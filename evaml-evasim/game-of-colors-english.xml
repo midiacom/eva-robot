@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<evaml name="game-of-colors-english"
+	xsi:noNamespaceSchemaLocation="/home/marcelo/Dropbox/Estudo XML/EvaML-Schema/evaml_schema.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<settings>
+		<voice tone="en-US_AllisonV3Voice" />
+	</settings>
+	<script>
+		<light state="off" />
+		<evaEmotion emotion="neutral" />
+		<talk>Hi, I'm the robot Eva!</talk>
+		<audio source="mario-game-intro" block="true" />
+		<talk>Shall we play the color game?</talk>
+		<evaEmotion emotion="happy" />
+		<audio source="mario-start-01" block="true" />
+		<talk>What's your name?</talk>
+		<audio source="mario-sound1" block="true" />
+		<listen />
+		<talk>That Cool!</talk>
+		<talk>Let's go $</talk>
+		<!-- ############ Primeira cor com duas tentativas ############ -->
+		<counter var="try" op="=" value="1" />
+		<evaEmotion id="COR1" emotion="neutral" />
+		<talk>What is this color?</talk>
+		<audio source="mario-sound1" block="true" />
+		<light state="on" color="blue" />
+		<listen />
+		<switch var="$">
+			<case op="contain" value="blue">
+				<audio source="mario-start-02" block="true" />
+				<talk>Very good! You're right!</talk>
+			</case>
+			<default>
+				<audio source="mario-sound1" block="true" />
+				<talk>This color is blue</talk>
+				<switch var="try">
+					<case op="eq" value="1">
+						<counter var="try" op="+" value="1" />
+						<wait duration="2000" />
+						<talk>Let's try one more time</talk>
+						<light state="off" />
+						<wait duration="2000" />
+						<goto target="COR1" />
+					</case>
+					<case op="eq" value="2">
+						<wait duration="100" />
+					</case>
+				</switch>
+			</default>
+		</switch>
+		<evaEmotion emotion="happy" />
+		<light state="off" />
+		<wait duration="1000" />
+		<!-- ############ Segunda cor com duas tentativas ############ -->
+		<counter var="try" op="=" value="1" />
+		<evaEmotion id="COR2" emotion="neutral" />
+		<talk>What is this color?</talk>
+		<audio source="mario-sound1" block="true" />
+		<light state="on" color="red" />
+		<listen />
+		<switch var="$">
+			<case op="contain" value="red">
+				<audio source="mario-start-02" block="true" />
+				<talk>Excelent! You're right!</talk>
+			</case>
+			<default>
+				<audio source="mario-sound1" block="true" />
+				<talk>This color is red</talk>
+				<switch var="try">
+					<case op="eq" value="1">
+						<counter var="try" op="+" value="1" />
+						<wait duration="2000" />
+						<talk>Let's try one more time</talk>
+						<light state="off" />
+						<wait duration="2000" />
+						<goto target="COR2" />
+					</case>
+					<case op="eq" value="2">
+						<wait duration="100" />
+					</case>
+				</switch>
+			</default>
+		</switch>
+		<evaEmotion emotion="happy" />
+		<light state="off" />
+		<wait duration="1000" />
+		<!-- ############ Terceira cor com duas tentativas ############ -->
+		<counter var="try" op="=" value="1" />
+		<evaEmotion id="COR3" emotion="neutral" />
+		<talk>What is this color?</talk>
+		<audio source="mario-sound1" block="true" />
+		<light state="on" color="green" />
+		<listen />
+		<switch var="$">
+			<case op="contain" value="green">
+				<audio source="mario-start-02" block="true" />
+				<talk>Nice! You're correct!</talk>
+			</case>
+			<default>
+				<audio source="mario-sound1" block="true" />
+				<talk>This color is green</talk>
+				<switch var="try">
+					<case op="eq" value="1">
+						<counter var="try" op="+" value="1" />
+						<wait duration="2000" />
+						<talk>Let's try one more time</talk>
+						<light state="off" />
+						<wait duration="2000" />
+						<goto target="COR3" />
+					</case>
+					<case op="eq" value="2">
+						<wait duration="100" />
+					</case>
+				</switch>
+			</default>
+		</switch>
+		<evaEmotion emotion="happy" />
+		<talk>It was really nice to play with you $1</talk>
+		<audio source="mario-end-02" block="true" />
+		<light state="off" />
+	</script>
+</evaml>

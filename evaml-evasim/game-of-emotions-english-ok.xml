@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<evaml name="game-of-emotions-english-ok"
+	xsi:noNamespaceSchemaLocation="/home/marcelo/Dropbox/Estudo XML/EvaML-Schema/evaml_schema.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<settings>
+		<voice tone="en-US_AllisonV3Voice" />
+	</settings>
+	<script>
+		<!-- Saudação e apresentação do jogo-->
+		<light state="on" color="white" />
+		<evaEmotion emotion="neutral" />
+		<talk>Hi, I am the robot Eva!</talk>
+		<audio source="mario-game-intro" block="true" />
+		<talk>Shall we play the emotions game?</talk>
+		<evaEmotion emotion="happy" />
+		<audio source="mario-start-01" block="true" />
+		<evaEmotion emotion="neutral" />
+		<talk>What is your name?</talk>
+		<audio source="mario-sound1" block="false" />
+		<listen />
+		<evaEmotion emotion="happy" />
+		<talk>Very nice!</talk>
+		<talk>Let's go $</talk>
+		<evaEmotion emotion="neutral" />
+		<talk>I will show you my emotions</talk>
+		<audio source="mario-sound1" block="true" />
+		<talk>I look like this when I am happy</talk>
+		<evaEmotion emotion="happy" />
+		<light state="on" color="green" />
+		<led animation="happy" />
+		<wait duration="2000" />
+		<evaEmotion emotion="neutral" />
+		<talk>I look like this when I am sad</talk>
+		<audio source="mario-sound1" block="true" />
+		<evaEmotion emotion="sad" />
+		<light state="on" color="blue" />
+		<led animation="sad" />
+		<wait duration="2000" />
+		<evaEmotion emotion="neutral" />
+		<talk>I look like this when I am angry</talk>
+		<audio source="mario-sound1" block="false" />
+		<evaEmotion emotion="angry" />
+		<light state="on" color="red" />
+		<led animation="angry" />
+		<wait duration="2000" />
+		<evaEmotion emotion="neutral" />
+		<light state="on" color="white" />
+		<talk>Let's start the game</talk>
+		<!-- ############ Primeira emoção com duas tentativas ############ -->
+		<counter var="try" op="=" value="1" />
+		<evaEmotion id="EMOCAO1" emotion="neutral" />
+		<light state="on" color="white" />
+		<talk>How am I feeling?</talk>
+		<talk>Happy, sad, or, angry?</talk>
+		<evaEmotion emotion="sad" />
+		<light state="on" color="blue" />
+		<audio source="mario-sound1" block="true" />
+		<listen />
+		<switch var="$">
+			<case op="contain" value="sad">
+				<audio source="mario-start-02" block="true" />
+				<talk>Very good! You are right!</talk>
+			</case>
+			<default>
+				<audio source="mario-sound1" block="true" />
+				<talk>I am feeling sad</talk>
+				<switch var="try">
+					<case op="eq" value="1">
+						<counter var="try" op="+" value="1" />
+						<wait duration="2000" />
+						<talk>Let's try one more time</talk>
+						<wait duration="2000" />
+						<goto target="EMOCAO1" />
+					</case>
+					<case op="eq" value="2">
+						<wait duration="100" />
+					</case>
+				</switch>
+			</default>
+		</switch>
+		<evaEmotion emotion="happy" />
+		<wait duration="1000" />
+		<!-- ############ Segunda emoção com duas tentativas ############ -->
+		<counter var="try" op="=" value="1" />
+		<evaEmotion id="EMOCAO2" emotion="neutral" />
+		<light state="on" color="white" />
+		<talk>How am I feeling?</talk>
+		<talk>Happy, sad, or, angry?</talk>
+		<evaEmotion emotion="angry" />
+		<light state="on" color="red" />
+		<audio source="mario-sound1" block="true" />
+		<listen />
+		<switch var="$">
+			<case op="contain" value="angry">
+				<audio source="mario-start-02" block="true" />
+				<talk>Nice! You are right!</talk>
+			</case>
+			<default>
+				<audio source="mario-sound1" block="true" />
+				<talk>I am feeling angry</talk>
+				<switch var="try">
+					<case op="eq" value="1">
+						<counter var="try" op="+" value="1" />
+						<wait duration="2000" />
+						<talk>Let's try one more time</talk>
+						<wait duration="2000" />
+						<goto target="EMOCAO2" />
+					</case>
+					<case op="eq" value="2">
+						<wait duration="100" />
+					</case>
+				</switch>
+			</default>
+		</switch>
+		<evaEmotion emotion="happy" />
+		<wait duration="1000" />
+		<!-- ############ Terceira emoção com duas tentativas ############ -->
+		<counter var="try" op="=" value="1" />
+		<evaEmotion id="EMOCAO3" emotion="neutral" />
+		<light state="on" color="white" />
+		<talk>How am I feeling?</talk>
+		<talk>Happy, sad, or, angry?</talk>
+		<evaEmotion emotion="happy" />
+		<light state="on" color="green" />
+		<audio source="mario-sound1" block="true" />
+		<listen />
+		<switch var="$">
+			<case op="contain" value="happy">
+				<audio source="mario-start-02" block="true" />
+				<talk>Perfect! You are correct!</talk>
+			</case>
+			<default>
+				<audio source="mario-sound1" block="true" />
+				<talk>I am feeling happy</talk>
+				<switch var="try">
+					<case op="eq" value="1">
+						<counter var="try" op="+" value="1" />
+						<wait duration="2000" />
+						<talk>Let's try one more time</talk>
+						<wait duration="2000" />
+						<goto target="EMOCAO2" />
+					</case>
+					<case op="eq" value="2">
+						<wait duration="100" />
+					</case>
+				</switch>
+			</default>
+		</switch>
+		<evaEmotion emotion="happy" />
+		<talk>It was really nice to play with you $1</talk>
+		<audio source="mario-end-02" block="true" />
+		<light state="off" />
+	</script>
+</evaml>
