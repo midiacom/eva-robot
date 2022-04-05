@@ -142,7 +142,7 @@ def tab_load_mem_vars():
         tab_vars.insert(parent='',index='end',text='', values=(var_name, eva_memory.vars[var_name]))
 
 
-# funcao para escrever os dados da memeria na tabela mem dollar
+# funcao para escrever os dados da memoria na tabela mem dollar
 def tab_load_mem_dollar():
     indice = 1 # indice para a variável dollar
     for i in tab_dollar.get_children(): # limpa os valores da tabela
