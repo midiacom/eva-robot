@@ -1,0 +1,121 @@
+<evaml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="game-of-emotions-ING" xsi:noNamespaceSchemaLocation="/home/marcelo/Dropbox/Estudo XML/EvaML-Schema/evaml_schema.xsd" id="64905bd604ae5f02fccb17529d7f5c79">
+	<settings>
+		<voice tone="en-US_AllisonV3Voice" key="1000" />
+	</settings>
+	<script>
+		<light state="on" color="white" key="1001" />
+		<evaEmotion emotion="neutral" key="1002" />
+		<talk key="1003">Hi, I am the robot Eva!</talk>
+		<audio source="mario-game-intro" block="true" key="1004" />
+		<talk key="1005">Shall we play the emotions game?</talk>
+		<evaEmotion emotion="happy" key="1006" />
+		<audio source="mario-start-01" block="true" key="1007" />
+		<evaEmotion emotion="neutral" key="1008" />
+		<talk key="1009">What is your name?</talk>
+		<audio source="mario-sound1" block="true" key="1010" />
+			<led animation="listen" key="1011" />
+			<wait duration="4000" key="1012" />
+			<led animation="stop" key="1013" />
+			<wait duration="1000" key="1014" />
+		<evaEmotion emotion="happy" key="1015" />
+		<talk key="1016">Very nice!</talk>
+		<talk key="1017">Let's go Marcelo</talk>
+		<evaEmotion emotion="neutral" key="1018" />
+		<talk key="1019">I will show you my emotions</talk>
+		<audio source="mario-sound1" block="true" key="1020" />
+		<talk key="1021">I look like this when I am happy</talk>
+		<evaEmotion emotion="happy" key="1022" />
+		<light state="on" color="green" key="1023" />
+		<led animation="happy" key="1024" />
+		<wait duration="2000" key="1025" />
+		<evaEmotion emotion="neutral" key="1026" />
+		<talk key="1027">I look like this when I am sad</talk>
+		<audio source="mario-sound1" block="true" key="1028" />
+		<evaEmotion emotion="sad" key="1029" />
+		<light state="on" color="blue" key="1030" />
+		<led animation="sad" key="1031" />
+		<wait duration="2000" key="1032" />
+		<evaEmotion emotion="neutral" key="1033" />
+		<talk key="1034">I look like this when I am angry</talk>
+		<audio source="mario-sound1" block="true" key="1035" />
+		<evaEmotion emotion="angry" key="1036" />
+		<light state="on" color="red" key="1037" />
+		<led animation="angry" key="1038" />
+		<wait duration="2000" key="1039" />
+		<evaEmotion emotion="neutral" key="1040" />
+		<light state="on" color="white" key="1041" />
+		<talk key="1042">Let's start the game</talk>
+		
+		<counter var="try" op="=" value="1" key="1043" />
+		<evaEmotion id="EMOCAO1" emotion="neutral" key="1044" />
+		<light state="on" color="white" key="1045" />
+		<talk key="1046">How am I feeling?</talk>
+		<talk key="1047">Happy, sad, or, angry?</talk>
+		<evaEmotion emotion="sad" key="1048" />
+		<light state="on" color="blue" key="1049" />
+		<audio source="mario-sound1" block="true" key="1050" />
+			<led animation="listen" key="1051" />
+			<wait duration="4000" key="1052" />
+			<led animation="stop" key="1053" />
+			<wait duration="1000" key="1054" />
+				<audio source="mario-start-02" block="true" key="1055" />
+				<talk key="1056">Very good! You are right!</talk>
+			
+		<evaEmotion emotion="happy" key="1057" />
+		<wait duration="1000" key="1058" />
+		
+		<counter var="try" op="=" value="1" key="1059" />
+		<evaEmotion id="EMOCAO2" emotion="neutral" key="1060" />
+		<light state="on" color="white" key="1061" />
+		<talk key="1062">How am I feeling?</talk>
+		<talk key="1063">Happy, sad, or, angry?</talk>
+		<evaEmotion emotion="angry" key="1064" />
+		<light state="on" color="red" key="1065" />
+		<audio source="mario-sound1" block="true" key="1066" />
+			<led animation="listen" key="1067" />
+			<wait duration="4000" key="1068" />
+			<led animation="stop" key="1069" />
+			<wait duration="1000" key="1070" />
+			<audio source="mario-start-02" block="true" key="1071" />
+			<talk key="1072">Nice! You are right!</talk>
+			
+		<evaEmotion emotion="happy" key="1073" />
+		<wait duration="1000" key="1074" />
+		
+		<counter var="try" op="=" value="1" key="1075" />
+		<evaEmotion id="EMOCAO3" emotion="neutral" key="1076" />
+		<light state="on" color="white" key="1077" />
+		<talk key="1078">How am I feeling?</talk>
+		<talk key="1079">Happy, sad, or, angry?</talk>
+		<evaEmotion emotion="happy" key="1080" />
+		<light state="on" color="green" key="1081" />
+		<audio source="mario-sound1" block="true" key="1082" />
+			<led animation="listen" key="1083" />
+			<wait duration="4000" key="1084" />
+			<led animation="stop" key="1085" />
+			<wait duration="1000" key="1086" />
+		
+				<audio source="mario-sound1" block="true" key="1087" />
+				<talk key="1088">I am feeling happy</talk>
+						<wait duration="2000" key="1089" />
+						<talk key="1090">Let's try one more time</talk>
+						<wait duration="2000" key="1091" />
+						<evaEmotion emotion="neutral" key="1092" />
+						<light state="on" color="white" key="1093" />
+						<talk key="1094">How am I feeling?</talk>
+						<talk key="1095">Happy, sad, or, angry?</talk>
+						<evaEmotion emotion="happy" key="1096" />
+						<light state="on" color="green" key="1097" />
+						<audio source="mario-sound1" block="true" key="1098" />
+							<led animation="listen" key="1099" />
+							<wait duration="4000" key="1100" />
+							<led animation="stop" key="1101" />
+							<wait duration="1000" key="1102" />
+							<audio source="mario-start-02" block="true" key="1103" />
+							<talk key="1104">Perfect! You are correct </talk>
+		<evaEmotion emotion="happy" key="1105" />
+		<talk key="1106">It was really nice to play with you Marcelo</talk>
+		<audio source="mario-end-02" block="true" key="1107" />
+		<light state="off" key="1108" />
+	</script>
+<links><link from="1000" to="1001" /><link from="1001" to="1002" /><link from="1002" to="1003" /><link from="1003" to="1004" /><link from="1004" to="1005" /><link from="1005" to="1006" /><link from="1006" to="1007" /><link from="1007" to="1008" /><link from="1008" to="1009" /><link from="1009" to="1010" /><link from="1010" to="1011" /><link from="1011" to="1012" /><link from="1012" to="1013" /><link from="1013" to="1014" /><link from="1014" to="1015" /><link from="1015" to="1016" /><link from="1016" to="1017" /><link from="1017" to="1018" /><link from="1018" to="1019" /><link from="1019" to="1020" /><link from="1020" to="1021" /><link from="1021" to="1022" /><link from="1022" to="1023" /><link from="1023" to="1024" /><link from="1024" to="1025" /><link from="1025" to="1026" /><link from="1026" to="1027" /><link from="1027" to="1028" /><link from="1028" to="1029" /><link from="1029" to="1030" /><link from="1030" to="1031" /><link from="1031" to="1032" /><link from="1032" to="1033" /><link from="1033" to="1034" /><link from="1034" to="1035" /><link from="1035" to="1036" /><link from="1036" to="1037" /><link from="1037" to="1038" /><link from="1038" to="1039" /><link from="1039" to="1040" /><link from="1040" to="1041" /><link from="1041" to="1042" /><link from="1042" to="1043" /><link from="1043" to="1044" /><link from="1044" to="1045" /><link from="1045" to="1046" /><link from="1046" to="1047" /><link from="1047" to="1048" /><link from="1048" to="1049" /><link from="1049" to="1050" /><link from="1050" to="1051" /><link from="1051" to="1052" /><link from="1052" to="1053" /><link from="1053" to="1054" /><link from="1054" to="1055" /><link from="1055" to="1056" /><link from="1056" to="1057" /><link from="1057" to="1058" /><link from="1058" to="1059" /><link from="1059" to="1060" /><link from="1060" to="1061" /><link from="1061" to="1062" /><link from="1062" to="1063" /><link from="1063" to="1064" /><link from="1064" to="1065" /><link from="1065" to="1066" /><link from="1066" to="1067" /><link from="1067" to="1068" /><link from="1068" to="1069" /><link from="1069" to="1070" /><link from="1070" to="1071" /><link from="1071" to="1072" /><link from="1072" to="1073" /><link from="1073" to="1074" /><link from="1074" to="1075" /><link from="1075" to="1076" /><link from="1076" to="1077" /><link from="1077" to="1078" /><link from="1078" to="1079" /><link from="1079" to="1080" /><link from="1080" to="1081" /><link from="1081" to="1082" /><link from="1082" to="1083" /><link from="1083" to="1084" /><link from="1084" to="1085" /><link from="1085" to="1086" /><link from="1086" to="1087" /><link from="1087" to="1088" /><link from="1088" to="1089" /><link from="1089" to="1090" /><link from="1090" to="1091" /><link from="1091" to="1092" /><link from="1092" to="1093" /><link from="1093" to="1094" /><link from="1094" to="1095" /><link from="1095" to="1096" /><link from="1096" to="1097" /><link from="1097" to="1098" /><link from="1098" to="1099" /><link from="1099" to="1100" /><link from="1100" to="1101" /><link from="1101" to="1102" /><link from="1102" to="1103" /><link from="1103" to="1104" /><link from="1104" to="1105" /><link from="1105" to="1106" /><link from="1106" to="1107" /><link from="1107" to="1108" /></links></evaml>

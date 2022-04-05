@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<evaml name="game-of-colors-english-eva"
+	xsi:noNamespaceSchemaLocation="/home/marcelo/Dropbox/Estudo XML/EvaML-Schema/evaml_schema.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<settings>
+		<voice tone="en-US_AllisonV3Voice" />
+	</settings>
+	<script>
+		<light state="off" />
+		<evaEmotion emotion="neutral" />
+		<talk>Hi, I'm the robot Eva!</talk>
+		<audio source="mario-game-intro" block="true" />
+		<talk>Shall we play the color game?</talk>
+		<evaEmotion emotion="happy" />
+		<audio source="mario-start-01" block="true" />
+		<talk>What's your name?</talk>
+		<audio source="mario-sound1" block="true" />
+			<led animation="listen" />
+			<wait duration="4000" />
+			<led animation="stop" />
+			<wait duration="1000" />
+		<talk>That Cool!</talk>
+		<talk>Let's go Marcelo</talk>
+		<!-- ############ Primeira cor com duas tentativas ############ -->
+		<counter var="try" op="=" value="1" />
+		<evaEmotion id="COR1" emotion="neutral" />
+		<talk>What is this color?</talk>
+		<audio source="mario-sound1" block="true" />
+		<light state="on" color="blue" />
+			<led animation="listen" />
+		<wait duration="4000" />
+		<led animation="stop" />
+		<wait duration="1000" />
+			<audio source="mario-start-02" block="true" />
+			<talk>Very good! You're right!</talk>
+		<evaEmotion emotion="happy" />
+		<light state="off" />
+		<wait duration="1000" />
+		<!-- ############ Segunda cor com duas tentativas ############ -->
+		<counter var="try" op="=" value="1" />
+		<evaEmotion id="COR2" emotion="neutral" />
+		<talk>What is this color?</talk>
+		<audio source="mario-sound1" block="true" />
+		<light state="on" color="red" />
+			<led animation="listen" />
+			<wait duration="4000" />
+			<led animation="stop" />
+			<wait duration="1000" />
+				<audio source="mario-start-02" block="true" />
+				<talk>Excelent! You're right!</talk>
+		<evaEmotion emotion="happy" />
+		<light state="off" />
+		<wait duration="1000" />
+		<!-- ############ Terceira cor com duas tentativas ############ -->
+		<counter var="try" op="=" value="1" />
+		<evaEmotion id="COR3" emotion="neutral" />
+		<talk>What is this color?</talk>
+		<audio source="mario-sound1" block="true" />
+		<light state="on" color="green" />
+			<led animation="listen" />
+			<wait duration="4000" />
+			<led animation="stop" />
+			<wait duration="1000" />
+				<audio source="mario-sound1" block="true" />
+				<talk>This color is green</talk>
+						<wait duration="2000" />
+						<talk>Let's try one more time</talk>
+						<light state="off" />
+						<wait duration="2000" />
+					<talk>What is this color?</talk>
+					<audio source="mario-sound1" block="true" />
+					<light state="on" color="green" />
+						<led animation="listen" />
+						<wait duration="4000" />
+						<led animation="stop" />
+						<wait duration="1000" />
+						<audio source="mario-start-02" block="true" />
+						<talk>Nice! You're correct!</talk>
+		<evaEmotion emotion="happy" />
+		<talk>It was really nice to play with you Marcelo</talk>
+		<audio source="mario-end-02" block="true" />
+		<light state="off" />
+	</script>
+</evaml>

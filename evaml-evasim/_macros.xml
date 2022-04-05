@@ -1,9 +1,0 @@
-<evaml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="teste_flavio" xsi:noNamespaceSchemaLocation="/home/marcelo/Dropbox/Estudo XML/EvaML-Schema/evaml_schema.xsd">
-  <settings>
-    <voice tone="en-US_AllisonV3Voice" />
-  </settings>
-  <script>
-    <listen />
-    <userEmotion />
-  </script>
-</evaml>

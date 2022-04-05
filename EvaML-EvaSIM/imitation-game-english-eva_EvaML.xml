@@ -1,0 +1,72 @@
+<evaml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="imitation-game-english-eva" xsi:noNamespaceSchemaLocation="/home/marcelo/Dropbox/Estudo XML/EvaML-Schema/evaml_schema.xsd" id="46d9b0f283ee1581a8d6fa4788e240e1">
+  <settings>
+      <voice tone="en-US_AllisonV3Voice" key="1000" />
+      <lightEffects mode="on" />
+      <audioEffects mode="on" vol="100%" />
+    </settings>
+    <script>
+      
+      <evaEmotion emotion="neutral" key="1001" />
+      <light state="on" color="white" key="1002" />
+      <audio source="mario-start-01" block="true" key="1003" />
+      <light state="on" color="yellow" key="1004" />
+      <evaEmotion emotion="happy" key="1005" />
+      <talk key="1006">Hi, I'm the robot Eva / Hello, my name is Eva / Hi, what is up. I am the robot Eva</talk>
+      <light state="on" color="pink" key="1007" />
+      <evaEmotion emotion="neutral" key="1008" />
+      <wait duration="2000" key="1009" />
+      
+      <talk key="1010">What is your name?</talk>
+        <led animation="listen" key="1011" />
+        <wait duration="4000" key="1012" />
+        <led animation="stop" key="1013" />
+        <wait duration="1000" key="1014" />
+      <talk key="1015">Hello Marcelo, I'm going to present my expressions</talk>
+      <evaEmotion emotion="happy" key="1016" />
+      <talk key="1017">I can express happiness</talk>
+      <wait duration="1500" key="1018" />
+      <evaEmotion emotion="sad" key="1019" />
+      <talk key="1020">I can express sadness</talk> 
+      <wait duration="1500" key="1021" />
+      <evaEmotion emotion="angry" key="1022" />
+      <talk key="1023">I can express anger</talk>
+      <wait duration="1500" key="1024" />
+      <evaEmotion emotion="neutral" key="1025" />
+      <talk key="1026">Hey Marcelo, let's play the emotions game?</talk>
+        <led animation="listen" key="1027" />
+        <wait duration="4000" key="1028" />
+        <led animation="stop" key="1029" />
+        <wait duration="1000" key="1030" />
+          <evaEmotion emotion="happy" key="1031" />
+          <talk key="1032">Excelent! Let's go now</talk>
+        
+      
+      <talk key="1033">I will show some emotions and you try to imitate me</talk>
+
+          <evaEmotion emotion="angry" key="1034" />
+          <light state="on" color="red" key="1035" />
+          <talk key="1036">Can you imitate me?</talk>
+      <audio source="mario-fundo" block="true" key="1037" />
+    <evaEmotion emotion="happy" key="1038" />
+      <audio source="fanfare2" block="true" key="1039" />
+      <talk key="1040">Ok! You are correct</talk>
+    <evaEmotion emotion="sad" key="1041" />
+          <light state="on" color="blue" key="1042" />
+          <talk key="1043">Can you imitate me?</talk>
+      <audio source="mario-fundo" block="true" key="1044" />
+    <evaEmotion emotion="sad" key="1045" />
+      <talk key="1046">You are wrong</talk>
+    <evaEmotion emotion="happy" key="1047" />
+          <light state="on" color="yellow" key="1048" />
+          <talk key="1049">Can you imitate me?</talk>
+      <audio source="mario-fundo" block="true" key="1050" />
+    <evaEmotion emotion="happy" key="1051" />
+      <audio source="fanfare2" block="true" key="1052" />
+      <talk key="1053">Ok! You are correct</talk>
+    <evaEmotion emotion="happy" key="1054" />
+          <talk key="1055">Your score was two</talk>
+          <talk key="1056">It was good to play with you Marcelo. Bye</talk>
+          <light state="off" key="1057" />
+
+  </script>
+  <links><link from="1000" to="1001" /><link from="1001" to="1002" /><link from="1002" to="1003" /><link from="1003" to="1004" /><link from="1004" to="1005" /><link from="1005" to="1006" /><link from="1006" to="1007" /><link from="1007" to="1008" /><link from="1008" to="1009" /><link from="1009" to="1010" /><link from="1010" to="1011" /><link from="1011" to="1012" /><link from="1012" to="1013" /><link from="1013" to="1014" /><link from="1014" to="1015" /><link from="1015" to="1016" /><link from="1016" to="1017" /><link from="1017" to="1018" /><link from="1018" to="1019" /><link from="1019" to="1020" /><link from="1020" to="1021" /><link from="1021" to="1022" /><link from="1022" to="1023" /><link from="1023" to="1024" /><link from="1024" to="1025" /><link from="1025" to="1026" /><link from="1026" to="1027" /><link from="1027" to="1028" /><link from="1028" to="1029" /><link from="1029" to="1030" /><link from="1030" to="1031" /><link from="1031" to="1032" /><link from="1032" to="1033" /><link from="1033" to="1034" /><link from="1034" to="1035" /><link from="1035" to="1036" /><link from="1036" to="1037" /><link from="1037" to="1038" /><link from="1038" to="1039" /><link from="1039" to="1040" /><link from="1040" to="1041" /><link from="1041" to="1042" /><link from="1042" to="1043" /><link from="1043" to="1044" /><link from="1044" to="1045" /><link from="1045" to="1046" /><link from="1046" to="1047" /><link from="1047" to="1048" /><link from="1048" to="1049" /><link from="1049" to="1050" /><link from="1050" to="1051" /><link from="1051" to="1052" /><link from="1052" to="1053" /><link from="1053" to="1054" /><link from="1054" to="1055" /><link from="1055" to="1056" /><link from="1056" to="1057" /></links></evaml>
