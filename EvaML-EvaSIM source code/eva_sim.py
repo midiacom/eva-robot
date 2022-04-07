@@ -133,7 +133,7 @@ tab_vars.heading("Var", text="Var",anchor=CENTER)
 tab_vars.heading("Value",text="Value",anchor=CENTER)
 
 
-# funcao para escrever os dados da memeria na tabela de variaveis
+# funcao para escrever os dados da memoria na tabela de variaveis
 def tab_load_mem_vars():
     for i in tab_vars.get_children(): # limpa os valores da tabela
         tab_vars.delete(i)
