@@ -199,11 +199,11 @@ def evaInit():
     bt_power['state'] = DISABLED
     evaEmotion("power_on")
     terminal.insert(INSERT, "\nstate: Initializing.")
-    #playsound("my_sounds/power_on.wav")
+    playsound("my_sounds/power_on.wav")
     terminal.insert(INSERT, "\nstate: Speaking a greeting text.")
-    #playsound("my_sounds/greetings.wav")
+    playsound("my_sounds/greetings.wav")
     terminal.insert(INSERT, '\nstate: Speaking "Load a script file and enjoy."')
-    #playsound("my_sounds/load_a_script.wav")
+    playsound("my_sounds/load_a_script.wav")
     terminal.insert(INSERT, "\nstate: Entering in standby mode.")
     bt_import['state'] = NORMAL
     evaMatrix("white")
