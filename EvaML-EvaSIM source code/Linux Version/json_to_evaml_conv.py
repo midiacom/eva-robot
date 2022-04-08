@@ -9,7 +9,7 @@ links = ""
 links_json = ""
 evaml = ""
 
-def converte(json_file_name):
+def converte(json_file_name, tkinter):
   global script, comandos_json, links, links_json, evaml
   # lendo do arquivo json
   with open(json_file_name, 'r') as openfile:
@@ -25,10 +25,19 @@ def converte(json_file_name):
   settings = ET.SubElement(evaml, "settings")
   # add os subelementos de settings com seus atributos
   for comando in comandos_json:
+    voice_found = False # 
     if comando["type"] == "voice": # busca comando voice e seus atributos
       voice_atributos = {"tone":comando["voice"], "key":str(comando["key"])}
-
-  voice = ET.SubElement(settings, "voice", voice_atributos)
+      comandos_json.remove(comando) # exclui voice para que ele não seja processado na proxima etapa
+      voice_found = True
+      voice = ET.SubElement(settings, "voice", voice_atributos)
+      break
+  
+    if not voice_found: # voice precisa existir no JSON e precisa ser o primeiro elemento da VPL
+      print("Oops! The Voice element is missing...") # it's required that the voice be the first element of VPL
+      warning_message = "Sorry! I didn't find the Voice element.\n\nPlease the Voice element must be the first element of the script!\n\nThe EvaSIM will be closed!"
+      tkinter.messagebox.showerror(title="Error!", message=warning_message)
+      exit(1)
 
   # este elementos ficam com os valores default pois ainda não foram implementados no robô
   lightEffects_atributos = {"mode":"on"}
@@ -42,12 +51,12 @@ def converte(json_file_name):
   links = ET.SubElement(evaml, "links")
 
   # chama as funções de processamento
-  processa_nodes(script, comandos_json) # converte os nós json para nós XML
+  processa_nodes(script, comandos_json, tkinter) # converte os nós json para nós XML
   processa_links(links, links_json) # converte os links json para links XML
 
 
 # processamentos dos comandos no arquivo json #######################################################################################
-def processa_nodes(script, comandos_json):
+def processa_nodes(script, comandos_json, tkinter):
   for comando in comandos_json:
 
     # <light>
@@ -57,13 +66,13 @@ def processa_nodes(script, comandos_json):
   
 
     # <audio>
-    if comando["type"] == "sound":
+    elif comando["type"] == "sound":
       audio_atributos = {"key" : str(comando["key"]), "source" : comando["src"], "block" : str(comando["wait"]).lower()}
       ET.SubElement(script, "audio", audio_atributos)
 
 
     # <evaEmotion>
-    if comando["type"] == "emotion":
+    elif comando["type"] == "emotion":
       # mapeando os nomes da expressões (4 expressões)
       if (comando["emotion"] == "anger"): eva_emotion = "angry"
       elif (comando["emotion"] == "joy"): eva_emotion = "happy"
@@ -74,7 +83,7 @@ def processa_nodes(script, comandos_json):
       ET.SubElement(script, "evaEmotion", eva_emotion_atributos)
 
     # <leds>
-    if comando["type"] == "led":
+    elif comando["type"] == "led":
       # mapeando os nomes da expressões (4 expressões)
       if (comando["anim"] == "anger"): animatiom = "angry"
       elif (comando["anim"] == "joy"): animatiom = "happy"
@@ -89,38 +98,38 @@ def processa_nodes(script, comandos_json):
 
 
     # <wait>
-    if comando["type"] == "wait":
+    elif comando["type"] == "wait":
       wait_atributos = {"key" : str(comando["key"]), "duration" : str(comando["time"])}
       ET.SubElement(script, "wait", wait_atributos)
 
     
     # <listen>
-    if comando["type"] == "listen":
+    elif comando["type"] == "listen":
       listen_atributos = {"key" : str(comando["key"])}
       ET.SubElement(script, "listen", listen_atributos)
 
     
     # <random>
-    if comando["type"] == "random":
+    elif comando["type"] == "random":
       random_atributos = {"key" : str(comando["key"]), "min" : str(comando["min"]), "max" : str(comando["max"])}
       ET.SubElement(script, "random", random_atributos)
 
 
     # <talk>
-    if comando["type"] == "speak":
+    elif comando["type"] == "speak":
       speak_atributos = {"key" : str(comando["key"])}
       talk = ET.SubElement(script, "talk", speak_atributos)
       talk.text = comando["text"]
 
 
     # <userEmotion>
-    if comando["type"] == "user_emotion":
+    elif comando["type"] == "user_emotion":
       user_emotion_atributos = {"key" : str(comando["key"])}
       ET.SubElement(script, "userEmotion", user_emotion_atributos)
 
 
     # <counter>
-    if comando["type"] == "counter":
+    elif comando["type"] == "counter":
       # mapping operations types
       if (comando["ops"] == "assign"): op = "="
       elif (comando["ops"] == "rest"): op = "%"
@@ -134,7 +143,7 @@ def processa_nodes(script, comandos_json):
 
 
     # <if>
-    if comando["type"] == "if":
+    elif comando["type"] == "if":
       exp_logica = comando["text"] # string com a expressao logica do condition
       tag = "case" # temos esta variável aqui, para que, caso seja necessário, criemos o elemento default.
       # mapping "op" types
@@ -195,6 +204,31 @@ def processa_nodes(script, comandos_json):
       if_atributos = {"key" : str(comando["key"]), "op" : op, "value" : value, "var" : var}
       ET.SubElement(script, tag , if_atributos)
 
+    # Todos os comandos suportados foram testados
+    else:
+      warning_message = """Sorry, an unsupported VPL element was found. Please, check your JSON script!
+
+=========================
+  Supported VPL Elements List
+=========================
+        
+* Voice
+* Random
+* Wait
+* Talk
+* Light
+* evaEmotion
+* Audio
+* Led
+* Counter
+* Condition
+* Listen
+* userEmotion
+
+The EvaSIM will be closed..."""
+
+      tkinter.messagebox.showerror(title="Error!", message=warning_message)
+      exit(1)
 
 
 # processamentos dos links no arquivo json #######################################################################################################

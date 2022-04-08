@@ -67,7 +67,10 @@ h = 525  # on linux use 525 # on windows use 550
 window.geometry(str(w) + "x" + str(h))
 
 # fonte tamanho 9 para botoes e textos em geral
-font1 = ('Arial', 9) 
+font1 = ('Arial', 9)
+
+#setting the default font for applicantion
+window.option_add( "*font", "Arial 9")
 
 # define o frame para a imagem do robô
 frame_robot = tkinter.Frame(master=window, width= 400, height=h)
@@ -194,11 +197,12 @@ def evaInit():
     playsound("my_sounds/load_a_script.mp3", block = True)
     terminal.insert(INSERT, "\nstate: Entering in standby mode.")
     bt_import['state'] = NORMAL
-    while bt_run['state'] == DISABLED: # animacao da luz da matrix em stand by
-            evaMatrix("white")
-            time.sleep(0.5)
-            evaMatrix("grey")
-            time.sleep(0.5)
+    evaMatrix("white")
+    # while bt_run['state'] == DISABLED: # animacao da luz da matrix em stand by
+    #         evaMatrix("white")
+    #         time.sleep(0.5)
+    #         evaMatrix("grey")
+    #         time.sleep(0.5)
 
 
 # Eva powerOn function
@@ -247,7 +251,7 @@ def importFile():
         print("Convertendo e executando um arquivo do tipo JSON")
         #  script_file não é uma string e ainda possui infos além do caminho do arquivo
         # por isso precisa ser processada antes de ser passada para o modulo de conversão
-        json_to_evaml_conv.converte(str(script_file).split("'")[1])
+        json_to_evaml_conv.converte(str(script_file).split("'")[1], tkinter)
         script_file = "_json_to_evaml_converted.xml" # arquivo json convertido para XML
     else: # leitura de um XML
         print("Executando um arquivo do tipo XML")
