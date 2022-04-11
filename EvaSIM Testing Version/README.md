@@ -1,5 +1,5 @@
 # EvaSIM Testing Versions
 
-Neste diretório se encontram as versões para teste do EvaSIM nas versões para Linux e Windows.
+In this directory are the test versions of EvaSIM in versions for Linux and Windows.
 
-Há também um pdf explicando o passo a passo de instalação dos componentes de software do simulador.
+There is also a pdf explaining the step-by-step installation of the simulator software components.
