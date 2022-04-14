@@ -6,9 +6,13 @@ First, you must download the correct version for your system.
  
 ## EvaSIM (Windows Version):
 https://1drv.ms/u/s!As9IqnfIu5behqh3t5cZMVM_YV7efA?e=mmSPFC
+
+
  
 ## EvaSIM (Linux Version):
 https://1drv.ms/u/s!As9IqnfIu5behqh4F7Z609eFUBvKcg?e=Hrdxej
+
+
  
 After downloading the zip file, you must unzip it.
  
