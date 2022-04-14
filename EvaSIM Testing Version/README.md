@@ -14,9 +14,9 @@ In order to facilitate the use of EvaSIM, we managed to package the software wit
  
     After downloading the zip file, you must unzip it.
  
-    So, you will see an *"eva_sim"* folder. 
+    So, you will see an "*eva_sim*" folder. 
  
-2. Enter the *“eva_sim”* folder and double-click on the *"eva_sim.exe"* file, in the case of the Windows version, or the *"eva_sim"* file, in the case of the Linux version.
+2. Enter the "*eva_sim*" folder and double-click on the "*eva_sim.exe*" file, in the case of the Windows version, or the "*eva_sim*" file, in the case of the Linux version.
  
 3. Now, activate the simulator using the EvaSIM **"Power On"** button.
  
