@@ -1,5 +1,6 @@
 # EvaSIM Installation Instructions
  
+![texto](https://drive.google.com/file/d/1GTAU9mpPB3oNYGUpr5pRHsYtKk1qcY67/view?usp=sharing)
 In order to facilitate the use of EvaSIM, we managed to package the software with all its dependencies, without having to download and install Python modules. I did it in two versions, one for Windows and one for Linux. To run EvaSIM we recommend **Windows 10** and Linux distributions **Ubuntu 20.04.4** and Linux **Mint 20.3**.
  
 1. First, you must download the correct version for your system.
@@ -20,7 +21,7 @@ In order to facilitate the use of EvaSIM, we managed to package the software wit
  
     If you hear a greeting, everything should be working correctly!
  
-`In the Linux version, if after two clicks on "eva_sim" the simulator does not run, please check if the file has permission to be executed. This can be done by clicking with the right mouse button on the file, selecting the properties option and in the permissions tab activating the option "allow the execution of the file". This can also be done via the command line as follows:`
+`In the Linux version, if after two clicks on "eva_sim" file the simulator does not run, please check if the file has permission to be executed. This can be done by clicking with the right mouse button on the file, selecting the properties option and in the permissions tab activating the option "allow the execution of the file". This can also be done via the command line as follows:`
 ```
 sudo chmod +x eva_sim
 ```
