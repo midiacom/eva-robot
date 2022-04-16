@@ -16,11 +16,13 @@ In order to facilitate the use of EvaSIM, we managed to package the software wit
  
     So, you will see an "*eva_sim*" folder. 
  
-2. Enter the "*eva_sim*" folder and double-click on the "*eva_sim.exe*" file, in the case of the Windows version, or the "*eva_sim*" file, in the case of the Linux version.
+    Enter the "*eva_sim*" folder and double-click on the "*eva_sim.exe*" file, in the case of the Windows version, or the "*eva_sim*" file, in the case of the Linux version.
  
-3. Now, activate the simulator using the EvaSIM **"Power On"** button.
+    Now, activate the simulator using the EvaSIM **"Power On"** button.
  
     If you hear a greeting, everything should be working correctly!
+
+    Now that you have completed step 1, please **return to the form and go to step 2**.
  
 `In the Linux version, if after two clicks on "eva_sim" file the simulator does not run, please check if the file has permission to be executed. This can be done by clicking with the right mouse button on the file, selecting the properties option and in the permissions tab activating the option "allow the execution of the file". This can also be done via the command line as follows:`
 ```
