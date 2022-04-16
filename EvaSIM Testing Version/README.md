@@ -18,7 +18,7 @@ In order to facilitate the use of EvaSIM, we managed to package the software wit
  
     Enter the "*eva_sim*" folder and double-click on the "*eva_sim.exe*" file, in the case of the Windows version, or the "*eva_sim*" file, in the case of the Linux version.
  
-    Now, activate the simulator using the EvaSIM **"Power On"** button.
+    Now, **activate** the simulator using the EvaSIM **"Power On"** button.
  
     If you hear a greeting, everything should be working correctly!
 
