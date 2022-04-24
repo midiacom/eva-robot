@@ -5,13 +5,14 @@
       <audioEffects mode="on" vol="100%" />
     </settings>
     <script>
-      <talk key="1001">I will move my head to the left</talk>
-      <motion id="head" type="LEFT" key="1002" />
-      <talk key="1003">I will move my head to the center</talk>
-      <motion type="center" key="1004" />
-      <talk key="1005">I will move my head to the left</talk>
-      <motion type="RIGHT" key="1006" />
-      <light state="on" color="red" key="1007" />
-      <goto target="head" />
+      <light state="on" color="white" key="1001" />
+      <light state="on" color="white" key="1002" />
+      <talk key="1003">I will move my head to the left</talk>
+      <motion type="angry" key="1004" />
+      <talk key="1005">I will move my head to the center</talk>
+      <motion type="CENTER" key="1006" />
+      <talk key="1007">I will move my head to the right</talk>
+      <motion type="2UP" key="1008" />
+      <light state="on" color="red" key="1009" />
     </script>
-<links><link from="1000" to="1001" /><link from="1001" to="1002" /><link from="1002" to="1003" /><link from="1003" to="1004" /><link from="1004" to="1005" /><link from="1005" to="1006" /><link from="1006" to="1007" /><link from="1007" to="1002" /></links></evaml>
+<links><link from="1000" to="1001" /><link from="1001" to="1002" /><link from="1002" to="1003" /><link from="1003" to="1004" /><link from="1004" to="1005" /><link from="1005" to="1006" /><link from="1006" to="1007" /><link from="1007" to="1008" /><link from="1008" to="1009" /></links></evaml>

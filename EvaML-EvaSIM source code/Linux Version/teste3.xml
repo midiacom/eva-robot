@@ -10,12 +10,10 @@
     </settings>
     <script>
       <talk>I will move my head to the left</talk>
-      <motion id="head" type="LEFT" />
+      <motion type="" />
       <talk>I will move my head to the center</talk>
-      <motion type="center" />
-      <talk>I will move my head to the left</talk>
-      <motion type="RIGHT" />
-      <light state="on" color="red"/>
-      <goto target="head" />
+      <motion type="CENTER" />
+      <talk>I will move my head to the right</talk>
+      <motion type="2UP" />
     </script>
 </evaml>

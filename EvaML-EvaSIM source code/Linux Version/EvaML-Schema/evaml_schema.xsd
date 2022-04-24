@@ -24,18 +24,18 @@
 
 	<xs:simpleType name="motionListType">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="yes"/>
-			<xs:enumeration value="no"/>
-			<xs:enumeration value="center"/>
-			<xs:enumeration value="left"/>
-			<xs:enumeration value="right"/>
-			<xs:enumeration value="up"/>
-			<xs:enumeration value="down"/>
-			<xs:enumeration value="angry"/>
+			<xs:enumeration value="YES"/>
+			<xs:enumeration value="NO"/>
+			<xs:enumeration value="CENTER"/>
+			<xs:enumeration value="LEFT"/>
+			<xs:enumeration value="RIGHT"/>
 			<xs:enumeration value="UP"/>
 			<xs:enumeration value="DOWN"/>
-			<xs:enumeration value="RIGHT"/>
-			<xs:enumeration value="LEFT"/>
+			<xs:enumeration value="ANGRY"/>
+			<xs:enumeration value="2UP"/>
+			<xs:enumeration value="2DOWN"/>
+			<xs:enumeration value="2RIGHT"/>
+			<xs:enumeration value="2LEFT"/>
 		</xs:restriction>
 	</xs:simpleType>
 

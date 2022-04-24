@@ -203,29 +203,29 @@ def motion_process(motion_command):
     global gohashid
 
     # mapping 
-    if motion_command.attrib['type'] == "yes": # 
+    if motion_command.attrib['type'] == "YES": # 
       type = "n" # nao esta errado nao!!! yes é mapeado como "n" no robô
-    elif motion_command.attrib['type'] == "no":
+    elif motion_command.attrib['type'] == "NO":
       type = "s"
-    elif motion_command.attrib['type'] == "center":
+    elif motion_command.attrib['type'] == "CENTER":
       type = "c"
-    elif motion_command.attrib['type'] == "left":
-      type = "l"
-    elif motion_command.attrib['type'] == "right":
-      type = "r"
-    elif motion_command.attrib['type'] == "up":
-      type = "u"
-    elif motion_command.attrib['type'] == "down":
-      type = "d"
-    elif motion_command.attrib['type'] == "angry":
-      type = "a" # isso mesmo! Nao sei porque usa "a" para raiva
-    elif motion_command.attrib['type'] == "UP":
-      type = "U"
-    elif motion_command.attrib['type'] == "DOWN":
-      type = "D"
-    elif motion_command.attrib['type'] == "RIGHT":
-      type = "R"
     elif motion_command.attrib['type'] == "LEFT":
+      type = "l"
+    elif motion_command.attrib['type'] == "RIGHT":
+      type = "r"
+    elif motion_command.attrib['type'] == "UP":
+      type = "u"
+    elif motion_command.attrib['type'] == "DOWN":
+      type = "d"
+    elif motion_command.attrib['type'] == "ANGRY":
+      type = "a" # isso mesmo! Nao sei porque usa "a" para raiva
+    elif motion_command.attrib['type'] == "2UP":
+      type = "U"
+    elif motion_command.attrib['type'] == "2DOWN":
+      type = "D"
+    elif motion_command.attrib['type'] == "2RIGHT":
+      type = "R"
+    elif motion_command.attrib['type'] == "2LEFT":
       type = "L"
     
     motion_node = """      {

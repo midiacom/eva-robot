@@ -5,13 +5,14 @@
       <audioEffects mode="on" vol="100%" />
     </settings>
     <script>
+      <light state="on" />
+      <light state="on" color="white" />
       <talk>I will move my head to the left</talk>
-      <motion id="head" type="LEFT" />
+      <motion type="angry" />
       <talk>I will move my head to the center</talk>
-      <motion type="center" />
-      <talk>I will move my head to the left</talk>
-      <motion type="RIGHT" />
+      <motion type="CENTER" />
+      <talk>I will move my head to the right</talk>
+      <motion type="2UP" />
       <light state="on" color="red" />
-      <goto target="head" />
     </script>
 </evaml>

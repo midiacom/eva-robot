@@ -5,13 +5,14 @@
       <audioEffects mode="on" vol="100%" />
     </settings>
     <script>
-      <talk key="1001">I will move my head to the left</talk>
-      <motion id="head" type="LEFT" key="1002" />
-      <talk key="1003">I will move my head to the center</talk>
-      <motion type="center" key="1004" />
-      <talk key="1005">I will move my head to the left</talk>
-      <motion type="RIGHT" key="1006" />
-      <light state="on" color="red" key="1007" />
-      <goto target="head" />
+      <light state="on" color="white" key="1001" />
+      <light state="on" color="white" key="1002" />
+      <talk key="1003">I will move my head to the left</talk>
+      <motion type="angry" key="1004" />
+      <talk key="1005">I will move my head to the center</talk>
+      <motion type="CENTER" key="1006" />
+      <talk key="1007">I will move my head to the right</talk>
+      <motion type="2UP" key="1008" />
+      <light state="on" color="red" key="1009" />
     </script>
 </evaml>
