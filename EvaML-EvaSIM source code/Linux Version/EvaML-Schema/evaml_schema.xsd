@@ -22,6 +22,31 @@
 		</xs:restriction>
 	</xs:simpleType>
 
+	<xs:simpleType name="motionListType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="yes"/>
+			<xs:enumeration value="no"/>
+			<xs:enumeration value="center"/>
+			<xs:enumeration value="left"/>
+			<xs:enumeration value="right"/>
+			<xs:enumeration value="up"/>
+			<xs:enumeration value="down"/>
+			<xs:enumeration value="angry"/>
+			<xs:enumeration value="UP"/>
+			<xs:enumeration value="DOWN"/>
+			<xs:enumeration value="RIGHT"/>
+			<xs:enumeration value="LEFT"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="motionStringType">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+
+	<xs:simpleType name="motionType">
+		<xs:union memberTypes="motionListType motionStringType" />
+	</xs:simpleType>
+
 	<xs:simpleType name="voiceStringType">
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>
@@ -244,6 +269,13 @@
 		</xs:complexType>
 	</xs:element>
 
+	<xs:element name="motion">
+		<xs:complexType>
+			<xs:attribute name="id" type="idType"/>
+			<xs:attribute name="type" type="motionType" use="required"/>
+		</xs:complexType>
+	</xs:element>
+
 	<xs:element name="voice">
 		<xs:complexType>
 			<xs:attribute name="tone" type="voiceType" use="required"/>
@@ -272,6 +304,7 @@
 				<xs:element ref="stop"/>
 				<xs:element ref="light"/>
 				<xs:element ref="goto"/>
+				<xs:element ref="motion"/>
 				<xs:element ref="userEmotion"/>
 				<xs:element ref="evaEmotion"/>
 				<xs:element ref="useMacro"/>
@@ -295,6 +328,7 @@
 				<xs:element ref="stop"/>
 				<xs:element ref="light"/>
 				<xs:element ref="goto"/>
+				<xs:element ref="motion"/>
 				<xs:element ref="userEmotion"/>
 				<xs:element ref="evaEmotion"/>
 				<xs:element ref="useMacro"/>
@@ -316,6 +350,7 @@
 				<xs:element ref="stop"/>
 				<xs:element ref="light"/>
 				<xs:element ref="goto"/>
+				<xs:element ref="motion"/>
 				<xs:element ref="userEmotion"/>
 				<xs:element ref="evaEmotion"/>
 				<xs:element ref="listen"/>
@@ -361,6 +396,7 @@
 				<xs:element ref="stop"/>
 				<xs:element ref="light"/>
 				<xs:element ref="goto"/>
+				<xs:element ref="motion"/>
 				<xs:element ref="userEmotion"/>
 				<xs:element ref="evaEmotion"/>
 				<xs:element ref="useMacro"/>

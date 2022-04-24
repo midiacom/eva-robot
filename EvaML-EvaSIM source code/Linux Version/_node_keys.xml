@@ -1,0 +1,17 @@
+<evaml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="teste3" xsi:noNamespaceSchemaLocation="EvaML-Schema/evaml_schema.xsd" id="507eb04c9c427e9f961e47a7204fac41">
+  <settings>
+      <voice tone="en-US_AllisonV3Voice" key="1000" />
+      <lightEffects mode="on" />
+      <audioEffects mode="on" vol="100%" />
+    </settings>
+    <script>
+      <talk key="1001">I will move my head to the left</talk>
+      <motion id="head" type="LEFT" key="1002" />
+      <talk key="1003">I will move my head to the center</talk>
+      <motion type="center" key="1004" />
+      <talk key="1005">I will move my head to the left</talk>
+      <motion type="RIGHT" key="1006" />
+      <light state="on" color="red" key="1007" />
+      <goto target="head" />
+    </script>
+</evaml>

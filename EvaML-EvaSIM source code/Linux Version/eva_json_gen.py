@@ -15,6 +15,10 @@ def mapping_xml_to_json():
     for elem in script_node.iter():
         if not(elem.tag in excluded_nodes):
 
+            if (elem.tag == 'motion'):
+                output += ",\n"
+                output += motion_process(elem)
+
             if (elem.tag == 'audio'):
                 output += ",\n"
                 output += audio_process(elem)
@@ -192,6 +196,49 @@ def listen_process(listen_command):
       }"""
     gohashid += 1
     return listen_node
+
+
+# motion type processing #########################################################################
+def motion_process(motion_command):
+    global gohashid
+
+    # mapping 
+    if motion_command.attrib['type'] == "yes": # 
+      type = "n" # nao esta errado nao!!! yes é mapeado como "n" no robô
+    elif motion_command.attrib['type'] == "no":
+      type = "s"
+    elif motion_command.attrib['type'] == "center":
+      type = "c"
+    elif motion_command.attrib['type'] == "left":
+      type = "l"
+    elif motion_command.attrib['type'] == "right":
+      type = "r"
+    elif motion_command.attrib['type'] == "up":
+      type = "u"
+    elif motion_command.attrib['type'] == "down":
+      type = "d"
+    elif motion_command.attrib['type'] == "angry":
+      type = "a" # isso mesmo! Nao sei porque usa "a" para raiva
+    elif motion_command.attrib['type'] == "UP":
+      type = "U"
+    elif motion_command.attrib['type'] == "DOWN":
+      type = "D"
+    elif motion_command.attrib['type'] == "RIGHT":
+      type = "R"
+    elif motion_command.attrib['type'] == "LEFT":
+      type = "L"
+    
+    motion_node = """      {
+        "key": """ + motion_command.attrib["key"] + """,
+        "name": "Motion",
+        "type": "mov",
+        "color": "lightblue",
+        "isGroup": false,
+        "mov": """ + '"' + type + '",' + """
+        "__gohashid": """ + str(gohashid) + """
+      }"""
+    gohashid += 1
+    return motion_node
 
 
 # led animation processing #########################################################################
