@@ -15,4 +15,4 @@
       <wait duration="1000" key="1008" />
       <audio source="applause-moderate" block="TRUE" key="1009" />
     </script>
-</evaml>
+<links><link from="1000" to="1001" /><link from="1001" to="1002" /><link from="1002" to="1003" /><link from="1003" to="1004" /><link from="1004" to="1005" /><link from="1005" to="1006" /><link from="1006" to="1007" /><link from="1007" to="1008" /><link from="1008" to="1009" /></links></evaml>

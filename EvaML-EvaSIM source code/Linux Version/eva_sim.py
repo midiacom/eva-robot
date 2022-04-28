@@ -188,7 +188,7 @@ canvas.create_image(340, 285, image = bulb_image)
 # Eva initialization function
 def evaInit():
     bt_power['state'] = DISABLED
-    evaEmotion("power_on")
+    evaEmotion("POWER_ON")
     terminal.insert(INSERT, "\nstate: Initializing.")
     playsound("my_sounds/power_on.mp3", block = True)
     terminal.insert(INSERT, "\nstate: Speaking a greeting text.")
@@ -263,7 +263,7 @@ def importFile():
     links_node = root.find("links")
     bt_run['state'] = NORMAL
     bt_stop['state'] = DISABLED
-    evaEmotion("neutral")
+    evaEmotion("NEUTRAL")
     terminal.insert(INSERT, '\nstate: Script loaded.')
     terminal.see(tkinter.END)
 
@@ -293,6 +293,7 @@ bt_clear.pack(side=tkinter.LEFT, padx=bt_padx)
 terminal = Text (frame_terminal, fg = "cyan", bg = "black", height = "34", width = "85")
 terminal.configure(font = ("Arial", 8))
 terminal.tag_configure("error", foreground="red")
+terminal.tag_configure("motion", foreground="orange")
 # limpa e desenha e coloca terminal no frame dele
 clear_terminal()
 terminal.pack()
@@ -300,27 +301,27 @@ terminal.pack()
 
 # led "animations"
 def ledAnimation(animation):
-    if animation == "stop": evaMatrix("grey")
-    elif animation == "listen": evaMatrix("green")
-    elif animation == "speak": evaMatrix("blue")
-    elif animation == "angry": evaMatrix("red")
-    elif animation == "happy": evaMatrix("green")
-    elif animation == "sad": evaMatrix("blue")
-    elif animation == "surprise": evaMatrix("yellow")
+    if animation == "STOP": evaMatrix("grey")
+    elif animation == "LISTEN": evaMatrix("green")
+    elif animation == "SPEAK": evaMatrix("blue")
+    elif animation == "ANGRY": evaMatrix("red")
+    elif animation == "HAPPY": evaMatrix("green")
+    elif animation == "SAD": evaMatrix("blue")
+    elif animation == "SURPRISE": evaMatrix("yellow")
     else: print("wrong led animation option")
 
 
 # set the Eva emotion
 def evaEmotion(expression):
-    if expression == "neutral":
+    if expression == "NEUTRAL":
         canvas.create_image(156, 161, image = im_eyes_neutral)
-    elif expression == "angry":
+    elif expression == "ANGRY":
         canvas.create_image(156, 161, image = im_eyes_angry)
-    elif expression == "happy":
+    elif expression == "HAPPY":
         canvas.create_image(156, 161, image = im_eyes_happy)
-    elif expression == "sad":
+    elif expression == "SAD":
         canvas.create_image(156, 161, image = im_eyes_sad)
-    elif expression == "power_on": 
+    elif expression == "POWER_ON": 
         canvas.create_image(156, 161, image = im_eyes_on)
     else: 
         print("Wrong expression")
@@ -347,10 +348,10 @@ def evaMatrix(color):
 
 # set the iamge of light (color and state)
 def light(color, state):
-    color_map = {"white":"#ffffff", "black":"#000000", "red":"#ff0000", "pink":"#e6007e", "green":"#00ff00", "yellow":"#ffff00", "blue":"#0000ff"}
+    color_map = {"WHITE":"#ffffff", "BLACK":"#000000", "RED":"#ff0000", "PINK":"#e6007e", "GREEN":"#00ff00", "YELLOW":"#ffff00", "BLUE":"#0000ff"}
     if color_map.get(color) != None:
         color = color_map.get(color)
-    if state == "on":
+    if state == "ON":
         canvas.create_oval(300, 205, 377, 285, fill = color, outline = color )
         canvas.create_image(340, 285, image = bulb_image) # redesenha a lampada
     else:
@@ -366,18 +367,25 @@ def exec_comando(node):
         terminal.see(tkinter.END)
 
 
+    if node.tag == "motion":
+        terminal.insert(INSERT, "\nstate: Moving the head! Movement type: " + node.attrib["type"], "motion")
+        terminal.see(tkinter.END)
+        print("Moving the head. Type:", node.attrib["type"])
+        time.sleep(1) # Um tempo apenas simbólico. No robô, o movimento não bloqueia o script e demorar tempos distintos
+
+
     elif node.tag == "light":
-        lightEffect = "on"
+        lightEffect = "ON"
         state = node.attrib["state"]
         # process lightEffects settings
         if root.find("settings").find("lightEffects") != None:
-            if root.find("settings").find("lightEffects").attrib["mode"] == "off":
-                lightEffect = "off"
+            if root.find("settings").find("lightEffects").attrib["mode"] == "OFF":
+                lightEffect = "OFF"
         
         # caso a seguir, se o state é off, e pode não ter atributo color definido
-        if state == "off":
+        if state == "OFF":
             color = "black"
-            if lightEffect == "off":
+            if lightEffect == "OFF":
                 message_state = "\nstate: Light Effects DISABLED."
             else:
                 message_state = "\nstate: Turnning off the light."
@@ -385,9 +393,9 @@ def exec_comando(node):
             terminal.see(tkinter.END)
         else:
             color = node.attrib["color"]
-            if lightEffect == "off":
+            if lightEffect == "OFF":
                 message_state = "\nstate: Light Effects DISABLED."
-                state = "off"
+                state = "OFF"
             else:
                 message_state = "\nstate: Turnning on the light. Color=" + color + "."
             terminal.insert(INSERT, message_state)
@@ -428,7 +436,7 @@ def exec_comando(node):
 
     elif node.tag == "listen":
         lock_thread_pop()
-        ledAnimation("listen")
+        ledAnimation("LISTEN")
         # função de fechamento da janela pop up para a tecla <return)
         def fechar_pop_ret(self): 
             print(var.get())
@@ -472,7 +480,7 @@ def exec_comando(node):
         # espera pela liberacao, aguardando a resposta do usuario
         while thread_pop_pause: 
             time.sleep(0.5)
-        ledAnimation("stop")
+        ledAnimation("STOP")
 
 
     elif node.tag == "talk":
@@ -536,9 +544,9 @@ def exec_comando(node):
             with open("audio_cache_files/" + file_name + ".mp3", 'wb') as audio_file:
                 res = tts.synthesize(texto[ind_random], accept = "audio/mp3", voice = root.find("settings")[0].attrib["tone"]).get_result()
                 audio_file.write(res.content)
-        ledAnimation("speak")
+        ledAnimation("SPEAK")
         playsound("audio_cache_files/" + file_name + ".mp3", block = True) # toca o audio da fala
-        ledAnimation("stop")
+        ledAnimation("STOP")
 
 
     elif node.tag == "evaEmotion":
@@ -557,17 +565,17 @@ def exec_comando(node):
 
         # process audioEffects settings
         if root.find("settings").find("audioEffects") != None:
-            if root.find("settings").find("audioEffects").attrib["mode"] == "off":
+            if root.find("settings").find("audioEffects").attrib["mode"] == "OFF":
                 # mode off implies the use of MUTED-SOUND file 
                 sound_file = "my_sounds/MUTED-SOUND.wav"
                 message_audio = "\nstate: Audio Effects DISABLED."
 
         terminal.insert(INSERT, message_audio)
         terminal.see(tkinter.END)
-        ledAnimation("speak")
+        ledAnimation("SPEAK")
         try:
             playsound(sound_file, block = block)
-            ledAnimation("stop")
+            ledAnimation("STOP")
         except Exception as e:
             # trata uma exceção. não achei exceções na documentação da biblioteca
             error_string = "\nError -> " + str(e) + "."

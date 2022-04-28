@@ -1,6 +1,6 @@
 {
-  "_id": "507eb04c9c427e9f961e47a7204fac41",
-  "nombre": "teste3",
+  "_id": "73bf3127fb3c9791e88a4d308171fd85",
+  "nombre": "teste4",
   "data": {
     "node": [
       {
@@ -14,68 +14,97 @@
       },
       {
         "key": 1001,
-        "name": "Talk",
-        "type": "speak",
-        "color": "#00ff00",
+        "name": "Eva_Emotion",
+        "type": "emotion",
+        "color": "lightcoral",
         "isGroup": false,
-        "text": "I will move my head to the left",
+        "group": "",
+        "emotion": "ini",
+        "level": 0,
+        "speed": 0,
         "__gohashid": 1
       },
       {
         "key": 1002,
-        "name": "Motion",
-        "type": "mov",
+        "name": "Wait",
+        "type": "wait",
         "color": "lightblue",
         "isGroup": false,
-        "mov": "L",
+        "time": 1000,
         "__gohashid": 2
       },
       {
         "key": 1003,
-        "name": "Talk",
-        "type": "speak",
-        "color": "#00ff00",
+        "name": "Eva_Emotion",
+        "type": "emotion",
+        "color": "lightcoral",
         "isGroup": false,
-        "text": "I will move my head to the center",
+        "group": "",
+        "emotion": "anger",
+        "level": 0,
+        "speed": 0,
         "__gohashid": 3
       },
       {
         "key": 1004,
-        "name": "Motion",
-        "type": "mov",
+        "name": "Wait",
+        "type": "wait",
         "color": "lightblue",
         "isGroup": false,
-        "mov": "c",
+        "time": 1000,
         "__gohashid": 4
       },
       {
         "key": 1005,
-        "name": "Talk",
-        "type": "speak",
-        "color": "#00ff00",
+        "name": "Eva_Emotion",
+        "type": "emotion",
+        "color": "lightcoral",
         "isGroup": false,
-        "text": "I will move my head to the left",
+        "group": "",
+        "emotion": "joy",
+        "level": 0,
+        "speed": 0,
         "__gohashid": 5
       },
       {
         "key": 1006,
-        "name": "Motion",
-        "type": "mov",
+        "name": "Wait",
+        "type": "wait",
         "color": "lightblue",
         "isGroup": false,
-        "mov": "R",
+        "time": 1000,
         "__gohashid": 6
       },
       {
         "key": 1007,
-        "name": "Light",
-        "type": "light",
-        "color": "#ffa500",
+        "name": "Eva_Emotion",
+        "type": "emotion",
+        "color": "lightcoral",
         "isGroup": false,
         "group": "",
-        "lcolor": "#ff0000",
-        "state": "on",
+        "emotion": "sad",
+        "level": 0,
+        "speed": 0,
         "__gohashid": 7
+      },
+      {
+        "key": 1008,
+        "name": "Wait",
+        "type": "wait",
+        "color": "lightblue",
+        "isGroup": false,
+        "time": 1000,
+        "__gohashid": 8
+      },
+      {
+        "key": 1009,
+        "name": "Audio",
+        "type": "sound",
+        "color": "lightblue",
+        "isGroup": false,
+        "src": "MUTED-SOUND",
+        "wait": true,
+        "__gohashid": 9
       }
     ],
     "link": [
@@ -116,8 +145,13 @@
       },
       { 
         "from": 1007,
-        "to": 1002,
+        "to": 1008,
         "__gohashid": 7
+      },
+      { 
+        "from": 1008,
+        "to": 1009,
+        "__gohashid": 8
       }
     ]
   }

@@ -6,8 +6,8 @@
 
 	<xs:simpleType name="modeType">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="on"/>
-			<xs:enumeration value="off"/>
+			<xs:enumeration value="ON"/>
+			<xs:enumeration value="OFF"/>
 		</xs:restriction>
 	</xs:simpleType>
 
@@ -37,14 +37,6 @@
 			<xs:enumeration value="2RIGHT"/>
 			<xs:enumeration value="2LEFT"/>
 		</xs:restriction>
-	</xs:simpleType>
-
-	<xs:simpleType name="motionStringType">
-		<xs:restriction base="xs:string"/>
-	</xs:simpleType>
-
-	<xs:simpleType name="motionType">
-		<xs:union memberTypes="motionListType motionStringType" />
 	</xs:simpleType>
 
 	<xs:simpleType name="voiceStringType">
@@ -103,27 +95,27 @@
 
 	<xs:simpleType name="audioBlockType">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="true"/>
-			<xs:enumeration value="false"/>
+			<xs:enumeration value="TRUE"/>
+			<xs:enumeration value="FALSE"/>
 		</xs:restriction>
 	</xs:simpleType>
 
 	<xs:simpleType name="ledAnimationType">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="happy"/>
-			<xs:enumeration value="sad"/>
-			<xs:enumeration value="angry"/>
-			<xs:enumeration value="stop"/>
-			<xs:enumeration value="speak"/>
-			<xs:enumeration value="listen"/>
-			<xs:enumeration value="surprise"/>
+			<xs:enumeration value="HAPPY"/>
+			<xs:enumeration value="SAD"/>
+			<xs:enumeration value="ANGRY"/>
+			<xs:enumeration value="STOP"/>
+			<xs:enumeration value="SPEAK"/>
+			<xs:enumeration value="LISTEN"/>
+			<xs:enumeration value="SURPRISE"/>
 		</xs:restriction>
 	</xs:simpleType>
 
 	<xs:simpleType name="lightStateType">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="on"/>
-			<xs:enumeration value="off"/>
+			<xs:enumeration value="ON"/>
+			<xs:enumeration value="OFF"/>
 		</xs:restriction>
 	</xs:simpleType>
 
@@ -135,13 +127,13 @@
 	
 	<xs:simpleType name="lightListColorType">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="white"/>
-			<xs:enumeration value="black"/>
-			<xs:enumeration value="red"/>
-			<xs:enumeration value="pink"/>
-			<xs:enumeration value="green"/>
-			<xs:enumeration value="yellow"/>
-			<xs:enumeration value="blue"/>
+			<xs:enumeration value="WHITE"/>
+			<xs:enumeration value="BLACK"/>
+			<xs:enumeration value="RED"/>
+			<xs:enumeration value="PINK"/>
+			<xs:enumeration value="GREEN"/>
+			<xs:enumeration value="YELLOW"/>
+			<xs:enumeration value="BLUE"/>
 		</xs:restriction>
 	</xs:simpleType>
 
@@ -161,10 +153,10 @@
 
 	<xs:simpleType name="evaEmotionType">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="neutral"/>
-			<xs:enumeration value="happy"/>
-			<xs:enumeration value="sad"/>
-			<xs:enumeration value="angry"/>
+			<xs:enumeration value="NEUTRAL"/>
+			<xs:enumeration value="HAPPY"/>
+			<xs:enumeration value="SAD"/>
+			<xs:enumeration value="ANGRY"/>
 		</xs:restriction>
 	</xs:simpleType>
 
@@ -199,7 +191,7 @@
 		<xs:complexType>
 			<xs:attribute name="id" type="idType"/>
 			<xs:attribute name="state" type="lightStateType" use="required"/>
-			<xs:attribute name="color" type="lightColorType" default="white"/>
+			<xs:attribute name="color" type="lightColorType" default="WHITE"/>
 		</xs:complexType>
 	</xs:element>
 
@@ -272,7 +264,7 @@
 	<xs:element name="motion">
 		<xs:complexType>
 			<xs:attribute name="id" type="idType"/>
-			<xs:attribute name="type" type="motionType" use="required"/>
+			<xs:attribute name="type" type="motionListType" use="required"/>
 		</xs:complexType>
 	</xs:element>
 

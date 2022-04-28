@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<evaml
+  name="teste4"
+  xsi:noNamespaceSchemaLocation="EvaML-Schema/evaml_schema.xsd"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <settings>
+      <voice tone="en-US_AllisonV3Voice" />
+      <lightEffects mode="OFF" />
+      <audioEffects mode="OFF" />
+    </settings>
+    <script>
+      <evaEmotion emotion="NEUTRAL" />
+      <wait duration="1000" />
+      <evaEmotion emotion="ANGRY" />
+      <wait duration="1000" />
+      <evaEmotion emotion="HAPPY" />
+      <wait duration="1000" />
+      <evaEmotion emotion="SAD" />
+      <wait duration="1000" />
+      <audio source="applause-moderate" block="TRUE" />
+    </script>
+</evaml>

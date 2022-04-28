@@ -205,6 +205,8 @@ def processa_nodes(script, comandos_json, tkinter):
       ET.SubElement(script, tag , if_atributos)
 
     # Todos os comandos suportados foram testados
+    elif comando["type"] == "mov": 
+      print("Motion!!!!!")
     else:
       warning_message = """Sorry, an unsupported VPL element was found. Please, check your JSON script!
 
@@ -217,6 +219,7 @@ def processa_nodes(script, comandos_json, tkinter):
 * Wait
 * Talk
 * Light
+* Motion
 * evaEmotion
 * Audio
 * Led
