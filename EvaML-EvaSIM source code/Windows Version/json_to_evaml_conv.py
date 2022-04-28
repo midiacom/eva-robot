@@ -34,11 +34,10 @@ def converte(json_file_name, tkinter):
       break
   
     if not voice_found: # voice precisa existir no JSON e precisa ser o primeiro elemento da VPL
-      print("Oops! Missing element Voice...") # it's required that the voice be the first element of VPL
+      print("Oops! The Voice element is missing...") # it's required that the voice be the first element of VPL
       warning_message = "Sorry! I didn't find the Voice element.\n\nPlease the Voice element must be the first element of the script!\n\nThe EvaSIM will be closed!"
       tkinter.messagebox.showerror(title="Error!", message=warning_message)
       exit(1)
-      
 
   # este elementos ficam com os valores default pois ainda não foram implementados no robô
   lightEffects_atributos = {"mode":"on"}
@@ -142,6 +141,7 @@ def processa_nodes(script, comandos_json, tkinter):
       ET.SubElement(script, "counter", counter_atributos)
 
 
+
     # <if>
     elif comando["type"] == "if":
       exp_logica = comando["text"] # string com a expressao logica do condition
@@ -203,20 +203,23 @@ def processa_nodes(script, comandos_json, tkinter):
             value = var[1] # uma var em value precisa ir com o caracter #
       if_atributos = {"key" : str(comando["key"]), "op" : op, "value" : value, "var" : var}
       ET.SubElement(script, tag , if_atributos)
-    
+
     # Todos os comandos suportados foram testados
+    elif comando["type"] == "mov": 
+      print("Motion!!!!!")
     else:
       warning_message = """Sorry, an unsupported VPL element was found. Please, check your JSON script!
 
-=====================
-   Supported VPL Elements List
-=====================
+=========================
+  Supported VPL Elements List
+=========================
         
 * Voice
 * Random
 * Wait
 * Talk
 * Light
+* Motion
 * evaEmotion
 * Audio
 * Led
@@ -229,6 +232,7 @@ The EvaSIM will be closed..."""
 
       tkinter.messagebox.showerror(title="Error!", message=warning_message)
       exit(1)
+
 
 # processamentos dos links no arquivo json #######################################################################################################
 def processa_links(links, links_json):

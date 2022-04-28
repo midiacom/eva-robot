@@ -1,0 +1,229 @@
+{
+  "_id": "73bf3127fb3c9791e88a4d308171fd85",
+  "nombre": "teste4",
+  "data": {
+    "node": [
+      {
+        "key": 1000,
+        "name": "Voice",
+        "type": "voice",
+        "color": "#0020ff",
+        "isGroup": false,
+        "voice": "en-US_AllisonV3Voice",
+        "__gohashid": 0
+      },
+      {
+        "key": 1001,
+        "name": "Light",
+        "type": "light",
+        "color": "#ffa500",
+        "isGroup": false,
+        "group": "",
+        "lcolor": "#ff0000",
+        "state": "off",
+        "__gohashid": 1
+      },
+      {
+        "key": 1002,
+        "name": "Wait",
+        "type": "wait",
+        "color": "lightblue",
+        "isGroup": false,
+        "time": 1000,
+        "__gohashid": 2
+      },
+      {
+        "key": 1003,
+        "name": "Light",
+        "type": "light",
+        "color": "#ffa500",
+        "isGroup": false,
+        "group": "",
+        "lcolor": "#000000",
+        "state": "off",
+        "__gohashid": 3
+      },
+      {
+        "key": 1004,
+        "name": "Wait",
+        "type": "wait",
+        "color": "lightblue",
+        "isGroup": false,
+        "time": 1000,
+        "__gohashid": 4
+      },
+      {
+        "key": 1005,
+        "name": "Light",
+        "type": "light",
+        "color": "#ffa500",
+        "isGroup": false,
+        "group": "",
+        "lcolor": "#0000ff",
+        "state": "off",
+        "__gohashid": 5
+      },
+      {
+        "key": 1006,
+        "name": "Wait",
+        "type": "wait",
+        "color": "lightblue",
+        "isGroup": false,
+        "time": 1000,
+        "__gohashid": 6
+      },
+      {
+        "key": 1007,
+        "name": "Light",
+        "type": "light",
+        "color": "#ffa500",
+        "isGroup": false,
+        "group": "",
+        "lcolor": "#00ff00",
+        "state": "off",
+        "__gohashid": 7
+      },
+      {
+        "key": 1008,
+        "name": "Wait",
+        "type": "wait",
+        "color": "lightblue",
+        "isGroup": false,
+        "time": 1000,
+        "__gohashid": 8
+      },
+      {
+        "key": 1009,
+        "name": "Light",
+        "type": "light",
+        "color": "#ffa500",
+        "isGroup": false,
+        "group": "",
+        "lcolor": "#e6007e",
+        "state": "off",
+        "__gohashid": 9
+      },
+      {
+        "key": 1010,
+        "name": "Wait",
+        "type": "wait",
+        "color": "lightblue",
+        "isGroup": false,
+        "time": 1000,
+        "__gohashid": 10
+      },
+      {
+        "key": 1011,
+        "name": "Light",
+        "type": "light",
+        "color": "#ffa500",
+        "isGroup": false,
+        "group": "",
+        "lcolor": "#ffffff",
+        "state": "off",
+        "__gohashid": 11
+      },
+      {
+        "key": 1012,
+        "name": "Wait",
+        "type": "wait",
+        "color": "lightblue",
+        "isGroup": false,
+        "time": 1000,
+        "__gohashid": 12
+      },
+      {
+        "key": 1013,
+        "name": "Light",
+        "type": "light",
+        "color": "#ffa500",
+        "isGroup": false,
+        "group": "",
+        "lcolor": "#ffff00",
+        "state": "off",
+        "__gohashid": 13
+      },
+      {
+        "key": 1014,
+        "name": "Wait",
+        "type": "wait",
+        "color": "lightblue",
+        "isGroup": false,
+        "time": 1000,
+        "__gohashid": 14
+      }
+    ],
+    "link": [
+      { 
+        "from": 1000,
+        "to": 1001,
+        "__gohashid": 0
+      },
+      { 
+        "from": 1001,
+        "to": 1002,
+        "__gohashid": 1
+      },
+      { 
+        "from": 1002,
+        "to": 1003,
+        "__gohashid": 2
+      },
+      { 
+        "from": 1003,
+        "to": 1004,
+        "__gohashid": 3
+      },
+      { 
+        "from": 1004,
+        "to": 1005,
+        "__gohashid": 4
+      },
+      { 
+        "from": 1005,
+        "to": 1006,
+        "__gohashid": 5
+      },
+      { 
+        "from": 1006,
+        "to": 1007,
+        "__gohashid": 6
+      },
+      { 
+        "from": 1007,
+        "to": 1008,
+        "__gohashid": 7
+      },
+      { 
+        "from": 1008,
+        "to": 1009,
+        "__gohashid": 8
+      },
+      { 
+        "from": 1009,
+        "to": 1010,
+        "__gohashid": 9
+      },
+      { 
+        "from": 1010,
+        "to": 1011,
+        "__gohashid": 10
+      },
+      { 
+        "from": 1011,
+        "to": 1012,
+        "__gohashid": 11
+      },
+      { 
+        "from": 1012,
+        "to": 1013,
+        "__gohashid": 12
+      },
+      { 
+        "from": 1013,
+        "to": 1014,
+        "__gohashid": 13
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<evaml
+  name="teste4"
+  xsi:noNamespaceSchemaLocation="EvaML-Schema/evaml_schema.xsd"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <settings>
+      <voice tone="en-US_AllisonV3Voice" />
+      <lightEffects mode="OFF" />
+      <audioEffects mode="ON" />
+    </settings>
+    <script>
+      <light state="ON" color="RED" />
+      <wait duration="1000" />
+      <light state="ON" color="BLACK" />
+      <wait duration="1000" />
+      <light state="ON" color="BLUE" />
+      <wait duration="1000" />
+      <light state="ON" color="GREEN" />
+      <wait duration="1000" />
+      <light state="ON" color="PINK" />
+      <wait duration="1000" />
+      <light state="ON" color="WHITE" />
+      <wait duration="1000" />
+      <light state="ON" color="YELLOW" />
+      <wait duration="1000" />
+    </script>
+</evaml>

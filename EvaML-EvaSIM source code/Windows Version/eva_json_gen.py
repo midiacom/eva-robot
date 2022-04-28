@@ -15,6 +15,10 @@ def mapping_xml_to_json():
     for elem in script_node.iter():
         if not(elem.tag in excluded_nodes):
 
+            if (elem.tag == 'motion'):
+                output += ",\n"
+                output += motion_process(elem)
+
             if (elem.tag == 'audio'):
                 output += ",\n"
                 output += audio_process(elem)
@@ -90,7 +94,7 @@ def audio_process(audio_command):
     audio_source = audio_command.attrib['source']
     # audioEffects settings processing
     if root.find("settings").find("audioEffects") != None:
-      if root.find("settings").find("audioEffects").attrib["mode"] == "off":
+      if root.find("settings").find("audioEffects").attrib["mode"] == "OFF":
         # mode off implies the use of MUTED-SOUND file 
         audio_source = "MUTED-SOUND"
 
@@ -101,7 +105,7 @@ def audio_process(audio_command):
         "color": "lightblue",
         "isGroup": false,
         "src": """ + '"' + audio_source + '",' + """
-        "wait": """ + audio_command.attrib['block'] + ',' + """
+        "wait": """ + audio_command.attrib['block'].lower() + ',' + """
         "__gohashid": """ + str(gohashid) + """
       }"""
     gohashid += 1
@@ -143,23 +147,23 @@ def light_process(light_command):
     global gohashid
 
     bulb_state = light_command.attrib['state']
-    if bulb_state == "off": # a ideia é admitir a ausencia do parametro color quando o estado da lampada for off
-      light_command.attrib['color'] = "black" # mesmo se o atributo não tiver sido setado, ele será setado aqui
+    if bulb_state == "OFF": # a ideia é admitir a ausencia do parametro color quando o estado da lampada for off
+      light_command.attrib['color'] = "BLACK" # mesmo se o atributo não tiver sido setado, ele será setado aqui
     
-    if (bulb_state == "on") and (light_command.get("color") == None): 
-      light_command.attrib['color'] = "white" # default color "white" mesmo se o atributo não tiver sido setado, ele será setado aqui
+    if (bulb_state == "ON") and (light_command.get("color") == None): 
+      light_command.attrib['color'] = "WHITE" # default color "white" mesmo se o atributo não tiver sido setado, ele será setado aqui
     
     color = light_command.attrib['color']
-    color_map = {"white":"#ffffff", "black":"#000000", "red":"#ff0000", "pink":"#e6007e", "green":"#00ff00", "yellow":"#ffff00", "blue":"#0000ff"}
+    color_map = {"WHITE":"#ffffff", "BLACK":"#000000", "RED":"#ff0000", "PINK":"#e6007e", "GREEN":"#00ff00", "YELLOW":"#ffff00", "BLUE":"#0000ff"}
     if color_map.get(color) != None:
         color = color_map.get(color)
 
 
     # lightEffects settings processing #########################################################################
     if root.find("settings").find("lightEffects") != None:
-      if root.find("settings").find("lightEffects").attrib["mode"] == "off":
+      if root.find("settings").find("lightEffects").attrib["mode"] == "OFF":
         # mode off implies bulb_state off 
-        bulb_state = "off"
+        bulb_state = "OFF"
 
     light_node = """      {
         "key": """ + light_command.attrib["key"] + """,
@@ -169,7 +173,7 @@ def light_process(light_command):
         "isGroup": false,
         "group": "",
         "lcolor": """ + '"' + color + '",' + """
-        "state": """ + '"' + bulb_state + '",' + """
+        "state": """ + '"' + bulb_state.lower() + '",' + """
         "__gohashid": """ + str(gohashid) + """
       }"""
     gohashid += 1
@@ -194,24 +198,67 @@ def listen_process(listen_command):
     return listen_node
 
 
+# motion type processing #########################################################################
+def motion_process(motion_command):
+    global gohashid
+
+    # mapping 
+    if motion_command.attrib['type'] == "YES": # 
+      type = "n" # nao esta errado nao!!! yes é mapeado como "n" no robô
+    elif motion_command.attrib['type'] == "NO":
+      type = "s"
+    elif motion_command.attrib['type'] == "CENTER":
+      type = "c"
+    elif motion_command.attrib['type'] == "LEFT":
+      type = "l"
+    elif motion_command.attrib['type'] == "RIGHT":
+      type = "r"
+    elif motion_command.attrib['type'] == "UP":
+      type = "u"
+    elif motion_command.attrib['type'] == "DOWN":
+      type = "d"
+    elif motion_command.attrib['type'] == "ANGRY":
+      type = "a" # isso mesmo! Nao sei porque usa "a" para raiva
+    elif motion_command.attrib['type'] == "2UP":
+      type = "U"
+    elif motion_command.attrib['type'] == "2DOWN":
+      type = "D"
+    elif motion_command.attrib['type'] == "2RIGHT":
+      type = "R"
+    elif motion_command.attrib['type'] == "2LEFT":
+      type = "L"
+    
+    motion_node = """      {
+        "key": """ + motion_command.attrib["key"] + """,
+        "name": "Motion",
+        "type": "mov",
+        "color": "lightblue",
+        "isGroup": false,
+        "mov": """ + '"' + type + '",' + """
+        "__gohashid": """ + str(gohashid) + """
+      }"""
+    gohashid += 1
+    return motion_node
+
+
 # led animation processing #########################################################################
 def led_process(led_command):
     global gohashid
 
     # mapping 
-    if led_command.attrib['animation'] == "stop": # just to show what is happening here
+    if led_command.attrib['animation'] == "STOP": # just to show what is happening here
       animation = "stop"
-    elif led_command.attrib['animation'] == "listen":
+    elif led_command.attrib['animation'] == "LISTEN":
       animation = "escuchaT"
-    elif led_command.attrib['animation'] == "speak":
+    elif led_command.attrib['animation'] == "SPEAK":
       animation = "hablaT_v2"
-    elif led_command.attrib['animation'] == "angry":
+    elif led_command.attrib['animation'] == "ANGRY":
       animation = "anger"
-    elif led_command.attrib['animation'] == "happy":
+    elif led_command.attrib['animation'] == "HAPPY":
       animation = "joy"
-    elif led_command.attrib['animation'] == "sad":
+    elif led_command.attrib['animation'] == "SAD":
       animation = "sad"
-    elif led_command.attrib['animation'] == "surprise":
+    elif led_command.attrib['animation'] == "SURPRISE":
       animation = "surprise"
     
     led_node = """      {
@@ -288,14 +335,17 @@ def eva_emotion_process(eva_emotion_command):
 
     # speed 0 é o valor default. Não vejo necessidade de implementar isso
 
-    if eva_emotion_command.attrib['emotion'] == "happy": # compatibiliza com o Eva. O Eva usa joy.
+    if eva_emotion_command.attrib['emotion'] == "HAPPY": # compatibiliza com o Eva. O Eva usa joy.
       eva_emotion_command.attrib['emotion'] = "joy"
 
-    if eva_emotion_command.attrib['emotion'] == "angry": # compatibiliza com o Eva.
+    if eva_emotion_command.attrib['emotion'] == "ANGRY": # compatibiliza com o Eva.
       eva_emotion_command.attrib['emotion'] = "anger"
 
-    if eva_emotion_command.attrib['emotion'] == "neutral": # compatibiliza com o Eva.
+    if eva_emotion_command.attrib['emotion'] == "NEUTRAL": # compatibiliza com o Eva.
       eva_emotion_command.attrib['emotion'] = "ini"
+
+    # attrib emotion "SAD" é o mesmo para "sad" para o robo
+    # o lower (só transforma para caixa baixa)
 
     eva_emotion_node = """      {
         "key": """ + eva_emotion_command.attrib["key"] + """,
@@ -304,7 +354,7 @@ def eva_emotion_process(eva_emotion_command):
         "color": "lightcoral",
         "isGroup": false,
         "group": "",
-        "emotion": """ + '"' + eva_emotion_command.attrib['emotion'] + '",' + """
+        "emotion": """ + '"' + eva_emotion_command.attrib['emotion'].lower() + '",' + """
         "level": 0,
         "speed": 0,
         "__gohashid": """ + str(gohashid) + """
