@@ -748,7 +748,7 @@ def exec_comando(node):
             unlock_thread_pop() # reativa a thread de processamento do script
 
         var = StringVar()
-        var.set("Neutral")
+        var.set("NEUTRAL")
         img_neutral = PhotoImage(file = "images/img_neutral.png")
         img_happy = PhotoImage(file = "images/img_happy.png")
         img_angry = PhotoImage(file = "images/img_angry.png")
@@ -774,11 +774,11 @@ def exec_comando(node):
         Label(pop, image=img_angry).place(x = 284, y = 50)
         Label(pop, image=img_sad).place(x = 421, y = 50)
         Label(pop, image=img_surprised).place(x = 558, y = 50)
-        Radiobutton(pop, text = "Neutral", variable = var, font = font1, command = None, value = "neutral").place(x = 35, y = 185)
-        Radiobutton(pop, text = "Happy", variable = var, font = font1, command = None, value = "happy").place(x = 172, y = 185)
-        Radiobutton(pop, text = "Angry", variable = var, font = font1, command = None, value = "angry").place(x = 312, y = 185)
-        Radiobutton(pop, text = "Sad", variable = var, font = font1, command = None, value = "sad").place(x = 452, y = 185)
-        Radiobutton(pop, text = "Surprised", variable = var, font = font1, command = None, value = "surprised").place(x = 575, y = 185)
+        Radiobutton(pop, text = "Neutral", variable = var, font = font1, command = None, value = "NEUTRAL").place(x = 35, y = 185)
+        Radiobutton(pop, text = "Happy", variable = var, font = font1, command = None, value = "HAPPY").place(x = 172, y = 185)
+        Radiobutton(pop, text = "Angry", variable = var, font = font1, command = None, value = "ANGRY").place(x = 312, y = 185)
+        Radiobutton(pop, text = "Sad", variable = var, font = font1, command = None, value = "SAD").place(x = 452, y = 185)
+        Radiobutton(pop, text = "Surprised", variable = var, font = font1, command = None, value = "SURPRISED").place(x = 575, y = 185)
         Button(pop, text = "     OK     ", font = font1, command = fechar_pop).place(x = 310, y = 215)
         # espera pela liberacao, aguardando a resposta do usuario
         while thread_pop_pause: 

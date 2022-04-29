@@ -61,23 +61,44 @@ def processa_nodes(script, comandos_json, tkinter):
 
     # <light>
     if comando["type"] == "light":
-      light_atributos = {"key" : str(comando["key"]), "state" : comando["state"], "color" : comando["lcolor"]}
+      light_atributos = {"key" : str(comando["key"]), "state" : comando["state"].upper(), "color" : comando["lcolor"].upper()}
       ET.SubElement(script, "light", light_atributos)
   
 
+    # <motion>
+    elif comando["type"] == "mov":
+      # mapeando os tipos de movimentos da cabeça
+      if   (comando["mov"] == "n"): motion_type = "YES"
+      elif (comando["mov"] == "s"): motion_type = "NO"
+      elif (comando["mov"] == "c"): motion_type = "CENTER"
+      elif (comando["mov"] == "l"): motion_type = "LEFT"
+      elif (comando["mov"] == "r"): motion_type = "RIGHT"
+      elif (comando["mov"] == "u"): motion_type = "UP"
+      elif (comando["mov"] == "d"): motion_type = "DOWN"
+      elif (comando["mov"] == "a"): motion_type = "ANGRY"
+      elif (comando["mov"] == "U"): motion_type = "2UP"
+      elif (comando["mov"] == "D"): motion_type = "2DOWN"
+      elif (comando["mov"] == "R"): motion_type = "2RIGHT"
+      else: motion_type = "2LEFT"
+
+
+      motion_atributo = {"key" : str(comando["key"]), "type" : motion_type}
+      ET.SubElement(script, "motion", motion_atributo)
+
+
     # <audio>
     elif comando["type"] == "sound":
-      audio_atributos = {"key" : str(comando["key"]), "source" : comando["src"], "block" : str(comando["wait"]).lower()}
+      audio_atributos = {"key" : str(comando["key"]), "source" : comando["src"], "block" : str(comando["wait"]).upper()}
       ET.SubElement(script, "audio", audio_atributos)
 
 
     # <evaEmotion>
     elif comando["type"] == "emotion":
       # mapeando os nomes da expressões (4 expressões)
-      if (comando["emotion"] == "anger"): eva_emotion = "angry"
-      elif (comando["emotion"] == "joy"): eva_emotion = "happy"
-      elif (comando["emotion"] == "ini"): eva_emotion = "neutral"
-      else: eva_emotion = "sad"
+      if (comando["emotion"] == "anger"): eva_emotion = "ANGRY"
+      elif (comando["emotion"] == "joy"): eva_emotion = "HAPPY"
+      elif (comando["emotion"] == "ini"): eva_emotion = "NEUTRAL"
+      else: eva_emotion = "SAD"
 
       eva_emotion_atributos = {"key" : str(comando["key"]), "emotion" :eva_emotion}
       ET.SubElement(script, "evaEmotion", eva_emotion_atributos)
@@ -85,13 +106,13 @@ def processa_nodes(script, comandos_json, tkinter):
     # <leds>
     elif comando["type"] == "led":
       # mapeando os nomes da expressões (4 expressões)
-      if (comando["anim"] == "anger"): animatiom = "angry"
-      elif (comando["anim"] == "joy"): animatiom = "happy"
-      elif (comando["anim"] == "escuchaT"): animatiom = "listen"
-      elif (comando["anim"] == "sad"): animatiom = "sad"
-      elif (comando["anim"] == "hablaT_v2"): animatiom = "speak"
-      elif (comando["anim"] == "stop"): animatiom = "stop"
-      elif (comando["anim"] == "surprise"): animatiom = "surprise"
+      if (comando["anim"] == "anger"): animatiom = "ANGRY"
+      elif (comando["anim"] == "joy"): animatiom = "HAPPY"
+      elif (comando["anim"] == "escuchaT"): animatiom = "LISTEN"
+      elif (comando["anim"] == "sad"): animatiom = "SAD"
+      elif (comando["anim"] == "hablaT_v2"): animatiom = "SPEAK"
+      elif (comando["anim"] == "stop"): animatiom = "STOP"
+      elif (comando["anim"] == "surprise"): animatiom = "SURPRISE"
 
       led_atributos = {"key" : str(comando["key"]), "animation" :animatiom}
       ET.SubElement(script, "led", led_atributos)
@@ -205,8 +226,6 @@ def processa_nodes(script, comandos_json, tkinter):
       ET.SubElement(script, tag , if_atributos)
 
     # Todos os comandos suportados foram testados
-    elif comando["type"] == "mov": 
-      print("Motion!!!!!")
     else:
       warning_message = """Sorry, an unsupported VPL element was found. Please, check your JSON script!
 
