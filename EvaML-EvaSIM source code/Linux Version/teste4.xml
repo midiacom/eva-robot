@@ -5,18 +5,11 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <settings>
       <voice tone="en-US_AllisonV3Voice" />
-      <lightEffects mode="OFF" />
-      <audioEffects mode="OFF" />
+      <lightEffects mode="ON" />
+      <audioEffects mode="ON" />
     </settings>
     <script>
-      <evaEmotion emotion="NEUTRAL" />
-      <wait duration="1000" />
-      <evaEmotion emotion="ANGRY" />
-      <wait duration="1000" />
-      <evaEmotion emotion="HAPPY" />
-      <wait duration="1000" />
-      <evaEmotion emotion="SAD" />
-      <wait duration="1000" />
+      <motion type="YES" />
       <audio source="applause-moderate" block="TRUE" />
     </script>
 </evaml>
