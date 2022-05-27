@@ -26,88 +26,92 @@
       <evaEmotion emotion="ANGRY" key="1017" />
       <talk key="1018">I can express anger</talk>
       <evaEmotion emotion="NEUTRAL" key="1019" />
-      <talk key="1020">Hey $, let's play the emotions game?</talk>
+      <talk key="1020">Hey $, let's play the imitation game? Yes or No</talk>
       <listen key="1021" />
       <switch var="$">
-        <case op="contain" value="yes" key="1022" child_proc="false">
+        <case op="contain" value="y" key="1022" child_proc="false"> 
           <evaEmotion emotion="HAPPY" key="1023" />
           <talk key="1024">Excelent! Let's go now</talk>
         </case>
-        <case op="contain" value="no" key="1025" child_proc="false">
-          <evaEmotion emotion="SAD" key="1026" />
-          <talk key="1027">Oh, I'm sorry you don't want to play. Bye!</talk>
-          <light state="OFF" key="1028" />
-          <stop />
+        <case op="contain" value="k" key="1025" child_proc="false"> 
+          <evaEmotion emotion="HAPPY" key="1026" />
+          <talk key="1027">Excelent! Let's go now</talk>
         </case>
+        <default key="1028" child_proc="false"> 
+          <evaEmotion emotion="SAD" key="1029" />
+          <talk key="1030">Oh, I'm sorry you don't want to play. Bye!</talk>
+          <light state="OFF" key="1031" />
+          <stop />
+        </default>
       </switch>
       
-      <talk key="1029">I will show some emotions and you try to imitate me</talk>
-      <counter var="score" op="=" value="0" key="1030" />
-      <counter var="chance" op="=" value="0" key="1031" />
-      <random id="LOOP" min="1" max="3" key="1032" />
+      <talk key="1032">I will show some emotions and you try to imitate me</talk>
+      <counter var="score" op="=" value="0" key="1033" />
+      <counter var="chance" op="=" value="0" key="1034" />
+      <random id="LOOP" min="1" max="3" key="1035" />
       <switch var="$">
-        <case op="eq" value="1" key="1033" child_proc="false">
-          <evaEmotion emotion="SAD" key="1034" />
-          <light state="ON" color="BLUE" key="1035" />
-          <talk key="1036">Can you imitate me?</talk>
-      <userEmotion key="1037" />
+        <case op="eq" value="1" key="1036" child_proc="false">
+          <evaEmotion emotion="SAD" key="1037" />
+          <light state="ON" color="BLUE" key="1038" />
+          <talk key="1039">Can you imitate me?</talk>
+      <userEmotion key="1040" />
     <switch var="$">
-            <case op="exact" value="sad" key="1038" child_proc="false">
-              <evaEmotion emotion="HAPPY" key="1039" />
-      <talk key="1040">Ok! You are correct</talk>
-      <counter var="score" op="+" value="1" key="1041" />
+            <case op="exact" value="sad" key="1041" child_proc="false">
+              <evaEmotion emotion="HAPPY" key="1042" />
+      <talk key="1043">Ok! You are correct</talk>
+      <counter var="score" op="+" value="1" key="1044" />
     </case>
-            <default key="1042" child_proc="false">
-              <evaEmotion emotion="SAD" key="1043" />
-      <talk key="1044">You are wrong</talk>
+            <default key="1045" child_proc="false">
+              <evaEmotion emotion="SAD" key="1046" />
+      <talk key="1047">You are wrong</talk>
     </default>
           </switch>
         </case>
-        <case op="eq" value="2" key="1045" child_proc="false">
-          <evaEmotion emotion="HAPPY" key="1046" />
-          <light state="ON" color="YELLOW" key="1047" />
-          <talk key="1048">Can you imitate me?</talk>
-      <userEmotion key="1049" />
+        <case op="eq" value="2" key="1048" child_proc="false">
+          <evaEmotion emotion="HAPPY" key="1049" />
+          <light state="ON" color="YELLOW" key="1050" />
+          <talk key="1051">Can you imitate me?</talk>
+      <userEmotion key="1052" />
     <switch var="$">
-            <case op="exact" value="happy" key="1050" child_proc="false">
-              <evaEmotion emotion="HAPPY" key="1051" />
-      <talk key="1052">Ok! You are correct</talk>
-      <counter var="score" op="+" value="1" key="1053" />
+            <case op="exact" value="happy" key="1053" child_proc="false">
+              <evaEmotion emotion="HAPPY" key="1054" />
+      <talk key="1055">Ok! You are correct</talk>
+      <counter var="score" op="+" value="1" key="1056" />
     </case>
-            <default key="1054" child_proc="false">
-              <evaEmotion emotion="SAD" key="1055" />
-      <talk key="1056">You are wrong</talk>
+            <default key="1057" child_proc="false">
+              <evaEmotion emotion="SAD" key="1058" />
+      <talk key="1059">You are wrong</talk>
     </default>
           </switch>
         </case>
-        <case op="eq" value="3" key="1057" child_proc="false">
-          <evaEmotion emotion="ANGRY" key="1058" />
-          <light state="ON" color="RED" key="1059" />
-          <talk key="1060">Can you imitate me?</talk>
-      <userEmotion key="1061" />
+        <case op="eq" value="3" key="1060" child_proc="false">
+          <evaEmotion emotion="ANGRY" key="1061" />
+          <light state="ON" color="RED" key="1062" />
+          <talk key="1063">Can you imitate me?</talk>
+      <userEmotion key="1064" />
     <switch var="$">
-            <case op="exact" value="angry" key="1062" child_proc="false">
-              <evaEmotion emotion="HAPPY" key="1063" />
-      <talk key="1064">Ok! You are correct</talk>
-      <counter var="score" op="+" value="1" key="1065" />
+            <case op="exact" value="angry" key="1065" child_proc="false">
+              <evaEmotion emotion="HAPPY" key="1066" />
+      <talk key="1067">Ok! You are correct</talk>
+      <counter var="score" op="+" value="1" key="1068" />
     </case>
-            <default key="1066" child_proc="false">
-              <evaEmotion emotion="SAD" key="1067" />
-      <talk key="1068">You are wrong</talk>
+            <default key="1069" child_proc="false">
+              <evaEmotion emotion="SAD" key="1070" />
+      <talk key="1071">You are wrong</talk>
     </default>
           </switch>
         </case>
       </switch>
-      <counter var="chance" op="+" value="1" key="1069" />
+      <counter var="chance" op="+" value="1" key="1072" />
       <switch var="chance">
-        <case op="eq" value="3" key="1070" child_proc="false">
-          <evaEmotion emotion="HAPPY" key="1071" />
-          <talk key="1072">Your score was #score</talk>
-          <talk key="1073">It was good to play with you $1. Bye</talk>
-          <light state="OFF" key="1074" />
+        <case op="eq" value="3" key="1073" child_proc="false">
+          <evaEmotion emotion="HAPPY" key="1074" />
+          <talk key="1075">Your score was #score</talk>
+          <talk key="1076">It was good to play with you $1. Bye</talk>
+          <light state="OFF" key="1077" />
           <stop />
         </case>
-        <default key="1075" child_proc="false">
+        <default key="1078" child_proc="false">
           <goto target="LOOP" />
         </default>
       </switch>

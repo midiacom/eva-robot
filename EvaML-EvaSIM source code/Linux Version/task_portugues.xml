@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<evaml name="task"
+<evaml name="task_portugues"
   xsi:noNamespaceSchemaLocation="EvaML-Schema/evaml_schema.xsd"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <settings>
-      <voice tone="en-US_AllisonV3Voice" />
+      <voice tone="pt-BR_IsabelaV3Voice" />
       <lightEffects mode="ON" />
       <audioEffects mode="ON" />
     </settings>
@@ -14,41 +14,41 @@
       <audio source="mario-start-01" block="TRUE" />
       <light state="ON" color="YELLOW" />
       <evaEmotion emotion="HAPPY" />
-      <talk>Hi, I'm the robot Eva / Hello, my name is Eva / Hi, what is up. I am the robot Eva</talk>
+      <talk>Oi, eu sou o robô EVA / Olá, meu nome é EVA / Oi, como vai? Eu sou o robô EVA</talk>
       <light state="ON" color="PINK" />
       <evaEmotion emotion="NEUTRAL" />
       <wait duration="2000" />
       <!-- tarefa (parte 02) ************************************************************************* -->
-      <talk>What is your name?</talk>
+      <talk>Qual o seu nome?</talk>
       <listen />
-      <talk>Hello $, I'm going to present my expressions</talk>
+      <talk>Oi $, eu vou te mostrar minhas expressões</talk>
       <evaEmotion emotion="HAPPY"/>
-      <talk>I can express happiness</talk>
+      <talk>Eu posso expressar alegria</talk>
       <evaEmotion emotion="SAD"/>
-      <talk>I can express sadness</talk> 
+      <talk>Eu posso expressar tristeza</talk> 
       <evaEmotion emotion="ANGRY"/>
-      <talk>I can express anger</talk>
+      <talk>eu também posso expressar raiva</talk>
       <evaEmotion emotion="NEUTRAL"/>
-      <talk>Hey $, let's play the imitation game? Yes or No</talk>
+      <talk>Ei $, vamos jogar o jogo da imitação? Sim ou Não?</talk>
       <listen />
       <switch var="$">
-        <case op="contain" value="y"> <!-- Capture YES-->
+        <case op="contain" value="s"> <!-- Captura Sim-->
           <evaEmotion emotion="HAPPY" />
-          <talk>Excelent! Let's go now</talk>
+          <talk>Excelente! Vamos começar agora!</talk>
         </case>
-        <case op="contain" value="k"> <!-- Capture OK-->
+        <case op="contain" value="k"> <!-- Captura Ok-->
           <evaEmotion emotion="HAPPY" />
-          <talk>Excelent! Let's go now</talk>
+          <talk>Excelente! Vamos começar agora!</talk>
         </case>
-        <default> <!-- Capture something different, like No -->
+        <default> <!-- Captura algo diferente de sim ou ok-->
           <evaEmotion emotion="SAD" />
-          <talk>Oh, I'm sorry you don't want to play. Bye!</talk>
+          <talk>Puxa, eu lamento que você não queira jogar. Adeus!</talk>
           <light state="OFF" />
           <stop />
         </default>
       </switch>
       <!-- tarefa (parte 03) ************************************************************************* -->
-      <talk>I will show some emotions and you try to imitate me</talk>
+      <talk>Eu vou te mostrar algumas expressões e você tenta me imitar</talk>
       <counter var="score" op="=" value="0" />
       <counter var="chance" op="=" value="0" />
       <random id = "LOOP" min="1" max="3" />
@@ -97,8 +97,8 @@
       <switch var="chance">
         <case op="eq" value="3">
           <evaEmotion emotion="HAPPY" />
-          <talk>Your score was #score</talk>
-          <talk>It was good to play with you $1. Bye</talk>
+          <talk>Sua pontuação foi #score</talk>
+          <talk>Foi muito bom jogar com você $1. Até logo</talk>
           <light state="OFF" />
           <stop />
         </case>
@@ -110,19 +110,19 @@
   <macros>
     <!-- Usada na tarefa 3 -->
     <macro id="GET_EXPRESSION">
-      <talk>Can you imitate me?</talk>
+      <talk>Você consegue me imitar?</talk>
       <userEmotion />
     </macro>
     <!-- Usada na tarefa 3 -->
     <macro id="RIGHT_ANSWER">
       <evaEmotion emotion="HAPPY" />
-      <talk>Ok! You are correct</talk>
+      <talk>Muito bom! Você acertou</talk>
       <counter var="score" op="+" value="1" />
     </macro>
     <!-- Usada na tarefa 3 -->
     <macro id="WRONG_ANSWER">
       <evaEmotion emotion="SAD" />
-      <talk>You are wrong</talk>
+      <talk>Puxa, não foi dessa vez!</talk>
     </macro>
   </macros>
 </evaml>

@@ -1,6 +1,6 @@
 {
-  "_id": "478f3a4c51824ad23cb50c1c60670c0f",
-  "nombre": "task",
+  "_id": "faefced623675aea95a1a65f15bc10b8",
+  "nombre": "task_portugues",
   "data": {
     "node": [
       {
@@ -9,7 +9,7 @@
         "type": "voice",
         "color": "#0020ff",
         "isGroup": false,
-        "voice": "en-US_AllisonV3Voice",
+        "voice": "pt-BR_IsabelaV3Voice",
         "__gohashid": 0
       },
       {
@@ -74,7 +74,7 @@
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
-        "text": "Hi, I'm the robot Eva / Hello, my name is Eva / Hi, what is up. I am the robot Eva",
+        "text": "Oi, eu sou o robô EVA / Olá, meu nome é EVA / Oi, como vai? Eu sou o robô EVA",
         "__gohashid": 6
       },
       {
@@ -115,7 +115,7 @@
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
-        "text": "What is your name?",
+        "text": "Qual o seu nome?",
         "__gohashid": 10
       },
       {
@@ -133,7 +133,7 @@
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
-        "text": "Hello $, I'm going to present my expressions",
+        "text": "Oi $, eu vou te mostrar minhas expressões",
         "__gohashid": 12
       },
       {
@@ -154,7 +154,7 @@
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
-        "text": "I can express happiness",
+        "text": "Eu posso expressar alegria",
         "__gohashid": 14
       },
       {
@@ -175,7 +175,7 @@
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
-        "text": "I can express sadness",
+        "text": "Eu posso expressar tristeza",
         "__gohashid": 16
       },
       {
@@ -196,7 +196,7 @@
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
-        "text": "I can express anger",
+        "text": "eu também posso expressar raiva",
         "__gohashid": 18
       },
       {
@@ -217,7 +217,7 @@
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
-        "text": "Hey $, let's play the imitation game? Yes or No",
+        "text": "Ei $, vamos jogar o jogo da imitação? Sim ou Não?",
         "__gohashid": 20
       },
       {
@@ -235,7 +235,7 @@
         "type": "if",
         "color": "white",
         "isGroup": false,
-        "text": "y",
+        "text": "s",
         "opt": 2,
         "__gohashid": 22
       },
@@ -257,7 +257,7 @@
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
-        "text": "Excelent! Let's go now",
+        "text": "Excelente! Vamos começar agora!",
         "__gohashid": 24
       },
       {
@@ -288,7 +288,7 @@
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
-        "text": "Excelent! Let's go now",
+        "text": "Excelente! Vamos começar agora!",
         "__gohashid": 27
       },
       {
@@ -319,7 +319,7 @@
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
-        "text": "Oh, I'm sorry you don't want to play. Bye!",
+        "text": "Puxa, eu lamento que você não queira jogar. Adeus!",
         "__gohashid": 30
       },
       {
@@ -339,7 +339,7 @@
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
-        "text": "I will show some emotions and you try to imitate me",
+        "text": "Eu vou te mostrar algumas expressões e você tenta me imitar",
         "__gohashid": 32
       },
       {
@@ -416,7 +416,7 @@
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
-        "text": "Can you imitate me?",
+        "text": "Você consegue me imitar?",
         "__gohashid": 39
       },
       {
@@ -457,7 +457,7 @@
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
-        "text": "Ok! You are correct",
+        "text": "Muito bom! Você acertou",
         "__gohashid": 43
       },
       {
@@ -500,7 +500,7 @@
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
-        "text": "You are wrong",
+        "text": "Puxa, não foi dessa vez!",
         "__gohashid": 47
       },
       {
@@ -542,7 +542,7 @@
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
-        "text": "Can you imitate me?",
+        "text": "Você consegue me imitar?",
         "__gohashid": 51
       },
       {
@@ -583,7 +583,7 @@
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
-        "text": "Ok! You are correct",
+        "text": "Muito bom! Você acertou",
         "__gohashid": 55
       },
       {
@@ -626,7 +626,7 @@
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
-        "text": "You are wrong",
+        "text": "Puxa, não foi dessa vez!",
         "__gohashid": 59
       },
       {
@@ -668,7 +668,7 @@
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
-        "text": "Can you imitate me?",
+        "text": "Você consegue me imitar?",
         "__gohashid": 63
       },
       {
@@ -709,7 +709,7 @@
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
-        "text": "Ok! You are correct",
+        "text": "Muito bom! Você acertou",
         "__gohashid": 67
       },
       {
@@ -752,7 +752,7 @@
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
-        "text": "You are wrong",
+        "text": "Puxa, não foi dessa vez!",
         "__gohashid": 71
       },
       {
@@ -795,7 +795,7 @@
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
-        "text": "Your score was #score",
+        "text": "Sua pontuação foi #score",
         "__gohashid": 75
       },
       {
@@ -804,7 +804,7 @@
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
-        "text": "It was good to play with you $1. Bye",
+        "text": "Foi muito bom jogar com você $1. Até logo",
         "__gohashid": 76
       },
       {

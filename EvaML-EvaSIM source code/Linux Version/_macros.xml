@@ -26,19 +26,23 @@
       <evaEmotion emotion="ANGRY" />
       <talk>I can express anger</talk>
       <evaEmotion emotion="NEUTRAL" />
-      <talk>Hey $, let's play the emotions game?</talk>
+      <talk>Hey $, let's play the imitation game? Yes or No</talk>
       <listen />
       <switch var="$">
-        <case op="contain" value="yes">
+        <case op="contain" value="y"> 
           <evaEmotion emotion="HAPPY" />
           <talk>Excelent! Let's go now</talk>
         </case>
-        <case op="contain" value="no">
+        <case op="contain" value="k"> 
+          <evaEmotion emotion="HAPPY" />
+          <talk>Excelent! Let's go now</talk>
+        </case>
+        <default> 
           <evaEmotion emotion="SAD" />
           <talk>Oh, I'm sorry you don't want to play. Bye!</talk>
           <light state="OFF" />
           <stop />
-        </case>
+        </default>
       </switch>
       
       <talk>I will show some emotions and you try to imitate me</talk>
