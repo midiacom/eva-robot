@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import hashlib
+from logging import exception
 import re # expressões regulares
 import os
 
@@ -294,6 +295,7 @@ terminal = Text (frame_terminal, fg = "cyan", bg = "black", height = "34", width
 terminal.configure(font = ("Arial", 8))
 terminal.tag_configure("error", foreground="red")
 terminal.tag_configure("motion", foreground="orange")
+terminal.tag_configure("tip", foreground="yellow")
 # limpa e desenha e coloca terminal no frame dele
 clear_terminal()
 terminal.pack()
@@ -366,6 +368,7 @@ def exec_comando(node):
     if node.tag == "voice":
         terminal.insert(INSERT, "\nstate: Selected Voice: " + node.attrib["tone"])
         terminal.see(tkinter.END)
+        terminal.insert(INSERT, "\nTIP: If the <talk> command doesn't speak some text, try emptying the audio_cache_files folder", "tip")
 
 
     if node.tag == "motion":
@@ -543,8 +546,15 @@ def exec_comando(node):
         if not (os.path.isfile("audio_cache_files/" + file_name + ".mp3")): # se nao existe chama o watson
             # Eva tts functions
             with open("audio_cache_files/" + file_name + ".mp3", 'wb') as audio_file:
-                res = tts.synthesize(texto[ind_random], accept = "audio/mp3", voice = root.find("settings")[0].attrib["tone"]).get_result()
-                audio_file.write(res.content)
+                print("Aqui")
+                try:
+                    res = tts.synthesize(texto[ind_random], accept = "audio/mp3", voice = root.find("settings")[0].attrib["tone"]).get_result()
+                    audio_file.write(res.content)
+                except:
+                    print("Voice exception")
+                    terminal.insert(INSERT, "\nError when trying to select voice tone, please verify the tone atribute.\n", "error")
+                    terminal.see(tkinter.END)
+                    exit(1)
         ledAnimation("SPEAK")
         playsound("audio_cache_files/" + file_name + ".mp3", block = True) # toca o audio da fala
         ledAnimation("STOP")

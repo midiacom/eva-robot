@@ -4,7 +4,6 @@
   xsi:noNamespaceSchemaLocation="EvaML-Schema/evaml_schema.xsd"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <settings>
-    <voice tone="pt-BR_IsabelaV3Voice" />
   </settings>
   <script>
   </script>
