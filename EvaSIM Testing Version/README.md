@@ -23,7 +23,6 @@ In order to facilitate the use of EvaSIM, we managed to package the software wit
  
     If you hear a greeting, everything should be working correctly!
 
-    ### Now that you have completed step 1, please **return to the form and go to step 2**.
  
 `In the Linux version, if after two clicks on "eva_sim" file the simulator does not run, please check if the file has permission to be executed. This can be done by clicking with the right mouse button on the file, selecting the properties option and in the permissions tab activating the option "allow the execution of the file". This can also be done via the command line as follows:`
 ```
