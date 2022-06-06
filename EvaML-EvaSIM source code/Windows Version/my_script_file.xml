@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<evaml
+  name="script01"
+  xsi:noNamespaceSchemaLocation="EvaML-Schema/evaml_schema.xsd"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <settings>
+    <voice tone="pt-BR_IsabelaV3Voice" />
+  </settings>
+  <script>
+  </script>
+</evaml>

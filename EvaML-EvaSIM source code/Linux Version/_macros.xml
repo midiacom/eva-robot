@@ -1,119 +1,53 @@
-<evaml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="task" xsi:noNamespaceSchemaLocation="EvaML-Schema/evaml_schema.xsd">
+<evaml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="script01" xsi:noNamespaceSchemaLocation="EvaML-Schema/evaml_schema.xsd">
   <settings>
-      <voice tone="en-US_AllisonV3Voice" />
-      <lightEffects mode="ON" />
-      <audioEffects mode="ON" />
-    </settings>
-    <script>
-      
-      <evaEmotion emotion="NEUTRAL" />
-      <light state="ON" color="WHITE" />
-      <audio source="mario-start-01" block="TRUE" />
-      <light state="ON" color="YELLOW" />
-      <evaEmotion emotion="HAPPY" />
-      <talk>Hi, I'm the robot Eva / Hello, my name is Eva / Hi, what is up. I am the robot Eva</talk>
-      <light state="ON" color="PINK" />
-      <evaEmotion emotion="NEUTRAL" />
-      <wait duration="2000" />
-      
-      <talk>What is your name?</talk>
+    <voice tone="pt-BR_IsabelaV3Voice" />
+  </settings>
+  <script>
+    <evaEmotion emotion="NEUTRAL" />
+      <light state="ON" />
+      <talk>Olá eu sou o robô Eva</talk>
+      <audio source="fanfare2" block="TRUE" />
+      <talk>Qual o seu nome?</talk>
       <listen />
-      <talk>Hello $, I'm going to present my expressions</talk>
-      <evaEmotion emotion="HAPPY" />
-      <talk>I can express happiness</talk>
-      <evaEmotion emotion="SAD" />
-      <talk>I can express sadness</talk> 
-      <evaEmotion emotion="ANGRY" />
-      <talk>I can express anger</talk>
-      <evaEmotion emotion="NEUTRAL" />
-      <talk>Hey $, let's play the imitation game? Yes or No</talk>
-      <listen />
-      <switch var="$">
-        <case op="contain" value="y"> 
-          <evaEmotion emotion="HAPPY" />
-          <talk>Excelent! Let's go now</talk>
-        </case>
-        <case op="contain" value="k"> 
-          <evaEmotion emotion="HAPPY" />
-          <talk>Excelent! Let's go now</talk>
-        </case>
-        <default> 
-          <evaEmotion emotion="SAD" />
-          <talk>Oh, I'm sorry you don't want to play. Bye!</talk>
-          <light state="OFF" />
-          <stop />
-        </default>
-      </switch>
-      
-      <talk>I will show some emotions and you try to imitate me</talk>
-      <counter var="score" op="=" value="0" />
-      <counter var="chance" op="=" value="0" />
-      <random id="LOOP" min="1" max="3" />
-      <switch var="$">
-        <case op="eq" value="1">
-          <evaEmotion emotion="SAD" />
-          <light state="ON" color="BLUE" />
-          <talk>Can you imitate me?</talk>
-      <userEmotion />
+    <talk>Muito prazer $</talk>
+    <talk>Três variáveis serão criadas. Olha na tabela ao lado </talk>
+    <counter var="var1" op="=" value="0" />
+      <counter var="var2" op="=" value="0" />
+      <counter var="var3" op="=" value="0" />
+    <random min="1" max="3" />
+    <talk>Veja como estou me sentindo hoje</talk>
     <switch var="$">
-            <case op="exact" value="sad">
-              <evaEmotion emotion="HAPPY" />
-      <talk>Ok! You are correct</talk>
-      <counter var="score" op="+" value="1" />
-    </case>
-            <default>
-              <evaEmotion emotion="SAD" />
-      <talk>You are wrong</talk>
-    </default>
-          </switch>
-        </case>
-        <case op="eq" value="2">
-          <evaEmotion emotion="HAPPY" />
-          <light state="ON" color="YELLOW" />
-          <talk>Can you imitate me?</talk>
-      <userEmotion />
-    <switch var="$">
-            <case op="exact" value="happy">
-              <evaEmotion emotion="HAPPY" />
-      <talk>Ok! You are correct</talk>
-      <counter var="score" op="+" value="1" />
-    </case>
-            <default>
-              <evaEmotion emotion="SAD" />
-      <talk>You are wrong</talk>
-    </default>
-          </switch>
-        </case>
-        <case op="eq" value="3">
-          <evaEmotion emotion="ANGRY" />
-          <light state="ON" color="RED" />
-          <talk>Can you imitate me?</talk>
-      <userEmotion />
-    <switch var="$">
-            <case op="exact" value="angry">
-              <evaEmotion emotion="HAPPY" />
-      <talk>Ok! You are correct</talk>
-      <counter var="score" op="+" value="1" />
-    </case>
-            <default>
-              <evaEmotion emotion="SAD" />
-      <talk>You are wrong</talk>
-    </default>
-          </switch>
-        </case>
-      </switch>
-      <counter var="chance" op="+" value="1" />
-      <switch var="chance">
-        <case op="eq" value="3">
-          <evaEmotion emotion="HAPPY" />
-          <talk>Your score was #score</talk>
-          <talk>It was good to play with you $1. Bye</talk>
-          <light state="OFF" />
-          <stop />
-        </case>
-        <default>
-          <goto target="LOOP" />
-        </default>
-      </switch>
-  </script>
+      <case op="exact" value="1">
+        <evaEmotion emotion="SAD" />
+        <light state="ON" color="BLUE" />
+        <talk>Estou triste</talk>
+        <motion type="2DOWN" />
+        <talk>Vou incrementar a variável var 1 em uma unidade</talk>
+        <counter var="var1" op="+" value="1" />
+      </case>
+      <case op="exact" value="2">
+        <evaEmotion emotion="ANGRY" />
+        <light state="ON" color="RED" />
+        <talk>Estou com raiva</talk>
+        <motion type="2DOWN" />
+        <talk>Vou incrementar a variável var 2 em duas unidades</talk>
+        <counter var="var2" op="+" value="2" />
+      </case>
+      <case op="exact" value="3">
+        <evaEmotion emotion="HAPPY" />
+        <light state="ON" color="GREEN" />
+        <talk>Estou muito feliz</talk>
+        <motion type="2UP" />
+        <talk>Vou incrementar a variável var 3 em três unidades</talk>
+        <counter var="var3" op="+" value="3" />
+      </case>
+    </switch>
+    <evaEmotion emotion="NEUTRAL" />
+    <talk>Ouça essa música e me diga como você está se sentindo</talk>
+    <audio source="song-vivaldi-spring" block="FALSE" />
+    <listen />
+    <talk>Nossa você está $</talk>
+      <talk>Até mais, $1</talk>
+      <light state="OFF" />
+    </script>
   </evaml>

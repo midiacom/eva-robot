@@ -17,7 +17,7 @@
     <random min="1" max="3" key="1012" />
     <talk key="1013">Veja como estou me sentindo hoje</talk>
     <switch var="$">
-      <case op="exact" value="1" key="1014" child_proc="false">
+      <case op="exact" value="1" key="1014" child_proc="true" var="$">
         <evaEmotion emotion="SAD" key="1015" />
         <light state="ON" color="BLUE" key="1016" />
         <talk key="1017">Estou triste</talk>
@@ -25,7 +25,7 @@
         <talk key="1019">Vou incrementar a variável var 1 em uma unidade</talk>
         <counter var="var1" op="+" value="1" key="1020" />
       </case>
-      <case op="exact" value="2" key="1021" child_proc="false">
+      <case op="exact" value="2" key="1021" child_proc="true" var="$">
         <evaEmotion emotion="ANGRY" key="1022" />
         <light state="ON" color="RED" key="1023" />
         <talk key="1024">Estou com raiva</talk>
@@ -33,7 +33,7 @@
         <talk key="1026">Vou incrementar a variável var 2 em duas unidades</talk>
         <counter var="var2" op="+" value="2" key="1027" />
       </case>
-      <case op="exact" value="3" key="1028" child_proc="false">
+      <case op="exact" value="3" key="1028" child_proc="true" var="$">
         <evaEmotion emotion="HAPPY" key="1029" />
         <light state="ON" color="GREEN" key="1030" />
         <talk key="1031">Estou muito feliz</talk>
@@ -50,4 +50,4 @@
       <talk key="1040">Até mais, $1</talk>
       <light state="OFF" key="1041" />
     </script>
-  </evaml>
+  <links><link from="1000" to="1001" /><link from="1001" to="1002" /><link from="1002" to="1003" /><link from="1003" to="1004" /><link from="1004" to="1005" /><link from="1005" to="1006" /><link from="1006" to="1007" /><link from="1007" to="1008" /><link from="1008" to="1009" /><link from="1009" to="1010" /><link from="1010" to="1011" /><link from="1011" to="1012" /><link from="1012" to="1013" /><link from="1013" to="1014" /><link from="1014" to="1015" /><link from="1015" to="1016" /><link from="1016" to="1017" /><link from="1017" to="1018" /><link from="1018" to="1019" /><link from="1019" to="1020" /><link from="1013" to="1021" /><link from="1021" to="1022" /><link from="1022" to="1023" /><link from="1023" to="1024" /><link from="1024" to="1025" /><link from="1025" to="1026" /><link from="1026" to="1027" /><link from="1013" to="1028" /><link from="1028" to="1029" /><link from="1029" to="1030" /><link from="1030" to="1031" /><link from="1031" to="1032" /><link from="1032" to="1033" /><link from="1033" to="1034" /><link from="1020" to="1035" /><link from="1027" to="1035" /><link from="1034" to="1035" /><link from="1035" to="1036" /><link from="1036" to="1037" /><link from="1037" to="1038" /><link from="1038" to="1039" /><link from="1039" to="1040" /><link from="1040" to="1041" /></links></evaml>

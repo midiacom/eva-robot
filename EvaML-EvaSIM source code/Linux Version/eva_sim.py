@@ -346,8 +346,9 @@ def evaMatrix(color):
         print("wrong color to matrix...")
 
 
-# set the iamge of light (color and state)
+# set the image of light (color and state)
 def light(color, state):
+    print("aqui ------------")
     color_map = {"WHITE":"#ffffff", "BLACK":"#000000", "RED":"#ff0000", "PINK":"#e6007e", "GREEN":"#00ff00", "YELLOW":"#ffff00", "BLUE":"#0000ff"}
     if color_map.get(color) != None:
         color = color_map.get(color)
