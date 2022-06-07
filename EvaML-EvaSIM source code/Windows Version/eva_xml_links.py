@@ -197,7 +197,7 @@ print("step 03 - Creating the Elements <link>... (OK)")
 script_node.remove(root.find("script").find("voice"))
 
 # arquivo de saida
-# tree.write(root.attrib['name'] + "_EvaML.xml", "UTF-8") # UTF-8 para Linux
+#tree.write(root.attrib['name'] + "_EvaML.xml", "UTF-8") # UTF-8 para Linux
 tree.write(root.attrib['name'] + "_EvaML.xml") # versao para o Windows
 
 

@@ -45,9 +45,7 @@
 	</xs:simpleType>
 
 	<xs:simpleType name="voiceType">
-		<!-- limitando as opções para evitar erro do usuario no teste -->
-		<!-- <xs:union memberTypes="voiceListType voiceStringType" /> -->
-		<xs:union memberTypes="voiceListType"/> <!-- só será permitido usar os valores da lista -->
+		<xs:union memberTypes="voiceListType voiceStringType" />
 	</xs:simpleType>
 
 	<xs:simpleType name="audioListType">

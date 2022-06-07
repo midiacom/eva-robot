@@ -304,6 +304,7 @@ terminal = Text (frame_terminal, fg = "cyan", bg = "black", height = "34", width
 terminal.configure(font = ("Arial", 8))
 terminal.tag_configure("error", foreground="red")
 terminal.tag_configure("motion", foreground="orange")
+terminal.tag_configure("tip", foreground="yellow")
 # limpa e desenha e coloca terminal no frame dele
 clear_terminal()
 terminal.pack()
@@ -375,6 +376,8 @@ def exec_comando(node):
     if node.tag == "voice":
         terminal.insert(INSERT, "\nstate: Selected Voice: " + node.attrib["tone"])
         terminal.see(tkinter.END)
+        terminal.insert(INSERT, "\nTIP: If the <talk> command doesn't speak some text, try emptying the audio_cache_files folder", "tip")
+
 
     if node.tag == "motion":
        terminal.insert(INSERT, "\nstate: Moving the head! Movement type: " + node.attrib["type"], "motion")
