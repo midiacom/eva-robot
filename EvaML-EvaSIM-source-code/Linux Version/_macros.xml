@@ -1,0 +1,11 @@
+<evaml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="script01" xsi:noNamespaceSchemaLocation="EvaML-Schema/evaml_schema.xsd">
+  <settings>
+    <voice tone="pt-BR_IsabelaV3Voice" />
+  </settings>
+  <script>
+    <talk>Olá Júlio, vou tocar um áudio</talk>
+    <audio source="mario-end-01" block="TRUE" />
+    <talk>Estou me sentido feliz</talk>
+    <evaEmotion emotion="HAPPY" />
+  </script>
+</evaml>
