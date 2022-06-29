@@ -1,104 +1,94 @@
 ﻿<h1 style="text-align:center">Roteiro de Teste para a Avalia&ccedil;&atilde;o da Linguagem EvaML e do simulador EvaSIM</h1>
-
 <hr />
-<p>&nbsp;</p>
 
-<p><span style="color:#000000"><span style="font-family:Montserrat,sans-serif"><span style="font-size:medium"><strong>TERMO DE CONSENTIMENTO LIVRE E ESCLARECIDO</strong></span></span></span></p>
-
-<p>&nbsp;</p>
-
-<p><span style="color:#000000"><span style="font-family:Montserrat,sans-serif"><span style="font-size:medium">Universidade Federal Fluminense/IC - Instituto de Computa&ccedil;&atilde;o</span></span></span><br />
-&nbsp;</p>
-
-<p style="text-align:justify"><span style="color:#000000"><span style="font-family:Montserrat,sans-serif"><span style="font-size:medium">Voc&ecirc; est&aacute; sendo convidado a participar de um estudo para avaliar a linguagem EvaML e o software simulador EvaSIM. Trata-se de uma pesquisa realizada pelo aluno de p&oacute;s-gradua&ccedil;&atilde;o Marcelo Marques da Rocha, orientado pela professora Dra. D&eacute;bora Christina Muchaluat Saade.</span></span></span></p>
-
-<p style="text-align:justify"><span style="color:#000000"><span style="font-family:Montserrat,sans-serif"><span style="font-size:medium">Se desejar continuar participando, continue a leitura e realize as atividades propostas. Muito obrigado!</span></span></span></p>
-
-<p style="text-align:justify">&nbsp;</p>
-
+<p><strong>TERMO DE CONSENTIMENTO LIVRE E ESCLARECIDO</strong></p>
+<p>Universidade Federal Fluminense/IC - Instituto de Computação</p>
+<p>Voc&ecirc; est&aacute; sendo convidado a participar de um estudo para avaliar a linguagem EvaML e o software simulador EvaSIM. Trata-se de uma pesquisa realizada pelo aluno de p&oacute;s-gradua&ccedil;&atilde;o Marcelo Marques da Rocha, orientado pela professora Dra. D&eacute;bora Christina Muchaluat Saade.</p>
+<p>Se desejar continuar participando, continue a leitura e realize as atividades propostas. Muito obrigado! </p>
 <hr />
-<p style="text-align:justify">&nbsp;</p>
+<p align="justify">O rob&ocirc; <strong>EVA</strong> (Embodied Voice Assistant) &eacute; um rob&ocirc; social e foi desenvolvido originalmente por pesquisadores do CICESE (Centro de Investigaci&oacute;n Cient&iacute;fica y de Educaci&oacute;n Superior de Ensenada), em Baja California no M&eacute;xico. O rob&ocirc; EVA &eacute; uma plataforma de rob&oacute;tica <em>open-source</em> destinada a auxiliar como ferramenta de apoio &agrave; pesquisa em Intera&ccedil;&atilde;o Humano-Rob&ocirc; (IHR). A imagem do robô EVA pode ser vista na Figura 1.</p>
+<div align="center">
+  <table width="200" border="0">
+    <tr>
+      <td width="200"><img src="imgs/eva_img.png" width="250" height="440" /></td>
+    </tr>
+    <tr>
+      <td width="200"><div align="center">Figura 1: Robô EVA</div></td>
+    </tr>
+  </table>
+</div>
+<p align="center" style="text-align:justify">&nbsp;</p>
 
-<p style="text-align:justify"><span style="color:#000000"><span style="font-family:Montserrat,sans-serif"><span style="font-size:medium">O rob&ocirc; <strong>EVA</strong> (Embodied Voice Assistant) &eacute; um rob&ocirc; social e foi desenvolvido originalmente por pesquisadores do CICESE (Centro de Investigaci&oacute;n Cient&iacute;fica y de Educaci&oacute;n Superior de Ensenada), em Baja California no M&eacute;xico. O rob&ocirc; EVA &eacute; uma plataforma de rob&oacute;tica <em>open-source</em> destinada a auxiliar como ferramenta de apoio &agrave; pesquisa em Intera&ccedil;&atilde;o Humano-Rob&ocirc; (IHR).</span></span></span></p>
+<p align="justify">O objetivo deste teste &eacute; a cria&ccedil;&atilde;o de uma sess&atilde;o interativa para o rob&ocirc; EVA usando os elementos definidos na linguagem EvaML, baseada em XML. O processo de desenvolvimento dos scripts para o rob&ocirc; EVA ser&aacute; usado como objeto de avalia&ccedil;&atilde;o da linguagem EvaML. O teste ser&aacute; dividido em 3 tarefas menores que utilizar&atilde;o os elementos da linguagem de forma progressiva. Ao finalizar as 3 tarefas, a sess&atilde;o interativa deve ser similar &agrave; dispon&iacute;vel neste <a href="https://www.youtube.com/watch?v=uDkwUEX8IeA" target="_blank"><u>link </u></a>(idioma do v&iacute;deo: ingl&ecirc;s). Antes de come&ccedil;ar a executar as tarefas sugeridas, recomenda-se ler o <a href="https://github.com/midiacom/eva-robot/blob/master/EvaML-Reference-Manual/EvaML-Reference-Manual.pdf" target="_blank"><u>manual da linguagem EvaML</u></a>&nbsp; e instalar o parser EvaML e o simulador EvaSIM.</p>
 
-<p style="text-align:justify"><span style="color:#000000"><span style="font-family:Montserrat,sans-serif"><span style="font-size:medium">O objetivo deste teste &eacute; a cria&ccedil;&atilde;o de uma sess&atilde;o interativa para o rob&ocirc; EVA usando os elementos definidos na linguagem EvaML, baseada em XML. O processo de desenvolvimento dos scripts para o rob&ocirc; EVA ser&aacute; usado como objeto de avalia&ccedil;&atilde;o da linguagem EvaML. O teste ser&aacute; dividido em 3 tarefas menores que utilizar&atilde;o os elementos da linguagem de forma progressiva. Ao finalizar as 3 tarefas, a sess&atilde;o interativa deve ser similar &agrave; dispon&iacute;vel neste </span></span></span><a href="https://www.youtube.com/watch?v=uDkwUEX8IeA" target="_blank"><span style="color:#1155cc"><span style="font-family:Montserrat,sans-serif"><span style="font-size:medium"><u>link</u></span></span></span></a><span style="color:#000000"><span style="font-family:Montserrat,sans-serif"><span style="font-size:medium"> </span></span></span><span style="color:#000000"><span style="font-family:Montserrat,sans-serif"><span style="font-size:medium">(idioma do v&iacute;deo: ingl&ecirc;s).</span></span></span><span style="color:#000000"><span style="font-family:Montserrat,sans-serif"><span style="font-size:medium"> Antes de come&ccedil;ar a executar as tarefas sugeridas, recomenda-se ler o </span></span></span><a href="https://github.com/midiacom/eva-robot/blob/master/EvaML-Reference-Manual/EvaML-Reference-Manual.pdf" target="_blank"><span style="color:#1155cc"><span style="font-family:Montserrat,sans-serif"><span style="font-size:medium"><u>manual da linguagem EvaML</u></span></span></span></a><span style="color:#000000"> &nbsp;<span style="font-family:Montserrat,sans-serif"><span style="font-size:medium">e instalar o parser EvaML e o simulador EvaSIM.</span></span></span></p>
-
-<p style="text-align:justify"><span style="color:#000000; font-family:Montserrat,sans-serif; font-size:medium">A seguir ser&atilde;o apresentados os passos para a configura&ccedil;&atilde;o do ambiente adequado para o desenvolvimento do teste:</span></p>
+<p>A seguir ser&atilde;o apresentados os passos para a configura&ccedil;&atilde;o do ambiente adequado para o desenvolvimento do teste:</p>
 
 <ol>
-	<li style="text-align:justify"><span style="color:#000000; font-family:Montserrat,sans-serif; font-size:medium">IDE Visual Studio Code (Linux ou Windows)</span>
+  <li style="text-align:justify"><strong>IDE Visual Studio Code (Linux ou Windows)</strong></li>
+</ol>
+<ul>
+  <li>Voc&ecirc; deve baixar e instalar&nbsp;a IDE&nbsp;Visual Studio Code a partir deste endere&ccedil;o:&nbsp;<a href="https://code.visualstudio.com/" target="_blank">https://code.visualstudio.com/</a>.</li>
+</ul>
+<ol>
+  <li><strong>XML Language Support by Red Hat instalado no VScode</strong></li>
+</ol>
+<ul>
+  <li>
+    <div align="justify">A linguagem EvaML &eacute; uma linguagem baseada em XML e exige uma formata&ccedil;&atilde;o adequada da sua estrutura, elementos e atributos. A utiliza&ccedil;&atilde;o do VSCode com o plugin da Red Hat que d&aacute; suporte &agrave; linguagens baseadas em XML &eacute; uma ferramenta de apoio insdispens&aacute;vel para o correto desenvolvimento das tarefas.</div>
+  </li>
+  <li>
+    <div align="justify">A instala&ccedil;&atilde;o &eacute; muito simples!&nbsp;Para isso, abra a visualiza&ccedil;&atilde;o de &quot;Extens&otilde;es&quot; clicando no &iacute;cone &quot;Extens&otilde;es&quot; na Barra de atividades que fica&nbsp;na lateral esquerda do VSCode ou utilizando o atalho do teclado&nbsp;(Ctrl+Shift+X). Voc&ecirc; ver&aacute; uma lista das extens&otilde;es mais populares do VSCode no VSCode Marketplace. Na barra de pesquisa, digite <em>XML Language Suporte by Red Hat</em>. Para instalar a extens&atilde;o, clique no bot&atilde;o Instalar.</div>
+  </li>
+  <li>
+    <div align="justify">A partir deste momento o VSCode dar&aacute; suporte &agrave; codifica&ccedil;&atilde;o da linguagem usando como base as regras b&aacute;sicas da linguagem XML e tamb&eacute;m com base no arquivo XML Schema que define a&nbsp;gram&aacute;tica da linguagem EvaML . Voc&ecirc; ter&aacute; suporte na defini&ccedil;&atilde;o da estrutura do documento, utiliza&ccedil;&atilde;o correta dos elementos dispon&iacute;veis em cada se&ccedil;&atilde;o do documento&nbsp;e poder&aacute; utilizar o recurso de autocompletar do VSCode atrav&eacute;s do atalho do teclado (Ctrl+Barra de espa&ccedil;o) durante a entrada dos comandos e atributos da linguagem.</div>
+  </li>
+</ul>
+<ol>
+  <li><strong>Parser EvaML e o&nbsp;simulador EvaSIM</strong></li>
+</ol>
+<ul>
+  <li>
+    <div align="justify">A linguagem EvaML &eacute; uma linguagem para o desenvolvimento de sess&otilde;es interativas para o rob&ocirc; EVA. Como n&atilde;o &eacute; poss&iacute;vel neste momento ter um rob&ocirc; f&iacute;sico montado para os testes da linguagem, o c&oacute;digo escrito em EvaML ser&aacute; testado usando-se o simulador do rob&ocirc; EVA chamado EvaSIM. O EvaSIM, assim como o rob&ocirc; f&iacute;sico, n&atilde;o executa diretamente um c&oacute;digo escrito na linguagem EvaML, o simulador &eacute; capaz de executar o c&oacute;digo resultante do processo de parser da linguagem EvaML. O c&oacute;digo do parser da linguagem se encontra no arquivo &quot;eva_parser.py&quot;.</div>
+  </li>
+  <li>
+    <div align="justify">Como dito anteriormente, o simulador EvaSIM&nbsp;&eacute; capaz de executar o c&oacute;digo resultante do processo de parser da linguagem EvaML e &eacute; esse c&oacute;digo que deve ser importado e executado no simulador .</div>
+  </li>
+  <li>
+    <div align="justify">Para ter acesso ao simulador EvaSIM e ao parser EvaML baixe o arquivo zip na vers&atilde;o correta referente ao seu sistema operacional a partir deste <a href="https://github.com/midiacom/eva-robot/tree/master/EvaSIM%20Testing%20Version" target="_blank">link&nbsp;</a>. Voc&ecirc; ser&aacute; direcionado a&nbsp;uma p&aacute;gina contendo as instru&ccedil;&otilde;es para o download, execu&ccedil;&atilde;o e o teste inicial do EvaSIM.</div>
+  </li>
+</ul>
+<p align="justify">Para que a experi&ecirc;ncia no processo de desenvolvimento da tarefa seja a melhor poss&iacute;vel, ser&aacute; apresentada a seguir uma sequ&ecirc;ncia de passos que podem servir como um guia para a execu&ccedil;&atilde;o das tarefas. N&oacute;s partiremos do pressuposto que voc&ecirc; j&aacute; tem o ambiente de desenvolvimento corretamente configurado como indicado anteriormente.</p>
 
-	<ul>
-		<li style="text-align:justify">
-		<p>Voc&ecirc; deve baixar e instalar&nbsp;a IDE&nbsp;Visual Studio Code a partir deste endere&ccedil;o:&nbsp;<a href="https://code.visualstudio.com/" target="_blank">https://code.visualstudio.com/</a>.</p>
-		</li>
-	</ul>
+<ol>
+	<li>
+	<p align="justify">Voc&ecirc; de abrir o VSCode e no menu &quot;Arquivo&quot; clicar em importar &quot;pasta&quot;. Em seguida v&aacute; at&eacute; a pasta &quot;eva_sim&quot; e a selecione. O VSCode mostrar&aacute; o conte&uacute;do da pasta &quot;eva_sim&quot; com todos os seus arquivos. Caso voc&ecirc; n&atilde;o esteja vendo a &aacute;rvore do diret&oacute;rio no VSCode, use o atalho (Ctrl+Shift+E).</p>
 	</li>
-	<li style="text-align:justify"><span style="color:#000000; font-family:Montserrat,sans-serif; font-size:medium">Plugin&nbsp;</span><span style="color:#000000; font-family:Montserrat,sans-serif; font-size:medium">XML Language Support by Red Hat instalado no VScode</span>
-	<ul>
-		<li style="text-align:justify">
-		<p>A linguagem EvaML &eacute; uma linguagem baseada em XML e exige uma formata&ccedil;&atilde;o adequada da sua estrutura, elementos e atributos. A utiliza&ccedil;&atilde;o do VSCode com o plugin da Red Hat que d&aacute; suporte &agrave; linguagens baseadas em XML &eacute; uma ferramenta de apoio insdispens&aacute;vel para o correto desenvolvimento das tarefas.</p>
-		</li>
-		<li style="text-align:justify">
-		<p>A instala&ccedil;&atilde;o &eacute; muito simples!&nbsp;Para isso, abra a visualiza&ccedil;&atilde;o de &quot;Extens&otilde;es&quot; clicando no &iacute;cone &quot;Extens&otilde;es&quot; na Barra de atividades que fica&nbsp;na lateral esquerda do VSCode ou utilizando o atalho do teclado&nbsp;(Ctrl+Shift+X). Voc&ecirc; ver&aacute; uma lista das extens&otilde;es mais populares do VSCode no VSCode Marketplace. Na barra de pesquisa, digite <em>XML Language Suporte by Red Hat</em>. Para instalar a extens&atilde;o, clique no bot&atilde;o Instalar.</p>
-		</li>
-		<li style="text-align:justify">
-		<p>A partir deste momento o VSCode dar&aacute; suporte &agrave; codifica&ccedil;&atilde;o da linguagem usando como base as regras b&aacute;sicas da linguagem XML e tamb&eacute;m com base no arquivo XML Schema que define a&nbsp;gram&aacute;tica da linguagem EvaML . Voc&ecirc; ter&aacute; suporte na defini&ccedil;&atilde;o da estrutura do documento, utiliza&ccedil;&atilde;o correta dos elementos dispon&iacute;veis em cada se&ccedil;&atilde;o do documento&nbsp;e poder&aacute; utilizar o recurso de autocompletar do VSCode atrav&eacute;s do atalho do teclado (Ctrl+Barra de espa&ccedil;o) durante a entrada dos comandos e atributos da linguagem.</p>
-		</li>
-	</ul>
+	<li>
+	<p>Observando os arquivos atrav&eacute;s do explorer do VSCode, voc&ecirc; deve clicar no arquivo de template nomeado &quot;<em>my_script_file.xml</em>&quot;. Esse arquivo cont&eacute;m uma estrutura b&aacute;sica do documento no padr&atilde;o EvaML. &Eacute; neste arquivo que voc&ecirc; deve&nbsp;entrar o c&oacute;digo referente a execu&ccedil;&atilde;o das tarefas propostas neste teste.&nbsp;<strong>Voc&ecirc; deve aproveitar o recurso de autocompletar do VSCode!</strong>&nbsp;Ele o ajudar&aacute; na utiliza&ccedil;&atilde;o correta dos elementos da linguagem. Por exemplo, ao digitar o caractere &quot;&lt;&quot; voc&ecirc; ver&aacute; uma lista dos elementos da linguagem que podem ou devem ser utilizados em cada se&ccedil;&atilde;o do seu documento EvaML. Da mesma maneira, ao entrar com um atributo tamb&eacute;m ser&aacute; apresentada uma lista com as op&ccedil;&otilde;es para cada atributo. Quando h&aacute; algum erro na estrutura do documento ou h&aacute; algum erro de digita&ccedil;&atilde;o que comprometa a boa forma&ccedil;&atilde;o do documento, a IDE procura indicar, da maneira mais precisa poss&iacute;vel, em que lugar do documento se encontra o erro. Ela faz isso, geralmente, sublinhando o local onde o erro est&aacute; ocorrendo com a cor vermelha.</span></p>
+	</li>
+	<li>
+	<p align="justify">Para testar o c&oacute;digo que voc&ecirc; escreveu, como j&aacute; foi dito, ser&aacute; utilizado o simulador EvaSIM, mas para isso, &eacute; preciso transformar o c&oacute;digo do script que voc&ecirc; escreveu em um c&oacute;digo compat&iacute;vel com o simulador. Esse processo &eacute; feito utilizando-se o parser EvaML. Para ter acesso &agrave; linha de comando crie um novo &quot;terminal&quot; no VSCode atrav&eacute;s do menu &quot;Terminal&quot; ou atrav&eacute;s do atalho (Ctrl+Shift+&#39;). Um terminal se abrir&aacute; na parte inferior da IDE e j&aacute; estar&aacute; no diret&oacute;rio de trabalho, ou seja, no diret&oacute;rio referente &agrave; pasta &quot;eva_sim&quot;. Para executar o parser do c&oacute;digo digite no terminal o comando &quot;<em>python eva_parser.py my_script_file.xml -c</em>&quot;. Se o seu c&oacute;digo estiver no padr&atilde;o da linguagem EvaML, voc&ecirc; ver&aacute; no terminal, a indica&ccedil;&atilde;o de que as 4 etapas do parsing executaram corretamente&nbsp;e o parsing ter&aacute; criado o arquivo &quot;<em>script01_EvaML.xml</em>&quot;.&nbsp; &Eacute; este o arquivo que dever&aacute; ser importado no EvaSIM na pr&oacute;xima etapa.</p>
 	</li>
 	<li style="text-align:justify">
-	<p style="text-align:justify"><span style="color:#000000"><span style="font-family:Montserrat,sans-serif"><span style="font-size:medium">Parser EvaML e o&nbsp;simulador EvaSIM</span></span></span></p>
-
-	<ul>
-		<li style="text-align:justify">
-		<p style="text-align:justify">A linguagem EvaML &eacute; uma linguagem para o desenvolvimento de sess&otilde;es interativas para o rob&ocirc; EVA. Como n&atilde;o &eacute; poss&iacute;vel neste momento ter um rob&ocirc; f&iacute;sico montado para os testes da linguagem, o c&oacute;digo escrito em EvaML ser&aacute; testado usando-se o simulador do rob&ocirc; EVA chamado EvaSIM. O EvaSIM, assim como o rob&ocirc; f&iacute;sico, n&atilde;o executa diretamente um c&oacute;digo escrito na linguagem EvaML, o simulador &eacute; capaz de executar o c&oacute;digo resultante do processo de parser da linguagem EvaML. O c&oacute;digo do parser da linguagem se encontra no arquivo &quot;eva_parser.py&quot;.</p>
-		</li>
-		<li style="text-align:justify">
-		<p style="text-align:justify">Como dito anteriormente, o simulador EvaSIM&nbsp;&eacute; capaz de executar o c&oacute;digo resultante do processo de parser da linguagem EvaML e &eacute; esse c&oacute;digo que deve ser importado e executado no simulador .</p>
-		</li>
-		<li style="text-align:justify">
-		<p style="text-align:justify">Para ter acesso ao simulador EvaSIM e ao parser EvaML baixe o arquivo zip na vers&atilde;o correta referente ao seu sistema operacional a partir deste <a href="https://github.com/midiacom/eva-robot/tree/master/EvaSIM%20Testing%20Version" target="_blank">link&nbsp;</a>. Voc&ecirc; ser&aacute; direcionado a&nbsp;uma p&aacute;gina contendo as instru&ccedil;&otilde;es para o download, execu&ccedil;&atilde;o e o teste inicial do EvaSIM.</p>
-		</li>
-	</ul>
+	<p align="justify">Durante a etapa de configura&ccedil;&atilde;o do ambiente adequado (como foi sugerido) voc&ecirc; deve ter baixado e executado o simulador EvaSIM. Voc&ecirc; tamb&eacute;m deve ter ativado o simulador clicando no bot&atilde;o &quot;PowerOn&quot; no menu de bot&otilde;es do mesmo. Para que o simulador execute o c&oacute;digo gerado pelo parsing, voc&ecirc; precisa import&aacute;-lo no EvaSIM. Para isso, voc&ecirc; deve cliquar no bot&atilde;o &quot;Import File&quot; no menu de bot&otilde;es do simulador e selecionar, atrav&eacute;s da janela de di&aacute;logo de abertura de arquivo, o arquivo &quot;<em>script01_EvaML.xml&quot;.</em></p>
+	</li>
+	<li style="text-align:justify">
+	<p align="justify">O pr&oacute;ximo passo &eacute; rodar o script carregado na mem&oacute;ria do EvaSIM e isso deve ser feito clicando no bot&atilde;o &quot;Run&quot; do simulador. Durante a execu&ccedil;&atilde;o do script, observe as mensagens no emulador de terminal do EvaSIM, elas podem ajud&aacute;-lo na verifica&ccedil;&atilde;o da l&oacute;gica do seu script. Acompanhe tamb&eacute;m as tabelas de mem&oacute;ria, que ficam &agrave; direita na interface do simulador, nelas voc&ecirc; pode visualisar o conte&uacute;do da mem&oacute;ria do EvaSIM. O simulador foi programado para emitir algumas mensagens de alerta e de&nbsp;erro em tempo de excu&ccedil;&atilde;o. Caso ocorra algum problema na execu&ccedil;&atilde;o do seu c&oacute;digo, volte para o VSCode e procure corrigi-lo, salvando-o e voltando novamente aos processos de parsing, importa&ccedil;&atilde;o e execu&ccedil;&atilde;o do script.</p>
 	</li>
 </ol>
 
-<p style="text-align:justify">&nbsp;</p>
 
-<p style="text-align:justify"><span style="color:#000000"><span style="font-family:Montserrat,sans-serif"><span style="font-size:medium">Para que a experi&ecirc;ncia no processo de desenvolvimento da tarefa seja a melhor poss&iacute;vel, ser&aacute; apresentada a seguir uma sequ&ecirc;ncia de passos que podem servir como um guia para a execu&ccedil;&atilde;o das tarefas. N&oacute;s partiremos do pressuposto que voc&ecirc; j&aacute; tem o ambiente de desenvolvimento corretamente configurado como indicado anteriormente.</span></span></span></p>
-
-<ol>
-	<li style="text-align:justify">
-	<p><span style="color:#000000"><span style="font-family:Montserrat,sans-serif"><span style="font-size:medium">Voc&ecirc; de abrir o VSCode e no menu &quot;Arquivo&quot; clicar em importar &quot;pasta&quot;. Em seguida v&aacute; at&eacute; a pasta &quot;eva_sim&quot; e a selecione. O VSCode mostrar&aacute; o conte&uacute;do da pasta &quot;eva_sim&quot; com todos os seus arquivos. Caso voc&ecirc; n&atilde;o esteja vendo a &aacute;rvore do diret&oacute;rio no VSCode, use o atalho (Ctrl+Shift+E).</span></span></span></p>
-	</li>
-	<li style="text-align:justify">
-	<p><span style="color:#000000; font-family:Montserrat,sans-serif; font-size:medium">Observando os arquivos atrav&eacute;s do explorer do VSCode, voc&ecirc; deve clicar no arquivo de template nomeado &quot;<em>my_script_file.xml</em>&quot;. Esse arquivo cont&eacute;m uma estrutura b&aacute;sica do documento no padr&atilde;o EvaML. &Eacute; neste arquivo que voc&ecirc; deve&nbsp;entrar o c&oacute;digo referente a execu&ccedil;&atilde;o das tarefas propostas neste teste.&nbsp;</span><span style="color:#000000; font-family:Montserrat,sans-serif; font-size:medium"><strong>Voc&ecirc; deve aproveitar o recurso de autocompletar do VSCode!</strong>&nbsp;Ele o ajudar&aacute; na utiliza&ccedil;&atilde;o correta dos elementos da linguagem. Por exemplo, ao digitar o caractere &quot;&lt;&quot; voc&ecirc; ver&aacute; uma lista dos elementos da linguagem que podem ou devem ser utilizados em cada se&ccedil;&atilde;o do seu documento EvaML. Da mesma maneira, ao entrar com um atributo tamb&eacute;m ser&aacute; apresentada uma lista com as op&ccedil;&otilde;es para cada atributo. Quando h&aacute; algum erro na estrutura do documento ou h&aacute; algum erro de digita&ccedil;&atilde;o que comprometa a boa forma&ccedil;&atilde;o do documento, a IDE procura indicar, da maneira mais precisa poss&iacute;vel, em que lugar do documento se encontra o erro. Ela faz isso, geralmente, sublinhando o local onde o erro est&aacute; ocorrendo com a cor vermelha.</span></p>
-	</li>
-	<li style="text-align:justify">
-	<p><span style="color:#000000; font-family:Montserrat,sans-serif; font-size:medium">Para testar o c&oacute;digo que voc&ecirc; escreveu, como j&aacute; foi dito, ser&aacute; utilizado o simulador EvaSIM, mas para isso, &eacute; preciso transformar o c&oacute;digo do script que voc&ecirc; escreveu em um c&oacute;digo compat&iacute;vel com o simulador. Esse processo &eacute; feito utilizando-se o parser EvaML. Para ter acesso &agrave; linha de comando crie um novo &quot;terminal&quot; no VSCode atrav&eacute;s do menu &quot;Terminal&quot; ou atrav&eacute;s do atalho (Ctrl+Shift+&#39;). Um terminal se abrir&aacute; na parte inferior da IDE e j&aacute; estar&aacute; no diret&oacute;rio de trabalho, ou seja, no diret&oacute;rio referente &agrave; pasta &quot;eva_sim&quot;. Para executar o parser do c&oacute;digo digite no terminal o comando &quot;<em>python eva_parser.py my_script_file.xml -c</em>&quot;. Se o seu c&oacute;digo estiver no padr&atilde;o da linguagem EvaML, voc&ecirc; ver&aacute; no terminal, a indica&ccedil;&atilde;o de que as 4 etapas do parsing executaram corretamente&nbsp;e o parsing ter&aacute; criado o arquivo &quot;</span><span style="color:#000000"><span style="font-family:Montserrat,sans-serif"><span style="font-size:medium"><em>script01_EvaML.xml</em></span></span></span><span style="color:#000000; font-family:Montserrat,sans-serif; font-size:medium">&quot;.&nbsp; &Eacute; este o arquivo que dever&aacute; ser importado no EvaSIM na pr&oacute;xima etapa.</span></p>
-	</li>
-	<li style="text-align:justify">
-	<p><span style="color:#000000"><span style="font-family:Montserrat,sans-serif"><span style="font-size:medium">Durante a etapa de configura&ccedil;&atilde;o do ambiente adequado (como foi sugerido) voc&ecirc; deve ter baixado e executado o simulador EvaSIM. Voc&ecirc; tamb&eacute;m deve ter ativado o simulador clicando no bot&atilde;o &quot;PowerOn&quot; no menu de bot&otilde;es do mesmo. Para que o simulador execute o c&oacute;digo gerado pelo parsing, voc&ecirc; precisa import&aacute;-lo no EvaSIM. Para isso, voc&ecirc; deve cliquar no bot&atilde;o &quot;Import File&quot; no menu de bot&otilde;es do simulador e selecionar, atrav&eacute;s da janela de di&aacute;logo de abertura de arquivo, o arquivo &quot;<em>script01_EvaML.xml&quot;.</em></span></span></span></p>
-	</li>
-	<li style="text-align:justify">
-	<p><span style="color:#000000"><span style="font-family:Montserrat,sans-serif"><span style="font-size:medium">O pr&oacute;ximo passo &eacute; rodar o script carregado na mem&oacute;ria do EvaSIM e isso deve ser feito clicando no bot&atilde;o &quot;Run&quot; do simulador. Durante a execu&ccedil;&atilde;o do script, observe as mensagens no emulador de terminal do EvaSIM, elas podem ajud&aacute;-lo na verifica&ccedil;&atilde;o da l&oacute;gica do seu script. Acompanhe tamb&eacute;m as tabelas de mem&oacute;ria, que ficam &agrave; direita na interface do simulador, nelas voc&ecirc; pode visualisar o conte&uacute;do da mem&oacute;ria do EvaSIM. O simulador foi programado para emitir algumas mensagens de alerta e de&nbsp;erro em tempo de excu&ccedil;&atilde;o. Caso ocorra algum problema na execu&ccedil;&atilde;o do seu c&oacute;digo, volte para o VSCode e procure corrigi-lo, salvando-o e voltando novamente aos processos de parsing, importa&ccedil;&atilde;o e execu&ccedil;&atilde;o do script.</span></span></span></p>
-	</li>
-</ol>
+<p>Seguindo as dicas indicadas at&eacute; aqui voc&ecirc; ser&aacute; capaz de executar as tarefas propostas a seguir. Boa sorte!</p>
 
 <p style="text-align:justify">&nbsp;</p>
 
-<p style="text-align:justify"><span style="color:#000000; font-family:Montserrat,sans-serif; font-size:medium">Seguindo as dicas indicadas at&eacute; aqui voc&ecirc; ser&aacute; capaz de executar as tarefas propostas a seguir. Boa sorte!</span></p>
-
-<p style="text-align:justify">&nbsp;</p>
-
-<p style="text-align:center"><u><span style="color:#000000"><span style="font-family:Montserrat,sans-serif"><span style="font-size:medium"><strong>Tarefa 1</strong></span></span></span></u></p>
+<h2 style="text-align:center"><u><strong>Tarefa 1</strong></u></h2>
 
 <p>&nbsp;</p>
 
-<p><span style="color:#000000"><span style="font-family:Montserrat,sans-serif"><span style="font-size:medium">Desenvolva uma sess&atilde;o para o rob&ocirc; EVA que fa&ccedil;a ele se apresentar para o usu&aacute;rio. Esta sess&atilde;o deve usar elementos de luz e som, deve utilizar o display do rob&ocirc; para expressar suas emo&ccedil;&otilde;es atrav&eacute;s do olhar e deve utilizar o recurso de </span></span></span><span style="color:#000000"><span style="font-family:Montserrat,sans-serif"><span style="font-size:medium"><em>Text-To-Speech</em></span></span></span><span style="color:#000000"> </span><span style="color:#000000"><span style="font-family:Montserrat,sans-serif"><span style="font-size:medium">(TTS) do rob&ocirc;, permitindo que o rob&ocirc; fale. Marque o tempo que levar&aacute; para executar esta tarefa.</span></span></span></p>
+<p align="justify">Desenvolva uma sess&atilde;o para o rob&ocirc; EVA que fa&ccedil;a ele se apresentar para o usu&aacute;rio. Esta sess&atilde;o deve usar elementos de luz e som, deve utilizar o display do rob&ocirc; para expressar suas emo&ccedil;&otilde;es atrav&eacute;s do olhar e deve utilizar o recurso de <em>Text-To-Speech</em>(TTS) do rob&ocirc;, permitindo que o rob&ocirc; fale. Marque o tempo que levar&aacute; para executar esta tarefa.</p>
 
-<p><span style="color:#000000"><span style="font-family:Montserrat,sans-serif"><span style="font-size:medium">Primeiro, defina o nome do script atrav&eacute;s do atributo </span></span></span><span style="color:#000000"><span style="font-family:Montserrat,sans-serif"><span style="font-size:medium"><em>name</em></span></span></span><span style="color:#000000"> </span><span style="color:#000000"><span style="font-family:Montserrat,sans-serif"><span style="font-size:medium">do elemento </span></span></span><span style="color:#9b59b6"><span style="font-family:Montserrat,sans-serif"><span style="font-size:medium">&lt;evaml&gt;</span></span></span><span style="color:#000000"><span style="font-family:Montserrat,sans-serif"><span style="font-size:medium">. Voc&ecirc; pode manter o mesmo nome que j&aacute; veio dentro do template. Em seguida, voc&ecirc; deve definir a voz do rob&ocirc; usando o comando </span></span></span><span style="color:#9b59b6"><span style="font-family:Montserrat,sans-serif"><span style="font-size:medium">&lt;voice&gt;</span></span></span><span style="color:#000000"><span style="font-family:Montserrat,sans-serif"><span style="font-size:medium">. Para ter acesso a algumas op&ccedil;&otilde;es de vozes dispon&iacute;veis, consulte a Tabela 2.3, na Se&ccedil;&atilde;o 2.3.1 do manual. Certifique-se de ativar os efeitos de luz e &aacute;udio na se&ccedil;&atilde;o </span></span></span><span style="color:#9b59b6"><span style="font-family:Montserrat,sans-serif"><span style="font-size:medium">&lt;settings&gt;</span></span></span><span style="color:#000000"><span style="font-family:Montserrat,sans-serif"><span style="font-size:medium">. A sequ&ecirc;ncia de a&ccedil;&otilde;es a serem executadas pelo rob&ocirc; &eacute; a seguinte.</span></span></span></p>
+<p>Primeiro, defina o nome do script atrav&eacute;s do atributo <em>name </em>do elemento <span style="color:#9b59b6">&lt;evaml&gt;<span style="color:#000000">. Voc&ecirc; pode manter o mesmo nome que j&aacute; veio dentro do template. Em seguida, voc&ecirc; deve definir a voz do rob&ocirc; usando o comando <span style="color:#9b59b6">&lt;voice&gt;</span>. Para ter acesso a algumas op&ccedil;&otilde;es de vozes dispon&iacute;veis, consulte a Tabela 2.3, na Se&ccedil;&atilde;o 2.3.1 do manual. Certifique-se de ativar os efeitos de luz e &aacute;udio na se&ccedil;&atilde;o <span style="color:#9b59b6">&lt;settings&gt;</span><span style="color:#000000">. A sequ&ecirc;ncia de a&ccedil;&otilde;es a serem executadas pelo rob&ocirc; &eacute; a seguinte.</span></span></span></p>
 
 <p><span style="color:#000000"><span style="font-family:Montserrat,sans-serif"><span style="font-size:medium">Usando o comando </span></span></span><span style="color:#9b59b6"><span style="font-family:Montserrat,sans-serif"><span style="font-size:medium">&lt;evaEmotion&gt;</span></span></span><span style="color:#000000"><span style="font-family:Montserrat,sans-serif"><span style="font-size:medium">, fa&ccedil;a com que o olhar do rob&ocirc; fique com a express&atilde;o neutra. Com o comando </span></span></span><span style="color:#9b59b6"><span style="font-family:Montserrat,sans-serif"><span style="font-size:medium">&lt;light&gt;</span></span></span><span style="color:#000000"><span style="font-family:Montserrat,sans-serif"><span style="font-size:medium">, fa&ccedil;a com que o rob&ocirc; acenda a luz na cor branca. V&aacute; at&eacute; a pasta &ldquo;sonidos&rdquo;, que se encontra no diret&oacute;rio do parser EvaML e escolha um arquivo de &aacute;udio para ser tocado pelo rob&ocirc;. Utilizando o comando </span></span></span><span style="color:#9b59b6"><span style="font-family:Montserrat,sans-serif"><span style="font-size:medium">&lt;audio&gt;</span></span></span><span style="color:#000000"><span style="font-family:Montserrat,sans-serif"><span style="font-size:medium"> toque o arquivo de &aacute;udio escolhido como um som de abertura, antes do texto de apresenta&ccedil;&atilde;o do rob&ocirc;. Lembre-se de usar o atributo </span></span></span><span style="color:#000000"><span style="font-family:Montserrat,sans-serif"><span style="font-size:medium"><em>block=&rdquo;true&rdquo;</em></span></span></span><span style="color:#000000"> </span><span style="color:#000000"><span style="font-family:Montserrat,sans-serif"><span style="font-size:medium">para fazer com que o comando seguinte espere pelo fim do play do arquivo de &aacute;udio.</span></span></span></p>
 
