@@ -6,10 +6,10 @@ In order to facilitate the use of EvaSIM, we managed to package the software wit
  
 1. First, you should download the correct version for your system.
  
-    * **EvaSIM (Windows Version):** [EvaSIM-Windows.zip](https://drive.google.com/file/d/1vV5Q8nR0bg15C8fM-jJBG0jDuk1K-EbZ/view?usp=sharing)
+    * **EvaSIM (Windows Version):** [EvaSIM-Windows.zip](https://drive.google.com/file/d/1C61Vf4qugX0ZCqZfVoC_Q7Y6WxEyzK_B/view?usp=sharing)
 
  
-    * **EvaSIM (Linux Version):** [EvaSIM-Linux.zip](https://drive.google.com/file/d/10wwBGMZ35i_1x243X9aAinprDR0Q0Mb5/view?usp=sharing)
+    * **EvaSIM (Linux Version):** [EvaSIM-Linux.zip](https://drive.google.com/file/d/1iYm_6YsU12cXCOaPufkhQNJvAujxyb_I/view?usp=sharing)
 
  
     After downloading the zip file, you should unzip it.
