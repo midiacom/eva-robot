@@ -1,5 +1,14 @@
 <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <!-- ********************** Data type definitions ********************** -->
+<!--
+XML Schema for the EvaML Language
+This is EvaML
+Copyright : 2022 LABORATORIO MIDIACOM, All Rights Reserved.
+See https://www.midiacom.uff.br
+PublicURI : https://github.com/midiacom/eva-robot/blob/master/EvaML-EvaSIM-source-code/Linux%20Version/EvaML-Schema/evaml_schema.xsd
+Author : Marcelo Marques da Rocha
+Revision: 2022/08/12
+-->
+  <!-- ** Data type definitions ** -->
 	<xs:simpleType name="idType">
 		<xs:restriction base="xs:ID"/>
 	</xs:simpleType>
@@ -161,7 +170,7 @@
 		</xs:restriction>
 	</xs:simpleType>
 
-  <!-- ********************** EvaML Commands Definitions ********************** -->
+  <!-- ** EvaML Commands Definitions ** -->
 	<xs:element name="random">
 		<xs:complexType>
 			<xs:attribute name="id" type="idType"/>
@@ -356,7 +365,7 @@
 		</xs:complexType>
 	</xs:element>
 
-	<!-- ********************** Root Section Definition ********************** -->
+	<!-- ** Root Section Definition ** -->
 	<xs:element name="evaml">
 		<xs:complexType>
 			<xs:sequence>
@@ -368,7 +377,7 @@
 		</xs:complexType>
 	</xs:element>
 
-	<!-- ********************** Settings Section Definition ********************** -->
+	<!-- ** Settings Section Definition ** -->
 	<xs:element name="settings">
     <xs:complexType>
 			<xs:all>
@@ -379,7 +388,7 @@
     </xs:complexType>
   </xs:element>
 
-	<!-- ********************** Script Section Definition ********************** -->
+	<!-- ** Script Section Definition ** -->
 	<xs:element name="script">
 		<xs:complexType>
 			<xs:choice minOccurs="0" maxOccurs="unbounded">
@@ -402,7 +411,7 @@
 		</xs:complexType>
 	</xs:element>
 
-	<!-- ********************** Macros Section Definition ********************** -->
+	<!-- ** Macros Section Definition ** -->
 	<xs:element name="macros">
 		<xs:complexType>
 			<xs:sequence minOccurs="1" maxOccurs="unbounded">
