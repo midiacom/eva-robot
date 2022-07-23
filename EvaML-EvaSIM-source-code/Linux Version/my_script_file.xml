@@ -4,7 +4,17 @@
   xsi:noNamespaceSchemaLocation="EvaML-Schema/evaml_schema.xsd"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <settings>
+    <voice tone="pt-BR_IsabelaV3Voice" />
   </settings>
   <script>
+    <counter id="LOOP" var="x" op="=" value="1" />
+    <switch var="x">
+      <case op="lt" value="2">
+        <audio source="beep-09" block="TRUE" />
+        <goto target="LOOP" />
+      </case>
+      <default></default>
+    </switch>
+    <light state="ON" />
   </script>
 </evaml>

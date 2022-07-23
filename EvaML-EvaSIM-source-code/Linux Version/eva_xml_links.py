@@ -184,7 +184,8 @@ for elem in script_node.iter():
         for info in elem.attrib.items():
             error_msg += '('
             error_msg += ' = '.join(info)
-            error_msg += '), '
+            error_msg += '),'
+        error_msg += '\n  WARNING: This may indicate the lack of a <default> element within a <switch>.'
         print(error_msg)
 
 if error:

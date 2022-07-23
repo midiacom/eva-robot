@@ -3,9 +3,14 @@
     <voice tone="pt-BR_IsabelaV3Voice" key="1000" />
   </settings>
   <script>
-    <talk key="1001">Olá Júlio, vou tocar um áudio</talk>
-    <audio source="mario-end-01" block="TRUE" key="1002" />
-    <talk key="1003">Estou me sentido feliz</talk>
-    <evaEmotion emotion="HAPPY" key="1004" />
+    <counter id="LOOP" var="x" op="=" value="1" key="1001" />
+    <switch var="x">
+      <case op="lt" value="2" key="1002" child_proc="false">
+        <audio source="beep-09" block="TRUE" key="1003" />
+        <goto target="LOOP" />
+      </case>
+      <default key="1004" child_proc="false" />
+    </switch>
+    <light state="ON" color="WHITE" key="1005" />
   </script>
 </evaml>

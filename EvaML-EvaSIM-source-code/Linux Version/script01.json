@@ -14,43 +14,56 @@
       },
       {
         "key": 1001,
-        "name": "Talk",
-        "type": "speak",
-        "color": "#00ff00",
+        "name": "Counter",
+        "type": "counter",
+        "color": "lightblue",
         "isGroup": false,
-        "text": "Olá Júlio, vou tocar um áudio",
+        "group": "",
+        "count": "x",
+        "ops": "assign",
+        "value": 1,
         "__gohashid": 1
       },
       {
         "key": 1002,
+        "name": "Condition",
+        "type": "if",
+        "color": "white",
+        "isGroup": false,
+        "text": "#x < 2",
+        "opt": 5,
+        "__gohashid": 2
+        },
+      {
+        "key": 1003,
         "name": "Audio",
         "type": "sound",
         "color": "lightblue",
         "isGroup": false,
-        "src": "mario-end-01",
+        "src": "beep-09",
         "wait": true,
-        "__gohashid": 2
-      },
-      {
-        "key": 1003,
-        "name": "Talk",
-        "type": "speak",
-        "color": "#00ff00",
-        "isGroup": false,
-        "text": "Estou me sentido feliz",
         "__gohashid": 3
       },
       {
         "key": 1004,
-        "name": "Eva_Emotion",
-        "type": "emotion",
-        "color": "lightcoral",
+        "name": "Condition",
+        "type": "if",
+        "color": "white",
+        "isGroup": false,
+        "text": "",
+        "opt": 4,
+        "__gohashid": 4
+      },
+      {
+        "key": 1005,
+        "name": "Light",
+        "type": "light",
+        "color": "#ffa500",
         "isGroup": false,
         "group": "",
-        "emotion": "joy",
-        "level": 0,
-        "speed": 0,
-        "__gohashid": 4
+        "lcolor": "#ffffff",
+        "state": "on",
+        "__gohashid": 5
       }
     ],
     "link": [
@@ -71,8 +84,18 @@
       },
       { 
         "from": 1003,
-        "to": 1004,
+        "to": 1001,
         "__gohashid": 3
+      },
+      { 
+        "from": 1001,
+        "to": 1004,
+        "__gohashid": 4
+      },
+      { 
+        "from": 1004,
+        "to": 1005,
+        "__gohashid": 5
       }
     ]
   }
