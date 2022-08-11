@@ -2,6 +2,12 @@
  
 ![](https://github.com/midiacom/eva-robot/blob/master/Assembly%20Process/capa_form_evasim.png)
 
+This repository contains the source codes of two projects:
+
+1. The EvaML language parser project
+
+2. The EvaSIM simulator project
+
 In order to facilitate the use of EvaSIM, we managed to package the software with all its dependencies, without having to download and install Python modules. We did it in two versions, one for Windows and one for Linux. To run EvaSIM we recommend **Windows 10** and Linux distributions **Ubuntu 20.04.4** and Linux **Mint 20.3**.
  
 1. First, you should download the correct version for your system.
