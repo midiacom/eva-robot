@@ -1,6 +1,6 @@
 {
-  "_id": "4bc9160a149eddcf36a458f53d9cf58a",
-  "nombre": "script01",
+  "_id": "9a4ab0c93200cfbd58aa398b446862f5",
+  "nombre": "Teste_Renan",
   "data": {
     "node": [
       {
@@ -75,8 +75,8 @@
         "color": "#00ff00",
         "isGroup": false,
         "text": "Olá, eu sou o robô EVA. / 
-          Olá, eu sou EVA. /
-          Olá, eu sou um robô. ",
+        Olá, eu sou EVA. /
+        Olá, eu sou um robô. ",
         "__gohashid": 6
       },
       {
@@ -135,7 +135,7 @@
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
-        "text": "Olá $, tudo bem com você? Irei te apresentar minhas emoções. ",
+        "text": "Olá $, tudo bem com você? Irei te apresentar minhas emoções",
         "__gohashid": 12
       },
       {
@@ -284,54 +284,6 @@
       },
       {
         "key": 1027,
-        "name": "Audio",
-        "type": "sound",
-        "color": "lightblue",
-        "isGroup": false,
-        "src": "mario-start-01",
-        "wait": true,
-        "__gohashid": 27
-      },
-      {
-        "key": 1028,
-        "name": "Talk",
-        "type": "speak",
-        "color": "#00ff00",
-        "isGroup": false,
-        "text": "Para começarmos o jogo, irei primeiro te ensinar os passos.",
-        "__gohashid": 28
-      },
-      {
-        "key": 1029,
-        "name": "Talk",
-        "type": "speak",
-        "color": "#00ff00",
-        "isGroup": false,
-        "text": "Eu irei te apresentar uma das três emoções de maneira aleatória, com uma cor que a acompanhe. Você deverá imitar o sentimento apresentado.",
-        "__gohashid": 29
-      },
-      {
-        "key": 1030,
-        "name": "Talk",
-        "type": "speak",
-        "color": "#00ff00",
-        "isGroup": false,
-        "text": "Você está preparado?",
-        "__gohashid": 30
-      },
-      {
-        "key": 1031,
-        "name": "Light",
-        "type": "light",
-        "color": "#ffa500",
-        "isGroup": false,
-        "group": "",
-        "lcolor": "#ffffff",
-        "state": "on",
-        "__gohashid": 31
-      },
-      {
-        "key": 1032,
         "name": "Eva_Emotion",
         "type": "emotion",
         "color": "lightcoral",
@@ -340,29 +292,101 @@
         "emotion": "ini",
         "level": 0,
         "speed": 0,
+        "__gohashid": 27
+      },
+      {
+        "key": 1028,
+        "name": "Audio",
+        "type": "sound",
+        "color": "lightblue",
+        "isGroup": false,
+        "src": "mario-start-01",
+        "wait": true,
+        "__gohashid": 28
+      },
+      {
+        "key": 1029,
+        "name": "Talk",
+        "type": "speak",
+        "color": "#00ff00",
+        "isGroup": false,
+        "text": "Para começarmos o jogo, irei primeiro te ensinar os passos.",
+        "__gohashid": 29
+      },
+      {
+        "key": 1030,
+        "name": "Talk",
+        "type": "speak",
+        "color": "#00ff00",
+        "isGroup": false,
+        "text": "Eu irei te apresentar uma das três emoções de maneira aleatória,",
+        "__gohashid": 30
+      },
+      {
+        "key": 1031,
+        "name": "Talk",
+        "type": "speak",
+        "color": "#00ff00",
+        "isGroup": false,
+        "text": "Você está preparado?",
+        "__gohashid": 31
+      },
+      {
+        "key": 1032,
+        "name": "Light",
+        "type": "light",
+        "color": "#ffa500",
+        "isGroup": false,
+        "group": "",
+        "lcolor": "#ffffff",
+        "state": "on",
         "__gohashid": 32
       },
       {
         "key": 1033,
+        "name": "Eva_Emotion",
+        "type": "emotion",
+        "color": "lightcoral",
+        "isGroup": false,
+        "group": "",
+        "emotion": "ini",
+        "level": 0,
+        "speed": 0,
+        "__gohashid": 33
+      },
+      {
+        "key": 1034,
         "name": "Listen",
         "type": "listen",
         "color": "#ffff00",
         "isGroup": false,
         "opt": "",
-        "__gohashid": 33
+        "__gohashid": 34
       },
       {
-        "key": 1034,
+        "key": 1035,
         "name": "Condition",
         "type": "if",
         "color": "white",
         "isGroup": false,
         "text": "Sim",
         "opt": 4,
-        "__gohashid": 34
+        "__gohashid": 35
       },
       {
-        "key": 1035,
+        "key": 1036,
+        "name": "Counter",
+        "type": "counter",
+        "color": "lightblue",
+        "isGroup": false,
+        "group": "",
+        "count": "ponto",
+        "ops": "assign",
+        "value": 0,
+        "__gohashid": 36
+      },
+      {
+        "key": 1037,
         "name": "Light",
         "type": "light",
         "color": "#ffa500",
@@ -370,25 +394,6 @@
         "group": "",
         "lcolor": "#00ff00",
         "state": "on",
-        "__gohashid": 35
-      },
-      {
-        "key": 1036,
-        "name": "Talk",
-        "type": "speak",
-        "color": "#00ff00",
-        "isGroup": false,
-        "text": "Então vamos começar.",
-        "__gohashid": 36
-      },
-      {
-        "key": 1037,
-        "name": "Condition",
-        "type": "if",
-        "color": "white",
-        "isGroup": false,
-        "text": "Não",
-        "opt": 4,
         "__gohashid": 37
       },
       {
@@ -397,7 +402,7 @@
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
-        "text": "Então começaremos mais tarde.",
+        "text": "Então vamos começar.",
         "__gohashid": 38
       },
       {
@@ -412,6 +417,25 @@
       },
       {
         "key": 1040,
+        "name": "Talk",
+        "type": "speak",
+        "color": "#00ff00",
+        "isGroup": false,
+        "text": "Então começaremos mais tarde.",
+        "__gohashid": 40
+      },
+      {
+        "key": 1041,
+        "name": "Condition",
+        "type": "if",
+        "color": "white",
+        "isGroup": false,
+        "text": "Não",
+        "opt": 4,
+        "__gohashid": 41
+      },
+      {
+        "key": 1042,
         "name": "Light",
         "type": "light",
         "color": "#ffa500",
@@ -419,10 +443,10 @@
         "group": "",
         "lcolor": "#ff0000",
         "state": "on",
-        "__gohashid": 40
+        "__gohashid": 42
       },
       {
-        "key": 1041,
+        "key": 1043,
         "name": "Eva_Emotion",
         "type": "emotion",
         "color": "lightcoral",
@@ -431,29 +455,29 @@
         "emotion": "sad",
         "level": 0,
         "speed": 0,
-        "__gohashid": 41
+        "__gohashid": 43
       },
       {
-        "key": 1042,
+        "key": 1044,
         "name": "Talk",
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
-        "text": "É uma pena não jogarmos juntos, mas espero que esteja disposto na próxima vez.",
-        "__gohashid": 42
+        "text": "É uma pena não jogarmos juntos, mas espero que esteja disposto",
+        "__gohashid": 44
       },
       {
-        "key": 1043,
+        "key": 1045,
         "name": "Audio",
         "type": "sound",
         "color": "lightblue",
         "isGroup": false,
         "src": "mario-end-03",
         "wait": true,
-        "__gohashid": 43
+        "__gohashid": 45
       },
       {
-        "key": 1044,
+        "key": 1046,
         "name": "Random",
         "type": "random",
         "color": "pink",
@@ -461,49 +485,28 @@
         "group": "",
         "min": 0,
         "max": 2,
-        "__gohashid": 44
+        "__gohashid": 46
       },
       {
-        "key": 1045,
+        "key": 1047,
         "name": "Condition",
         "type": "if",
         "color": "white",
         "isGroup": false,
         "text": "0",
         "opt": 4,
-        "__gohashid": 45
-      },
-      {
-        "key": 1046,
-        "name": "Eva_Emotion",
-        "type": "emotion",
-        "color": "lightcoral",
-        "isGroup": false,
-        "group": "",
-        "emotion": "joy",
-        "level": 0,
-        "speed": 0,
-        "__gohashid": 46
-      },
-      {
-        "key": 1047,
-        "name": "Light",
-        "type": "light",
-        "color": "#ffa500",
-        "isGroup": false,
-        "group": "",
-        "lcolor": "#00ff00",
-        "state": "on",
         "__gohashid": 47
       },
       {
         "key": 1048,
-        "name": "Condition",
-        "type": "if",
-        "color": "white",
+        "name": "Counter",
+        "type": "counter",
+        "color": "lightblue",
         "isGroup": false,
-        "text": "1",
-        "opt": 4,
+        "group": "",
+        "count": "HAPPY",
+        "ops": "assign",
+        "value": 0,
         "__gohashid": 48
       },
       {
@@ -513,7 +516,7 @@
         "color": "lightcoral",
         "isGroup": false,
         "group": "",
-        "emotion": "sad",
+        "emotion": "joy",
         "level": 0,
         "speed": 0,
         "__gohashid": 49
@@ -525,7 +528,7 @@
         "color": "#ffa500",
         "isGroup": false,
         "group": "",
-        "lcolor": "#0000ff",
+        "lcolor": "#00ff00",
         "state": "on",
         "__gohashid": 50
       },
@@ -535,86 +538,24 @@
         "type": "if",
         "color": "white",
         "isGroup": false,
-        "text": "2",
+        "text": "1",
         "opt": 4,
         "__gohashid": 51
       },
       {
         "key": 1052,
-        "name": "Eva_Emotion",
-        "type": "emotion",
-        "color": "lightcoral",
+        "name": "Counter",
+        "type": "counter",
+        "color": "lightblue",
         "isGroup": false,
         "group": "",
-        "emotion": "anger",
-        "level": 0,
-        "speed": 0,
+        "count": "SAD",
+        "ops": "assign",
+        "value": 1,
         "__gohashid": 52
       },
       {
         "key": 1053,
-        "name": "Light",
-        "type": "light",
-        "color": "#ffa500",
-        "isGroup": false,
-        "group": "",
-        "lcolor": "#ff0000",
-        "state": "on",
-        "__gohashid": 53
-      },
-      {
-        "key": 1054,
-        "name": "User_Emotion",
-        "type": "user_emotion",
-        "color": "lightgreen",
-        "isGroup": false,
-        "group": "",
-        "vision": "capture",
-        "__gohashid": 54
-      },
-      {
-        "key": 1055,
-        "name": "Condition",
-        "type": "if",
-        "color": "white",
-        "isGroup": false,
-        "text": "$",
-        "opt": 4,
-        "__gohashid": 55
-      },
-      {
-        "key": 1056,
-        "name": "Eva_Emotion",
-        "type": "emotion",
-        "color": "lightcoral",
-        "isGroup": false,
-        "group": "",
-        "emotion": "joy",
-        "level": 0,
-        "speed": 0,
-        "__gohashid": 56
-      },
-      {
-        "key": 1057,
-        "name": "Talk",
-        "type": "speak",
-        "color": "#00ff00",
-        "isGroup": false,
-        "text": "Uau, você arrasou, vamos para a próxima rodada.",
-        "__gohashid": 57
-      },
-      {
-        "key": 1058,
-        "name": "Condition",
-        "type": "if",
-        "color": "white",
-        "isGroup": false,
-        "text": "$ != $",
-        "opt": 5,
-        "__gohashid": 58
-        },
-      {
-        "key": 1059,
         "name": "Eva_Emotion",
         "type": "emotion",
         "color": "lightcoral",
@@ -623,16 +564,307 @@
         "emotion": "sad",
         "level": 0,
         "speed": 0,
+        "__gohashid": 53
+      },
+      {
+        "key": 1054,
+        "name": "Light",
+        "type": "light",
+        "color": "#ffa500",
+        "isGroup": false,
+        "group": "",
+        "lcolor": "#0000ff",
+        "state": "on",
+        "__gohashid": 54
+      },
+      {
+        "key": 1055,
+        "name": "Condition",
+        "type": "if",
+        "color": "white",
+        "isGroup": false,
+        "text": "2",
+        "opt": 4,
+        "__gohashid": 55
+      },
+      {
+        "key": 1056,
+        "name": "Counter",
+        "type": "counter",
+        "color": "lightblue",
+        "isGroup": false,
+        "group": "",
+        "count": "ANGRY",
+        "ops": "assign",
+        "value": 2,
+        "__gohashid": 56
+      },
+      {
+        "key": 1057,
+        "name": "Eva_Emotion",
+        "type": "emotion",
+        "color": "lightcoral",
+        "isGroup": false,
+        "group": "",
+        "emotion": "anger",
+        "level": 0,
+        "speed": 0,
+        "__gohashid": 57
+      },
+      {
+        "key": 1058,
+        "name": "Light",
+        "type": "light",
+        "color": "#ffa500",
+        "isGroup": false,
+        "group": "",
+        "lcolor": "#ff0000",
+        "state": "on",
+        "__gohashid": 58
+      },
+      {
+        "key": 1059,
+        "name": "User_Emotion",
+        "type": "user_emotion",
+        "color": "lightgreen",
+        "isGroup": false,
+        "group": "",
+        "vision": "capture",
         "__gohashid": 59
       },
       {
         "key": 1060,
-        "name": "Talk",
-        "type": "speak",
-        "color": "#00ff00",
+        "name": "Counter",
+        "type": "counter",
+        "color": "lightblue",
         "isGroup": false,
-        "text": "Uma pena você não ter conseguido, mas quem sabe na próxima vez.",
+        "group": "",
+        "count": "ponto",
+        "ops": "assign",
+        "value": 0,
         "__gohashid": 60
+      },
+      {
+        "key": 1061,
+        "name": "Random",
+        "type": "random",
+        "color": "pink",
+        "isGroup": false,
+        "group": "",
+        "min": 0,
+        "max": 2,
+        "__gohashid": 61
+      },
+      {
+        "key": 1062,
+        "name": "Condition",
+        "type": "if",
+        "color": "white",
+        "isGroup": false,
+        "text": "0",
+        "opt": 4,
+        "__gohashid": 62
+      },
+      {
+        "key": 1063,
+        "name": "Eva_Emotion",
+        "type": "emotion",
+        "color": "lightcoral",
+        "isGroup": false,
+        "group": "",
+        "emotion": "joy",
+        "level": 0,
+        "speed": 0,
+        "__gohashid": 63
+      },
+      {
+        "key": 1064,
+        "name": "Counter",
+        "type": "counter",
+        "color": "lightblue",
+        "isGroup": false,
+        "group": "",
+        "count": "HAPPY",
+        "ops": "assign",
+        "value": 0,
+        "__gohashid": 64
+      },
+      {
+        "key": 1065,
+        "name": "Light",
+        "type": "light",
+        "color": "#ffa500",
+        "isGroup": false,
+        "group": "",
+        "lcolor": "#00ff00",
+        "state": "on",
+        "__gohashid": 65
+      },
+      {
+        "key": 1066,
+        "name": "Condition",
+        "type": "if",
+        "color": "white",
+        "isGroup": false,
+        "text": "1",
+        "opt": 4,
+        "__gohashid": 66
+      },
+      {
+        "key": 1067,
+        "name": "Counter",
+        "type": "counter",
+        "color": "lightblue",
+        "isGroup": false,
+        "group": "",
+        "count": "SAD",
+        "ops": "assign",
+        "value": 1,
+        "__gohashid": 67
+      },
+      {
+        "key": 1068,
+        "name": "Eva_Emotion",
+        "type": "emotion",
+        "color": "lightcoral",
+        "isGroup": false,
+        "group": "",
+        "emotion": "sad",
+        "level": 0,
+        "speed": 0,
+        "__gohashid": 68
+      },
+      {
+        "key": 1069,
+        "name": "Light",
+        "type": "light",
+        "color": "#ffa500",
+        "isGroup": false,
+        "group": "",
+        "lcolor": "#0000ff",
+        "state": "on",
+        "__gohashid": 69
+      },
+      {
+        "key": 1070,
+        "name": "Condition",
+        "type": "if",
+        "color": "white",
+        "isGroup": false,
+        "text": "2",
+        "opt": 4,
+        "__gohashid": 70
+      },
+      {
+        "key": 1071,
+        "name": "Counter",
+        "type": "counter",
+        "color": "lightblue",
+        "isGroup": false,
+        "group": "",
+        "count": "ANGRY",
+        "ops": "assign",
+        "value": 2,
+        "__gohashid": 71
+      },
+      {
+        "key": 1072,
+        "name": "Eva_Emotion",
+        "type": "emotion",
+        "color": "lightcoral",
+        "isGroup": false,
+        "group": "",
+        "emotion": "anger",
+        "level": 0,
+        "speed": 0,
+        "__gohashid": 72
+      },
+      {
+        "key": 1073,
+        "name": "Light",
+        "type": "light",
+        "color": "#ffa500",
+        "isGroup": false,
+        "group": "",
+        "lcolor": "#ff0000",
+        "state": "on",
+        "__gohashid": 73
+      },
+      {
+        "key": 1074,
+        "name": "User_Emotion",
+        "type": "user_emotion",
+        "color": "lightgreen",
+        "isGroup": false,
+        "group": "",
+        "vision": "capture",
+        "__gohashid": 74
+      },
+      {
+        "key": 1075,
+        "name": "Condition",
+        "type": "if",
+        "color": "white",
+        "isGroup": false,
+        "text": "HAPPY",
+        "opt": 4,
+        "__gohashid": 75
+      },
+      {
+        "key": 1076,
+        "name": "Counter",
+        "type": "counter",
+        "color": "lightblue",
+        "isGroup": false,
+        "group": "",
+        "count": "ponto",
+        "ops": "sum",
+        "value": 1,
+        "__gohashid": 76
+      },
+      {
+        "key": 1077,
+        "name": "Condition",
+        "type": "if",
+        "color": "white",
+        "isGroup": false,
+        "text": "ANGRY",
+        "opt": 4,
+        "__gohashid": 77
+      },
+      {
+        "key": 1078,
+        "name": "Counter",
+        "type": "counter",
+        "color": "lightblue",
+        "isGroup": false,
+        "group": "",
+        "count": "ponto",
+        "ops": "sum",
+        "value": 1,
+        "__gohashid": 78
+      },
+      {
+        "key": 1079,
+        "name": "Condition",
+        "type": "if",
+        "color": "white",
+        "isGroup": false,
+        "text": "SAD",
+        "opt": 4,
+        "__gohashid": 79
+      },
+      {
+        "key": 1080,
+        "name": "Counter",
+        "type": "counter",
+        "color": "lightblue",
+        "isGroup": false,
+        "group": "",
+        "count": "ponto",
+        "ops": "sum",
+        "value": 1,
+        "__gohashid": 80
       }
     ],
     "link": [
@@ -817,7 +1049,7 @@
         "__gohashid": 35
       },
       { 
-        "from": 1033,
+        "from": 1036,
         "to": 1037,
         "__gohashid": 36
       },
@@ -827,7 +1059,7 @@
         "__gohashid": 37
       },
       { 
-        "from": 1022,
+        "from": 1034,
         "to": 1039,
         "__gohashid": 38
       },
@@ -837,7 +1069,7 @@
         "__gohashid": 39
       },
       { 
-        "from": 1040,
+        "from": 1022,
         "to": 1041,
         "__gohashid": 40
       },
@@ -852,18 +1084,18 @@
         "__gohashid": 42
       },
       { 
-        "from": 1036,
+        "from": 1043,
         "to": 1044,
         "__gohashid": 43
       },
       { 
-        "from": 1043,
-        "to": 1044,
+        "from": 1044,
+        "to": 1045,
         "__gohashid": 44
       },
       { 
-        "from": 1044,
-        "to": 1045,
+        "from": 1038,
+        "to": 1046,
         "__gohashid": 45
       },
       { 
@@ -877,7 +1109,7 @@
         "__gohashid": 47
       },
       { 
-        "from": 1044,
+        "from": 1047,
         "to": 1048,
         "__gohashid": 48
       },
@@ -892,7 +1124,7 @@
         "__gohashid": 50
       },
       { 
-        "from": 1044,
+        "from": 1046,
         "to": 1051,
         "__gohashid": 51
       },
@@ -907,38 +1139,38 @@
         "__gohashid": 53
       },
       { 
-        "from": 1047,
+        "from": 1053,
         "to": 1054,
         "__gohashid": 54
       },
       { 
-        "from": 1050,
-        "to": 1054,
-        "__gohashid": 55
-      },
-      { 
-        "from": 1053,
-        "to": 1054,
-        "__gohashid": 56
-      },
-      { 
-        "from": 1054,
+        "from": 1046,
         "to": 1055,
-        "__gohashid": 57
+        "__gohashid": 55
       },
       { 
         "from": 1055,
         "to": 1056,
-        "__gohashid": 58
+        "__gohashid": 56
       },
       { 
         "from": 1056,
         "to": 1057,
+        "__gohashid": 57
+      },
+      { 
+        "from": 1057,
+        "to": 1058,
+        "__gohashid": 58
+      },
+      { 
+        "from": 1050,
+        "to": 1059,
         "__gohashid": 59
       },
       { 
         "from": 1054,
-        "to": 1058,
+        "to": 1059,
         "__gohashid": 60
       },
       { 
@@ -950,6 +1182,116 @@
         "from": 1059,
         "to": 1060,
         "__gohashid": 62
+      },
+      { 
+        "from": 1060,
+        "to": 1061,
+        "__gohashid": 63
+      },
+      { 
+        "from": 1061,
+        "to": 1062,
+        "__gohashid": 64
+      },
+      { 
+        "from": 1062,
+        "to": 1063,
+        "__gohashid": 65
+      },
+      { 
+        "from": 1063,
+        "to": 1064,
+        "__gohashid": 66
+      },
+      { 
+        "from": 1064,
+        "to": 1065,
+        "__gohashid": 67
+      },
+      { 
+        "from": 1061,
+        "to": 1066,
+        "__gohashid": 68
+      },
+      { 
+        "from": 1066,
+        "to": 1067,
+        "__gohashid": 69
+      },
+      { 
+        "from": 1067,
+        "to": 1068,
+        "__gohashid": 70
+      },
+      { 
+        "from": 1068,
+        "to": 1069,
+        "__gohashid": 71
+      },
+      { 
+        "from": 1061,
+        "to": 1070,
+        "__gohashid": 72
+      },
+      { 
+        "from": 1070,
+        "to": 1071,
+        "__gohashid": 73
+      },
+      { 
+        "from": 1071,
+        "to": 1072,
+        "__gohashid": 74
+      },
+      { 
+        "from": 1072,
+        "to": 1073,
+        "__gohashid": 75
+      },
+      { 
+        "from": 1065,
+        "to": 1074,
+        "__gohashid": 76
+      },
+      { 
+        "from": 1069,
+        "to": 1074,
+        "__gohashid": 77
+      },
+      { 
+        "from": 1073,
+        "to": 1074,
+        "__gohashid": 78
+      },
+      { 
+        "from": 1074,
+        "to": 1075,
+        "__gohashid": 79
+      },
+      { 
+        "from": 1075,
+        "to": 1076,
+        "__gohashid": 80
+      },
+      { 
+        "from": 1074,
+        "to": 1077,
+        "__gohashid": 81
+      },
+      { 
+        "from": 1077,
+        "to": 1078,
+        "__gohashid": 82
+      },
+      { 
+        "from": 1074,
+        "to": 1079,
+        "__gohashid": 83
+      },
+      { 
+        "from": 1079,
+        "to": 1080,
+        "__gohashid": 84
       }
     ]
   }

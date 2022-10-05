@@ -1,16 +1,115 @@
-<evaml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="script01" xsi:noNamespaceSchemaLocation="EvaML-Schema/evaml_schema.xsd">
+<evaml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Teste_Renan" xsi:noNamespaceSchemaLocation="EvaML-Schema/evaml_schema.xsd">
   <settings>
     <voice tone="pt-BR_IsabelaV3Voice" />
+    <lightEffects mode="ON" />
+    <audioEffects mode="ON" />
   </settings>
   <script>
-    <counter id="LOOP" var="x" op="=" value="1" />
-    <switch var="x">
-      <case op="lt" value="2">
-        <audio source="beep-09" block="TRUE" />
-        <goto target="LOOP" />
+    <evaEmotion emotion="NEUTRAL" />
+    <light state="ON" color="WHITE" />
+    <audio source="mario-end-01" block="TRUE" />
+    <light state="ON" color="YELLOW" />
+    <evaEmotion emotion="HAPPY" />
+    <talk>Olá, eu sou o robô EVA. / 
+        Olá, eu sou EVA. /
+        Olá, eu sou um robô. </talk>
+    <light state="ON" color="PINK" />
+    <evaEmotion emotion="NEUTRAL" />
+    <wait duration="2000" />
+    <talk>Qual é o seu nome?</talk>
+    <listen />
+    <talk>Olá $, tudo bem com você? Irei te apresentar minhas emoções</talk>
+    <wait duration="2000" />
+    <talk>Desse modo, estou feliz.</talk>
+    <evaEmotion emotion="HAPPY" />
+    <talk>Desse outro jeito, estou triste.</talk>
+    <evaEmotion emotion="SAD" />
+    <talk>E desse modo, estou com raiva.</talk>
+    <evaEmotion emotion="ANGRY" />
+    <evaEmotion emotion="NEUTRAL" />
+    <talk>Você gostaria de jogar o jogo da imitação comigo?</talk>
+    <listen />
+    <switch var="$"> 
+      <case op="exact" value="Sim"> 
+        <light state="ON" color="WHITE" />
+        <evaEmotion emotion="HAPPY" />
+        <talk>Que bom que você quer jogar comigo, vamos jogar então.</talk>
+        <evaEmotion emotion="NEUTRAL" />
+        <audio source="mario-start-01" block="TRUE" />
+        <talk>Para começarmos o jogo, irei primeiro te ensinar os passos.</talk>
+        <talk>Eu irei te apresentar uma das três emoções de maneira aleatória,</talk>
+        <talk>Você está preparado?</talk>
+        <light state="ON" color="WHITE" />
+        <evaEmotion emotion="NEUTRAL" />
+        <listen />
+        <switch var="$">
+          <case op="exact" value="Sim">
+            <counter var="ponto" op="=" value="0" />
+            <light state="ON" color="GREEN" />
+            <talk>Então vamos começar.</talk>
+          </case>
+          <case op="exact" value="Não">
+            <talk>Então começaremos mais tarde.</talk>
+            <stop />
+          </case>
+      </switch>
       </case>
-      <default />
+      <case op="exact" value="Não">
+        <light state="ON" color="RED" />
+        <evaEmotion emotion="SAD" />
+        <talk>É uma pena não jogarmos juntos, mas espero que esteja disposto</talk>
+        <audio source="mario-end-03" block="TRUE" />
+      </case>
     </switch>
-    <light state="ON" />
+    <random min="0" max="2" />
+    <switch var="$">
+      <case op="exact" value="0">
+        <counter var="HAPPY" op="=" value="0" />
+        <evaEmotion emotion="HAPPY" />
+        <light state="ON" color="GREEN" />      
+      </case>
+      <case op="exact" value="1">
+        <counter var="SAD" op="=" value="1" />
+        <evaEmotion emotion="SAD" />
+        <light state="ON" color="BLUE" />
+      </case>
+      <case op="exact" value="2">
+        <counter var="ANGRY" op="=" value="2" />
+        <evaEmotion emotion="ANGRY" />
+        <light state="ON" color="RED" />
+      </case>
+    </switch>
+    <userEmotion />
+    <counter var="ponto" op="=" value="0" />
+    <random min="0" max="2" />
+    <switch var="$">
+      <case op="exact" value="0">
+        <evaEmotion emotion="HAPPY" />
+        <counter var="HAPPY" op="=" value="0" />
+        <light state="ON" color="GREEN" />      
+      </case>
+      <case op="exact" value="1">
+        <counter var="SAD" op="=" value="1" />
+        <evaEmotion emotion="SAD" />
+        <light state="ON" color="BLUE" />
+      </case>
+      <case op="exact" value="2">
+        <counter var="ANGRY" op="=" value="2" />
+        <evaEmotion emotion="ANGRY" />
+        <light state="ON" color="RED" />
+      </case>
+    </switch>
+    <userEmotion />
+    <switch var="$">
+      <case op="exact" value="HAPPY">
+        <counter var="ponto" op="+" value="1" />
+      </case>
+      <case op="exact" value="ANGRY">
+        <counter var="ponto" op="+" value="1" />
+      </case>
+      <case op="exact" value="SAD">
+        <counter var="ponto" op="+" value="1" />
+      </case>
+    </switch>
   </script>
 </evaml>
