@@ -720,8 +720,8 @@ def exec_comando(node):
         if op == "*": # efetua o produto
             eva_memory.vars[var_name] *= var_value
 
-        if op == "/": # efetua a divisão
-            eva_memory.vars[var_name] /= var_value
+        if op == "/": # efetua a divisão (era /=) porem mudei para //= (divisão inteira)
+            eva_memory.vars[var_name] //= var_value
 
         if op == "%": # calcula o módulo
             eva_memory.vars[var_name] %= var_value
