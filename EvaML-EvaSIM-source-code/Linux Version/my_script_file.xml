@@ -5,7 +5,7 @@
     <audioEffects mode="ON"/>
   </settings>
   <script>
-    <evaEmotion emotion="NEUTRAL"/>
+    <evaEmotion emotion="NEUTRAL"/> 
     <light state="ON" color="WHITE"/>
     <audio source="mario-end-01" block="TRUE"/>
     <light state="ON" color="YELLOW"/>
