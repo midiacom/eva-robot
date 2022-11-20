@@ -1,65 +1,11 @@
-<evaml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="tabuada" xsi:noNamespaceSchemaLocation="EvaML-Schema/evaml_schema.xsd" id="282f2b79cdf6e6b8bd0d8372a2896f6f">
+<evaml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="script01" xsi:noNamespaceSchemaLocation="EvaML-Schema/evaml_schema.xsd" id="4bc9160a149eddcf36a458f53d9cf58a">
   <settings>
     <voice tone="pt-BR_IsabelaV3Voice" key="1000" />
     <lightEffects mode="ON" />
     <audioEffects mode="ON" />
   </settings>
   <script>
-    <listen key="1001" />
-    <switch var="$">
-        <case op="exact" value="1" key="1002" child_proc="false">
-          <counter var="aux" op="=" value="1" key="1003" />
-        </case>
-        <case op="exact" value="2" key="1004" child_proc="false">
-          <counter var="aux" op="=" value="2" key="1005" />
-        </case>
-        <case op="exact" value="3" key="1006" child_proc="false">
-          <counter var="aux" op="=" value="3" key="1007" />
-        </case>
-        <case op="exact" value="4" key="1008" child_proc="false">
-          <counter var="aux" op="=" value="4" key="1009" />
-        </case>
-        <case op="exact" value="5" key="1010" child_proc="false">
-          <counter var="aux" op="=" value="5" key="1011" />
-        </case>
-        <case op="exact" value="6" key="1012" child_proc="false">
-          <counter var="aux" op="=" value="6" key="1013" />
-        </case>
-        <case op="exact" value="7" key="1014" child_proc="false">
-          <counter var="aux" op="=" value="7" key="1015" />
-        </case>
-        <case op="exact" value="8" key="1016" child_proc="false">
-          <counter var="aux" op="=" value="8" key="1017" />
-        </case>
-        <case op="exact" value="9" key="1018" child_proc="false">
-          <counter var="aux" op="=" value="9" key="1019" />
-        </case>
-      </switch>
-      <counter var="aux" op="*" value="1" key="1020" />
-      <talk key="1021">$ vezes 1 é igual a #aux</talk>
-      <counter var="aux" op="/" value="1" key="1022" />
-      <counter var="aux" op="*" value="2" key="1023" />
-      <talk key="1024">$ vezes 2 = a #aux</talk>
-      <counter var="aux" op="/" value="2" key="1025" />
-      <counter var="aux" op="*" value="3" key="1026" />
-      <talk key="1027">$ vezes 3 = a #aux</talk>
-      <counter var="aux" op="/" value="3" key="1028" />
-      <counter var="aux" op="*" value="4" key="1029" />
-      <talk key="1030">$ vezes 4 = #aux</talk>
-      <counter var="aux" op="/" value="4" key="1031" />
-      <counter var="aux" op="*" value="5" key="1032" />
-      <talk key="1033">$ vezes 5 = #aux</talk>
-      <counter var="aux" op="/" value="5" key="1034" />
-      <counter var="aux" op="*" value="6" key="1035" />
-      <talk key="1036">$ vezes 6 = #aux</talk>
-      <counter var="aux" op="/" value="6" key="1037" />
-      <counter var="aux" op="*" value="7" key="1038" />
-      <talk key="1039">$ vezes 7 = #aux</talk>
-      <counter var="aux" op="/" value="7" key="1040" />
-      <counter var="aux" op="*" value="8" key="1041" />
-      <talk key="1042">$ vezes 8 = #aux</talk>
-      <counter var="aux" op="/" value="8" key="1043" />
-      <counter var="aux" op="*" value="9" key="1044" />
-      <talk key="1045">$ vezes 9 = #aux</talk>
-    </script>
-  </evaml>
+    <talk key="1001">Eu vou contar até cinco</talk>
+    <counter var="i" op="=" value="0" key="1002" /><switch id="LOOP_ID_i" var="i"><case op="lt" value="5" key="1003" child_proc="false"><counter var="i" op="+" value="1" key="1004" /><talk key="1005">#i</talk>
+    <goto target="LOOP_ID_i" /></case><default key="1006" child_proc="false" /></switch></script>
+</evaml>

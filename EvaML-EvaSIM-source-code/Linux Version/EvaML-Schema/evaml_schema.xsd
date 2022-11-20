@@ -171,6 +171,7 @@ Revision: 2022/08/12
 	</xs:simpleType>
 
   <!-- ** EvaML Commands Definitions ** -->
+
 	<xs:element name="random">
 		<xs:complexType>
 			<xs:attribute name="id" type="idType"/>
@@ -296,10 +297,37 @@ Revision: 2022/08/12
 			<xs:attribute name="vol" type="xs:string" default="100%"/>
 		</xs:complexType>
 	</xs:element>
+    
+	<xs:element name="loop">
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="loop"/>
+				<xs:element ref="random"/>
+				<xs:element ref="wait"/>
+				<xs:element ref="talk"/>
+				<xs:element ref="stop"/>
+				<xs:element ref="light"/>
+				<xs:element ref="goto"/>
+				<xs:element ref="motion"/>
+				<xs:element ref="userEmotion"/>
+				<xs:element ref="evaEmotion"/>
+				<xs:element ref="useMacro"/>
+				<xs:element ref="listen"/>
+				<xs:element ref="audio"/>
+				<xs:element ref="led"/>
+				<xs:element ref="counter"/>
+				<xs:element ref="switch"/>
+			</xs:choice>
+			<xs:attribute name="id" type="idType"/>
+		    <xs:attribute name="var" type="xs:string" use="optional"/>
+		    <xs:attribute name="times" type="xs:positiveInteger" use="required"/>
+		</xs:complexType>
+	</xs:element>
 
 	<xs:element name="case">
 		<xs:complexType>
 			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="loop"/>
 				<xs:element ref="random"/>
 				<xs:element ref="wait"/>
 				<xs:element ref="talk"/>
@@ -324,6 +352,7 @@ Revision: 2022/08/12
 	<xs:element name="default">
 		<xs:complexType>
 			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="loop"/>
 				<xs:element ref="random"/>
 				<xs:element ref="wait"/>
 				<xs:element ref="talk"/>
@@ -346,6 +375,7 @@ Revision: 2022/08/12
 	<xs:element name="macro">
 		<xs:complexType>
 			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="loop"/>
 				<xs:element ref="random"/>
 				<xs:element ref="wait"/>
 				<xs:element ref="talk"/>
@@ -392,6 +422,7 @@ Revision: 2022/08/12
 	<xs:element name="script">
 		<xs:complexType>
 			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="loop"/>
 				<xs:element ref="random"/>
 				<xs:element ref="wait"/>
 				<xs:element ref="talk"/>

@@ -25,6 +25,7 @@ root = tree.getroot() # evaml root node
 script_node = root.find("script")
 macros_node = root.find("macros")
 
+id_loop_number = 0  # id usado na criação dos ids dos loops
 
 ###############################################################################
 # Processamento (expansao) das macros                                         #
@@ -72,8 +73,79 @@ def macro_expander(script_node, macros_node):
             macro_expander(script_node, macros_node)
 
 
+###############################################################################
+# Processamento o comando (loop)                                              #
+###############################################################################
+def process_loop(script_node):
+    global id_loop_number
+    for i in range(len(script_node)):
+        if len(script_node[i]) != 0: process_loop(script_node[i])
+        if script_node[i].tag == "loop":
+            loop_copy = copy.deepcopy(script_node[i]) # copia o elemento  <loop>
+            c = ET.Element("counter") # cria o <counter> que inicializa a var de iteração com o valor zero
+            if script_node[i].get("id") != None: # caso o <loop> seja alvo de um goto
+                id_loop = script_node[i].attrib["id"] 
+                c.attrib["id"] = id_loop
+            if script_node[i].get("var") != None: 
+                var_loop = script_node[i].attrib["var"] 
+                c.attrib["var"] = var_loop
+            else: # caso o usuario não defina uma variação para a iteração, a variavel default "ITERATION_VAR...." será criada
+                id_loop_number += 1 # var utilizada na criação de nomes de algumas variáveis automáticas. Comeca com 1
+                var_loop = "_ITERATION_VAR" + str(id_loop_number) 
+            times_loop = script_node[i].attrib["times"] 
+            c.attrib["var"] = var_loop 
+            c.attrib["op"] = "=" 
+            c.attrib["value"] = "0"  # inicializa a variavel contadora com zero
+
+            script_node.remove(script_node[i]) # remove o elemento <loop> pois não é mais necessário (temos a sua cópia em )
+            script_node.insert(i, c)  # adiciona o <counter>
+
+            s = ET.Element("switch")  # cria o elemento <switch>
+            s.attrib["id"] = "LOOP_ID" + "_" + var_loop  # prefixo padrao do id automatico gerado para o loop _LOOP_ID_
+            s.attrib["var"] = var_loop 
+            script_node.insert(i + 1, s)  # adiciona o <switch>, com seus filhos, ao elemento script
+
+            cs = ET.Element("case") # cria o elemento <case>
+            cs.attrib["op"] = "lt" 
+            cs.attrib["value"] = times_loop 
+
+            c = ET.Element("counter")  # cria o <counter> que incrementa a variável de iteração
+            c.attrib["var"] = var_loop
+            c.attrib["op"] = "+"
+            c.attrib["value"] = "1"
+
+            cs.insert(0, c) 
+            #cs.insert(1, loop_copy)  # aqui, o elemento pai (loop) vem junto, e isso é ruim pois queremos apenas seus filhos
+            cs.extend(loop_copy)  # o extend adiciona apenas os filhos de loop
+
+            g = ET.Element("goto")  # cria o <goto> que faz o loop acontecer
+            g.attrib["target"] = "LOOP_ID" +  "_" + var_loop  # prefixo padrao do id automatico gerado para o loop _LOOP_ID_
+
+            cs.append(g)  # adiciona o <goto> (que gerar causa a repetição) ao final do <case> 
+
+            df = ET.Element("default") # cria o elemento <default> para o <case> do loop
+
+            s.insert(0, cs)  # insere o <case> com o corpo dentro do <switch>
+            s.insert(1, df)  # insere o comando <default> que gera a conexão com o restante do script, evitando a descontinuidade
+
+            process_loop(script_node) # o processamento de um loop muda a estrutura inicial do scriptnode e precisa ser revisitada
+
+
+#################### Funcao auxiliar para a impressao da arvore
+def print_tree(tree, tab):
+    for i in range(len(tree)):
+        print(" " * tab, tree[i].tag)
+        if len(tree[i]) != 0:
+            print_tree(tree[i], tab + 2)
+
+
 # expande as macros   
 macro_expander(script_node, macros_node)
+
+# processa os loops
+process_loop(script_node)
+
+#print_tree(root, 2)
 
 if _error == 1:
     exit(1)
@@ -85,4 +157,5 @@ if macros_node != None:
 
 # gera o arquivo com as macros expandidas (caso existam) para a proxima etapa
 tree.write("_macros.xml", "UTF-8")
+
 
