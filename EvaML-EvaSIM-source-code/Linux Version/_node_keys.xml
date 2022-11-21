@@ -5,7 +5,6 @@
     <audioEffects mode="ON" />
   </settings>
   <script>
-    <talk key="1001">Eu vou contar até cinco</talk>
-    <counter var="i" op="=" value="0" key="1002" /><switch id="LOOP_ID_i" var="i"><case op="lt" value="5" key="1003" child_proc="false"><counter var="i" op="+" value="1" key="1004" /><talk key="1005">#i</talk>
-    <goto target="LOOP_ID_i" /></case><default key="1006" child_proc="false" /></switch></script>
+    <counter var="ITERATION_VAR2" op="=" value="0" key="1001" /><switch id="LOOP_ID2_ITERATION_VAR2" var="ITERATION_VAR2"><case op="lt" value="2" key="1002" child_proc="false"><counter var="ITERATION_VAR2" op="+" value="1" key="1003" /><counter var="ITERATION_VAR1" op="=" value="0" key="1004" /><switch id="LOOP_ID1_ITERATION_VAR1" var="ITERATION_VAR1"><case op="lt" value="2" key="1005" child_proc="false"><counter var="ITERATION_VAR1" op="+" value="1" key="1006" /><talk key="1007">oi</talk>
+      <goto target="LOOP_ID1_ITERATION_VAR1" /></case><default key="1008" child_proc="false" /></switch><goto target="LOOP_ID2_ITERATION_VAR2" /></case><default key="1009" child_proc="false" /></switch></script>
 </evaml>

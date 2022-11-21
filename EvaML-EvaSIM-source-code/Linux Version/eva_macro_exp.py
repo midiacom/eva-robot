@@ -81,6 +81,7 @@ def process_loop(script_node):
     for i in range(len(script_node)):
         if len(script_node[i]) != 0: process_loop(script_node[i])
         if script_node[i].tag == "loop":
+            id_loop_number += 1 # var utilizada na criação de nomes de algumas variáveis automáticas. Comeca com 1
             loop_copy = copy.deepcopy(script_node[i]) # copia o elemento  <loop>
             c = ET.Element("counter") # cria o <counter> que inicializa a var de iteração com o valor zero
             if script_node[i].get("id") != None: # caso o <loop> seja alvo de um goto
@@ -90,8 +91,8 @@ def process_loop(script_node):
                 var_loop = script_node[i].attrib["var"] 
                 c.attrib["var"] = var_loop
             else: # caso o usuario não defina uma variação para a iteração, a variavel default "ITERATION_VAR...." será criada
-                id_loop_number += 1 # var utilizada na criação de nomes de algumas variáveis automáticas. Comeca com 1
-                var_loop = "_ITERATION_VAR" + str(id_loop_number) 
+                # id_loop_number += 1 # var utilizada na criação de nomes de algumas variáveis automáticas. Comeca com 1
+                var_loop = "ITERATION_VAR" + str(id_loop_number) 
             times_loop = script_node[i].attrib["times"] 
             c.attrib["var"] = var_loop 
             c.attrib["op"] = "=" 
@@ -101,7 +102,7 @@ def process_loop(script_node):
             script_node.insert(i, c)  # adiciona o <counter>
 
             s = ET.Element("switch")  # cria o elemento <switch>
-            s.attrib["id"] = "LOOP_ID" + "_" + var_loop  # prefixo padrao do id automatico gerado para o loop _LOOP_ID_
+            s.attrib["id"] = "LOOP_ID" + str(id_loop_number) + "_" + var_loop  # prefixo padrao do id automatico gerado para o loop _LOOP_ID_
             s.attrib["var"] = var_loop 
             script_node.insert(i + 1, s)  # adiciona o <switch>, com seus filhos, ao elemento script
 
@@ -119,7 +120,7 @@ def process_loop(script_node):
             cs.extend(loop_copy)  # o extend adiciona apenas os filhos de loop
 
             g = ET.Element("goto")  # cria o <goto> que faz o loop acontecer
-            g.attrib["target"] = "LOOP_ID" +  "_" + var_loop  # prefixo padrao do id automatico gerado para o loop _LOOP_ID_
+            g.attrib["target"] = "LOOP_ID" + str(id_loop_number) + "_" + var_loop  # prefixo padrao do id automatico gerado para o loop _LOOP_ID_
 
             cs.append(g)  # adiciona o <goto> (que gerar causa a repetição) ao final do <case> 
 

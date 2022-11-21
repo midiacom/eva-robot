@@ -14,35 +14,38 @@
       },
       {
         "key": 1001,
-        "name": "Talk",
-        "type": "speak",
-        "color": "#00ff00",
-        "isGroup": false,
-        "text": "Eu vou contar até cinco",
-        "__gohashid": 1
-      },
-      {
-        "key": 1002,
         "name": "Counter",
         "type": "counter",
         "color": "lightblue",
         "isGroup": false,
         "group": "",
-        "count": "i",
+        "count": "ITERATION_VAR2",
         "ops": "assign",
         "value": 0,
-        "__gohashid": 2
+        "__gohashid": 1
       },
       {
-        "key": 1003,
+        "key": 1002,
         "name": "Condition",
         "type": "if",
         "color": "white",
         "isGroup": false,
-        "text": "#i < 5",
+        "text": "#ITERATION_VAR2 < 2",
         "opt": 5,
-        "__gohashid": 3
+        "__gohashid": 2
         },
+      {
+        "key": 1003,
+        "name": "Counter",
+        "type": "counter",
+        "color": "lightblue",
+        "isGroup": false,
+        "group": "",
+        "count": "ITERATION_VAR2",
+        "ops": "sum",
+        "value": 1,
+        "__gohashid": 3
+      },
       {
         "key": 1004,
         "name": "Counter",
@@ -50,29 +53,61 @@
         "color": "lightblue",
         "isGroup": false,
         "group": "",
-        "count": "i",
-        "ops": "sum",
-        "value": 1,
+        "count": "ITERATION_VAR1",
+        "ops": "assign",
+        "value": 0,
         "__gohashid": 4
       },
       {
         "key": 1005,
+        "name": "Condition",
+        "type": "if",
+        "color": "white",
+        "isGroup": false,
+        "text": "#ITERATION_VAR1 < 2",
+        "opt": 5,
+        "__gohashid": 5
+        },
+      {
+        "key": 1006,
+        "name": "Counter",
+        "type": "counter",
+        "color": "lightblue",
+        "isGroup": false,
+        "group": "",
+        "count": "ITERATION_VAR1",
+        "ops": "sum",
+        "value": 1,
+        "__gohashid": 6
+      },
+      {
+        "key": 1007,
         "name": "Talk",
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
-        "text": "#i",
-        "__gohashid": 5
+        "text": "oi",
+        "__gohashid": 7
       },
       {
-        "key": 1006,
+        "key": 1008,
         "name": "Condition",
         "type": "if",
         "color": "white",
         "isGroup": false,
         "text": "",
         "opt": 4,
-        "__gohashid": 6
+        "__gohashid": 8
+      },
+      {
+        "key": 1009,
+        "name": "Condition",
+        "type": "if",
+        "color": "white",
+        "isGroup": false,
+        "text": "",
+        "opt": 4,
+        "__gohashid": 9
       }
     ],
     "link": [
@@ -103,18 +138,43 @@
       },
       { 
         "from": 1005,
-        "to": 1003,
+        "to": 1006,
         "__gohashid": 5
       },
       { 
-        "from": 1005,
-        "to": 1006,
+        "from": 1006,
+        "to": 1007,
         "__gohashid": 6
       },
       { 
-        "from": 1002,
-        "to": 1006,
+        "from": 1007,
+        "to": 1005,
         "__gohashid": 7
+      },
+      { 
+        "from": 1007,
+        "to": 1008,
+        "__gohashid": 8
+      },
+      { 
+        "from": 1004,
+        "to": 1008,
+        "__gohashid": 9
+      },
+      { 
+        "from": 1008,
+        "to": 1002,
+        "__gohashid": 10
+      },
+      { 
+        "from": 1008,
+        "to": 1009,
+        "__gohashid": 11
+      },
+      { 
+        "from": 1001,
+        "to": 1009,
+        "__gohashid": 12
       }
     ]
   }

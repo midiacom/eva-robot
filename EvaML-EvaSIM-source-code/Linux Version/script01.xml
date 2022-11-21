@@ -9,9 +9,10 @@
     <audioEffects mode="ON" />
   </settings>
   <script>
-    <talk>Eu vou contar até cinco</talk>
-    <loop var="i" times="5">
-      <talk>#i</talk>
+    <loop times="2">
+      <loop times="2">
+        <talk>oi</talk>
+      </loop>
     </loop>
   </script>
 </evaml>
