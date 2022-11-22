@@ -5,6 +5,17 @@
     <audioEffects mode="ON" />
   </settings>
   <script>
-    <counter var="ITERATION_VAR2" op="=" value="0" /><switch id="LOOP_ID2_ITERATION_VAR2" var="ITERATION_VAR2"><case op="lt" value="2"><counter var="ITERATION_VAR2" op="+" value="1" /><counter var="ITERATION_VAR1" op="=" value="0" /><switch id="LOOP_ID1_ITERATION_VAR1" var="ITERATION_VAR1"><case op="lt" value="2"><counter var="ITERATION_VAR1" op="+" value="1" /><talk>oi</talk>
-      <goto target="LOOP_ID1_ITERATION_VAR1" /></case><default /></switch><goto target="LOOP_ID2_ITERATION_VAR2" /></case><default /></switch></script>
+    <random min="1" max="2" />
+    <switch id="LOOP" var="$">
+      <case op="exact" value="1">
+        <led animation="HAPPY" />
+        <goto target="LOOP" />
+      </case>
+      <case op="exact" value="2">
+        <audio source="applause-moderate" block="TRUE" />
+        <goto target="LOOP" />
+      </case>
+    <default /></switch>
+    <evaEmotion emotion="NEUTRAL" />
+  </script>
 </evaml>

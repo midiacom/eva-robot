@@ -128,17 +128,17 @@ def link_process(node_list):
         # emite um aviso caso haja elemento(s) após um <goto>
         # se esse elemento não for referenciado em outra parte do script, ele poderá ficar desconectado do fluxo.
         if node_from.tag == "goto":
-            print("  Warning - There are elements after the <goto>. These elements may not be reached.")
+            print("  WARNING - There are elements after the <goto>. These elements may not be reached.")
 
         # case especifico da tag <stop> que deve interromper a conexao dos do fluxo sendo processado
         # todos os elem. após um <stop> são removidos. O parser emite um aviso de remoção e os exibe no terminal.
         if (node_from.tag == "stop"):
             for s in range(i, qtd-1):
                 if (node_list[i+1].get("id")) == None:
-                    print("  Warning - Removing unused commands ... <" + node_list[i+1].tag + ">")
+                    print("  WARNING - Removing unused (unreachable) commands ... <" + node_list[i+1].tag + ">")
                 else:
                     # emite um aviso especial caso um elemento com id seja excluído.
-                    print('  Warning - Removing unused commands ... <' + node_list[i+1].tag + '>. ALERT! This element has an attribue "id" and it is "' + node_list[i+1].attrib["id"] + '"')
+                    print('  WARNING - Removing unused (unreachable) commands ... <' + node_list[i+1].tag + '>. ALERT! This element has an attribue "id" and it is "' + node_list[i+1].attrib["id"] + '"')
                     exit(1)
                 node_list.remove(node_list[i+1])
             break
@@ -179,13 +179,15 @@ for elem in script_node.iter():
                 encontrado = True
                 break
     if not (encontrado) and not (elem.tag in excluded_nodes):
-        error = True
-        error_msg = "  Error -> The element <" + elem.tag + "> is disconnected from the execution flow. Attributes: "
+        error = False # para que o erro interrompa o parser, trocar para True
+        # a descontinuidade no grafo de execução, gera mais de um grafo, e faz com que o script não execute no robô, porém funciona no simulador
+        error_msg = "  WARNING -> The element <" + elem.tag + "> is disconnected from the execution flow. Attributes: "
         for info in elem.attrib.items():
             error_msg += '('
             error_msg += ' = '.join(info)
             error_msg += '),'
-        error_msg += '\n  WARNING: This may indicate the lack of a <default> element within a <switch>.'
+        # o erro abaixo foi resolvido com a função que adiciona os defaults automaticamente no módulo de expansão de macros    
+        # error_msg += '\n  WARNING: This may indicate the lack of a <default> element within a <switch>.'
         print(error_msg)
 
 if error:

@@ -131,6 +131,22 @@ def process_loop(script_node):
 
             process_loop(script_node) # o processamento de um loop muda a estrutura inicial do scriptnode e precisa ser revisitada
 
+###############################################################################
+# Insere <defaults> nos <cases>                                               #
+###############################################################################
+# esta função adiciona um <default> aos cases que não o tem.
+# esta ação evita que em um grafo de execução (script) possa haver uma desconexão, gerando mais de um grafo
+# isso acaba adicionando um <default> desnecessário em alguns casos, mas evita o problema da desconexão
+# caso esta função seja desativada aqui, o parser emitirá um WARNING indicando a descontinuidade, caso haja alguma
+# um script, que neste caso, possui dois grafos, é executado no EvaSIM, porém, não roda no robô físico
+def default_process(script_node):
+    for i in range(len(script_node)):
+        if len(script_node[i]) != 0: default_process(script_node[i])
+        if script_node[i].tag == "switch":
+            if script_node[i][len(script_node[i]) - 1].tag != "default":
+                df = ET.Element("default") # cria o elemento <default> para o <case> do loop
+                s = script_node[i]
+                s.insert(len(script_node[i]), df)
 
 #################### Funcao auxiliar para a impressao da arvore
 def print_tree(tree, tab):
@@ -145,6 +161,9 @@ macro_expander(script_node, macros_node)
 
 # processa os loops
 process_loop(script_node)
+
+# insere <defaults> nos <cases> que não os têm, eitando possíveis descontinuidades nos fluxos (grafos)
+default_process(script_node)
 
 #print_tree(root, 2)
 

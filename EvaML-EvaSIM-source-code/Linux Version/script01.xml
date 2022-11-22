@@ -9,10 +9,17 @@
     <audioEffects mode="ON" />
   </settings>
   <script>
-    <loop times="2">
-      <loop times="2">
-        <talk>oi</talk>
-      </loop>
-    </loop>
+    <random min="1" max="2" />
+    <switch id="LOOP" var="$">
+      <case op="exact" value="1">
+        <led animation="HAPPY" />
+        <goto target="LOOP" />
+      </case>
+      <case op="exact" value="2">
+        <audio source="applause-moderate" block="TRUE" />
+        <goto target="LOOP" />
+      </case>
+    </switch>
+    <evaEmotion emotion="NEUTRAL" />
   </script>
 </evaml>
