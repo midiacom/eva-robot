@@ -14,6 +14,17 @@
       },
       {
         "key": 1001,
+        "name": "Light",
+        "type": "light",
+        "color": "#ffa500",
+        "isGroup": false,
+        "group": "",
+        "lcolor": "#ffffff",
+        "state": "on",
+        "__gohashid": 1
+      },
+      {
+        "key": 1002,
         "name": "Eva_Emotion",
         "type": "emotion",
         "color": "lightcoral",
@@ -22,18 +33,6 @@
         "emotion": "ini",
         "level": 0,
         "speed": 0,
-        "__gohashid": 1
-      },
-      {
-        "key": 1002,
-        "name": "Counter",
-        "type": "counter",
-        "color": "lightblue",
-        "isGroup": false,
-        "group": "",
-        "count": "PONTOS",
-        "ops": "assign",
-        "value": 0,
         "__gohashid": 2
       },
       {
@@ -43,7 +42,7 @@
         "color": "lightblue",
         "isGroup": false,
         "group": "",
-        "count": "ERRO1",
+        "count": "PONTOS",
         "ops": "assign",
         "value": 0,
         "__gohashid": 3
@@ -55,69 +54,81 @@
         "color": "lightblue",
         "isGroup": false,
         "group": "",
-        "count": "ERRO2",
+        "count": "ERRO1",
         "ops": "assign",
         "value": 0,
         "__gohashid": 4
       },
       {
         "key": 1005,
+        "name": "Counter",
+        "type": "counter",
+        "color": "lightblue",
+        "isGroup": false,
+        "group": "",
+        "count": "ERRO2",
+        "ops": "assign",
+        "value": 0,
+        "__gohashid": 5
+      },
+      {
+        "key": 1006,
         "name": "Motion",
         "type": "mov",
         "color": "lightblue",
         "isGroup": false,
         "mov": "c",
-        "__gohashid": 5
+        "__gohashid": 6
       },
       {
-        "key": 1006,
+        "key": 1007,
         "name": "Audio",
         "type": "sound",
         "color": "lightblue",
         "isGroup": false,
         "src": "Wand1",
         "wait": true,
-        "__gohashid": 6
+        "__gohashid": 7
       },
       {
-        "key": 1007,
+        "key": 1008,
         "name": "Talk",
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
         "text": "Eu sou o robô eva",
-        "__gohashid": 7
+        "__gohashid": 8
       },
       {
-        "key": 1008,
+        "key": 1009,
         "name": "Audio",
         "type": "sound",
         "color": "lightblue",
         "isGroup": false,
         "src": "Blin",
         "wait": true,
-        "__gohashid": 8
+        "__gohashid": 9
       },
       {
-        "key": 1009,
+        "key": 1010,
         "name": "Talk",
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
         "text": "Como você se chama?",
-        "__gohashid": 9
+        "__gohashid": 10
       },
       {
-        "key": 1010,
+        "key": 1011,
         "name": "Listen",
         "type": "listen",
         "color": "#ffff00",
         "isGroup": false,
         "opt": "",
-        "__gohashid": 10
+        "__gohashid": 11
       },
       {
-        "key": 1011,
+        "key": 1012,
         "name": "Eva_Emotion",
         "type": "emotion",
         "color": "lightcoral",
@@ -126,34 +137,26 @@
         "emotion": "joy",
         "level": 0,
         "speed": 0,
-        "__gohashid": 11
+        "__gohashid": 12
       },
       {
-        "key": 1012,
+        "key": 1013,
+        "name": "Light",
+        "type": "light",
+        "color": "#ffa500",
+        "isGroup": false,
+        "group": "",
+        "lcolor": "#00ff00",
+        "state": "on",
+        "__gohashid": 13
+      },
+      {
+        "key": 1014,
         "name": "Talk",
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
         "text": "Oi $",
-        "__gohashid": 12
-      },
-      {
-        "key": 1013,
-        "name": "Talk",
-        "type": "speak",
-        "color": "#00ff00",
-        "isGroup": false,
-        "text": "Vamos jogar o jogo das tabuadas",
-        "__gohashid": 13
-      },
-      {
-        "key": 1014,
-        "name": "Audio",
-        "type": "sound",
-        "color": "lightblue",
-        "isGroup": false,
-        "src": "mario-game-intro",
-        "wait": true,
         "__gohashid": 14
       },
       {
@@ -162,19 +165,17 @@
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
-        "text": "Eu vou te fazer duas perguntas e você tenta acertar",
+        "text": "Vamos jogar o jogo das tabuadas",
         "__gohashid": 15
       },
       {
         "key": 1016,
-        "name": "Eva_Emotion",
-        "type": "emotion",
-        "color": "lightcoral",
+        "name": "Audio",
+        "type": "sound",
+        "color": "lightblue",
         "isGroup": false,
-        "group": "",
-        "emotion": "ini",
-        "level": 0,
-        "speed": 0,
+        "src": "mario-game-intro",
+        "wait": true,
         "__gohashid": 16
       },
       {
@@ -183,30 +184,62 @@
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
-        "text": "Vamos para a primeira pergunta",
+        "text": "Eu vou te fazer duas perguntas e você tenta acertar",
         "__gohashid": 17
       },
       {
         "key": 1018,
+        "name": "Eva_Emotion",
+        "type": "emotion",
+        "color": "lightcoral",
+        "isGroup": false,
+        "group": "",
+        "emotion": "ini",
+        "level": 0,
+        "speed": 0,
+        "__gohashid": 18
+      },
+      {
+        "key": 1019,
+        "name": "Talk",
+        "type": "speak",
+        "color": "#00ff00",
+        "isGroup": false,
+        "text": "Vamos para a primeira pergunta",
+        "__gohashid": 19
+      },
+      {
+        "key": 1020,
+        "name": "Light",
+        "type": "light",
+        "color": "#ffa500",
+        "isGroup": false,
+        "group": "",
+        "lcolor": "#ffffff",
+        "state": "on",
+        "__gohashid": 20
+      },
+      {
+        "key": 1021,
         "name": "Motion",
         "type": "mov",
         "color": "lightblue",
         "isGroup": false,
         "mov": "D",
-        "__gohashid": 18
+        "__gohashid": 21
       },
       {
-        "key": 1019,
+        "key": 1022,
         "name": "Audio",
         "type": "sound",
         "color": "lightblue",
         "isGroup": false,
         "src": "Blin",
         "wait": true,
-        "__gohashid": 19
+        "__gohashid": 22
       },
       {
-        "key": 1020,
+        "key": 1023,
         "name": "Random",
         "type": "random",
         "color": "pink",
@@ -214,34 +247,6 @@
         "group": "",
         "min": 2,
         "max": 5,
-        "__gohashid": 20
-      },
-      {
-        "key": 1021,
-        "name": "Condition",
-        "type": "if",
-        "color": "white",
-        "isGroup": false,
-        "text": "2",
-        "opt": 4,
-        "__gohashid": 21
-      },
-      {
-        "key": 1022,
-        "name": "Talk",
-        "type": "speak",
-        "color": "#00ff00",
-        "isGroup": false,
-        "text": "Quanto é dois vezes cinco?",
-        "__gohashid": 22
-      },
-      {
-        "key": 1023,
-        "name": "Listen",
-        "type": "listen",
-        "color": "#ffff00",
-        "isGroup": false,
-        "opt": "",
         "__gohashid": 23
       },
       {
@@ -250,21 +255,49 @@
         "type": "if",
         "color": "white",
         "isGroup": false,
-        "text": "10",
+        "text": "2",
         "opt": 4,
         "__gohashid": 24
       },
       {
         "key": 1025,
+        "name": "Talk",
+        "type": "speak",
+        "color": "#00ff00",
+        "isGroup": false,
+        "text": "Quanto é dois vezes cinco?",
+        "__gohashid": 25
+      },
+      {
+        "key": 1026,
+        "name": "Listen",
+        "type": "listen",
+        "color": "#ffff00",
+        "isGroup": false,
+        "opt": "",
+        "__gohashid": 26
+      },
+      {
+        "key": 1027,
+        "name": "Condition",
+        "type": "if",
+        "color": "white",
+        "isGroup": false,
+        "text": "10",
+        "opt": 4,
+        "__gohashid": 27
+      },
+      {
+        "key": 1028,
         "name": "Motion",
         "type": "mov",
         "color": "lightblue",
         "isGroup": false,
         "mov": "U",
-        "__gohashid": 25
+        "__gohashid": 28
       },
       {
-        "key": 1026,
+        "key": 1029,
         "name": "Eva_Emotion",
         "type": "emotion",
         "color": "lightcoral",
@@ -273,10 +306,10 @@
         "emotion": "joy",
         "level": 0,
         "speed": 0,
-        "__gohashid": 26
+        "__gohashid": 29
       },
       {
-        "key": 1027,
+        "key": 1030,
         "name": "Counter",
         "type": "counter",
         "color": "lightblue",
@@ -285,48 +318,59 @@
         "count": "PONTOS",
         "ops": "sum",
         "value": 1,
-        "__gohashid": 27
+        "__gohashid": 30
       },
       {
-        "key": 1028,
+        "key": 1031,
         "name": "Audio",
         "type": "sound",
         "color": "lightblue",
         "isGroup": false,
         "src": "mario-start-02",
         "wait": true,
-        "__gohashid": 28
+        "__gohashid": 31
       },
       {
-        "key": 1029,
+        "key": 1032,
+        "name": "Light",
+        "type": "light",
+        "color": "#ffa500",
+        "isGroup": false,
+        "group": "",
+        "lcolor": "#00ff00",
+        "state": "on",
+        "__gohashid": 32
+      },
+      {
+        "key": 1033,
         "name": "Talk",
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
         "text": "Muito bem! Você acertou!",
-        "__gohashid": 29
+        "__gohashid": 33
       },
       {
-        "key": 1030,
+        "key": 1034,
         "name": "Condition",
         "type": "if",
         "color": "white",
         "isGroup": false,
         "text": "",
         "opt": 4,
-        "__gohashid": 30
+        "__gohashid": 34
       },
       {
-        "key": 1031,
+        "key": 1035,
         "name": "Motion",
         "type": "mov",
         "color": "lightblue",
         "isGroup": false,
         "mov": "s",
-        "__gohashid": 31
+        "__gohashid": 35
       },
       {
-        "key": 1032,
+        "key": 1036,
         "name": "Eva_Emotion",
         "type": "emotion",
         "color": "lightcoral",
@@ -335,10 +379,10 @@
         "emotion": "sad",
         "level": 0,
         "speed": 0,
-        "__gohashid": 32
+        "__gohashid": 36
       },
       {
-        "key": 1033,
+        "key": 1037,
         "name": "Counter",
         "type": "counter",
         "color": "lightblue",
@@ -347,66 +391,77 @@
         "count": "ERRO1",
         "ops": "assign",
         "value": 2,
-        "__gohashid": 33
+        "__gohashid": 37
       },
       {
-        "key": 1034,
+        "key": 1038,
+        "name": "Light",
+        "type": "light",
+        "color": "#ffa500",
+        "isGroup": false,
+        "group": "",
+        "lcolor": "#0000ff",
+        "state": "on",
+        "__gohashid": 38
+      },
+      {
+        "key": 1039,
         "name": "Talk",
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
         "text": "Puxa, não foi dessa vez. Você precisa estudar mais um pouco",
-        "__gohashid": 34
+        "__gohashid": 39
       },
       {
-        "key": 1035,
+        "key": 1040,
         "name": "Condition",
         "type": "if",
         "color": "white",
         "isGroup": false,
         "text": "3",
         "opt": 4,
-        "__gohashid": 35
+        "__gohashid": 40
       },
       {
-        "key": 1036,
+        "key": 1041,
         "name": "Talk",
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
         "text": "Quanto é três vezes seis?",
-        "__gohashid": 36
+        "__gohashid": 41
       },
       {
-        "key": 1037,
+        "key": 1042,
         "name": "Listen",
         "type": "listen",
         "color": "#ffff00",
         "isGroup": false,
         "opt": "",
-        "__gohashid": 37
+        "__gohashid": 42
       },
       {
-        "key": 1038,
+        "key": 1043,
         "name": "Condition",
         "type": "if",
         "color": "white",
         "isGroup": false,
         "text": "18",
         "opt": 4,
-        "__gohashid": 38
+        "__gohashid": 43
       },
       {
-        "key": 1039,
+        "key": 1044,
         "name": "Motion",
         "type": "mov",
         "color": "lightblue",
         "isGroup": false,
         "mov": "U",
-        "__gohashid": 39
+        "__gohashid": 44
       },
       {
-        "key": 1040,
+        "key": 1045,
         "name": "Eva_Emotion",
         "type": "emotion",
         "color": "lightcoral",
@@ -415,10 +470,10 @@
         "emotion": "joy",
         "level": 0,
         "speed": 0,
-        "__gohashid": 40
+        "__gohashid": 45
       },
       {
-        "key": 1041,
+        "key": 1046,
         "name": "Counter",
         "type": "counter",
         "color": "lightblue",
@@ -427,48 +482,59 @@
         "count": "PONTOS",
         "ops": "sum",
         "value": 1,
-        "__gohashid": 41
+        "__gohashid": 46
       },
       {
-        "key": 1042,
+        "key": 1047,
         "name": "Audio",
         "type": "sound",
         "color": "lightblue",
         "isGroup": false,
         "src": "mario-start-02",
         "wait": true,
-        "__gohashid": 42
+        "__gohashid": 47
       },
       {
-        "key": 1043,
+        "key": 1048,
+        "name": "Light",
+        "type": "light",
+        "color": "#ffa500",
+        "isGroup": false,
+        "group": "",
+        "lcolor": "#00ff00",
+        "state": "on",
+        "__gohashid": 48
+      },
+      {
+        "key": 1049,
         "name": "Talk",
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
         "text": "Muito bem! Você acertou!",
-        "__gohashid": 43
+        "__gohashid": 49
       },
       {
-        "key": 1044,
+        "key": 1050,
         "name": "Condition",
         "type": "if",
         "color": "white",
         "isGroup": false,
         "text": "",
         "opt": 4,
-        "__gohashid": 44
+        "__gohashid": 50
       },
       {
-        "key": 1045,
+        "key": 1051,
         "name": "Motion",
         "type": "mov",
         "color": "lightblue",
         "isGroup": false,
         "mov": "s",
-        "__gohashid": 45
+        "__gohashid": 51
       },
       {
-        "key": 1046,
+        "key": 1052,
         "name": "Eva_Emotion",
         "type": "emotion",
         "color": "lightcoral",
@@ -477,10 +543,10 @@
         "emotion": "sad",
         "level": 0,
         "speed": 0,
-        "__gohashid": 46
+        "__gohashid": 52
       },
       {
-        "key": 1047,
+        "key": 1053,
         "name": "Counter",
         "type": "counter",
         "color": "lightblue",
@@ -489,96 +555,36 @@
         "count": "ERRO1",
         "ops": "assign",
         "value": 3,
-        "__gohashid": 47
+        "__gohashid": 53
       },
       {
-        "key": 1048,
+        "key": 1054,
+        "name": "Light",
+        "type": "light",
+        "color": "#ffa500",
+        "isGroup": false,
+        "group": "",
+        "lcolor": "#0000ff",
+        "state": "on",
+        "__gohashid": 54
+      },
+      {
+        "key": 1055,
         "name": "Talk",
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
         "text": "Puxa, não foi dessa vez. Você precisa estudar mais um pouco",
-        "__gohashid": 48
+        "__gohashid": 55
       },
       {
-        "key": 1049,
+        "key": 1056,
         "name": "Condition",
         "type": "if",
         "color": "white",
         "isGroup": false,
         "text": "4",
         "opt": 4,
-        "__gohashid": 49
-      },
-      {
-        "key": 1050,
-        "name": "Talk",
-        "type": "speak",
-        "color": "#00ff00",
-        "isGroup": false,
-        "text": "Quanto é quatro vezes cinco?",
-        "__gohashid": 50
-      },
-      {
-        "key": 1051,
-        "name": "Listen",
-        "type": "listen",
-        "color": "#ffff00",
-        "isGroup": false,
-        "opt": "",
-        "__gohashid": 51
-      },
-      {
-        "key": 1052,
-        "name": "Condition",
-        "type": "if",
-        "color": "white",
-        "isGroup": false,
-        "text": "20",
-        "opt": 4,
-        "__gohashid": 52
-      },
-      {
-        "key": 1053,
-        "name": "Motion",
-        "type": "mov",
-        "color": "lightblue",
-        "isGroup": false,
-        "mov": "U",
-        "__gohashid": 53
-      },
-      {
-        "key": 1054,
-        "name": "Eva_Emotion",
-        "type": "emotion",
-        "color": "lightcoral",
-        "isGroup": false,
-        "group": "",
-        "emotion": "joy",
-        "level": 0,
-        "speed": 0,
-        "__gohashid": 54
-      },
-      {
-        "key": 1055,
-        "name": "Counter",
-        "type": "counter",
-        "color": "lightblue",
-        "isGroup": false,
-        "group": "",
-        "count": "PONTOS",
-        "ops": "sum",
-        "value": 1,
-        "__gohashid": 55
-      },
-      {
-        "key": 1056,
-        "name": "Audio",
-        "type": "sound",
-        "color": "lightblue",
-        "isGroup": false,
-        "src": "mario-start-02",
-        "wait": true,
         "__gohashid": 56
       },
       {
@@ -587,87 +593,89 @@
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
-        "text": "Muito bem! Você acertou!",
+        "text": "Quanto é quatro vezes cinco?",
         "__gohashid": 57
       },
       {
         "key": 1058,
-        "name": "Condition",
-        "type": "if",
-        "color": "white",
-        "isGroup": false,
-        "text": "",
-        "opt": 4,
-        "__gohashid": 58
-      },
-      {
-        "key": 1059,
-        "name": "Motion",
-        "type": "mov",
-        "color": "lightblue",
-        "isGroup": false,
-        "mov": "s",
-        "__gohashid": 59
-      },
-      {
-        "key": 1060,
-        "name": "Eva_Emotion",
-        "type": "emotion",
-        "color": "lightcoral",
-        "isGroup": false,
-        "group": "",
-        "emotion": "sad",
-        "level": 0,
-        "speed": 0,
-        "__gohashid": 60
-      },
-      {
-        "key": 1061,
-        "name": "Counter",
-        "type": "counter",
-        "color": "lightblue",
-        "isGroup": false,
-        "group": "",
-        "count": "ERRO1",
-        "ops": "assign",
-        "value": 4,
-        "__gohashid": 61
-      },
-      {
-        "key": 1062,
-        "name": "Talk",
-        "type": "speak",
-        "color": "#00ff00",
-        "isGroup": false,
-        "text": "Puxa, não foi dessa vez. Você precisa estudar mais um pouco",
-        "__gohashid": 62
-      },
-      {
-        "key": 1063,
-        "name": "Condition",
-        "type": "if",
-        "color": "white",
-        "isGroup": false,
-        "text": "5",
-        "opt": 4,
-        "__gohashid": 63
-      },
-      {
-        "key": 1064,
-        "name": "Talk",
-        "type": "speak",
-        "color": "#00ff00",
-        "isGroup": false,
-        "text": "Quanto é cinco vezes oito?",
-        "__gohashid": 64
-      },
-      {
-        "key": 1065,
         "name": "Listen",
         "type": "listen",
         "color": "#ffff00",
         "isGroup": false,
         "opt": "",
+        "__gohashid": 58
+      },
+      {
+        "key": 1059,
+        "name": "Condition",
+        "type": "if",
+        "color": "white",
+        "isGroup": false,
+        "text": "20",
+        "opt": 4,
+        "__gohashid": 59
+      },
+      {
+        "key": 1060,
+        "name": "Motion",
+        "type": "mov",
+        "color": "lightblue",
+        "isGroup": false,
+        "mov": "U",
+        "__gohashid": 60
+      },
+      {
+        "key": 1061,
+        "name": "Eva_Emotion",
+        "type": "emotion",
+        "color": "lightcoral",
+        "isGroup": false,
+        "group": "",
+        "emotion": "joy",
+        "level": 0,
+        "speed": 0,
+        "__gohashid": 61
+      },
+      {
+        "key": 1062,
+        "name": "Counter",
+        "type": "counter",
+        "color": "lightblue",
+        "isGroup": false,
+        "group": "",
+        "count": "PONTOS",
+        "ops": "sum",
+        "value": 1,
+        "__gohashid": 62
+      },
+      {
+        "key": 1063,
+        "name": "Audio",
+        "type": "sound",
+        "color": "lightblue",
+        "isGroup": false,
+        "src": "mario-start-02",
+        "wait": true,
+        "__gohashid": 63
+      },
+      {
+        "key": 1064,
+        "name": "Light",
+        "type": "light",
+        "color": "#ffa500",
+        "isGroup": false,
+        "group": "",
+        "lcolor": "#00ff00",
+        "state": "on",
+        "__gohashid": 64
+      },
+      {
+        "key": 1065,
+        "name": "Talk",
+        "type": "speak",
+        "color": "#00ff00",
+        "isGroup": false,
+        "text": "Muito bem! Você acertou!",
         "__gohashid": 65
       },
       {
@@ -676,7 +684,7 @@
         "type": "if",
         "color": "white",
         "isGroup": false,
-        "text": "40",
+        "text": "",
         "opt": 4,
         "__gohashid": 66
       },
@@ -686,7 +694,7 @@
         "type": "mov",
         "color": "lightblue",
         "isGroup": false,
-        "mov": "U",
+        "mov": "s",
         "__gohashid": 67
       },
       {
@@ -696,7 +704,7 @@
         "color": "lightcoral",
         "isGroup": false,
         "group": "",
-        "emotion": "joy",
+        "emotion": "sad",
         "level": 0,
         "speed": 0,
         "__gohashid": 68
@@ -708,19 +716,20 @@
         "color": "lightblue",
         "isGroup": false,
         "group": "",
-        "count": "PONTOS",
-        "ops": "sum",
-        "value": 1,
+        "count": "ERRO1",
+        "ops": "assign",
+        "value": 4,
         "__gohashid": 69
       },
       {
         "key": 1070,
-        "name": "Audio",
-        "type": "sound",
-        "color": "lightblue",
+        "name": "Light",
+        "type": "light",
+        "color": "#ffa500",
         "isGroup": false,
-        "src": "mario-start-02",
-        "wait": true,
+        "group": "",
+        "lcolor": "#0000ff",
+        "state": "on",
         "__gohashid": 70
       },
       {
@@ -729,7 +738,7 @@
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
-        "text": "Muito bem! Você acertou!",
+        "text": "Puxa, não foi dessa vez. Você precisa estudar mais um pouco",
         "__gohashid": 71
       },
       {
@@ -738,21 +747,122 @@
         "type": "if",
         "color": "white",
         "isGroup": false,
-        "text": "",
+        "text": "5",
         "opt": 4,
         "__gohashid": 72
       },
       {
         "key": 1073,
+        "name": "Talk",
+        "type": "speak",
+        "color": "#00ff00",
+        "isGroup": false,
+        "text": "Quanto é cinco vezes oito?",
+        "__gohashid": 73
+      },
+      {
+        "key": 1074,
+        "name": "Listen",
+        "type": "listen",
+        "color": "#ffff00",
+        "isGroup": false,
+        "opt": "",
+        "__gohashid": 74
+      },
+      {
+        "key": 1075,
+        "name": "Condition",
+        "type": "if",
+        "color": "white",
+        "isGroup": false,
+        "text": "40",
+        "opt": 4,
+        "__gohashid": 75
+      },
+      {
+        "key": 1076,
+        "name": "Motion",
+        "type": "mov",
+        "color": "lightblue",
+        "isGroup": false,
+        "mov": "U",
+        "__gohashid": 76
+      },
+      {
+        "key": 1077,
+        "name": "Eva_Emotion",
+        "type": "emotion",
+        "color": "lightcoral",
+        "isGroup": false,
+        "group": "",
+        "emotion": "joy",
+        "level": 0,
+        "speed": 0,
+        "__gohashid": 77
+      },
+      {
+        "key": 1078,
+        "name": "Counter",
+        "type": "counter",
+        "color": "lightblue",
+        "isGroup": false,
+        "group": "",
+        "count": "PONTOS",
+        "ops": "sum",
+        "value": 1,
+        "__gohashid": 78
+      },
+      {
+        "key": 1079,
+        "name": "Audio",
+        "type": "sound",
+        "color": "lightblue",
+        "isGroup": false,
+        "src": "mario-start-02",
+        "wait": true,
+        "__gohashid": 79
+      },
+      {
+        "key": 1080,
+        "name": "Light",
+        "type": "light",
+        "color": "#ffa500",
+        "isGroup": false,
+        "group": "",
+        "lcolor": "#00ff00",
+        "state": "on",
+        "__gohashid": 80
+      },
+      {
+        "key": 1081,
+        "name": "Talk",
+        "type": "speak",
+        "color": "#00ff00",
+        "isGroup": false,
+        "text": "Muito bem! Você acertou!",
+        "__gohashid": 81
+      },
+      {
+        "key": 1082,
+        "name": "Condition",
+        "type": "if",
+        "color": "white",
+        "isGroup": false,
+        "text": "",
+        "opt": 4,
+        "__gohashid": 82
+      },
+      {
+        "key": 1083,
         "name": "Motion",
         "type": "mov",
         "color": "lightblue",
         "isGroup": false,
         "mov": "s",
-        "__gohashid": 73
+        "__gohashid": 83
       },
       {
-        "key": 1074,
+        "key": 1084,
         "name": "Eva_Emotion",
         "type": "emotion",
         "color": "lightcoral",
@@ -761,10 +871,10 @@
         "emotion": "sad",
         "level": 0,
         "speed": 0,
-        "__gohashid": 74
+        "__gohashid": 84
       },
       {
-        "key": 1075,
+        "key": 1085,
         "name": "Counter",
         "type": "counter",
         "color": "lightblue",
@@ -773,28 +883,60 @@
         "count": "ERRO1",
         "ops": "assign",
         "value": 5,
-        "__gohashid": 75
+        "__gohashid": 85
       },
       {
-        "key": 1076,
+        "key": 1086,
+        "name": "Light",
+        "type": "light",
+        "color": "#ffa500",
+        "isGroup": false,
+        "group": "",
+        "lcolor": "#0000ff",
+        "state": "on",
+        "__gohashid": 86
+      },
+      {
+        "key": 1087,
         "name": "Talk",
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
         "text": "Puxa, não foi dessa vez. Você precisa estudar mais um pouco",
-        "__gohashid": 76
+        "__gohashid": 87
       },
       {
-        "key": 1077,
+        "key": 1088,
+        "name": "Condition",
+        "type": "if",
+        "color": "white",
+        "isGroup": false,
+        "text": "",
+        "opt": 4,
+        "__gohashid": 88
+      },
+      {
+        "key": 1089,
+        "name": "Light",
+        "type": "light",
+        "color": "#ffa500",
+        "isGroup": false,
+        "group": "",
+        "lcolor": "#ffffff",
+        "state": "on",
+        "__gohashid": 89
+      },
+      {
+        "key": 1090,
         "name": "Motion",
         "type": "mov",
         "color": "lightblue",
         "isGroup": false,
         "mov": "c",
-        "__gohashid": 77
+        "__gohashid": 90
       },
       {
-        "key": 1078,
+        "key": 1091,
         "name": "Eva_Emotion",
         "type": "emotion",
         "color": "lightcoral",
@@ -803,29 +945,29 @@
         "emotion": "ini",
         "level": 0,
         "speed": 0,
-        "__gohashid": 78
+        "__gohashid": 91
       },
       {
-        "key": 1079,
+        "key": 1092,
         "name": "Talk",
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
         "text": "Vamos para a segunda pergunta",
-        "__gohashid": 79
+        "__gohashid": 92
       },
       {
-        "key": 1080,
+        "key": 1093,
         "name": "Audio",
         "type": "sound",
         "color": "lightblue",
         "isGroup": false,
         "src": "Blin",
         "wait": true,
-        "__gohashid": 80
+        "__gohashid": 93
       },
       {
-        "key": 1081,
+        "key": 1094,
         "name": "Random",
         "type": "random",
         "color": "pink",
@@ -833,208 +975,66 @@
         "group": "",
         "min": 6,
         "max": 9,
-        "__gohashid": 81
+        "__gohashid": 94
       },
       {
-        "key": 1082,
+        "key": 1095,
         "name": "Motion",
         "type": "mov",
         "color": "lightblue",
         "isGroup": false,
         "mov": "D",
-        "__gohashid": 82
+        "__gohashid": 95
       },
       {
-        "key": 1083,
+        "key": 1096,
         "name": "Condition",
         "type": "if",
         "color": "white",
         "isGroup": false,
         "text": "6",
         "opt": 4,
-        "__gohashid": 83
+        "__gohashid": 96
       },
       {
-        "key": 1084,
+        "key": 1097,
         "name": "Talk",
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
         "text": "Quanto é seis vezes sete?",
-        "__gohashid": 84
+        "__gohashid": 97
       },
       {
-        "key": 1085,
+        "key": 1098,
         "name": "Listen",
         "type": "listen",
         "color": "#ffff00",
         "isGroup": false,
         "opt": "",
-        "__gohashid": 85
+        "__gohashid": 98
       },
       {
-        "key": 1086,
+        "key": 1099,
         "name": "Condition",
         "type": "if",
         "color": "white",
         "isGroup": false,
         "text": "42",
         "opt": 4,
-        "__gohashid": 86
-      },
-      {
-        "key": 1087,
-        "name": "Motion",
-        "type": "mov",
-        "color": "lightblue",
-        "isGroup": false,
-        "mov": "U",
-        "__gohashid": 87
-      },
-      {
-        "key": 1088,
-        "name": "Eva_Emotion",
-        "type": "emotion",
-        "color": "lightcoral",
-        "isGroup": false,
-        "group": "",
-        "emotion": "joy",
-        "level": 0,
-        "speed": 0,
-        "__gohashid": 88
-      },
-      {
-        "key": 1089,
-        "name": "Counter",
-        "type": "counter",
-        "color": "lightblue",
-        "isGroup": false,
-        "group": "",
-        "count": "PONTOS",
-        "ops": "sum",
-        "value": 2,
-        "__gohashid": 89
-      },
-      {
-        "key": 1090,
-        "name": "Audio",
-        "type": "sound",
-        "color": "lightblue",
-        "isGroup": false,
-        "src": "mario-start-02",
-        "wait": true,
-        "__gohashid": 90
-      },
-      {
-        "key": 1091,
-        "name": "Talk",
-        "type": "speak",
-        "color": "#00ff00",
-        "isGroup": false,
-        "text": "Muito bem! Você acertou!",
-        "__gohashid": 91
-      },
-      {
-        "key": 1092,
-        "name": "Condition",
-        "type": "if",
-        "color": "white",
-        "isGroup": false,
-        "text": "",
-        "opt": 4,
-        "__gohashid": 92
-      },
-      {
-        "key": 1093,
-        "name": "Motion",
-        "type": "mov",
-        "color": "lightblue",
-        "isGroup": false,
-        "mov": "s",
-        "__gohashid": 93
-      },
-      {
-        "key": 1094,
-        "name": "Eva_Emotion",
-        "type": "emotion",
-        "color": "lightcoral",
-        "isGroup": false,
-        "group": "",
-        "emotion": "sad",
-        "level": 0,
-        "speed": 0,
-        "__gohashid": 94
-      },
-      {
-        "key": 1095,
-        "name": "Counter",
-        "type": "counter",
-        "color": "lightblue",
-        "isGroup": false,
-        "group": "",
-        "count": "ERRO2",
-        "ops": "assign",
-        "value": 6,
-        "__gohashid": 95
-      },
-      {
-        "key": 1096,
-        "name": "Talk",
-        "type": "speak",
-        "color": "#00ff00",
-        "isGroup": false,
-        "text": "Puxa, não foi dessa vez. Você precisa estudar mais um pouco",
-        "__gohashid": 96
-      },
-      {
-        "key": 1097,
-        "name": "Condition",
-        "type": "if",
-        "color": "white",
-        "isGroup": false,
-        "text": "7",
-        "opt": 4,
-        "__gohashid": 97
-      },
-      {
-        "key": 1098,
-        "name": "Talk",
-        "type": "speak",
-        "color": "#00ff00",
-        "isGroup": false,
-        "text": "Quanto é sete vezes nove?",
-        "__gohashid": 98
-      },
-      {
-        "key": 1099,
-        "name": "Listen",
-        "type": "listen",
-        "color": "#ffff00",
-        "isGroup": false,
-        "opt": "",
         "__gohashid": 99
       },
       {
         "key": 1100,
-        "name": "Condition",
-        "type": "if",
-        "color": "white",
-        "isGroup": false,
-        "text": "63",
-        "opt": 4,
-        "__gohashid": 100
-      },
-      {
-        "key": 1101,
         "name": "Motion",
         "type": "mov",
         "color": "lightblue",
         "isGroup": false,
         "mov": "U",
-        "__gohashid": 101
+        "__gohashid": 100
       },
       {
-        "key": 1102,
+        "key": 1101,
         "name": "Eva_Emotion",
         "type": "emotion",
         "color": "lightcoral",
@@ -1043,10 +1043,10 @@
         "emotion": "joy",
         "level": 0,
         "speed": 0,
-        "__gohashid": 102
+        "__gohashid": 101
       },
       {
-        "key": 1103,
+        "key": 1102,
         "name": "Counter",
         "type": "counter",
         "color": "lightblue",
@@ -1055,16 +1055,27 @@
         "count": "PONTOS",
         "ops": "sum",
         "value": 2,
-        "__gohashid": 103
+        "__gohashid": 102
       },
       {
-        "key": 1104,
+        "key": 1103,
         "name": "Audio",
         "type": "sound",
         "color": "lightblue",
         "isGroup": false,
         "src": "mario-start-02",
         "wait": true,
+        "__gohashid": 103
+      },
+      {
+        "key": 1104,
+        "name": "Light",
+        "type": "light",
+        "color": "#ffa500",
+        "isGroup": false,
+        "group": "",
+        "lcolor": "#00ff00",
+        "state": "on",
         "__gohashid": 104
       },
       {
@@ -1116,67 +1127,78 @@
         "group": "",
         "count": "ERRO2",
         "ops": "assign",
-        "value": 7,
+        "value": 6,
         "__gohashid": 109
       },
       {
         "key": 1110,
+        "name": "Light",
+        "type": "light",
+        "color": "#ffa500",
+        "isGroup": false,
+        "group": "",
+        "lcolor": "#0000ff",
+        "state": "on",
+        "__gohashid": 110
+      },
+      {
+        "key": 1111,
         "name": "Talk",
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
         "text": "Puxa, não foi dessa vez. Você precisa estudar mais um pouco",
-        "__gohashid": 110
-      },
-      {
-        "key": 1111,
-        "name": "Condition",
-        "type": "if",
-        "color": "white",
-        "isGroup": false,
-        "text": "8",
-        "opt": 4,
         "__gohashid": 111
       },
       {
         "key": 1112,
-        "name": "Talk",
-        "type": "speak",
-        "color": "#00ff00",
+        "name": "Condition",
+        "type": "if",
+        "color": "white",
         "isGroup": false,
-        "text": "Quanto é oito vezes nove?",
+        "text": "7",
+        "opt": 4,
         "__gohashid": 112
       },
       {
         "key": 1113,
+        "name": "Talk",
+        "type": "speak",
+        "color": "#00ff00",
+        "isGroup": false,
+        "text": "Quanto é sete vezes nove?",
+        "__gohashid": 113
+      },
+      {
+        "key": 1114,
         "name": "Listen",
         "type": "listen",
         "color": "#ffff00",
         "isGroup": false,
         "opt": "",
-        "__gohashid": 113
-      },
-      {
-        "key": 1114,
-        "name": "Condition",
-        "type": "if",
-        "color": "white",
-        "isGroup": false,
-        "text": "72",
-        "opt": 4,
         "__gohashid": 114
       },
       {
         "key": 1115,
+        "name": "Condition",
+        "type": "if",
+        "color": "white",
+        "isGroup": false,
+        "text": "63",
+        "opt": 4,
+        "__gohashid": 115
+      },
+      {
+        "key": 1116,
         "name": "Motion",
         "type": "mov",
         "color": "lightblue",
         "isGroup": false,
         "mov": "U",
-        "__gohashid": 115
+        "__gohashid": 116
       },
       {
-        "key": 1116,
+        "key": 1117,
         "name": "Eva_Emotion",
         "type": "emotion",
         "color": "lightcoral",
@@ -1185,10 +1207,10 @@
         "emotion": "joy",
         "level": 0,
         "speed": 0,
-        "__gohashid": 116
+        "__gohashid": 117
       },
       {
-        "key": 1117,
+        "key": 1118,
         "name": "Counter",
         "type": "counter",
         "color": "lightblue",
@@ -1197,48 +1219,59 @@
         "count": "PONTOS",
         "ops": "sum",
         "value": 2,
-        "__gohashid": 117
+        "__gohashid": 118
       },
       {
-        "key": 1118,
+        "key": 1119,
         "name": "Audio",
         "type": "sound",
         "color": "lightblue",
         "isGroup": false,
         "src": "mario-start-02",
         "wait": true,
-        "__gohashid": 118
+        "__gohashid": 119
       },
       {
-        "key": 1119,
+        "key": 1120,
+        "name": "Light",
+        "type": "light",
+        "color": "#ffa500",
+        "isGroup": false,
+        "group": "",
+        "lcolor": "#00ff00",
+        "state": "on",
+        "__gohashid": 120
+      },
+      {
+        "key": 1121,
         "name": "Talk",
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
         "text": "Muito bem! Você acertou!",
-        "__gohashid": 119
+        "__gohashid": 121
       },
       {
-        "key": 1120,
+        "key": 1122,
         "name": "Condition",
         "type": "if",
         "color": "white",
         "isGroup": false,
         "text": "",
         "opt": 4,
-        "__gohashid": 120
+        "__gohashid": 122
       },
       {
-        "key": 1121,
+        "key": 1123,
         "name": "Motion",
         "type": "mov",
         "color": "lightblue",
         "isGroup": false,
         "mov": "s",
-        "__gohashid": 121
+        "__gohashid": 123
       },
       {
-        "key": 1122,
+        "key": 1124,
         "name": "Eva_Emotion",
         "type": "emotion",
         "color": "lightcoral",
@@ -1247,10 +1280,10 @@
         "emotion": "sad",
         "level": 0,
         "speed": 0,
-        "__gohashid": 122
+        "__gohashid": 124
       },
       {
-        "key": 1123,
+        "key": 1125,
         "name": "Counter",
         "type": "counter",
         "color": "lightblue",
@@ -1258,44 +1291,27 @@
         "group": "",
         "count": "ERRO2",
         "ops": "assign",
-        "value": 8,
-        "__gohashid": 123
+        "value": 7,
+        "__gohashid": 125
       },
       {
-        "key": 1124,
+        "key": 1126,
+        "name": "Light",
+        "type": "light",
+        "color": "#ffa500",
+        "isGroup": false,
+        "group": "",
+        "lcolor": "#0000ff",
+        "state": "on",
+        "__gohashid": 126
+      },
+      {
+        "key": 1127,
         "name": "Talk",
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
         "text": "Puxa, não foi dessa vez. Você precisa estudar mais um pouco",
-        "__gohashid": 124
-      },
-      {
-        "key": 1125,
-        "name": "Condition",
-        "type": "if",
-        "color": "white",
-        "isGroup": false,
-        "text": "9",
-        "opt": 4,
-        "__gohashid": 125
-      },
-      {
-        "key": 1126,
-        "name": "Talk",
-        "type": "speak",
-        "color": "#00ff00",
-        "isGroup": false,
-        "text": "Quanto é nove vezes seis?",
-        "__gohashid": 126
-      },
-      {
-        "key": 1127,
-        "name": "Listen",
-        "type": "listen",
-        "color": "#ffff00",
-        "isGroup": false,
-        "opt": "",
         "__gohashid": 127
       },
       {
@@ -1304,21 +1320,49 @@
         "type": "if",
         "color": "white",
         "isGroup": false,
-        "text": "54",
+        "text": "8",
         "opt": 4,
         "__gohashid": 128
       },
       {
         "key": 1129,
+        "name": "Talk",
+        "type": "speak",
+        "color": "#00ff00",
+        "isGroup": false,
+        "text": "Quanto é oito vezes nove?",
+        "__gohashid": 129
+      },
+      {
+        "key": 1130,
+        "name": "Listen",
+        "type": "listen",
+        "color": "#ffff00",
+        "isGroup": false,
+        "opt": "",
+        "__gohashid": 130
+      },
+      {
+        "key": 1131,
+        "name": "Condition",
+        "type": "if",
+        "color": "white",
+        "isGroup": false,
+        "text": "72",
+        "opt": 4,
+        "__gohashid": 131
+      },
+      {
+        "key": 1132,
         "name": "Motion",
         "type": "mov",
         "color": "lightblue",
         "isGroup": false,
         "mov": "U",
-        "__gohashid": 129
+        "__gohashid": 132
       },
       {
-        "key": 1130,
+        "key": 1133,
         "name": "Eva_Emotion",
         "type": "emotion",
         "color": "lightcoral",
@@ -1327,10 +1371,10 @@
         "emotion": "joy",
         "level": 0,
         "speed": 0,
-        "__gohashid": 130
+        "__gohashid": 133
       },
       {
-        "key": 1131,
+        "key": 1134,
         "name": "Counter",
         "type": "counter",
         "color": "lightblue",
@@ -1339,48 +1383,59 @@
         "count": "PONTOS",
         "ops": "sum",
         "value": 2,
-        "__gohashid": 131
+        "__gohashid": 134
       },
       {
-        "key": 1132,
+        "key": 1135,
         "name": "Audio",
         "type": "sound",
         "color": "lightblue",
         "isGroup": false,
         "src": "mario-start-02",
         "wait": true,
-        "__gohashid": 132
+        "__gohashid": 135
       },
       {
-        "key": 1133,
+        "key": 1136,
+        "name": "Light",
+        "type": "light",
+        "color": "#ffa500",
+        "isGroup": false,
+        "group": "",
+        "lcolor": "#00ff00",
+        "state": "on",
+        "__gohashid": 136
+      },
+      {
+        "key": 1137,
         "name": "Talk",
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
         "text": "Muito bem! Você acertou!",
-        "__gohashid": 133
+        "__gohashid": 137
       },
       {
-        "key": 1134,
+        "key": 1138,
         "name": "Condition",
         "type": "if",
         "color": "white",
         "isGroup": false,
         "text": "",
         "opt": 4,
-        "__gohashid": 134
+        "__gohashid": 138
       },
       {
-        "key": 1135,
+        "key": 1139,
         "name": "Motion",
         "type": "mov",
         "color": "lightblue",
         "isGroup": false,
         "mov": "s",
-        "__gohashid": 135
+        "__gohashid": 139
       },
       {
-        "key": 1136,
+        "key": 1140,
         "name": "Eva_Emotion",
         "type": "emotion",
         "color": "lightcoral",
@@ -1389,10 +1444,10 @@
         "emotion": "sad",
         "level": 0,
         "speed": 0,
-        "__gohashid": 136
+        "__gohashid": 140
       },
       {
-        "key": 1137,
+        "key": 1141,
         "name": "Counter",
         "type": "counter",
         "color": "lightblue",
@@ -1400,56 +1455,18 @@
         "group": "",
         "count": "ERRO2",
         "ops": "assign",
-        "value": 9,
-        "__gohashid": 137
-      },
-      {
-        "key": 1138,
-        "name": "Talk",
-        "type": "speak",
-        "color": "#00ff00",
-        "isGroup": false,
-        "text": "Puxa, não foi dessa vez. Você precisa estudar mais um pouco",
-        "__gohashid": 138
-      },
-      {
-        "key": 1139,
-        "name": "Eva_Emotion",
-        "type": "emotion",
-        "color": "lightcoral",
-        "isGroup": false,
-        "group": "",
-        "emotion": "joy",
-        "level": 0,
-        "speed": 0,
-        "__gohashid": 139
-      },
-      {
-        "key": 1140,
-        "name": "Motion",
-        "type": "mov",
-        "color": "lightblue",
-        "isGroup": false,
-        "mov": "c",
-        "__gohashid": 140
-      },
-      {
-        "key": 1141,
-        "name": "Condition",
-        "type": "if",
-        "color": "white",
-        "isGroup": false,
-        "text": "#PONTOS == 0",
-        "opt": 5,
+        "value": 8,
         "__gohashid": 141
-        },
+      },
       {
         "key": 1142,
-        "name": "Talk",
-        "type": "speak",
-        "color": "#00ff00",
+        "name": "Light",
+        "type": "light",
+        "color": "#ffa500",
         "isGroup": false,
-        "text": "Foi muito bom jogar com você",
+        "group": "",
+        "lcolor": "#0000ff",
+        "state": "on",
         "__gohashid": 142
       },
       {
@@ -1458,140 +1475,384 @@
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
-        "text": "Mas você precisa praticar mais as tabuadas de #ERRO1 e de #ERRO2",
+        "text": "Puxa, não foi dessa vez. Você precisa estudar mais um pouco",
         "__gohashid": 143
       },
       {
         "key": 1144,
+        "name": "Condition",
+        "type": "if",
+        "color": "white",
+        "isGroup": false,
+        "text": "9",
+        "opt": 4,
+        "__gohashid": 144
+      },
+      {
+        "key": 1145,
+        "name": "Talk",
+        "type": "speak",
+        "color": "#00ff00",
+        "isGroup": false,
+        "text": "Quanto é nove vezes seis?",
+        "__gohashid": 145
+      },
+      {
+        "key": 1146,
+        "name": "Listen",
+        "type": "listen",
+        "color": "#ffff00",
+        "isGroup": false,
+        "opt": "",
+        "__gohashid": 146
+      },
+      {
+        "key": 1147,
+        "name": "Condition",
+        "type": "if",
+        "color": "white",
+        "isGroup": false,
+        "text": "54",
+        "opt": 4,
+        "__gohashid": 147
+      },
+      {
+        "key": 1148,
+        "name": "Motion",
+        "type": "mov",
+        "color": "lightblue",
+        "isGroup": false,
+        "mov": "U",
+        "__gohashid": 148
+      },
+      {
+        "key": 1149,
+        "name": "Eva_Emotion",
+        "type": "emotion",
+        "color": "lightcoral",
+        "isGroup": false,
+        "group": "",
+        "emotion": "joy",
+        "level": 0,
+        "speed": 0,
+        "__gohashid": 149
+      },
+      {
+        "key": 1150,
+        "name": "Counter",
+        "type": "counter",
+        "color": "lightblue",
+        "isGroup": false,
+        "group": "",
+        "count": "PONTOS",
+        "ops": "sum",
+        "value": 2,
+        "__gohashid": 150
+      },
+      {
+        "key": 1151,
+        "name": "Audio",
+        "type": "sound",
+        "color": "lightblue",
+        "isGroup": false,
+        "src": "mario-start-02",
+        "wait": true,
+        "__gohashid": 151
+      },
+      {
+        "key": 1152,
+        "name": "Light",
+        "type": "light",
+        "color": "#ffa500",
+        "isGroup": false,
+        "group": "",
+        "lcolor": "#00ff00",
+        "state": "on",
+        "__gohashid": 152
+      },
+      {
+        "key": 1153,
+        "name": "Talk",
+        "type": "speak",
+        "color": "#00ff00",
+        "isGroup": false,
+        "text": "Muito bem! Você acertou!",
+        "__gohashid": 153
+      },
+      {
+        "key": 1154,
+        "name": "Condition",
+        "type": "if",
+        "color": "white",
+        "isGroup": false,
+        "text": "",
+        "opt": 4,
+        "__gohashid": 154
+      },
+      {
+        "key": 1155,
+        "name": "Motion",
+        "type": "mov",
+        "color": "lightblue",
+        "isGroup": false,
+        "mov": "s",
+        "__gohashid": 155
+      },
+      {
+        "key": 1156,
+        "name": "Eva_Emotion",
+        "type": "emotion",
+        "color": "lightcoral",
+        "isGroup": false,
+        "group": "",
+        "emotion": "sad",
+        "level": 0,
+        "speed": 0,
+        "__gohashid": 156
+      },
+      {
+        "key": 1157,
+        "name": "Counter",
+        "type": "counter",
+        "color": "lightblue",
+        "isGroup": false,
+        "group": "",
+        "count": "ERRO2",
+        "ops": "assign",
+        "value": 9,
+        "__gohashid": 157
+      },
+      {
+        "key": 1158,
+        "name": "Light",
+        "type": "light",
+        "color": "#ffa500",
+        "isGroup": false,
+        "group": "",
+        "lcolor": "#0000ff",
+        "state": "on",
+        "__gohashid": 158
+      },
+      {
+        "key": 1159,
+        "name": "Talk",
+        "type": "speak",
+        "color": "#00ff00",
+        "isGroup": false,
+        "text": "Puxa, não foi dessa vez. Você precisa estudar mais um pouco",
+        "__gohashid": 159
+      },
+      {
+        "key": 1160,
+        "name": "Condition",
+        "type": "if",
+        "color": "white",
+        "isGroup": false,
+        "text": "",
+        "opt": 4,
+        "__gohashid": 160
+      },
+      {
+        "key": 1161,
+        "name": "Eva_Emotion",
+        "type": "emotion",
+        "color": "lightcoral",
+        "isGroup": false,
+        "group": "",
+        "emotion": "joy",
+        "level": 0,
+        "speed": 0,
+        "__gohashid": 161
+      },
+      {
+        "key": 1162,
+        "name": "Light",
+        "type": "light",
+        "color": "#ffa500",
+        "isGroup": false,
+        "group": "",
+        "lcolor": "#e6007e",
+        "state": "on",
+        "__gohashid": 162
+      },
+      {
+        "key": 1163,
+        "name": "Motion",
+        "type": "mov",
+        "color": "lightblue",
+        "isGroup": false,
+        "mov": "c",
+        "__gohashid": 163
+      },
+      {
+        "key": 1164,
+        "name": "Condition",
+        "type": "if",
+        "color": "white",
+        "isGroup": false,
+        "text": "#PONTOS == 0",
+        "opt": 5,
+        "__gohashid": 164
+        },
+      {
+        "key": 1165,
+        "name": "Talk",
+        "type": "speak",
+        "color": "#00ff00",
+        "isGroup": false,
+        "text": "Foi muito bom jogar com você",
+        "__gohashid": 165
+      },
+      {
+        "key": 1166,
+        "name": "Talk",
+        "type": "speak",
+        "color": "#00ff00",
+        "isGroup": false,
+        "text": "Mas você precisa praticar mais as tabuadas de #ERRO1 e de #ERRO2",
+        "__gohashid": 166
+      },
+      {
+        "key": 1167,
         "name": "Talk",
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
         "text": "Bons estudos e até mais",
-        "__gohashid": 144
+        "__gohashid": 167
       },
       {
-        "key": 1145,
+        "key": 1168,
         "name": "Condition",
         "type": "if",
         "color": "white",
         "isGroup": false,
         "text": "#PONTOS == 1",
         "opt": 5,
-        "__gohashid": 145
+        "__gohashid": 168
         },
       {
-        "key": 1146,
+        "key": 1169,
         "name": "Talk",
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
         "text": "Meus parabéns, você fez um ponto",
-        "__gohashid": 146
+        "__gohashid": 169
       },
       {
-        "key": 1147,
+        "key": 1170,
         "name": "Talk",
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
         "text": "Você precisa praticar mais a tabuada de #ERRO2",
-        "__gohashid": 147
+        "__gohashid": 170
       },
       {
-        "key": 1148,
+        "key": 1171,
         "name": "Talk",
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
         "text": "Foi muito bom jogar com você. Até mais",
-        "__gohashid": 148
+        "__gohashid": 171
       },
       {
-        "key": 1149,
+        "key": 1172,
         "name": "Condition",
         "type": "if",
         "color": "white",
         "isGroup": false,
         "text": "#PONTOS == 2",
         "opt": 5,
-        "__gohashid": 149
+        "__gohashid": 172
         },
       {
-        "key": 1150,
+        "key": 1173,
         "name": "Talk",
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
         "text": "Meus parabéns, você fez um ponto",
-        "__gohashid": 150
+        "__gohashid": 173
       },
       {
-        "key": 1151,
+        "key": 1174,
         "name": "Talk",
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
         "text": "Você precisa praticar mais a tabuada de #ERRO1",
-        "__gohashid": 151
+        "__gohashid": 174
       },
       {
-        "key": 1152,
+        "key": 1175,
         "name": "Talk",
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
         "text": "Foi muito bom jogar com você. Até mais",
-        "__gohashid": 152
+        "__gohashid": 175
       },
       {
-        "key": 1153,
+        "key": 1176,
         "name": "Condition",
         "type": "if",
         "color": "white",
         "isGroup": false,
         "text": "#PONTOS == 3",
         "opt": 5,
-        "__gohashid": 153
+        "__gohashid": 176
         },
       {
-        "key": 1154,
+        "key": 1177,
         "name": "Motion",
         "type": "mov",
         "color": "lightblue",
         "isGroup": false,
         "mov": "U",
-        "__gohashid": 154
+        "__gohashid": 177
       },
       {
-        "key": 1155,
+        "key": 1178,
         "name": "Talk",
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
         "text": "Meus parabéns, você acertou as duas perguntas e fez dois pontos",
-        "__gohashid": 155
+        "__gohashid": 178
       },
       {
-        "key": 1156,
+        "key": 1179,
         "name": "Talk",
         "type": "speak",
         "color": "#00ff00",
         "isGroup": false,
         "text": "Foi muito bom jogar com você. Até mais",
-        "__gohashid": 156
+        "__gohashid": 179
       },
       {
-        "key": 1157,
+        "key": 1180,
+        "name": "Condition",
+        "type": "if",
+        "color": "white",
+        "isGroup": false,
+        "text": "",
+        "opt": 4,
+        "__gohashid": 180
+      },
+      {
+        "key": 1181,
         "name": "Motion",
         "type": "mov",
         "color": "lightblue",
         "isGroup": false,
         "mov": "c",
-        "__gohashid": 157
+        "__gohashid": 181
       },
       {
-        "key": 1158,
+        "key": 1182,
         "name": "Eva_Emotion",
         "type": "emotion",
         "color": "lightcoral",
@@ -1600,17 +1861,28 @@
         "emotion": "ini",
         "level": 0,
         "speed": 0,
-        "__gohashid": 158
+        "__gohashid": 182
       },
       {
-        "key": 1159,
+        "key": 1183,
         "name": "Audio",
         "type": "sound",
         "color": "lightblue",
         "isGroup": false,
         "src": "mario-end-02",
         "wait": true,
-        "__gohashid": 159
+        "__gohashid": 183
+      },
+      {
+        "key": 1184,
+        "name": "Light",
+        "type": "light",
+        "color": "#ffa500",
+        "isGroup": false,
+        "group": "",
+        "lcolor": "#000000",
+        "state": "off",
+        "__gohashid": 184
       }
     ],
     "link": [
@@ -1760,7 +2032,7 @@
         "__gohashid": 28
       },
       { 
-        "from": 1023,
+        "from": 1029,
         "to": 1030,
         "__gohashid": 29
       },
@@ -1780,12 +2052,12 @@
         "__gohashid": 32
       },
       { 
-        "from": 1033,
+        "from": 1026,
         "to": 1034,
         "__gohashid": 33
       },
       { 
-        "from": 1020,
+        "from": 1034,
         "to": 1035,
         "__gohashid": 34
       },
@@ -1810,7 +2082,7 @@
         "__gohashid": 38
       },
       { 
-        "from": 1039,
+        "from": 1023,
         "to": 1040,
         "__gohashid": 39
       },
@@ -1830,7 +2102,7 @@
         "__gohashid": 42
       },
       { 
-        "from": 1037,
+        "from": 1043,
         "to": 1044,
         "__gohashid": 43
       },
@@ -1855,12 +2127,12 @@
         "__gohashid": 47
       },
       { 
-        "from": 1020,
+        "from": 1048,
         "to": 1049,
         "__gohashid": 48
       },
       { 
-        "from": 1049,
+        "from": 1042,
         "to": 1050,
         "__gohashid": 49
       },
@@ -1890,7 +2162,7 @@
         "__gohashid": 54
       },
       { 
-        "from": 1055,
+        "from": 1023,
         "to": 1056,
         "__gohashid": 55
       },
@@ -1900,7 +2172,7 @@
         "__gohashid": 56
       },
       { 
-        "from": 1051,
+        "from": 1057,
         "to": 1058,
         "__gohashid": 57
       },
@@ -1925,7 +2197,7 @@
         "__gohashid": 61
       },
       { 
-        "from": 1020,
+        "from": 1062,
         "to": 1063,
         "__gohashid": 62
       },
@@ -1940,7 +2212,7 @@
         "__gohashid": 64
       },
       { 
-        "from": 1065,
+        "from": 1058,
         "to": 1066,
         "__gohashid": 65
       },
@@ -1970,7 +2242,7 @@
         "__gohashid": 70
       },
       { 
-        "from": 1065,
+        "from": 1023,
         "to": 1072,
         "__gohashid": 71
       },
@@ -1995,504 +2267,644 @@
         "__gohashid": 75
       },
       { 
-        "from": 1029,
+        "from": 1076,
         "to": 1077,
         "__gohashid": 76
       },
       { 
-        "from": 1034,
-        "to": 1077,
-        "__gohashid": 77
-      },
-      { 
-        "from": 1043,
-        "to": 1077,
-        "__gohashid": 78
-      },
-      { 
-        "from": 1048,
-        "to": 1077,
-        "__gohashid": 79
-      },
-      { 
-        "from": 1057,
-        "to": 1077,
-        "__gohashid": 80
-      },
-      { 
-        "from": 1062,
-        "to": 1077,
-        "__gohashid": 81
-      },
-      { 
-        "from": 1071,
-        "to": 1077,
-        "__gohashid": 82
-      },
-      { 
-        "from": 1076,
-        "to": 1077,
-        "__gohashid": 83
-      },
-      { 
         "from": 1077,
         "to": 1078,
-        "__gohashid": 84
+        "__gohashid": 77
       },
       { 
         "from": 1078,
         "to": 1079,
-        "__gohashid": 85
+        "__gohashid": 78
       },
       { 
         "from": 1079,
         "to": 1080,
-        "__gohashid": 86
+        "__gohashid": 79
       },
       { 
         "from": 1080,
         "to": 1081,
-        "__gohashid": 87
+        "__gohashid": 80
       },
       { 
-        "from": 1081,
+        "from": 1074,
         "to": 1082,
-        "__gohashid": 88
+        "__gohashid": 81
       },
       { 
         "from": 1082,
         "to": 1083,
-        "__gohashid": 89
+        "__gohashid": 82
       },
       { 
         "from": 1083,
         "to": 1084,
-        "__gohashid": 90
+        "__gohashid": 83
       },
       { 
         "from": 1084,
         "to": 1085,
-        "__gohashid": 91
+        "__gohashid": 84
       },
       { 
         "from": 1085,
         "to": 1086,
-        "__gohashid": 92
+        "__gohashid": 85
       },
       { 
         "from": 1086,
         "to": 1087,
+        "__gohashid": 86
+      },
+      { 
+        "from": 1023,
+        "to": 1088,
+        "__gohashid": 87
+      },
+      { 
+        "from": 1033,
+        "to": 1089,
+        "__gohashid": 88
+      },
+      { 
+        "from": 1039,
+        "to": 1089,
+        "__gohashid": 89
+      },
+      { 
+        "from": 1049,
+        "to": 1089,
+        "__gohashid": 90
+      },
+      { 
+        "from": 1055,
+        "to": 1089,
+        "__gohashid": 91
+      },
+      { 
+        "from": 1065,
+        "to": 1089,
+        "__gohashid": 92
+      },
+      { 
+        "from": 1071,
+        "to": 1089,
         "__gohashid": 93
       },
       { 
-        "from": 1087,
-        "to": 1088,
+        "from": 1081,
+        "to": 1089,
         "__gohashid": 94
       },
       { 
-        "from": 1088,
+        "from": 1087,
         "to": 1089,
         "__gohashid": 95
       },
       { 
+        "from": 1088,
+        "to": 1089,
+        "__gohashid": 96
+      },
+      { 
         "from": 1089,
         "to": 1090,
-        "__gohashid": 96
+        "__gohashid": 97
       },
       { 
         "from": 1090,
         "to": 1091,
-        "__gohashid": 97
+        "__gohashid": 98
       },
       { 
-        "from": 1085,
+        "from": 1091,
         "to": 1092,
-        "__gohashid": 98
+        "__gohashid": 99
       },
       { 
         "from": 1092,
         "to": 1093,
-        "__gohashid": 99
+        "__gohashid": 100
       },
       { 
         "from": 1093,
         "to": 1094,
-        "__gohashid": 100
+        "__gohashid": 101
       },
       { 
         "from": 1094,
         "to": 1095,
-        "__gohashid": 101
+        "__gohashid": 102
       },
       { 
         "from": 1095,
         "to": 1096,
-        "__gohashid": 102
+        "__gohashid": 103
       },
       { 
-        "from": 1082,
+        "from": 1096,
         "to": 1097,
-        "__gohashid": 103
+        "__gohashid": 104
       },
       { 
         "from": 1097,
         "to": 1098,
-        "__gohashid": 104
+        "__gohashid": 105
       },
       { 
         "from": 1098,
         "to": 1099,
-        "__gohashid": 105
+        "__gohashid": 106
       },
       { 
         "from": 1099,
         "to": 1100,
-        "__gohashid": 106
+        "__gohashid": 107
       },
       { 
         "from": 1100,
         "to": 1101,
-        "__gohashid": 107
+        "__gohashid": 108
       },
       { 
         "from": 1101,
         "to": 1102,
-        "__gohashid": 108
+        "__gohashid": 109
       },
       { 
         "from": 1102,
         "to": 1103,
-        "__gohashid": 109
+        "__gohashid": 110
       },
       { 
         "from": 1103,
         "to": 1104,
-        "__gohashid": 110
+        "__gohashid": 111
       },
       { 
         "from": 1104,
         "to": 1105,
-        "__gohashid": 111
+        "__gohashid": 112
       },
       { 
-        "from": 1099,
+        "from": 1098,
         "to": 1106,
-        "__gohashid": 112
+        "__gohashid": 113
       },
       { 
         "from": 1106,
         "to": 1107,
-        "__gohashid": 113
+        "__gohashid": 114
       },
       { 
         "from": 1107,
         "to": 1108,
-        "__gohashid": 114
+        "__gohashid": 115
       },
       { 
         "from": 1108,
         "to": 1109,
-        "__gohashid": 115
+        "__gohashid": 116
       },
       { 
         "from": 1109,
         "to": 1110,
-        "__gohashid": 116
-      },
-      { 
-        "from": 1082,
-        "to": 1111,
         "__gohashid": 117
       },
       { 
-        "from": 1111,
-        "to": 1112,
+        "from": 1110,
+        "to": 1111,
         "__gohashid": 118
+      },
+      { 
+        "from": 1095,
+        "to": 1112,
+        "__gohashid": 119
       },
       { 
         "from": 1112,
         "to": 1113,
-        "__gohashid": 119
+        "__gohashid": 120
       },
       { 
         "from": 1113,
         "to": 1114,
-        "__gohashid": 120
+        "__gohashid": 121
       },
       { 
         "from": 1114,
         "to": 1115,
-        "__gohashid": 121
+        "__gohashid": 122
       },
       { 
         "from": 1115,
         "to": 1116,
-        "__gohashid": 122
+        "__gohashid": 123
       },
       { 
         "from": 1116,
         "to": 1117,
-        "__gohashid": 123
+        "__gohashid": 124
       },
       { 
         "from": 1117,
         "to": 1118,
-        "__gohashid": 124
+        "__gohashid": 125
       },
       { 
         "from": 1118,
         "to": 1119,
-        "__gohashid": 125
+        "__gohashid": 126
       },
       { 
-        "from": 1113,
+        "from": 1119,
         "to": 1120,
-        "__gohashid": 126
+        "__gohashid": 127
       },
       { 
         "from": 1120,
         "to": 1121,
-        "__gohashid": 127
+        "__gohashid": 128
       },
       { 
-        "from": 1121,
+        "from": 1114,
         "to": 1122,
-        "__gohashid": 128
+        "__gohashid": 129
       },
       { 
         "from": 1122,
         "to": 1123,
-        "__gohashid": 129
+        "__gohashid": 130
       },
       { 
         "from": 1123,
         "to": 1124,
-        "__gohashid": 130
+        "__gohashid": 131
       },
       { 
-        "from": 1082,
+        "from": 1124,
         "to": 1125,
-        "__gohashid": 131
+        "__gohashid": 132
       },
       { 
         "from": 1125,
         "to": 1126,
-        "__gohashid": 132
+        "__gohashid": 133
       },
       { 
         "from": 1126,
         "to": 1127,
-        "__gohashid": 133
+        "__gohashid": 134
       },
       { 
-        "from": 1127,
+        "from": 1095,
         "to": 1128,
-        "__gohashid": 134
+        "__gohashid": 135
       },
       { 
         "from": 1128,
         "to": 1129,
-        "__gohashid": 135
+        "__gohashid": 136
       },
       { 
         "from": 1129,
         "to": 1130,
-        "__gohashid": 136
+        "__gohashid": 137
       },
       { 
         "from": 1130,
         "to": 1131,
-        "__gohashid": 137
+        "__gohashid": 138
       },
       { 
         "from": 1131,
         "to": 1132,
-        "__gohashid": 138
+        "__gohashid": 139
       },
       { 
         "from": 1132,
         "to": 1133,
-        "__gohashid": 139
+        "__gohashid": 140
       },
       { 
-        "from": 1127,
+        "from": 1133,
         "to": 1134,
-        "__gohashid": 140
+        "__gohashid": 141
       },
       { 
         "from": 1134,
         "to": 1135,
-        "__gohashid": 141
+        "__gohashid": 142
       },
       { 
         "from": 1135,
         "to": 1136,
-        "__gohashid": 142
+        "__gohashid": 143
       },
       { 
         "from": 1136,
         "to": 1137,
-        "__gohashid": 143
-      },
-      { 
-        "from": 1137,
-        "to": 1138,
         "__gohashid": 144
       },
       { 
-        "from": 1091,
-        "to": 1139,
+        "from": 1130,
+        "to": 1138,
         "__gohashid": 145
-      },
-      { 
-        "from": 1096,
-        "to": 1139,
-        "__gohashid": 146
-      },
-      { 
-        "from": 1105,
-        "to": 1139,
-        "__gohashid": 147
-      },
-      { 
-        "from": 1110,
-        "to": 1139,
-        "__gohashid": 148
-      },
-      { 
-        "from": 1119,
-        "to": 1139,
-        "__gohashid": 149
-      },
-      { 
-        "from": 1124,
-        "to": 1139,
-        "__gohashid": 150
-      },
-      { 
-        "from": 1133,
-        "to": 1139,
-        "__gohashid": 151
       },
       { 
         "from": 1138,
         "to": 1139,
-        "__gohashid": 152
+        "__gohashid": 146
       },
       { 
         "from": 1139,
         "to": 1140,
-        "__gohashid": 153
+        "__gohashid": 147
       },
       { 
         "from": 1140,
         "to": 1141,
-        "__gohashid": 154
+        "__gohashid": 148
       },
       { 
         "from": 1141,
         "to": 1142,
-        "__gohashid": 155
+        "__gohashid": 149
       },
       { 
         "from": 1142,
         "to": 1143,
-        "__gohashid": 156
+        "__gohashid": 150
       },
       { 
-        "from": 1143,
+        "from": 1095,
         "to": 1144,
-        "__gohashid": 157
+        "__gohashid": 151
       },
       { 
-        "from": 1140,
+        "from": 1144,
         "to": 1145,
-        "__gohashid": 158
+        "__gohashid": 152
       },
       { 
         "from": 1145,
         "to": 1146,
-        "__gohashid": 159
+        "__gohashid": 153
       },
       { 
         "from": 1146,
         "to": 1147,
-        "__gohashid": 160
+        "__gohashid": 154
       },
       { 
         "from": 1147,
         "to": 1148,
-        "__gohashid": 161
+        "__gohashid": 155
       },
       { 
-        "from": 1140,
+        "from": 1148,
         "to": 1149,
-        "__gohashid": 162
+        "__gohashid": 156
       },
       { 
         "from": 1149,
         "to": 1150,
-        "__gohashid": 163
+        "__gohashid": 157
       },
       { 
         "from": 1150,
         "to": 1151,
-        "__gohashid": 164
+        "__gohashid": 158
       },
       { 
         "from": 1151,
         "to": 1152,
-        "__gohashid": 165
+        "__gohashid": 159
       },
       { 
-        "from": 1140,
+        "from": 1152,
         "to": 1153,
-        "__gohashid": 166
+        "__gohashid": 160
       },
       { 
-        "from": 1153,
+        "from": 1146,
         "to": 1154,
-        "__gohashid": 167
+        "__gohashid": 161
       },
       { 
         "from": 1154,
         "to": 1155,
-        "__gohashid": 168
+        "__gohashid": 162
       },
       { 
         "from": 1155,
         "to": 1156,
-        "__gohashid": 169
-      },
-      { 
-        "from": 1144,
-        "to": 1157,
-        "__gohashid": 170
-      },
-      { 
-        "from": 1148,
-        "to": 1157,
-        "__gohashid": 171
-      },
-      { 
-        "from": 1152,
-        "to": 1157,
-        "__gohashid": 172
+        "__gohashid": 163
       },
       { 
         "from": 1156,
         "to": 1157,
-        "__gohashid": 173
+        "__gohashid": 164
       },
       { 
         "from": 1157,
         "to": 1158,
-        "__gohashid": 174
+        "__gohashid": 165
       },
       { 
         "from": 1158,
         "to": 1159,
+        "__gohashid": 166
+      },
+      { 
+        "from": 1095,
+        "to": 1160,
+        "__gohashid": 167
+      },
+      { 
+        "from": 1105,
+        "to": 1161,
+        "__gohashid": 168
+      },
+      { 
+        "from": 1111,
+        "to": 1161,
+        "__gohashid": 169
+      },
+      { 
+        "from": 1121,
+        "to": 1161,
+        "__gohashid": 170
+      },
+      { 
+        "from": 1127,
+        "to": 1161,
+        "__gohashid": 171
+      },
+      { 
+        "from": 1137,
+        "to": 1161,
+        "__gohashid": 172
+      },
+      { 
+        "from": 1143,
+        "to": 1161,
+        "__gohashid": 173
+      },
+      { 
+        "from": 1153,
+        "to": 1161,
+        "__gohashid": 174
+      },
+      { 
+        "from": 1159,
+        "to": 1161,
         "__gohashid": 175
+      },
+      { 
+        "from": 1160,
+        "to": 1161,
+        "__gohashid": 176
+      },
+      { 
+        "from": 1161,
+        "to": 1162,
+        "__gohashid": 177
+      },
+      { 
+        "from": 1162,
+        "to": 1163,
+        "__gohashid": 178
+      },
+      { 
+        "from": 1163,
+        "to": 1164,
+        "__gohashid": 179
+      },
+      { 
+        "from": 1164,
+        "to": 1165,
+        "__gohashid": 180
+      },
+      { 
+        "from": 1165,
+        "to": 1166,
+        "__gohashid": 181
+      },
+      { 
+        "from": 1166,
+        "to": 1167,
+        "__gohashid": 182
+      },
+      { 
+        "from": 1163,
+        "to": 1168,
+        "__gohashid": 183
+      },
+      { 
+        "from": 1168,
+        "to": 1169,
+        "__gohashid": 184
+      },
+      { 
+        "from": 1169,
+        "to": 1170,
+        "__gohashid": 185
+      },
+      { 
+        "from": 1170,
+        "to": 1171,
+        "__gohashid": 186
+      },
+      { 
+        "from": 1163,
+        "to": 1172,
+        "__gohashid": 187
+      },
+      { 
+        "from": 1172,
+        "to": 1173,
+        "__gohashid": 188
+      },
+      { 
+        "from": 1173,
+        "to": 1174,
+        "__gohashid": 189
+      },
+      { 
+        "from": 1174,
+        "to": 1175,
+        "__gohashid": 190
+      },
+      { 
+        "from": 1163,
+        "to": 1176,
+        "__gohashid": 191
+      },
+      { 
+        "from": 1176,
+        "to": 1177,
+        "__gohashid": 192
+      },
+      { 
+        "from": 1177,
+        "to": 1178,
+        "__gohashid": 193
+      },
+      { 
+        "from": 1178,
+        "to": 1179,
+        "__gohashid": 194
+      },
+      { 
+        "from": 1163,
+        "to": 1180,
+        "__gohashid": 195
+      },
+      { 
+        "from": 1167,
+        "to": 1181,
+        "__gohashid": 196
+      },
+      { 
+        "from": 1171,
+        "to": 1181,
+        "__gohashid": 197
+      },
+      { 
+        "from": 1175,
+        "to": 1181,
+        "__gohashid": 198
+      },
+      { 
+        "from": 1179,
+        "to": 1181,
+        "__gohashid": 199
+      },
+      { 
+        "from": 1180,
+        "to": 1181,
+        "__gohashid": 200
+      },
+      { 
+        "from": 1181,
+        "to": 1182,
+        "__gohashid": 201
+      },
+      { 
+        "from": 1182,
+        "to": 1183,
+        "__gohashid": 202
+      },
+      { 
+        "from": 1183,
+        "to": 1184,
+        "__gohashid": 203
       }
     ]
   }

@@ -96,10 +96,10 @@ def process_loop(script_node):
             times_loop = script_node[i].attrib["times"] 
             c.attrib["var"] = var_loop 
             c.attrib["op"] = "=" 
-            c.attrib["value"] = "0"  # inicializa a variavel contadora com zero
+            c.attrib["value"] = "1"  # inicializa a variavel contadora com zero
 
             script_node.remove(script_node[i]) # remove o elemento <loop> pois não é mais necessário (temos a sua cópia em )
-            script_node.insert(i, c)  # adiciona o <counter>
+            script_node.insert(i, c)  # adiciona o <counter> que inicializa a variavel de iteração
 
             s = ET.Element("switch")  # cria o elemento <switch>
             s.attrib["id"] = "LOOP_ID" + str(id_loop_number) + "_" + var_loop  # prefixo padrao do id automatico gerado para o loop _LOOP_ID_
@@ -107,17 +107,22 @@ def process_loop(script_node):
             script_node.insert(i + 1, s)  # adiciona o <switch>, com seus filhos, ao elemento script
 
             cs = ET.Element("case") # cria o elemento <case>
-            cs.attrib["op"] = "lt" 
+            cs.attrib["op"] = "lte" 
             cs.attrib["value"] = times_loop 
+
+            ####
+            ####
+
+
+
+            #cs.insert(1, loop_copy)  # aqui, o elemento pai (loop) vem junto, e isso é ruim pois queremos apenas seus filhos
+            cs.extend(loop_copy)  # o extend adiciona apenas os filhos de loop
 
             c = ET.Element("counter")  # cria o <counter> que incrementa a variável de iteração
             c.attrib["var"] = var_loop
             c.attrib["op"] = "+"
             c.attrib["value"] = "1"
-
-            cs.insert(0, c) 
-            #cs.insert(1, loop_copy)  # aqui, o elemento pai (loop) vem junto, e isso é ruim pois queremos apenas seus filhos
-            cs.extend(loop_copy)  # o extend adiciona apenas os filhos de loop
+            cs.append(c)
 
             g = ET.Element("goto")  # cria o <goto> que faz o loop acontecer
             g.attrib["target"] = "LOOP_ID" + str(id_loop_number) + "_" + var_loop  # prefixo padrao do id automatico gerado para o loop _LOOP_ID_

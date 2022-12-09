@@ -10,6 +10,7 @@
   </settings>
   <script>
     <!-- Variaveis do script -->
+    <light state="ON" />
     <evaEmotion emotion="NEUTRAL" />
     <counter var="PONTOS" op="=" value="0" />
     <counter var="ERRO1" op="=" value="0" />
@@ -21,12 +22,14 @@
     <talk>Como você se chama?</talk>
     <listen /> <!-- $1 é nome do usuário -->
     <evaEmotion emotion="HAPPY" />
+    <light state="ON" color="GREEN"/>
     <talk>Oi $</talk>
     <talk>Vamos jogar o jogo das tabuadas</talk>
     <audio source="mario-game-intro" block="TRUE" />
     <talk>Eu vou te fazer duas perguntas e você tenta acertar</talk>
     <evaEmotion emotion="NEUTRAL" />
     <talk>Vamos para a primeira pergunta</talk>
+    <light state="ON" />
     <motion type="2DOWN" />
     <audio source="Blin" block="TRUE" />
     <!-- Primeira pergunta com tabuadas de 2 a 5 -->
@@ -42,12 +45,14 @@
             <evaEmotion emotion="HAPPY" />
             <counter var="PONTOS" op="+" value="1" />
             <audio source="mario-start-02" block="TRUE" /> <!-- som de vitória -->
+            <light state="ON" color="GREEN"/>
             <talk>Muito bem! Você acertou!</talk>
           </case>
           <default>
             <motion type="NO" />
             <evaEmotion emotion="SAD" />
             <counter var="ERRO1" op="=" value="2" />
+            <light state="ON" color="BLUE"/>
             <talk>Puxa, não foi dessa vez. Você precisa estudar mais um pouco</talk>
           </default>
         </switch>
@@ -62,12 +67,14 @@
             <evaEmotion emotion="HAPPY" />
             <counter var="PONTOS" op="+" value="1" />
             <audio source="mario-start-02" block="TRUE" /> <!-- som de vitória -->
+            <light state="ON" color="GREEN"/>
             <talk>Muito bem! Você acertou!</talk>
           </case>
           <default>
             <motion type="NO" />
             <evaEmotion emotion="SAD" />
             <counter var="ERRO1" op="=" value="3" />
+            <light state="ON" color="BLUE"/>
             <talk>Puxa, não foi dessa vez. Você precisa estudar mais um pouco</talk>
           </default>
         </switch>
@@ -82,12 +89,14 @@
             <evaEmotion emotion="HAPPY" />
             <counter var="PONTOS" op="+" value="1" />
             <audio source="mario-start-02" block="TRUE" /> <!-- som de vitória -->
+            <light state="ON" color="GREEN"/>
             <talk>Muito bem! Você acertou!</talk>
           </case>
           <default>
             <motion type="NO" />
             <evaEmotion emotion="SAD" />
             <counter var="ERRO1" op="=" value="4" />
+            <light state="ON" color="BLUE"/>
             <talk>Puxa, não foi dessa vez. Você precisa estudar mais um pouco</talk>
           </default>
         </switch>
@@ -102,17 +111,20 @@
             <evaEmotion emotion="HAPPY" />
             <counter var="PONTOS" op="+" value="1" />
             <audio source="mario-start-02" block="TRUE" /> <!-- som de vitória -->
+            <light state="ON" color="GREEN"/>
             <talk>Muito bem! Você acertou!</talk>
           </case>
           <default>
             <motion type="NO" />
             <evaEmotion emotion="SAD" />
             <counter var="ERRO1" op="=" value="5" />
+            <light state="ON" color="BLUE"/>
             <talk>Puxa, não foi dessa vez. Você precisa estudar mais um pouco</talk>
           </default>
         </switch>
       </case>
     </switch>
+    <light state="ON" />
     <motion type="CENTER" />
     <evaEmotion emotion="NEUTRAL" />
     <talk>Vamos para a segunda pergunta</talk>
@@ -131,12 +143,14 @@
             <evaEmotion emotion="HAPPY" />
             <counter var="PONTOS" op="+" value="2" />
             <audio source="mario-start-02" block="TRUE" /> <!-- som de vitória -->
+            <light state="ON" color="GREEN"/>
             <talk>Muito bem! Você acertou!</talk>
           </case>
           <default>
             <motion type="NO" />
             <evaEmotion emotion="SAD" />
             <counter var="ERRO2" op="=" value="6" />
+            <light state="ON" color="BLUE"/>
             <talk>Puxa, não foi dessa vez. Você precisa estudar mais um pouco</talk>
           </default>
         </switch>
@@ -151,12 +165,14 @@
             <evaEmotion emotion="HAPPY" />
             <counter var="PONTOS" op="+" value="2" />
             <audio source="mario-start-02" block="TRUE" /> <!-- som de vitória -->
+            <light state="ON" color="GREEN"/>
             <talk>Muito bem! Você acertou!</talk>
           </case>
           <default>
             <motion type="NO" />
             <evaEmotion emotion="SAD" />
             <counter var="ERRO2" op="=" value="7" />
+            <light state="ON" color="BLUE"/>
             <talk>Puxa, não foi dessa vez. Você precisa estudar mais um pouco</talk>
           </default>
         </switch>
@@ -171,12 +187,14 @@
             <evaEmotion emotion="HAPPY" />
             <counter var="PONTOS" op="+" value="2" />
             <audio source="mario-start-02" block="TRUE" /> <!-- som de vitória -->
+            <light state="ON" color="GREEN"/>
             <talk>Muito bem! Você acertou!</talk>
           </case>
           <default>
             <motion type="NO" />
             <evaEmotion emotion="SAD" />
             <counter var="ERRO2" op="=" value="8" />
+            <light state="ON" color="BLUE"/>
             <talk>Puxa, não foi dessa vez. Você precisa estudar mais um pouco</talk>
           </default>
         </switch>
@@ -191,18 +209,21 @@
             <evaEmotion emotion="HAPPY" />
             <counter var="PONTOS" op="+" value="2" />
             <audio source="mario-start-02" block="TRUE" /> <!-- som de vitória -->
+            <light state="ON" color="GREEN"/>
             <talk>Muito bem! Você acertou!</talk>
           </case>
           <default>
             <motion type="NO" />
             <evaEmotion emotion="SAD" />
             <counter var="ERRO2" op="=" value="9" />
+            <light state="ON" color="BLUE"/>
             <talk>Puxa, não foi dessa vez. Você precisa estudar mais um pouco</talk>
           </default>
         </switch>
       </case>
     </switch>
     <evaEmotion emotion="HAPPY" />
+    <light state="ON" color="PINK"/>
     <motion type="CENTER" />
     <switch var="PONTOS">
       <case op="eq" value="0"> <!-- não acertou nenhuma -->
@@ -230,5 +251,6 @@
     <motion type="CENTER" />
     <evaEmotion emotion="NEUTRAL" />
     <audio source="mario-end-02" block="TRUE" />
+    <light state="OFF" />
   </script>
 </evaml>

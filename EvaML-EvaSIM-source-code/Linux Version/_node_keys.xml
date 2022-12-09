@@ -1,21 +1,1169 @@
-<evaml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="script01" xsi:noNamespaceSchemaLocation="EvaML-Schema/evaml_schema.xsd" id="4bc9160a149eddcf36a458f53d9cf58a">
+<evaml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Jogo_da_tabuada" xsi:noNamespaceSchemaLocation="EvaML-Schema/evaml_schema.xsd" id="05607e00f7d895f92d32909fb172b323">
   <settings>
     <voice tone="pt-BR_IsabelaV3Voice" key="1000" />
     <lightEffects mode="ON" />
     <audioEffects mode="ON" />
   </settings>
   <script>
-    <random min="1" max="2" key="1001" />
-    <switch id="LOOP" var="$">
-      <case op="exact" value="1" key="1002" child_proc="false">
-        <led animation="HAPPY" key="1003" />
-        <goto target="LOOP" />
+    <talk key="1001">Qual nível você quer jogar, nível teste ou nível 1.</talk>
+    <listen key="1002" />
+    <switch var="$">
+      <case op="exact" value="teste" key="1003" child_proc="false">
+        <talk key="1004">Qual tabuada você quer fixar?</talk>
+        <listen key="1005" />
+      <switch var="$">
+        <case op="exact" value="1" key="1006" child_proc="false">
+          <counter var="multiplicando" op="=" value="1" key="1007" />
+        </case>
+        <case op="exact" value="2" key="1008" child_proc="false">
+          <counter var="multiplicando" op="=" value="2" key="1009" />
+        </case>
+        <case op="exact" value="3" key="1010" child_proc="false">
+          <counter var="multiplicando" op="=" value="3" key="1011" />
+        </case>
+        <case op="exact" value="4" key="1012" child_proc="false">
+          <counter var="multiplicando" op="=" value="4" key="1013" />
+        </case>
+        <case op="exact" value="5" key="1014" child_proc="false">
+          <counter var="multiplicando" op="=" value="5" key="1015" />
+        </case>
+        <case op="exact" value="6" key="1016" child_proc="false">
+          <counter var="multiplicando" op="=" value="6" key="1017" />
+        </case>
+        <case op="exact" value="7" key="1018" child_proc="false">
+          <counter var="multiplicando" op="=" value="7" key="1019" />
+        </case>
+        <case op="exact" value="8" key="1020" child_proc="false">
+          <counter var="multiplicando" op="=" value="8" key="1021" />
+        </case>
+        <case op="exact" value="9" key="1022" child_proc="false">
+          <counter var="multiplicando" op="=" value="9" key="1023" />
+        </case>
+        <case op="exact" value="10" key="1024" child_proc="false">
+          <counter var="multiplicando" op="=" value="10" key="1025" />
+        </case>
+      <default key="1026" child_proc="false" /></switch>
+      <counter var="multiplicando" op="*" value="1" key="1027" />
+      <talk key="1028">$ vezes 1 é = a #multiplicando </talk>
+      <counter var="multiplicando" op="/" value="1" key="1029" />
+      <counter var="multiplicando" op="*" value="2" key="1030" />
+      <talk key="1031">$ vezes 2 é = a #multiplicando </talk>
+      <counter var="multiplicando" op="/" value="2" key="1032" />
+      <counter var="multiplicando" op="*" value="3" key="1033" />
+      <talk key="1034">$ vezes 3 é = a #multiplicando </talk>
+      <counter var="multiplicando" op="/" value="3" key="1035" />
+      <counter var="multiplicando" op="*" value="4" key="1036" />
+      <talk key="1037">$ vezes 4 é = a #multiplicando </talk>
+      <counter var="multiplicando" op="/" value="4" key="1038" />
+      <counter var="multiplicando" op="*" value="5" key="1039" />
+      <talk key="1040">$ vezes 5  é = a #multiplicando </talk>
+      <counter var="multiplicando" op="/" value="5" key="1041" />
+      <counter var="multiplicando" op="*" value="6" key="1042" />
+      <talk key="1043">$ vezes 6 é = a #multiplicando </talk>
+      <counter var="multiplicando" op="/" value="6" key="1044" />
+      <counter var="multiplicando" op="*" value="7" key="1045" />
+      <talk key="1046">$ vezes 7 é = a #multiplicando </talk>
+      <counter var="multiplicando" op="/" value="7" key="1047" />
+      <counter var="multiplicando" op="*" value="8" key="1048" />
+      <talk key="1049">$ vezes 8 é = a #multiplicando </talk>
+      <counter var="multiplicando" op="/" value="8" key="1050" />
+      <counter var="multiplicando" op="*" value="9" key="1051" />
+      <talk key="1052">$ vezes 9 é = a #multiplicando </talk>
+      <counter var="multiplicando" op="/" value="9" key="1053" />
+      <counter var="multiplicando" op="*" value="10" key="1054" />
+      <talk key="1055">$ vezes 10 é = a #multiplicando </talk>
+    </case>
+      <case op="exact" value="1" key="1056" child_proc="false">
+        <talk key="1057">Então ótimo vamos testar o seu conhecimento nas tabuadas</talk>
+        <random min="1" max="1" key="1058" />
+      <random min="2" max="2" key="1059" />
+      <random min="3" max="3" key="1060" />
+      <random min="4" max="4" key="1061" />
+      <random min="5" max="5" key="1062" />
+      <random min="6" max="6" key="1063" />
+      <random min="7" max="7" key="1064" />
+      <random min="8" max="8" key="1065" />
+      <random min="9" max="9" key="1066" />
+      <random min="10" max="10" key="1067" />
+    <random min="1" max="10" key="1068" />
+      <switch var="$">
+        <case op="exact" value="1" key="1069" child_proc="false">
+          <counter var="multiplicando" op="=" value="1" key="1070" />
+        </case>
+        <case op="exact" value="2" key="1071" child_proc="false">
+          <counter var="multiplicando" op="=" value="2" key="1072" />
+        </case>
+        <case op="exact" value="3" key="1073" child_proc="false">
+          <counter var="multiplicando" op="=" value="3" key="1074" />
+        </case>
+        <case op="exact" value="4" key="1075" child_proc="false">
+          <counter var="multiplicando" op="=" value="4" key="1076" />
+        </case>
+        <case op="exact" value="5" key="1077" child_proc="false">
+          <counter var="multiplicando" op="=" value="5" key="1078" />
+        </case>
+        <case op="exact" value="6" key="1079" child_proc="false">
+          <counter var="multiplicando" op="=" value="6" key="1080" />
+        </case>
+        <case op="exact" value="7" key="1081" child_proc="false">
+          <counter var="multiplicando" op="=" value="7" key="1082" />
+        </case>
+        <case op="exact" value="8" key="1083" child_proc="false">
+          <counter var="multiplicando" op="=" value="8" key="1084" />
+        </case>
+        <case op="exact" value="9" key="1085" child_proc="false">
+          <counter var="multiplicando" op="=" value="9" key="1086" />
+        </case>
+        <case op="exact" value="10" key="1087" child_proc="false">
+          <counter var="multiplicando" op="=" value="10" key="1088" />
+        </case>
+      <default key="1089" child_proc="false" /></switch>
+    <counter var="ponto" op="=" value="0" key="1090" />
+       <counter var="Loop" op="=" value="1" key="1091" /><switch id="LOOP_ID1_Loop" var="Loop"><case op="lte" value="3" key="1092" child_proc="false"><random min="1" max="10" key="1093" />
+      <switch var="$">
+        <case op="exact" value="1" key="1094" child_proc="false">
+          <talk key="1095">Quanto que é $12 vezes $2</talk>
+          <counter var="multiplicando" op="*" value="1" key="1096" />
+          <listen key="1097" />   
+          <switch var="$">
+            <case op="eq" value="#multiplicando" key="1098" child_proc="false">
+                  <evaEmotion emotion="HAPPY" key="1099" />
+      <light state="ON" color="GREEN" key="1100" />
+      <motion type="YES" key="1101" />
+      <audio source="applause-moderate" block="TRUE" key="1102" />
+      <counter var="ponto" op="+" value="1" key="1103" />
+      <talk key="1104">Parabéns, voce ganhou um ponto</talk>
+      <evaEmotion emotion="NEUTRAL" key="1105" />
+      <light state="ON" color="WHITE" key="1106" />
+    </case>
+            <default key="1107" child_proc="false">
+              <evaEmotion emotion="SAD" key="1108" />
+      <light state="ON" color="RED" key="1109" />
+      <motion type="NO" key="1110" />
+      <talk key="1111">Pôxa, dessa vez você não pontuou, vamos para a próxima</talk>
+      <light state="ON" color="WHITE" key="1112" />
+      <evaEmotion emotion="NEUTRAL" key="1113" />
+    </default>
+          </switch>
+          <talk key="1114">A resposta dessa operação é #multiplicando</talk>
+          <counter var="multiplicando" op="/" value="1" key="1115" />
+        </case>
+        <case op="exact" value="2" key="1116" child_proc="false">
+          <talk key="1117">Quanto que é $12 vezes $3</talk>
+          <counter var="multiplicando" op="*" value="2" key="1118" />
+          <listen key="1119" />   
+          <switch var="$">
+            <case op="eq" value="#multiplicando" key="1120" child_proc="false">
+                  <evaEmotion emotion="HAPPY" key="1121" />
+      <light state="ON" color="GREEN" key="1122" />
+      <motion type="YES" key="1123" />
+      <audio source="applause-moderate" block="TRUE" key="1124" />
+      <counter var="ponto" op="+" value="1" key="1125" />
+      <talk key="1126">Parabéns, voce ganhou um ponto</talk>
+      <evaEmotion emotion="NEUTRAL" key="1127" />
+      <light state="ON" color="WHITE" key="1128" />
+    </case>
+            <default key="1129" child_proc="false">
+              <evaEmotion emotion="SAD" key="1130" />
+      <light state="ON" color="RED" key="1131" />
+      <motion type="NO" key="1132" />
+      <talk key="1133">Pôxa, dessa vez você não pontuou, vamos para a próxima</talk>
+      <light state="ON" color="WHITE" key="1134" />
+      <evaEmotion emotion="NEUTRAL" key="1135" />
+    </default>
+          </switch>
+          <talk key="1136">A resposta dessa operação é #multiplicando</talk>
+          <counter var="multiplicando" op="/" value="2" key="1137" />
+        </case>
+        <case op="exact" value="3" key="1138" child_proc="false">
+          <talk key="1139">Quanto que é $12 vezes $4</talk>
+          <counter var="multiplicando" op="*" value="3" key="1140" />
+          <listen key="1141" />
+          <switch var="$">
+            <case op="eq" value="#multiplicando" key="1142" child_proc="false">
+                  <evaEmotion emotion="HAPPY" key="1143" />
+      <light state="ON" color="GREEN" key="1144" />
+      <motion type="YES" key="1145" />
+      <audio source="applause-moderate" block="TRUE" key="1146" />
+      <counter var="ponto" op="+" value="1" key="1147" />
+      <talk key="1148">Parabéns, voce ganhou um ponto</talk>
+      <evaEmotion emotion="NEUTRAL" key="1149" />
+      <light state="ON" color="WHITE" key="1150" />
+    </case>
+            <default key="1151" child_proc="false">
+              <evaEmotion emotion="SAD" key="1152" />
+      <light state="ON" color="RED" key="1153" />
+      <motion type="NO" key="1154" />
+      <talk key="1155">Pôxa, dessa vez você não pontuou, vamos para a próxima</talk>
+      <light state="ON" color="WHITE" key="1156" />
+      <evaEmotion emotion="NEUTRAL" key="1157" />
+    </default>
+          </switch>   
+          <talk key="1158">A resposta dessa operação é #multiplicando</talk>
+          <counter var="multiplicando" op="/" value="3" key="1159" />
+        </case>
+        <case op="exact" value="4" key="1160" child_proc="false">
+          <talk key="1161">Quanto que é $12 vezes $5</talk>
+          <counter var="multiplicando" op="*" value="4" key="1162" />
+          <listen key="1163" />
+          <switch var="$">
+            <case op="eq" value="#multiplicando" key="1164" child_proc="false">
+                  <evaEmotion emotion="HAPPY" key="1165" />
+      <light state="ON" color="GREEN" key="1166" />
+      <motion type="YES" key="1167" />
+      <audio source="applause-moderate" block="TRUE" key="1168" />
+      <counter var="ponto" op="+" value="1" key="1169" />
+      <talk key="1170">Parabéns, voce ganhou um ponto</talk>
+      <evaEmotion emotion="NEUTRAL" key="1171" />
+      <light state="ON" color="WHITE" key="1172" />
+    </case>
+            <default key="1173" child_proc="false">
+              <evaEmotion emotion="SAD" key="1174" />
+      <light state="ON" color="RED" key="1175" />
+      <motion type="NO" key="1176" />
+      <talk key="1177">Pôxa, dessa vez você não pontuou, vamos para a próxima</talk>
+      <light state="ON" color="WHITE" key="1178" />
+      <evaEmotion emotion="NEUTRAL" key="1179" />
+    </default>
+          </switch>   
+          <talk key="1180">A resposta dessa operação é #multiplicando</talk>
+          <counter var="multiplicando" op="/" value="4" key="1181" />
+        </case>
+        <case op="exact" value="5" key="1182" child_proc="false">
+          <talk key="1183">Quanto que é $12 vezes $6</talk>
+          <counter var="multiplicando" op="*" value="5" key="1184" />
+          <listen key="1185" />
+          <switch var="$">
+            <case op="eq" value="#multiplicando" key="1186" child_proc="false">
+                  <evaEmotion emotion="HAPPY" key="1187" />
+      <light state="ON" color="GREEN" key="1188" />
+      <motion type="YES" key="1189" />
+      <audio source="applause-moderate" block="TRUE" key="1190" />
+      <counter var="ponto" op="+" value="1" key="1191" />
+      <talk key="1192">Parabéns, voce ganhou um ponto</talk>
+      <evaEmotion emotion="NEUTRAL" key="1193" />
+      <light state="ON" color="WHITE" key="1194" />
+    </case>
+            <default key="1195" child_proc="false">
+              <evaEmotion emotion="SAD" key="1196" />
+      <light state="ON" color="RED" key="1197" />
+      <motion type="NO" key="1198" />
+      <talk key="1199">Pôxa, dessa vez você não pontuou, vamos para a próxima</talk>
+      <light state="ON" color="WHITE" key="1200" />
+      <evaEmotion emotion="NEUTRAL" key="1201" />
+    </default>
+          </switch>   
+          <talk key="1202">A resposta dessa operação é #multiplicando</talk>
+          <counter var="multiplicando" op="/" value="5" key="1203" />
+        </case>
+        <case op="exact" value="6" key="1204" child_proc="false">
+          <talk key="1205">Quanto que é $12 vezes $7</talk>
+          <counter var="multiplicando" op="*" value="6" key="1206" />
+          <listen key="1207" />
+          <switch var="$">
+            <case op="eq" value="#multiplicando" key="1208" child_proc="false">
+                  <evaEmotion emotion="HAPPY" key="1209" />
+      <light state="ON" color="GREEN" key="1210" />
+      <motion type="YES" key="1211" />
+      <audio source="applause-moderate" block="TRUE" key="1212" />
+      <counter var="ponto" op="+" value="1" key="1213" />
+      <talk key="1214">Parabéns, voce ganhou um ponto</talk>
+      <evaEmotion emotion="NEUTRAL" key="1215" />
+      <light state="ON" color="WHITE" key="1216" />
+    </case>
+            <default key="1217" child_proc="false">
+              <evaEmotion emotion="SAD" key="1218" />
+      <light state="ON" color="RED" key="1219" />
+      <motion type="NO" key="1220" />
+      <talk key="1221">Pôxa, dessa vez você não pontuou, vamos para a próxima</talk>
+      <light state="ON" color="WHITE" key="1222" />
+      <evaEmotion emotion="NEUTRAL" key="1223" />
+    </default>
+          </switch>   
+          <talk key="1224">A resposta dessa operação é #multiplicando</talk>
+          <counter var="multiplicando" op="/" value="6" key="1225" />
+        </case>
+        <case op="exact" value="7" key="1226" child_proc="false">
+          <talk key="1227">Quanto que é $12 vezes $8</talk>
+          <counter var="multiplicando" op="*" value="7" key="1228" />
+          <listen key="1229" />
+          <switch var="$">
+            <case op="eq" value="#multiplicando" key="1230" child_proc="false">
+                  <evaEmotion emotion="HAPPY" key="1231" />
+      <light state="ON" color="GREEN" key="1232" />
+      <motion type="YES" key="1233" />
+      <audio source="applause-moderate" block="TRUE" key="1234" />
+      <counter var="ponto" op="+" value="1" key="1235" />
+      <talk key="1236">Parabéns, voce ganhou um ponto</talk>
+      <evaEmotion emotion="NEUTRAL" key="1237" />
+      <light state="ON" color="WHITE" key="1238" />
+    </case>
+            <default key="1239" child_proc="false">
+              <evaEmotion emotion="SAD" key="1240" />
+      <light state="ON" color="RED" key="1241" />
+      <motion type="NO" key="1242" />
+      <talk key="1243">Pôxa, dessa vez você não pontuou, vamos para a próxima</talk>
+      <light state="ON" color="WHITE" key="1244" />
+      <evaEmotion emotion="NEUTRAL" key="1245" />
+    </default>
+          </switch>   
+          <talk key="1246">A resposta dessa operação é #multiplicando</talk>
+          <counter var="multiplicando" op="/" value="7" key="1247" />
+        </case>
+        <case op="exact" value="8" key="1248" child_proc="false">
+          <talk key="1249">Quanto que é $12 vezes $9</talk>
+          <counter var="multiplicando" op="*" value="8" key="1250" />
+          <listen key="1251" />
+          <switch var="$">
+            <case op="eq" value="#multiplicando" key="1252" child_proc="false">
+                  <evaEmotion emotion="HAPPY" key="1253" />
+      <light state="ON" color="GREEN" key="1254" />
+      <motion type="YES" key="1255" />
+      <audio source="applause-moderate" block="TRUE" key="1256" />
+      <counter var="ponto" op="+" value="1" key="1257" />
+      <talk key="1258">Parabéns, voce ganhou um ponto</talk>
+      <evaEmotion emotion="NEUTRAL" key="1259" />
+      <light state="ON" color="WHITE" key="1260" />
+    </case>
+            <default key="1261" child_proc="false">
+              <evaEmotion emotion="SAD" key="1262" />
+      <light state="ON" color="RED" key="1263" />
+      <motion type="NO" key="1264" />
+      <talk key="1265">Pôxa, dessa vez você não pontuou, vamos para a próxima</talk>
+      <light state="ON" color="WHITE" key="1266" />
+      <evaEmotion emotion="NEUTRAL" key="1267" />
+    </default>
+          </switch>   
+          <talk key="1268">A resposta dessa operação é #multiplicando</talk>
+          <counter var="multiplicando" op="/" value="8" key="1269" />
+        </case>
+        <case op="exact" value="9" key="1270" child_proc="false">
+          <talk key="1271">Quanto que é $12 vezes $10</talk>
+          <counter var="multiplicando" op="*" value="9" key="1272" />
+          <listen key="1273" />
+          <switch var="$">
+            <case op="eq" value="#multiplicando" key="1274" child_proc="false">
+                  <evaEmotion emotion="HAPPY" key="1275" />
+      <light state="ON" color="GREEN" key="1276" />
+      <motion type="YES" key="1277" />
+      <audio source="applause-moderate" block="TRUE" key="1278" />
+      <counter var="ponto" op="+" value="1" key="1279" />
+      <talk key="1280">Parabéns, voce ganhou um ponto</talk>
+      <evaEmotion emotion="NEUTRAL" key="1281" />
+      <light state="ON" color="WHITE" key="1282" />
+    </case>
+            <default key="1283" child_proc="false">
+              <evaEmotion emotion="SAD" key="1284" />
+      <light state="ON" color="RED" key="1285" />
+      <motion type="NO" key="1286" />
+      <talk key="1287">Pôxa, dessa vez você não pontuou, vamos para a próxima</talk>
+      <light state="ON" color="WHITE" key="1288" />
+      <evaEmotion emotion="NEUTRAL" key="1289" />
+    </default>
+          </switch>   
+          <talk key="1290">A resposta dessa operação é #multiplicando</talk>
+          <counter var="multiplicando" op="/" value="9" key="1291" />
+        </case>
+        <case op="exact" value="10" key="1292" child_proc="false">
+          <talk key="1293">Quanto que é $12 vezes $11</talk>
+          <counter var="multiplicando" op="*" value="10" key="1294" />
+          <listen key="1295" />   
+          <switch var="$">
+            <case op="eq" value="#multiplicando" key="1296" child_proc="false">
+                  <evaEmotion emotion="HAPPY" key="1297" />
+      <light state="ON" color="GREEN" key="1298" />
+      <motion type="YES" key="1299" />
+      <audio source="applause-moderate" block="TRUE" key="1300" />
+      <counter var="ponto" op="+" value="1" key="1301" />
+      <talk key="1302">Parabéns, voce ganhou um ponto</talk>
+      <evaEmotion emotion="NEUTRAL" key="1303" />
+      <light state="ON" color="WHITE" key="1304" />
+    </case>
+            <default key="1305" child_proc="false">
+              <evaEmotion emotion="SAD" key="1306" />
+      <light state="ON" color="RED" key="1307" />
+      <motion type="NO" key="1308" />
+      <talk key="1309">Pôxa, dessa vez você não pontuou, vamos para a próxima</talk>
+      <light state="ON" color="WHITE" key="1310" />
+      <evaEmotion emotion="NEUTRAL" key="1311" />
+    </default>
+          </switch>
+          <talk key="1312">A resposta dessa operação é #multiplicando</talk>
+          <counter var="multiplicando" op="/" value="10" key="1313" />
+        </case>
+      <default key="1314" child_proc="false" /></switch>  
+    <counter var="Loop" op="+" value="1" key="1315" /><goto target="LOOP_ID1_Loop" /></case><default key="1316" child_proc="false" /></switch><switch var="#ponto">
+        <case op="eq" value="3" key="1317" child_proc="false">
+          <counter var="ponto" op="=" value="0" key="1318" />
+          <talk key="1319">Oba,que bom que voce chegou aqui no nível dois</talk>
+          <talk key="1320">Podemos começar?</talk>
+          <listen key="1321" />
+          <switch var="$">
+            <case op="exact" value="sim" key="1322" child_proc="false">
+              <talk key="1323">Então vamos lá</talk>
+              <counter var="Loop" op="=" value="1" key="1324" /><switch id="LOOP_ID2_Loop" var="Loop"><case op="lte" value="3" key="1325" child_proc="false"><random min="1" max="10" key="1326" />
+      <switch var="$">
+        <case op="exact" value="1" key="1327" child_proc="false">
+          <counter var="multiplicando" op="=" value="1" key="1328" />
+        </case>
+        <case op="exact" value="2" key="1329" child_proc="false">
+          <counter var="multiplicando" op="=" value="2" key="1330" />
+        </case>
+        <case op="exact" value="3" key="1331" child_proc="false">
+          <counter var="multiplicando" op="=" value="3" key="1332" />
+        </case>
+        <case op="exact" value="4" key="1333" child_proc="false">
+          <counter var="multiplicando" op="=" value="4" key="1334" />
+        </case>
+        <case op="exact" value="5" key="1335" child_proc="false">
+          <counter var="multiplicando" op="=" value="5" key="1336" />
+        </case>
+        <case op="exact" value="6" key="1337" child_proc="false">
+          <counter var="multiplicando" op="=" value="6" key="1338" />
+        </case>
+        <case op="exact" value="7" key="1339" child_proc="false">
+          <counter var="multiplicando" op="=" value="7" key="1340" />
+        </case>
+        <case op="exact" value="8" key="1341" child_proc="false">
+          <counter var="multiplicando" op="=" value="8" key="1342" />
+        </case>
+        <case op="exact" value="9" key="1343" child_proc="false">
+          <counter var="multiplicando" op="=" value="9" key="1344" />
+        </case>
+        <case op="exact" value="10" key="1345" child_proc="false">
+          <counter var="multiplicando" op="=" value="10" key="1346" />
+        </case>
+      <default key="1347" child_proc="false" /></switch>
+    <random min="1" max="10" key="1348" />
+      <switch var="$">
+        <case op="exact" value="1" key="1349" child_proc="false">
+          <talk key="1350">Ana tem #multiplicando caixas de ovos e cada caixa tem $ ovos. Quantos ovos ela tem no total?/ 
+        Na escola de Alice existem #multiplicando salas de aula e em cada uma existem $ cadeiras . Quantas cadeiras existem na escola de Alice?/
+        João comprou #multiplicando salgados e cada salgado custa $ reais. Quanto joão pagou nos salgados?/
+        Renan tem #multiplicando sacos com $ balas cada um. Quantas balas há em todos os sacos?/
+        Na mesa da professora há #multiplicando prateleiras com $ livros cada uma. Quantos livros há na estante?
+      </talk>
+    <counter var="multiplicando" op="*" value="1" key="1351" />
+          <listen key="1352" />
+          <switch var="$">
+            <case op="eq" value="#multiplicando" key="1353" child_proc="false">
+              <evaEmotion emotion="HAPPY" key="1354" />
+      <light state="ON" color="GREEN" key="1355" />
+      <motion type="YES" key="1356" />
+      <audio source="applause-moderate" block="TRUE" key="1357" />
+      <counter var="ponto" op="+" value="1" key="1358" />
+      <talk key="1359">Parabéns, voce ganhou um ponto</talk>
+      <evaEmotion emotion="NEUTRAL" key="1360" />
+      <light state="ON" color="WHITE" key="1361" />
+    <counter var="multiplicando" op="/" value="1" key="1362" />
+            </case>
+            <default key="1363" child_proc="false">
+              <evaEmotion emotion="SAD" key="1364" />
+      <light state="ON" color="RED" key="1365" />
+      <motion type="NO" key="1366" />
+      <talk key="1367">Pôxa, dessa vez você não pontuou, vamos para a próxima</talk>
+      <light state="ON" color="WHITE" key="1368" />
+      <evaEmotion emotion="NEUTRAL" key="1369" />
+    <counter var="multiplicando" op="/" value="1" key="1370" />
+            </default>
+          </switch>
+        </case>
+        <case op="exact" value="2" key="1371" child_proc="false">
+          <talk key="1372">Ana tem #multiplicando caixas de ovos e cada caixa tem $ ovos. Quantos ovos ela tem no total?/ 
+        Na escola de Alice existem #multiplicando salas de aula e em cada uma existem $ cadeiras . Quantas cadeiras existem na escola de Alice?/
+        João comprou #multiplicando salgados e cada salgado custa $ reais. Quanto joão pagou nos salgados?/
+        Renan tem #multiplicando sacos com $ balas cada um. Quantas balas há em todos os sacos?/
+        Na mesa da professora há #multiplicando prateleiras com $ livros cada uma. Quantos livros há na estante?
+      </talk>
+    <counter var="multiplicando" op="*" value="2" key="1373" />
+          <listen key="1374" />
+          <switch var="$">
+            <case op="eq" value="#multiplicando" key="1375" child_proc="false">
+              <evaEmotion emotion="HAPPY" key="1376" />
+      <light state="ON" color="GREEN" key="1377" />
+      <motion type="YES" key="1378" />
+      <audio source="applause-moderate" block="TRUE" key="1379" />
+      <counter var="ponto" op="+" value="1" key="1380" />
+      <talk key="1381">Parabéns, voce ganhou um ponto</talk>
+      <evaEmotion emotion="NEUTRAL" key="1382" />
+      <light state="ON" color="WHITE" key="1383" />
+    <counter var="multiplicando" op="/" value="2" key="1384" />
+            </case>
+            <default key="1385" child_proc="false">
+              <evaEmotion emotion="SAD" key="1386" />
+      <light state="ON" color="RED" key="1387" />
+      <motion type="NO" key="1388" />
+      <talk key="1389">Pôxa, dessa vez você não pontuou, vamos para a próxima</talk>
+      <light state="ON" color="WHITE" key="1390" />
+      <evaEmotion emotion="NEUTRAL" key="1391" />
+    <counter var="multiplicando" op="/" value="2" key="1392" />
+            </default>
+          </switch>
+        </case>
+        <case op="exact" value="3" key="1393" child_proc="false">
+          <talk key="1394">Ana tem #multiplicando caixas de ovos e cada caixa tem $ ovos. Quantos ovos ela tem no total?/ 
+        Na escola de Alice existem #multiplicando salas de aula e em cada uma existem $ cadeiras . Quantas cadeiras existem na escola de Alice?/
+        João comprou #multiplicando salgados e cada salgado custa $ reais. Quanto joão pagou nos salgados?/
+        Renan tem #multiplicando sacos com $ balas cada um. Quantas balas há em todos os sacos?/
+        Na mesa da professora há #multiplicando prateleiras com $ livros cada uma. Quantos livros há na estante?
+      </talk>
+    <counter var="multiplicando" op="*" value="3" key="1395" />
+          <listen key="1396" />
+          <switch var="$">
+            <case op="eq" value="#multiplicando" key="1397" child_proc="false">
+              <evaEmotion emotion="HAPPY" key="1398" />
+      <light state="ON" color="GREEN" key="1399" />
+      <motion type="YES" key="1400" />
+      <audio source="applause-moderate" block="TRUE" key="1401" />
+      <counter var="ponto" op="+" value="1" key="1402" />
+      <talk key="1403">Parabéns, voce ganhou um ponto</talk>
+      <evaEmotion emotion="NEUTRAL" key="1404" />
+      <light state="ON" color="WHITE" key="1405" />
+    <counter var="multiplicando" op="/" value="3" key="1406" />
+            </case>
+            <default key="1407" child_proc="false">
+              <evaEmotion emotion="SAD" key="1408" />
+      <light state="ON" color="RED" key="1409" />
+      <motion type="NO" key="1410" />
+      <talk key="1411">Pôxa, dessa vez você não pontuou, vamos para a próxima</talk>
+      <light state="ON" color="WHITE" key="1412" />
+      <evaEmotion emotion="NEUTRAL" key="1413" />
+    <counter var="multiplicando" op="/" value="3" key="1414" />
+            </default>
+          </switch>
+        </case>
+        <case op="exact" value="4" key="1415" child_proc="false">
+          <talk key="1416">Ana tem #multiplicando caixas de ovos e cada caixa tem $ ovos. Quantos ovos ela tem no total?/ 
+        Na escola de Alice existem #multiplicando salas de aula e em cada uma existem $ cadeiras . Quantas cadeiras existem na escola de Alice?/
+        João comprou #multiplicando salgados e cada salgado custa $ reais. Quanto joão pagou nos salgados?/
+        Renan tem #multiplicando sacos com $ balas cada um. Quantas balas há em todos os sacos?/
+        Na mesa da professora há #multiplicando prateleiras com $ livros cada uma. Quantos livros há na estante?
+      </talk>
+    <counter var="multiplicando" op="*" value="4" key="1417" />
+          <listen key="1418" />
+          <switch var="$">
+            <case op="eq" value="#multiplicando" key="1419" child_proc="false">
+              <evaEmotion emotion="HAPPY" key="1420" />
+      <light state="ON" color="GREEN" key="1421" />
+      <motion type="YES" key="1422" />
+      <audio source="applause-moderate" block="TRUE" key="1423" />
+      <counter var="ponto" op="+" value="1" key="1424" />
+      <talk key="1425">Parabéns, voce ganhou um ponto</talk>
+      <evaEmotion emotion="NEUTRAL" key="1426" />
+      <light state="ON" color="WHITE" key="1427" />
+    <counter var="multiplicando" op="/" value="4" key="1428" />
+            </case>
+            <default key="1429" child_proc="false">
+              <evaEmotion emotion="SAD" key="1430" />
+      <light state="ON" color="RED" key="1431" />
+      <motion type="NO" key="1432" />
+      <talk key="1433">Pôxa, dessa vez você não pontuou, vamos para a próxima</talk>
+      <light state="ON" color="WHITE" key="1434" />
+      <evaEmotion emotion="NEUTRAL" key="1435" />
+    <counter var="multiplicando" op="/" value="4" key="1436" />
+            </default>
+          </switch>
+        </case>
+        <case op="exact" value="5" key="1437" child_proc="false">
+          <talk key="1438">Ana tem #multiplicando caixas de ovos e cada caixa tem $ ovos. Quantos ovos ela tem no total?/ 
+        Na escola de Alice existem #multiplicando salas de aula e em cada uma existem $ cadeiras . Quantas cadeiras existem na escola de Alice?/
+        João comprou #multiplicando salgados e cada salgado custa $ reais. Quanto joão pagou nos salgados?/
+        Renan tem #multiplicando sacos com $ balas cada um. Quantas balas há em todos os sacos?/
+        Na mesa da professora há #multiplicando prateleiras com $ livros cada uma. Quantos livros há na estante?
+      </talk>
+    <counter var="multiplicando" op="*" value="5" key="1439" />
+          <listen key="1440" />
+          <switch var="$">
+            <case op="eq" value="#multiplicando" key="1441" child_proc="false">
+              <evaEmotion emotion="HAPPY" key="1442" />
+      <light state="ON" color="GREEN" key="1443" />
+      <motion type="YES" key="1444" />
+      <audio source="applause-moderate" block="TRUE" key="1445" />
+      <counter var="ponto" op="+" value="1" key="1446" />
+      <talk key="1447">Parabéns, voce ganhou um ponto</talk>
+      <evaEmotion emotion="NEUTRAL" key="1448" />
+      <light state="ON" color="WHITE" key="1449" />
+    <counter var="multiplicando" op="/" value="5" key="1450" />
+            </case>
+            <default key="1451" child_proc="false">
+              <evaEmotion emotion="SAD" key="1452" />
+      <light state="ON" color="RED" key="1453" />
+      <motion type="NO" key="1454" />
+      <talk key="1455">Pôxa, dessa vez você não pontuou, vamos para a próxima</talk>
+      <light state="ON" color="WHITE" key="1456" />
+      <evaEmotion emotion="NEUTRAL" key="1457" />
+    <counter var="multiplicando" op="/" value="5" key="1458" />
+            </default>
+          </switch>
+        </case>
+        <case op="exact" value="6" key="1459" child_proc="false">
+          <talk key="1460">Ana tem #multiplicando caixas de ovos e cada caixa tem $ ovos. Quantos ovos ela tem no total?/ 
+        Na escola de Alice existem #multiplicando salas de aula e em cada uma existem $ cadeiras . Quantas cadeiras existem na escola de Alice?/
+        João comprou #multiplicando salgados e cada salgado custa $ reais. Quanto joão pagou nos salgados?/
+        Renan tem #multiplicando sacos com $ balas cada um. Quantas balas há em todos os sacos?/
+        Na mesa da professora há #multiplicando prateleiras com $ livros cada uma. Quantos livros há na estante?
+      </talk>
+    <counter var="multiplicando" op="*" value="6" key="1461" />
+          <listen key="1462" />
+          <switch var="$">
+            <case op="eq" value="#multiplicando" key="1463" child_proc="false">
+              <evaEmotion emotion="HAPPY" key="1464" />
+      <light state="ON" color="GREEN" key="1465" />
+      <motion type="YES" key="1466" />
+      <audio source="applause-moderate" block="TRUE" key="1467" />
+      <counter var="ponto" op="+" value="1" key="1468" />
+      <talk key="1469">Parabéns, voce ganhou um ponto</talk>
+      <evaEmotion emotion="NEUTRAL" key="1470" />
+      <light state="ON" color="WHITE" key="1471" />
+    <counter var="multiplicando" op="/" value="6" key="1472" />
+            </case>
+            <default key="1473" child_proc="false">
+              <evaEmotion emotion="SAD" key="1474" />
+      <light state="ON" color="RED" key="1475" />
+      <motion type="NO" key="1476" />
+      <talk key="1477">Pôxa, dessa vez você não pontuou, vamos para a próxima</talk>
+      <light state="ON" color="WHITE" key="1478" />
+      <evaEmotion emotion="NEUTRAL" key="1479" />
+    <counter var="multiplicando" op="/" value="6" key="1480" />
+            </default>
+          </switch>
+        </case>
+        <case op="exact" value="7" key="1481" child_proc="false">
+          <talk key="1482">Ana tem #multiplicando caixas de ovos e cada caixa tem $ ovos. Quantos ovos ela tem no total?/ 
+        Na escola de Alice existem #multiplicando salas de aula e em cada uma existem $ cadeiras . Quantas cadeiras existem na escola de Alice?/
+        João comprou #multiplicando salgados e cada salgado custa $ reais. Quanto joão pagou nos salgados?/
+        Renan tem #multiplicando sacos com $ balas cada um. Quantas balas há em todos os sacos?/
+        Na mesa da professora há #multiplicando prateleiras com $ livros cada uma. Quantos livros há na estante?
+      </talk>
+    <counter var="multiplicando" op="*" value="7" key="1483" />
+          <listen key="1484" />
+          <switch var="$">
+            <case op="eq" value="#multiplicando" key="1485" child_proc="false">
+              <evaEmotion emotion="HAPPY" key="1486" />
+      <light state="ON" color="GREEN" key="1487" />
+      <motion type="YES" key="1488" />
+      <audio source="applause-moderate" block="TRUE" key="1489" />
+      <counter var="ponto" op="+" value="1" key="1490" />
+      <talk key="1491">Parabéns, voce ganhou um ponto</talk>
+      <evaEmotion emotion="NEUTRAL" key="1492" />
+      <light state="ON" color="WHITE" key="1493" />
+    <counter var="multiplicando" op="/" value="7" key="1494" />
+            </case>
+            <default key="1495" child_proc="false">
+              <evaEmotion emotion="SAD" key="1496" />
+      <light state="ON" color="RED" key="1497" />
+      <motion type="NO" key="1498" />
+      <talk key="1499">Pôxa, dessa vez você não pontuou, vamos para a próxima</talk>
+      <light state="ON" color="WHITE" key="1500" />
+      <evaEmotion emotion="NEUTRAL" key="1501" />
+    <counter var="multiplicando" op="/" value="7" key="1502" />
+            </default>
+          </switch>
+        </case>
+        <case op="exact" value="8" key="1503" child_proc="false">
+          <talk key="1504">Ana tem #multiplicando caixas de ovos e cada caixa tem $ ovos. Quantos ovos ela tem no total?/ 
+        Na escola de Alice existem #multiplicando salas de aula e em cada uma existem $ cadeiras . Quantas cadeiras existem na escola de Alice?/
+        João comprou #multiplicando salgados e cada salgado custa $ reais. Quanto joão pagou nos salgados?/
+        Renan tem #multiplicando sacos com $ balas cada um. Quantas balas há em todos os sacos?/
+        Na mesa da professora há #multiplicando prateleiras com $ livros cada uma. Quantos livros há na estante?
+      </talk>
+    <counter var="multiplicando" op="*" value="8" key="1505" />
+          <listen key="1506" />
+          <switch var="$">
+            <case op="eq" value="#multiplicando" key="1507" child_proc="false">
+              <evaEmotion emotion="HAPPY" key="1508" />
+      <light state="ON" color="GREEN" key="1509" />
+      <motion type="YES" key="1510" />
+      <audio source="applause-moderate" block="TRUE" key="1511" />
+      <counter var="ponto" op="+" value="1" key="1512" />
+      <talk key="1513">Parabéns, voce ganhou um ponto</talk>
+      <evaEmotion emotion="NEUTRAL" key="1514" />
+      <light state="ON" color="WHITE" key="1515" />
+    <counter var="multiplicando" op="/" value="8" key="1516" />
+            </case>
+            <default key="1517" child_proc="false">
+              <evaEmotion emotion="SAD" key="1518" />
+      <light state="ON" color="RED" key="1519" />
+      <motion type="NO" key="1520" />
+      <talk key="1521">Pôxa, dessa vez você não pontuou, vamos para a próxima</talk>
+      <light state="ON" color="WHITE" key="1522" />
+      <evaEmotion emotion="NEUTRAL" key="1523" />
+    <counter var="multiplicando" op="/" value="8" key="1524" />
+            </default>
+          </switch>
+        </case>
+        <case op="exact" value="9" key="1525" child_proc="false">
+          <talk key="1526">Ana tem #multiplicando caixas de ovos e cada caixa tem $ ovos. Quantos ovos ela tem no total?/ 
+        Na escola de Alice existem #multiplicando salas de aula e em cada uma existem $ cadeiras . Quantas cadeiras existem na escola de Alice?/
+        João comprou #multiplicando salgados e cada salgado custa $ reais. Quanto joão pagou nos salgados?/
+        Renan tem #multiplicando sacos com $ balas cada um. Quantas balas há em todos os sacos?/
+        Na mesa da professora há #multiplicando prateleiras com $ livros cada uma. Quantos livros há na estante?
+      </talk>
+    <counter var="multiplicando" op="*" value="9" key="1527" />
+          <listen key="1528" />
+          <switch var="$">
+            <case op="eq" value="#multiplicando" key="1529" child_proc="false">
+              <evaEmotion emotion="HAPPY" key="1530" />
+      <light state="ON" color="GREEN" key="1531" />
+      <motion type="YES" key="1532" />
+      <audio source="applause-moderate" block="TRUE" key="1533" />
+      <counter var="ponto" op="+" value="1" key="1534" />
+      <talk key="1535">Parabéns, voce ganhou um ponto</talk>
+      <evaEmotion emotion="NEUTRAL" key="1536" />
+      <light state="ON" color="WHITE" key="1537" />
+    <counter var="multiplicando" op="/" value="9" key="1538" />
+            </case>
+            <default key="1539" child_proc="false">
+              <evaEmotion emotion="SAD" key="1540" />
+      <light state="ON" color="RED" key="1541" />
+      <motion type="NO" key="1542" />
+      <talk key="1543">Pôxa, dessa vez você não pontuou, vamos para a próxima</talk>
+      <light state="ON" color="WHITE" key="1544" />
+      <evaEmotion emotion="NEUTRAL" key="1545" />
+    <counter var="multiplicando" op="/" value="9" key="1546" />
+            </default>
+          </switch>
+        </case>
+        <case op="exact" value="10" key="1547" child_proc="false">
+          <talk key="1548">Ana tem #multiplicando caixas de ovos e cada caixa tem $ ovos. Quantos ovos ela tem no total?/ 
+        Na escola de Alice existem #multiplicando salas de aula e em cada uma existem $ cadeiras . Quantas cadeiras existem na escola de Alice?/
+        João comprou #multiplicando salgados e cada salgado custa $ reais. Quanto joão pagou nos salgados?/
+        Renan tem #multiplicando sacos com $ balas cada um. Quantas balas há em todos os sacos?/
+        Na mesa da professora há #multiplicando prateleiras com $ livros cada uma. Quantos livros há na estante?
+      </talk>
+    <counter var="multiplicando" op="*" value="10" key="1549" />
+          <listen key="1550" />
+          <switch var="$">
+            <case op="eq" value="#multiplicando" key="1551" child_proc="false">
+              <evaEmotion emotion="HAPPY" key="1552" />
+      <light state="ON" color="GREEN" key="1553" />
+      <motion type="YES" key="1554" />
+      <audio source="applause-moderate" block="TRUE" key="1555" />
+      <counter var="ponto" op="+" value="1" key="1556" />
+      <talk key="1557">Parabéns, voce ganhou um ponto</talk>
+      <evaEmotion emotion="NEUTRAL" key="1558" />
+      <light state="ON" color="WHITE" key="1559" />
+    <counter var="multiplicando" op="/" value="10" key="1560" />
+            </case>
+            <default key="1561" child_proc="false">
+              <evaEmotion emotion="SAD" key="1562" />
+      <light state="ON" color="RED" key="1563" />
+      <motion type="NO" key="1564" />
+      <talk key="1565">Pôxa, dessa vez você não pontuou, vamos para a próxima</talk>
+      <light state="ON" color="WHITE" key="1566" />
+      <evaEmotion emotion="NEUTRAL" key="1567" />
+    <counter var="multiplicando" op="/" value="10" key="1568" />
+            </default>
+          </switch>
+        </case>
+      <default key="1569" child_proc="false" /></switch>
+    <counter var="Loop" op="+" value="1" key="1570" /><goto target="LOOP_ID2_Loop" /></case><default key="1571" child_proc="false" /></switch><switch var="#ponto">
+                <case op="gte" value="2" key="1572" child_proc="false">
+                  <counter var="ponto" op="=" value="0" key="1573" />
+                  <talk key="1574">Oba,que bom que voce chegou aqui no nível três</talk>
+                  <talk key="1575">Podemos começar?</talk>
+                  <listen key="1576" />
+                  <switch var="$">
+                    <case op="exact" value="sim" key="1577" child_proc="false">
+                      <talk key="1578">Então vamos lá</talk>
+                      <counter var="Loop" op="=" value="1" key="1579" /><switch id="LOOP_ID3_Loop" var="Loop"><case op="lte" value="3" key="1580" child_proc="false"><random min="1" max="10" key="1581" />
+      <switch var="$">
+        <case op="exact" value="1" key="1582" child_proc="false">
+          <counter var="multiplicando" op="=" value="1" key="1583" />
+        </case>
+        <case op="exact" value="2" key="1584" child_proc="false">
+          <counter var="multiplicando" op="=" value="2" key="1585" />
+        </case>
+        <case op="exact" value="3" key="1586" child_proc="false">
+          <counter var="multiplicando" op="=" value="3" key="1587" />
+        </case>
+        <case op="exact" value="4" key="1588" child_proc="false">
+          <counter var="multiplicando" op="=" value="4" key="1589" />
+        </case>
+        <case op="exact" value="5" key="1590" child_proc="false">
+          <counter var="multiplicando" op="=" value="5" key="1591" />
+        </case>
+        <case op="exact" value="6" key="1592" child_proc="false">
+          <counter var="multiplicando" op="=" value="6" key="1593" />
+        </case>
+        <case op="exact" value="7" key="1594" child_proc="false">
+          <counter var="multiplicando" op="=" value="7" key="1595" />
+        </case>
+        <case op="exact" value="8" key="1596" child_proc="false">
+          <counter var="multiplicando" op="=" value="8" key="1597" />
+        </case>
+        <case op="exact" value="9" key="1598" child_proc="false">
+          <counter var="multiplicando" op="=" value="9" key="1599" />
+        </case>
+        <case op="exact" value="10" key="1600" child_proc="false">
+          <counter var="multiplicando" op="=" value="10" key="1601" />
+        </case>
+      <default key="1602" child_proc="false" /></switch>
+    <random min="1" max="10" key="1603" />
+      <switch var="$">
+        <case op="exact" value="1" key="1604" child_proc="false">
+          <talk key="1605">Um jogador comprou #multiplicando blusas de time custando $ reais cada uma. Quanto ele gastou ?/
+        Um caixote tem #multiplicando maçãs. Quantas maçãs terão $ caixotes?/
+        Marcelo estocou #multiplicando caixas contendo $ tubos de cola cada uma . Quantos tubos Marcelo estocou?/
+        Joana precisa encher #multiplicando copos de $ ml com refrigerante. Qual a quantidade de refrigerante que ele precisará?/
+        Ana Carolina usa #multiplicando novelos de lã para fazer uma blusa. De quantos novelos ela irá precisar para fazer $ blusas?/
+        Na fazenda de José Alfedro tem #multiplicando vacas leiteiras que produzem $ litros de leite cada uma. Quantos litros de leite elas produzem?/
+        Para fazer um bolo são necessários #multiplicando ovos. Quantos ovos serão necessários para fazer $ bolos?/
+        Bruna comprou #multiplicando caixas de morango para vender, em cada caixa há $ morangos. Quantos morangos ela comprou?
+      </talk>
+    <counter var="multiplicando" op="*" value="1" key="1606" />
+          <listen key="1607" />
+          <switch var="$">
+            <case op="eq" value="#multiplicando" key="1608" child_proc="false">
+              <evaEmotion emotion="HAPPY" key="1609" />
+      <light state="ON" color="GREEN" key="1610" />
+      <motion type="YES" key="1611" />
+      <audio source="applause-moderate" block="TRUE" key="1612" />
+      <counter var="ponto" op="+" value="1" key="1613" />
+      <talk key="1614">Parabéns, voce ganhou um ponto</talk>
+      <evaEmotion emotion="NEUTRAL" key="1615" />
+      <light state="ON" color="WHITE" key="1616" />
+    <counter var="multiplicando" op="/" value="1" key="1617" />
+            </case>
+            <default key="1618" child_proc="false">
+              <evaEmotion emotion="SAD" key="1619" />
+      <light state="ON" color="RED" key="1620" />
+      <motion type="NO" key="1621" />
+      <talk key="1622">Pôxa, dessa vez você não pontuou, vamos para a próxima</talk>
+      <light state="ON" color="WHITE" key="1623" />
+      <evaEmotion emotion="NEUTRAL" key="1624" />
+    <counter var="multiplicando" op="/" value="1" key="1625" />
+            </default>
+          </switch>
+        </case>
+        <case op="exact" value="2" key="1626" child_proc="false">
+          <talk key="1627">Um jogador comprou #multiplicando blusas de time custando $ reais cada uma. Quanto ele gastou ?/
+        Um caixote tem #multiplicando maçãs. Quantas maçãs terão $ caixotes?/
+        Marcelo estocou #multiplicando caixas contendo $ tubos de cola cada uma . Quantos tubos Marcelo estocou?/
+        Joana precisa encher #multiplicando copos de $ ml com refrigerante. Qual a quantidade de refrigerante que ele precisará?/
+        Ana Carolina usa #multiplicando novelos de lã para fazer uma blusa. De quantos novelos ela irá precisar para fazer $ blusas?/
+        Na fazenda de José Alfedro tem #multiplicando vacas leiteiras que produzem $ litros de leite cada uma. Quantos litros de leite elas produzem?/
+        Para fazer um bolo são necessários #multiplicando ovos. Quantos ovos serão necessários para fazer $ bolos?/
+        Bruna comprou #multiplicando caixas de morango para vender, em cada caixa há $ morangos. Quantos morangos ela comprou?
+      </talk>
+    <counter var="multiplicando" op="*" value="2" key="1628" />
+          <listen key="1629" />
+          <switch var="$">
+            <case op="eq" value="#multiplicando" key="1630" child_proc="false">
+              <evaEmotion emotion="HAPPY" key="1631" />
+      <light state="ON" color="GREEN" key="1632" />
+      <motion type="YES" key="1633" />
+      <audio source="applause-moderate" block="TRUE" key="1634" />
+      <counter var="ponto" op="+" value="1" key="1635" />
+      <talk key="1636">Parabéns, voce ganhou um ponto</talk>
+      <evaEmotion emotion="NEUTRAL" key="1637" />
+      <light state="ON" color="WHITE" key="1638" />
+    <counter var="multiplicando" op="/" value="2" key="1639" />
+            </case>
+            <default key="1640" child_proc="false">
+              <evaEmotion emotion="SAD" key="1641" />
+      <light state="ON" color="RED" key="1642" />
+      <motion type="NO" key="1643" />
+      <talk key="1644">Pôxa, dessa vez você não pontuou, vamos para a próxima</talk>
+      <light state="ON" color="WHITE" key="1645" />
+      <evaEmotion emotion="NEUTRAL" key="1646" />
+    <counter var="multiplicando" op="/" value="2" key="1647" />
+            </default>
+          </switch>
+        </case>
+        <case op="exact" value="3" key="1648" child_proc="false">
+          <talk key="1649">Um jogador comprou #multiplicando blusas de time custando $ reais cada uma. Quanto ele gastou ?/
+        Um caixote tem #multiplicando maçãs. Quantas maçãs terão $ caixotes?/
+        Marcelo estocou #multiplicando caixas contendo $ tubos de cola cada uma . Quantos tubos Marcelo estocou?/
+        Joana precisa encher #multiplicando copos de $ ml com refrigerante. Qual a quantidade de refrigerante que ele precisará?/
+        Ana Carolina usa #multiplicando novelos de lã para fazer uma blusa. De quantos novelos ela irá precisar para fazer $ blusas?/
+        Na fazenda de José Alfedro tem #multiplicando vacas leiteiras que produzem $ litros de leite cada uma. Quantos litros de leite elas produzem?/
+        Para fazer um bolo são necessários #multiplicando ovos. Quantos ovos serão necessários para fazer $ bolos?/
+        Bruna comprou #multiplicando caixas de morango para vender, em cada caixa há $ morangos. Quantos morangos ela comprou?
+      </talk>
+    <counter var="multiplicando" op="*" value="3" key="1650" />
+          <listen key="1651" />
+          <switch var="$">
+            <case op="eq" value="#multiplicando" key="1652" child_proc="false">
+              <evaEmotion emotion="HAPPY" key="1653" />
+      <light state="ON" color="GREEN" key="1654" />
+      <motion type="YES" key="1655" />
+      <audio source="applause-moderate" block="TRUE" key="1656" />
+      <counter var="ponto" op="+" value="1" key="1657" />
+      <talk key="1658">Parabéns, voce ganhou um ponto</talk>
+      <evaEmotion emotion="NEUTRAL" key="1659" />
+      <light state="ON" color="WHITE" key="1660" />
+    <counter var="multiplicando" op="/" value="3" key="1661" />
+            </case>
+            <default key="1662" child_proc="false">
+              <evaEmotion emotion="SAD" key="1663" />
+      <light state="ON" color="RED" key="1664" />
+      <motion type="NO" key="1665" />
+      <talk key="1666">Pôxa, dessa vez você não pontuou, vamos para a próxima</talk>
+      <light state="ON" color="WHITE" key="1667" />
+      <evaEmotion emotion="NEUTRAL" key="1668" />
+    <counter var="multiplicando" op="/" value="3" key="1669" />
+            </default>
+          </switch>
+        </case>
+        <case op="exact" value="4" key="1670" child_proc="false">
+          <talk key="1671">Um jogador comprou #multiplicando blusas de time custando $ reais cada uma. Quanto ele gastou ?/
+        Um caixote tem #multiplicando maçãs. Quantas maçãs terão $ caixotes?/
+        Marcelo estocou #multiplicando caixas contendo $ tubos de cola cada uma . Quantos tubos Marcelo estocou?/
+        Joana precisa encher #multiplicando copos de $ ml com refrigerante. Qual a quantidade de refrigerante que ele precisará?/
+        Ana Carolina usa #multiplicando novelos de lã para fazer uma blusa. De quantos novelos ela irá precisar para fazer $ blusas?/
+        Na fazenda de José Alfedro tem #multiplicando vacas leiteiras que produzem $ litros de leite cada uma. Quantos litros de leite elas produzem?/
+        Para fazer um bolo são necessários #multiplicando ovos. Quantos ovos serão necessários para fazer $ bolos?/
+        Bruna comprou #multiplicando caixas de morango para vender, em cada caixa há $ morangos. Quantos morangos ela comprou?
+      </talk>
+    <counter var="multiplicando" op="*" value="4" key="1672" />
+          <listen key="1673" />
+          <switch var="$">
+            <case op="eq" value="#multiplicando" key="1674" child_proc="false">
+              <evaEmotion emotion="HAPPY" key="1675" />
+      <light state="ON" color="GREEN" key="1676" />
+      <motion type="YES" key="1677" />
+      <audio source="applause-moderate" block="TRUE" key="1678" />
+      <counter var="ponto" op="+" value="1" key="1679" />
+      <talk key="1680">Parabéns, voce ganhou um ponto</talk>
+      <evaEmotion emotion="NEUTRAL" key="1681" />
+      <light state="ON" color="WHITE" key="1682" />
+    <counter var="multiplicando" op="/" value="4" key="1683" />
+            </case>
+            <default key="1684" child_proc="false">
+              <evaEmotion emotion="SAD" key="1685" />
+      <light state="ON" color="RED" key="1686" />
+      <motion type="NO" key="1687" />
+      <talk key="1688">Pôxa, dessa vez você não pontuou, vamos para a próxima</talk>
+      <light state="ON" color="WHITE" key="1689" />
+      <evaEmotion emotion="NEUTRAL" key="1690" />
+    <counter var="multiplicando" op="/" value="4" key="1691" />
+            </default>
+          </switch>
+        </case>
+        <case op="exact" value="5" key="1692" child_proc="false">
+          <talk key="1693">Um jogador comprou #multiplicando blusas de time custando $ reais cada uma. Quanto ele gastou ?/
+        Um caixote tem #multiplicando maçãs. Quantas maçãs terão $ caixotes?/
+        Marcelo estocou #multiplicando caixas contendo $ tubos de cola cada uma . Quantos tubos Marcelo estocou?/
+        Joana precisa encher #multiplicando copos de $ ml com refrigerante. Qual a quantidade de refrigerante que ele precisará?/
+        Ana Carolina usa #multiplicando novelos de lã para fazer uma blusa. De quantos novelos ela irá precisar para fazer $ blusas?/
+        Na fazenda de José Alfedro tem #multiplicando vacas leiteiras que produzem $ litros de leite cada uma. Quantos litros de leite elas produzem?/
+        Para fazer um bolo são necessários #multiplicando ovos. Quantos ovos serão necessários para fazer $ bolos?/
+        Bruna comprou #multiplicando caixas de morango para vender, em cada caixa há $ morangos. Quantos morangos ela comprou?
+      </talk>
+    <counter var="multiplicando" op="*" value="5" key="1694" />
+          <listen key="1695" />
+          <switch var="$">
+            <case op="eq" value="#multiplicando" key="1696" child_proc="false">
+              <evaEmotion emotion="HAPPY" key="1697" />
+      <light state="ON" color="GREEN" key="1698" />
+      <motion type="YES" key="1699" />
+      <audio source="applause-moderate" block="TRUE" key="1700" />
+      <counter var="ponto" op="+" value="1" key="1701" />
+      <talk key="1702">Parabéns, voce ganhou um ponto</talk>
+      <evaEmotion emotion="NEUTRAL" key="1703" />
+      <light state="ON" color="WHITE" key="1704" />
+    <counter var="multiplicando" op="/" value="5" key="1705" />
+            </case>
+            <default key="1706" child_proc="false">
+              <evaEmotion emotion="SAD" key="1707" />
+      <light state="ON" color="RED" key="1708" />
+      <motion type="NO" key="1709" />
+      <talk key="1710">Pôxa, dessa vez você não pontuou, vamos para a próxima</talk>
+      <light state="ON" color="WHITE" key="1711" />
+      <evaEmotion emotion="NEUTRAL" key="1712" />
+    <counter var="multiplicando" op="/" value="5" key="1713" />
+            </default>
+          </switch>
+        </case>
+        <case op="exact" value="6" key="1714" child_proc="false">
+          <talk key="1715">Um jogador comprou #multiplicando blusas de time custando $ reais cada uma. Quanto ele gastou ?/
+        Um caixote tem #multiplicando maçãs. Quantas maçãs terão $ caixotes?/
+        Marcelo estocou #multiplicando caixas contendo $ tubos de cola cada uma . Quantos tubos Marcelo estocou?/
+        Joana precisa encher #multiplicando copos de $ ml com refrigerante. Qual a quantidade de refrigerante que ele precisará?/
+        Ana Carolina usa #multiplicando novelos de lã para fazer uma blusa. De quantos novelos ela irá precisar para fazer $ blusas?/
+        Na fazenda de José Alfedro tem #multiplicando vacas leiteiras que produzem $ litros de leite cada uma. Quantos litros de leite elas produzem?/
+        Para fazer um bolo são necessários #multiplicando ovos. Quantos ovos serão necessários para fazer $ bolos?/
+        Bruna comprou #multiplicando caixas de morango para vender, em cada caixa há $ morangos. Quantos morangos ela comprou?
+      </talk>
+    <counter var="multiplicando" op="*" value="6" key="1716" />
+          <listen key="1717" />
+          <switch var="$">
+            <case op="eq" value="#multiplicando" key="1718" child_proc="false">
+              <evaEmotion emotion="HAPPY" key="1719" />
+      <light state="ON" color="GREEN" key="1720" />
+      <motion type="YES" key="1721" />
+      <audio source="applause-moderate" block="TRUE" key="1722" />
+      <counter var="ponto" op="+" value="1" key="1723" />
+      <talk key="1724">Parabéns, voce ganhou um ponto</talk>
+      <evaEmotion emotion="NEUTRAL" key="1725" />
+      <light state="ON" color="WHITE" key="1726" />
+    <counter var="multiplicando" op="/" value="6" key="1727" />
+            </case>
+            <default key="1728" child_proc="false">
+              <evaEmotion emotion="SAD" key="1729" />
+      <light state="ON" color="RED" key="1730" />
+      <motion type="NO" key="1731" />
+      <talk key="1732">Pôxa, dessa vez você não pontuou, vamos para a próxima</talk>
+      <light state="ON" color="WHITE" key="1733" />
+      <evaEmotion emotion="NEUTRAL" key="1734" />
+    <counter var="multiplicando" op="/" value="6" key="1735" />
+            </default>
+          </switch>
+        </case>
+        <case op="exact" value="7" key="1736" child_proc="false">
+          <talk key="1737">Um jogador comprou #multiplicando blusas de time custando $ reais cada uma. Quanto ele gastou ?/
+        Um caixote tem #multiplicando maçãs. Quantas maçãs terão $ caixotes?/
+        Marcelo estocou #multiplicando caixas contendo $ tubos de cola cada uma . Quantos tubos Marcelo estocou?/
+        Joana precisa encher #multiplicando copos de $ ml com refrigerante. Qual a quantidade de refrigerante que ele precisará?/
+        Ana Carolina usa #multiplicando novelos de lã para fazer uma blusa. De quantos novelos ela irá precisar para fazer $ blusas?/
+        Na fazenda de José Alfedro tem #multiplicando vacas leiteiras que produzem $ litros de leite cada uma. Quantos litros de leite elas produzem?/
+        Para fazer um bolo são necessários #multiplicando ovos. Quantos ovos serão necessários para fazer $ bolos?/
+        Bruna comprou #multiplicando caixas de morango para vender, em cada caixa há $ morangos. Quantos morangos ela comprou?
+      </talk>
+    <counter var="multiplicando" op="*" value="7" key="1738" />
+          <listen key="1739" />
+          <switch var="$">
+            <case op="eq" value="#multiplicando" key="1740" child_proc="false">
+              <evaEmotion emotion="HAPPY" key="1741" />
+      <light state="ON" color="GREEN" key="1742" />
+      <motion type="YES" key="1743" />
+      <audio source="applause-moderate" block="TRUE" key="1744" />
+      <counter var="ponto" op="+" value="1" key="1745" />
+      <talk key="1746">Parabéns, voce ganhou um ponto</talk>
+      <evaEmotion emotion="NEUTRAL" key="1747" />
+      <light state="ON" color="WHITE" key="1748" />
+    <counter var="multiplicando" op="/" value="7" key="1749" />
+            </case>
+            <default key="1750" child_proc="false">
+              <evaEmotion emotion="SAD" key="1751" />
+      <light state="ON" color="RED" key="1752" />
+      <motion type="NO" key="1753" />
+      <talk key="1754">Pôxa, dessa vez você não pontuou, vamos para a próxima</talk>
+      <light state="ON" color="WHITE" key="1755" />
+      <evaEmotion emotion="NEUTRAL" key="1756" />
+    <counter var="multiplicando" op="/" value="7" key="1757" />
+            </default>
+          </switch>
+        </case>
+        <case op="exact" value="8" key="1758" child_proc="false">
+          <talk key="1759">Um jogador comprou #multiplicando blusas de time custando $ reais cada uma. Quanto ele gastou ?/
+        Um caixote tem #multiplicando maçãs. Quantas maçãs terão $ caixotes?/
+        Marcelo estocou #multiplicando caixas contendo $ tubos de cola cada uma . Quantos tubos Marcelo estocou?/
+        Joana precisa encher #multiplicando copos de $ ml com refrigerante. Qual a quantidade de refrigerante que ele precisará?/
+        Ana Carolina usa #multiplicando novelos de lã para fazer uma blusa. De quantos novelos ela irá precisar para fazer $ blusas?/
+        Na fazenda de José Alfedro tem #multiplicando vacas leiteiras que produzem $ litros de leite cada uma. Quantos litros de leite elas produzem?/
+        Para fazer um bolo são necessários #multiplicando ovos. Quantos ovos serão necessários para fazer $ bolos?/
+        Bruna comprou #multiplicando caixas de morango para vender, em cada caixa há $ morangos. Quantos morangos ela comprou?
+      </talk>
+    <counter var="multiplicando" op="*" value="8" key="1760" />
+          <listen key="1761" />
+          <switch var="$">
+            <case op="eq" value="#multiplicando" key="1762" child_proc="false">
+              <evaEmotion emotion="HAPPY" key="1763" />
+      <light state="ON" color="GREEN" key="1764" />
+      <motion type="YES" key="1765" />
+      <audio source="applause-moderate" block="TRUE" key="1766" />
+      <counter var="ponto" op="+" value="1" key="1767" />
+      <talk key="1768">Parabéns, voce ganhou um ponto</talk>
+      <evaEmotion emotion="NEUTRAL" key="1769" />
+      <light state="ON" color="WHITE" key="1770" />
+    <counter var="multiplicando" op="/" value="8" key="1771" />
+            </case>
+            <default key="1772" child_proc="false">
+              <evaEmotion emotion="SAD" key="1773" />
+      <light state="ON" color="RED" key="1774" />
+      <motion type="NO" key="1775" />
+      <talk key="1776">Pôxa, dessa vez você não pontuou, vamos para a próxima</talk>
+      <light state="ON" color="WHITE" key="1777" />
+      <evaEmotion emotion="NEUTRAL" key="1778" />
+    <counter var="multiplicando" op="/" value="8" key="1779" />
+            </default>
+          </switch>
+        </case>
+        <case op="exact" value="9" key="1780" child_proc="false">
+          <talk key="1781">Um jogador comprou #multiplicando blusas de time custando $ reais cada uma. Quanto ele gastou ?/
+        Um caixote tem #multiplicando maçãs. Quantas maçãs terão $ caixotes?/
+        Marcelo estocou #multiplicando caixas contendo $ tubos de cola cada uma . Quantos tubos Marcelo estocou?/
+        Joana precisa encher #multiplicando copos de $ ml com refrigerante. Qual a quantidade de refrigerante que ele precisará?/
+        Ana Carolina usa #multiplicando novelos de lã para fazer uma blusa. De quantos novelos ela irá precisar para fazer $ blusas?/
+        Na fazenda de José Alfedro tem #multiplicando vacas leiteiras que produzem $ litros de leite cada uma. Quantos litros de leite elas produzem?/
+        Para fazer um bolo são necessários #multiplicando ovos. Quantos ovos serão necessários para fazer $ bolos?/
+        Bruna comprou #multiplicando caixas de morango para vender, em cada caixa há $ morangos. Quantos morangos ela comprou?
+      </talk>
+    <counter var="multiplicando" op="*" value="9" key="1782" />
+          <listen key="1783" />
+          <switch var="$">
+            <case op="eq" value="#multiplicando" key="1784" child_proc="false">
+              <evaEmotion emotion="HAPPY" key="1785" />
+      <light state="ON" color="GREEN" key="1786" />
+      <motion type="YES" key="1787" />
+      <audio source="applause-moderate" block="TRUE" key="1788" />
+      <counter var="ponto" op="+" value="1" key="1789" />
+      <talk key="1790">Parabéns, voce ganhou um ponto</talk>
+      <evaEmotion emotion="NEUTRAL" key="1791" />
+      <light state="ON" color="WHITE" key="1792" />
+    <counter var="multiplicando" op="/" value="9" key="1793" />
+            </case>
+            <default key="1794" child_proc="false">
+              <evaEmotion emotion="SAD" key="1795" />
+      <light state="ON" color="RED" key="1796" />
+      <motion type="NO" key="1797" />
+      <talk key="1798">Pôxa, dessa vez você não pontuou, vamos para a próxima</talk>
+      <light state="ON" color="WHITE" key="1799" />
+      <evaEmotion emotion="NEUTRAL" key="1800" />
+    <counter var="multiplicando" op="/" value="9" key="1801" />
+            </default>
+          </switch>
+        </case>
+        <case op="exact" value="10" key="1802" child_proc="false">
+          <talk key="1803">Um jogador comprou #multiplicando blusas de time custando $ reais cada uma. Quanto ele gastou ?/
+        Um caixote tem #multiplicando maçãs. Quantas maçãs terão $ caixotes?/
+        Marcelo estocou #multiplicando caixas contendo $ tubos de cola cada uma . Quantos tubos Marcelo estocou?/
+        Joana precisa encher #multiplicando copos de $ ml com refrigerante. Qual a quantidade de refrigerante que ele precisará?/
+        Ana Carolina usa #multiplicando novelos de lã para fazer uma blusa. De quantos novelos ela irá precisar para fazer $ blusas?/
+        Na fazenda de José Alfedro tem #multiplicando vacas leiteiras que produzem $ litros de leite cada uma. Quantos litros de leite elas produzem?/
+        Para fazer um bolo são necessários #multiplicando ovos. Quantos ovos serão necessários para fazer $ bolos?/
+        Bruna comprou #multiplicando caixas de morango para vender, em cada caixa há $ morangos. Quantos morangos ela comprou?
+      </talk>
+    <counter var="multiplicando" op="*" value="10" key="1804" />
+          <listen key="1805" />
+          <switch var="$">
+            <case op="eq" value="#multiplicando" key="1806" child_proc="false">
+              <evaEmotion emotion="HAPPY" key="1807" />
+      <light state="ON" color="GREEN" key="1808" />
+      <motion type="YES" key="1809" />
+      <audio source="applause-moderate" block="TRUE" key="1810" />
+      <counter var="ponto" op="+" value="1" key="1811" />
+      <talk key="1812">Parabéns, voce ganhou um ponto</talk>
+      <evaEmotion emotion="NEUTRAL" key="1813" />
+      <light state="ON" color="WHITE" key="1814" />
+    <counter var="multiplicando" op="/" value="10" key="1815" />
+            </case>
+            <default key="1816" child_proc="false">
+              <evaEmotion emotion="SAD" key="1817" />
+      <light state="ON" color="RED" key="1818" />
+      <motion type="NO" key="1819" />
+      <talk key="1820">Pôxa, dessa vez você não pontuou, vamos para a próxima</talk>
+      <light state="ON" color="WHITE" key="1821" />
+      <evaEmotion emotion="NEUTRAL" key="1822" />
+    <counter var="multiplicando" op="/" value="10" key="1823" />
+            </default>
+          </switch>
+        </case>
+      <default key="1824" child_proc="false" /></switch>
+    <counter var="Loop" op="+" value="1" key="1825" /><goto target="LOOP_ID3_Loop" /></case><default key="1826" child_proc="false" /></switch></case>
+                  <default key="1827" child_proc="false" /></switch>
+               </case>
+              <default key="1828" child_proc="false" /></switch>
+            </case>
+          <case op="exact" value="nao" key="1829" child_proc="false">
+            <talk key="1830">Tudo bem, começaremos em um outro momento</talk>
+          </case>
+          <default key="1831" child_proc="false" /></switch>
+        </case>  
+       <default key="1832" child_proc="false" /></switch>
       </case>
-      <case op="exact" value="2" key="1004" child_proc="false">
-        <audio source="applause-moderate" block="TRUE" key="1005" />
-        <goto target="LOOP" />
-      </case>
-    <default key="1006" child_proc="false" /></switch>
-    <evaEmotion emotion="NEUTRAL" key="1007" />
+    <default key="1833" child_proc="false" /></switch>  
   </script>
-</evaml>
+  </evaml>

@@ -826,6 +826,7 @@ def link_process(anterior = -1):
             exec_comando(busca_commando(from_key))
             anterior = from_key
         
+        
         if (comando_from == "case") or (comando_from == "default"): # se o comando executado foi um case
             if eva_memory.reg_case == 1: # verifica a flag pra saber se o case foi verdadeiro
                 fila_links = [] # esvazia a fila, pois o fluxo seguira deste no case em diante
@@ -840,6 +841,11 @@ def link_process(anterior = -1):
                 print("false")
         else: # se o comando nao foi um case
             fila_links.pop(0) # remove o link da fila
+            """ ####### inseri aqui
+            if len(fila_links) == 0:
+                exec_comando(busca_commando(from_key))
+                print(from_key, to_key)
+            ####### """
             if not(busca_links(to_key)): # como já comentado anteriormente
                 exec_comando(busca_commando(to_key))
                 print("fim de bloco.............")

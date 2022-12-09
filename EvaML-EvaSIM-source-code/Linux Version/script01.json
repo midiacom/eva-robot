@@ -14,76 +14,21 @@
       },
       {
         "key": 1001,
-        "name": "Random",
-        "type": "random",
-        "color": "pink",
+        "name": "Talk",
+        "type": "speak",
+        "color": "#00ff00",
         "isGroup": false,
-        "group": "",
-        "min": 1,
-        "max": 2,
+        "text": "Oi /       Teste /        sim    ",
         "__gohashid": 1
       },
       {
         "key": 1002,
-        "name": "Condition",
-        "type": "if",
-        "color": "white",
+        "name": "Talk",
+        "type": "speak",
+        "color": "#00ff00",
         "isGroup": false,
-        "text": "1",
-        "opt": 4,
+        "text": "Ana tem #multiplicando caixas de ovos e cada caixa tem $ ovos. Quantos ovos ela tem no total?/         Na escola de Alice existem #multiplicando salas de aula e em cada uma existem $ cadeiras . Quantas cadeiras existem na escola de Alice?/        João comprou #multiplicando salgados e cada salgado custa $ reais. Quanto joão pagou nos salgados?/        Renan tem #multiplicando sacos com $ balas cada um. Quantas balas há em todos os sacos?/        Na mesa da professora há #multiplicando prateleiras com $ livros cada uma. Quantos livros há na estante?    ",
         "__gohashid": 2
-      },
-      {
-        "key": 1003,
-        "name": "Leds",
-        "type": "led",
-        "color": "lightblue",
-        "isGroup": false,
-        "group": "",
-        "anim": "joy",
-        "__gohashid": 3
-      },
-      {
-        "key": 1004,
-        "name": "Condition",
-        "type": "if",
-        "color": "white",
-        "isGroup": false,
-        "text": "2",
-        "opt": 4,
-        "__gohashid": 4
-      },
-      {
-        "key": 1005,
-        "name": "Audio",
-        "type": "sound",
-        "color": "lightblue",
-        "isGroup": false,
-        "src": "applause-moderate",
-        "wait": true,
-        "__gohashid": 5
-      },
-      {
-        "key": 1006,
-        "name": "Condition",
-        "type": "if",
-        "color": "white",
-        "isGroup": false,
-        "text": "",
-        "opt": 4,
-        "__gohashid": 6
-      },
-      {
-        "key": 1007,
-        "name": "Eva_Emotion",
-        "type": "emotion",
-        "color": "lightcoral",
-        "isGroup": false,
-        "group": "",
-        "emotion": "ini",
-        "level": 0,
-        "speed": 0,
-        "__gohashid": 7
       }
     ],
     "link": [
@@ -96,61 +41,6 @@
         "from": 1001,
         "to": 1002,
         "__gohashid": 1
-      },
-      { 
-        "from": 1002,
-        "to": 1003,
-        "__gohashid": 2
-      },
-      { 
-        "from": 1003,
-        "to": 1002,
-        "__gohashid": 3
-      },
-      { 
-        "from": 1003,
-        "to": 1004,
-        "__gohashid": 4
-      },
-      { 
-        "from": 1004,
-        "to": 1005,
-        "__gohashid": 5
-      },
-      { 
-        "from": 1005,
-        "to": 1002,
-        "__gohashid": 6
-      },
-      { 
-        "from": 1005,
-        "to": 1004,
-        "__gohashid": 7
-      },
-      { 
-        "from": 1005,
-        "to": 1006,
-        "__gohashid": 8
-      },
-      { 
-        "from": 1003,
-        "to": 1006,
-        "__gohashid": 9
-      },
-      { 
-        "from": 1001,
-        "to": 1004,
-        "__gohashid": 10
-      },
-      { 
-        "from": 1001,
-        "to": 1006,
-        "__gohashid": 11
-      },
-      { 
-        "from": 1006,
-        "to": 1007,
-        "__gohashid": 12
       }
     ]
   }
