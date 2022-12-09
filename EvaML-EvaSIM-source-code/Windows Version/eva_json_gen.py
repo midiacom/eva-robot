@@ -283,6 +283,10 @@ def talk_process(talk_command):
     if (talk_command.text == None):
       print("  Error -> There is a <talk> command without a text.")
       exit(1)
+
+    ##### ????? verificar se o caracter de pular linha (\n) é o mesmo no Windows
+    talk_command.text = talk_command.text.replace("\n", " ") # remove os "enters", caso existam
+    talk_command.text = talk_command.text.replace("\t", " ") # remove os "tabs", caso existam
       
     talk_node = """      {
         "key": """ + talk_command.attrib["key"] + """,
