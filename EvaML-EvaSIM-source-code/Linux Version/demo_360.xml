@@ -128,6 +128,10 @@
     <motion type="CENTER" />
     <evaEmotion emotion="NEUTRAL" />
     <talk>Vamos para a segunda pergunta</talk>
+    <evaEmotion emotion="HAPPY" />
+    <led animation="LISTEN" />
+    <light state="ON" color="GREEN"/>
+    <wait duration="10000" />
     <audio source="Blin" block="TRUE" />
     <!-- Segunda pergunta com tabuadas de 6 a 9 -->
     <random min="6" max="9" /> 

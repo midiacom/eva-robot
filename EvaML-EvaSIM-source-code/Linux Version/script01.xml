@@ -9,15 +9,17 @@
     <audioEffects mode="ON" />
   </settings>
   <script>
-    <talk>Oi /
-       Teste /      
-       sim
-    </talk>
-    <talk>Ana tem #multiplicando caixas de ovos e cada caixa tem $ ovos. Quantos ovos ela tem no total?/ 
-        Na escola de Alice existem #multiplicando salas de aula e em cada uma existem $ cadeiras . Quantas cadeiras existem na escola de Alice?/
-        João comprou #multiplicando salgados e cada salgado custa $ reais. Quanto joão pagou nos salgados?/
-        Renan tem #multiplicando sacos com $ balas cada um. Quantas balas há em todos os sacos?/
-        Na mesa da professora há #multiplicando prateleiras com $ livros cada uma. Quantos livros há na estante?
-    </talk>
+    <random min="1" max="3" />
+    <switch var="$">
+      <case op="exact" value="1">
+        <light state="ON" color="GREEN" />
+      </case>
+      <case op="exact" value="2">
+        <evaEmotion emotion="HAPPY" />
+      </case>
+      <default>
+        <talk>Hello!</talk>
+      </default>
+    </switch>
   </script>
 </evaml>

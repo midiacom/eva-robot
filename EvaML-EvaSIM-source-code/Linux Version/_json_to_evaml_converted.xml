@@ -1,0 +1,28 @@
+	<evaml name="script01">
+		<settings>
+		  <voice tone="pt-BR_IsabelaV3Voice" key="1000" />
+		  <lightEffects mode="on" />
+		  <audioEffects mode="on" vol="100%" />
+		</settings>
+		<script>
+		  <random key="1001" min="1" max="3" />
+		  <case key="1002" op="exact" value="1" var="$" />
+		  <light key="1003" state="ON" color="#00FF00" />
+		  <case key="1004" op="exact" value="2" var="$" />
+		  <evaEmotion key="1005" emotion="HAPPY" />
+		  <default key="1006" op="exact" value="" var="$" />
+		  <talk key="1007">Hello!</talk>
+		</script>
+		<links>
+		  <link from="1000" to="1001" />
+		  <link from="1001" to="1002" />
+		  <link from="1002" to="1003" />
+		  <link from="1001" to="1004" />
+		  <link from="1004" to="1005" />
+		  <link from="1001" to="1006" />
+		  <link from="1006" to="1007" />
+		</links>
+	</evaml>
+
+
+
