@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<evaml
+  name="script01"
+  xsi:noNamespaceSchemaLocation="EvaML-Schema/evaml_schema.xsd"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <settings>
+    <voice tone="pt-BR_IsabelaV3Voice" />
+    <lightEffects mode="ON" />
+    <audioEffects mode="ON" />
+  </settings>
+  <script>
+    <random min="1" max="3" />
+    <switch var="$">
+      <case op="exact" value="1">
+        <light state="ON" color="GREEN" />
+      </case>
+      <case op="exact" value="2">
+        <evaEmotion emotion="HAPPY" />
+      </case>
+      <default>
+        <talk>Hello!</talk>
+        <userEmotion />
+      </default>
+    </switch>
+  </script>
+</evaml>

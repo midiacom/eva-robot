@@ -1,0 +1,3 @@
+# EvaSIM audio formats
+
+The library responsible for playing audio files on Linux systems works with "wav" and "mp3" files. EvaSIM, when running on Linux, works with the "mp3" format as it is a lighter format for downloading from the cloud. The library that plays audio files for Windows only works with "wav" type files. So, this folder contains the audio files, in the two types ("wav" and "mp3") used in the initialization of EvaSIM.
