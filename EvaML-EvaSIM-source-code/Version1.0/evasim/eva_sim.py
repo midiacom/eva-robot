@@ -1,45 +1,48 @@
 #!/usr/bin/env python3
+# EvaSIM - Software Simulador para o robô EVA
+# Autor: Marcelo Marques da Rocha
+# Labaratório MidiaCOM - Universidade Federal Fluminense
+
 import platform
 
 # seleciona o arquivo de definição da GUI para o sistema operacional host
 if platform.system() == "Linux":
     print("Linux platform identified. Loading GUI formatting for Linux.")
     import gui_linux as EvaSIM_gui # definicoes da interface grafica de usuario (Linux)
-    audio_ext = ".mp3"
-    ibm_audio_ext = "audio/mp3"
+    audio_ext = ".mp3" # extensão do audio utilizado pela biblioteca de audio no Linux
+    ibm_audio_ext = "audio/mp3" # extensão do audio usado pra gerar os audios do watson
 elif platform.system() == "Windows":
     print("Windows platform identified. Loading GUI formatting for Windows.")
     import gui_windows as EvaSIM_gui # definicoes da interface grafica de usuario (Windows)
     audio_ext = ".wav"
     ibm_audio_ext = "audio/wav"
 else:
-    print("Sorry, the current system is not supported by EvaSIM.") # OS incompativel
+    print("Sorry, the current OS is not supported by EvaSIM.") # OS incompativel
     exit(1)
 
 import hashlib
-from logging import exception
 import re # expressões regulares
 import os
 
 import random as rnd
 import xml.etree.ElementTree as ET
 
-from ibm_watson.text_to_speech_v1 import Voice
 import eva_memory # modulo de memoria do EvaSIM
 import json_to_evaml_conv # modulo de conversao de json para XML
 
 from tkinter import *
 from tkinter import filedialog as fd
-from tkinter import messagebox
 import tkinter
-from  tkinter import ttk # usando tabelas
+# from  tkinter import ttk # usando tabelas
 
-#from playsound import playsound
-from play_audio import playsound # classe adaptadora para a lib de play de audio
+# modulo adaptador para a biblioteca de audio
+# dependendo do OS importa e define uma função chamada "playsound"
+from play_audio import playsound
 
 import time
 import threading
 
+# from ibm_watson.text_to_speech_v1 import Voice
 from ibm_watson import TextToSpeechV1
 from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 
@@ -76,7 +79,7 @@ tts.set_service_url(url)
 
 # Create the Tkinter window
 window = Tk()
-gui = EvaSIM_gui.Gui(window)
+gui = EvaSIM_gui.Gui(window) # Instancia da classe Gui dentro do módulo de definição da interface gráfica do usuário
 
 font1 = gui.font1 # usa a mesma fonte definida no modulo GUI
 
@@ -137,11 +140,11 @@ def evaInit():
     gui.bt_import['state'] = NORMAL
     gui.bt_import.bind("<Button-1>", importFileThread)
     evaMatrix("white")
-    """ while gui.bt_run['state'] == DISABLED: # animacao da luz da matrix em stand by
+    while gui.bt_run['state'] == DISABLED: # animacao da luz da matrix em stand by
         evaMatrix("white")
         time.sleep(0.5)
         evaMatrix("grey")
-        time.sleep(0.5) """
+        time.sleep(0.5)
 
 
 # Eva powerOn function
@@ -196,7 +199,7 @@ def importFile():
     print("Importing a file...")
     # agora o EvaSIM pode ler json
     filetypes = (('evaML files', '*.xml *.json'), )
-    script_file = fd.askopenfile(mode = "r", title = 'Open an EvaML Script File', initialdir = '../', filetypes = filetypes)
+    script_file = fd.askopenfile(mode = "r", title = 'Open an EvaML Script File', initialdir = './', filetypes = filetypes)
     # imaginado que o cara vai ler um json ou um xml
     if (re.findall(r'\.(xml|json|JSON|XML)', str(script_file)))[0].lower() == "json": # leitura de json
         print("Convertendo e executando um arquivo do tipo JSON")
@@ -229,6 +232,11 @@ def clear_terminal(self):
 
 
 # conecta as callbacks aos botoes
+# a utilizacao de um outro modulo para definir a GUI não permitiu que as callbacks fossem assiciadas aos botões no momento de suas criações
+# a utilização do metodo bind para definir callbacks tem uma limitação
+# o elemento, mesmo no estado "disable" continua a responder a eventos de click do mouse
+# por isso, ao desabilitar um botão, é necessário utilizar "unbind" para desvincular a callback ao botão
+# se o botão for colocado no estado "normal", a callback deverá ser redefinida utilizando-se o "bind" novamente
 gui.bt_power.bind("<Button-1>", powerOn)
 gui.bt_clear.bind("<Button-1>", clear_terminal)
 
