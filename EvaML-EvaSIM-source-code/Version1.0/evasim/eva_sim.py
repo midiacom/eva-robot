@@ -3,7 +3,7 @@
 # Autor: Marcelo Marques da Rocha
 # Labaratório MidiaCOM - Universidade Federal Fluminense
 
-import platform
+import platform 
 
 # seleciona o arquivo de definição da GUI para o sistema operacional host
 if platform.system() == "Linux":
