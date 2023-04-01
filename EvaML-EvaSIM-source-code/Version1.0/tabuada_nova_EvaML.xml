@@ -1,0 +1,30 @@
+<evaml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="tabuada_nova" xsi:noNamespaceSchemaLocation="EvaML-Schema/evaml_schema.xsd" id="1bea463aeb68c0d21dde1e61053d1291">
+  <settings>
+    <voice tone="pt-BR_IsabelaV3Voice" key="1000" />
+    <lightEffects mode="ON" />
+    <audioEffects mode="ON" />
+  </settings>
+  <script>
+    <counter var="pont_min" op="=" value="3" key="1001" />
+    <counter var="ITERATION_VAR1" op="=" value="1" key="1002" />
+    <switch id="LOOP_ID1_ITERATION_VAR1" var="ITERATION_VAR1">
+      <case op="lte" value="2" key="1003" child_proc="true" var="ITERATION_VAR1">
+        <talk key="1004">oi</talk>
+        <counter var="ITERATION_VAR1" op="+" value="1" key="1005" />
+        <goto target="LOOP_ID1_ITERATION_VAR1" />
+      </case>
+      <default key="1006" child_proc="true" value="" op="exact">
+        <light state="ON" color="YELLOW" key="1007" />
+      </default>
+    </switch>
+    <switch var="#pont_min">
+      <case op="lt" value="2" key="1008" child_proc="true" var="#pont_min">
+        <talk key="1009">menor que dois</talk>
+      </case>
+      <case op="eq" value="2" key="1010" child_proc="true" var="#pont_min">
+        <talk key="1011">maior ou igual a dois</talk>
+      </case>
+    <default key="1012" child_proc="false" value="" op="exact" /></switch>
+    <led animation="HAPPY" key="1013" />
+  </script>
+<links><link from="1000" to="1001" /><link from="1001" to="1002" /><link from="1002" to="1003" /><link from="1003" to="1004" /><link from="1004" to="1005" /><link from="1005" to="1003" /><link from="1005" to="1006" /><link from="1006" to="1007" /><link from="1002" to="1006" /><link from="1007" to="1008" /><link from="1008" to="1009" /><link from="1007" to="1010" /><link from="1010" to="1011" /><link from="1007" to="1012" /><link from="1009" to="1013" /><link from="1011" to="1013" /><link from="1012" to="1013" /></links></evaml>

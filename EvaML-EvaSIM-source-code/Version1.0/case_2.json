@@ -1,0 +1,171 @@
+{
+  "_id": "e3dbe89a1e307d834912181da872fffd",
+  "nombre": "case_2",
+  "data": {
+    "node": [
+      {
+        "key": 1000,
+        "name": "Voice",
+        "type": "voice",
+        "color": "#0020ff",
+        "isGroup": false,
+        "voice": "pt-BR_IsabelaV3Voice",
+        "__gohashid": 0
+      },
+      {
+        "key": 1001,
+        "name": "Random",
+        "type": "random",
+        "color": "pink",
+        "isGroup": false,
+        "group": "",
+        "min": 1,
+        "max": 3,
+        "__gohashid": 1
+      },
+      {
+        "key": 1002,
+        "name": "Condition",
+        "type": "if",
+        "color": "white",
+        "isGroup": false,
+        "text": "$ == 1",
+        "opt": 5,
+        "__gohashid": 2
+        },
+      {
+        "key": 1003,
+        "name": "Leds",
+        "type": "led",
+        "color": "lightblue",
+        "isGroup": false,
+        "group": "",
+        "anim": "joy",
+        "__gohashid": 3
+      },
+      {
+        "key": 1004,
+        "name": "Condition",
+        "type": "if",
+        "color": "white",
+        "isGroup": false,
+        "text": "$ == 2",
+        "opt": 5,
+        "__gohashid": 4
+        },
+      {
+        "key": 1005,
+        "name": "Leds",
+        "type": "led",
+        "color": "lightblue",
+        "isGroup": false,
+        "group": "",
+        "anim": "sad",
+        "__gohashid": 5
+      },
+      {
+        "key": 1006,
+        "name": "Condition",
+        "type": "if",
+        "color": "white",
+        "isGroup": false,
+        "text": "$ == 3",
+        "opt": 5,
+        "__gohashid": 6
+        },
+      {
+        "key": 1007,
+        "name": "Leds",
+        "type": "led",
+        "color": "lightblue",
+        "isGroup": false,
+        "group": "",
+        "anim": "anger",
+        "__gohashid": 7
+      },
+      {
+        "key": 1008,
+        "name": "Condition",
+        "type": "if",
+        "color": "white",
+        "isGroup": false,
+        "text": "",
+        "opt": 4,
+        "__gohashid": 8
+      },
+      {
+        "key": 1009,
+        "name": "Light",
+        "type": "light",
+        "color": "#ffa500",
+        "isGroup": false,
+        "group": "",
+        "lcolor": "#e6007e",
+        "state": "on",
+        "__gohashid": 9
+      }
+    ],
+    "link": [
+      { 
+        "from": 1000,
+        "to": 1001,
+        "__gohashid": 0
+      },
+      { 
+        "from": 1001,
+        "to": 1002,
+        "__gohashid": 1
+      },
+      { 
+        "from": 1002,
+        "to": 1003,
+        "__gohashid": 2
+      },
+      { 
+        "from": 1001,
+        "to": 1004,
+        "__gohashid": 3
+      },
+      { 
+        "from": 1004,
+        "to": 1005,
+        "__gohashid": 4
+      },
+      { 
+        "from": 1001,
+        "to": 1006,
+        "__gohashid": 5
+      },
+      { 
+        "from": 1006,
+        "to": 1007,
+        "__gohashid": 6
+      },
+      { 
+        "from": 1001,
+        "to": 1008,
+        "__gohashid": 7
+      },
+      { 
+        "from": 1003,
+        "to": 1009,
+        "__gohashid": 8
+      },
+      { 
+        "from": 1005,
+        "to": 1009,
+        "__gohashid": 9
+      },
+      { 
+        "from": 1007,
+        "to": 1009,
+        "__gohashid": 10
+      },
+      { 
+        "from": 1008,
+        "to": 1009,
+        "__gohashid": 11
+      }
+    ]
+  }
+}

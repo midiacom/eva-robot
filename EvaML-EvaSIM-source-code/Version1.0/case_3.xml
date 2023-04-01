@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <evaml
-  name="script01"
+  name="case_3"
   xsi:noNamespaceSchemaLocation="EvaML-Schema/evaml_schema.xsd"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <settings>
@@ -10,17 +10,19 @@
   </settings>
   <script>
     <random min="1" max="3" />
-    <switch var="$">
-      <case op="exact" value="1">
-        <light state="ON" color="GREEN" />
+    <switch var="$" id="loop">
+      <case op="eq" value="1">
+        <led animation="HAPPY" />
       </case>
-      <case op="exact" value="2">
-        <evaEmotion emotion="HAPPY" />
+      <case op="eq" value="2">
+        <led animation="SAD" />
       </case>
-      <default>
-        <talk>Hello!</talk>
-        <userEmotion />
-      </default>
+      <case op="eq" value="3">
+        <led animation="ANGRY" />
+      </case>
     </switch>
+    <wait duration="1000" />
+    <random min="1" max="3" />
+    <goto target="loop" />
   </script>
 </evaml>

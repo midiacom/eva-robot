@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<evaml
+  name="tabuada_nova"
+  xsi:noNamespaceSchemaLocation="EvaML-Schema/evaml_schema.xsd"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <settings>
+    <voice tone="pt-BR_IsabelaV3Voice" />
+    <lightEffects mode="ON" />
+    <audioEffects mode="ON" />
+  </settings>
+  <script>
+    <counter var="pont_min" op="=" value="3" />
+    <counter var="ITERATION_VAR1" op="=" value="1"/>
+    <switch id="LOOP_ID1_ITERATION_VAR1" var="ITERATION_VAR1">
+      <case op="lte" value="2">
+        <talk>oi</talk>
+        <counter var="ITERATION_VAR1" op="+" value="1" />
+        <goto target="LOOP_ID1_ITERATION_VAR1" />
+      </case>
+      <default>
+        <light state="ON" color="YELLOW" />
+      </default>
+    </switch>
+    <switch var="#pont_min">
+      <case op="lt" value="2">
+        <talk>menor que dois</talk>
+      </case>
+      <case op="eq" value="2">
+        <talk>maior ou igual a dois</talk>
+      </case>
+    </switch>
+    <led animation="HAPPY" />
+  </script>
+</evaml>

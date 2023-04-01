@@ -175,7 +175,7 @@ def runScript(self):
     gui.bt_import.unbind("<Button-1>")
     play = True # ativa a var do play do script
     root.find("settings").find("voice").attrib["key"]
-    busca_links(root.find("settings").find("voice").attrib["key"]) # o primeiro elemento da interação é o
+    busca_links(root.find("settings").find("voice").attrib["key"]) # o primeiro elemento da interação é o voice
     threading.Thread(target=link_process, args=()).start()
 
 # Encerra a thread que roda o script
@@ -553,6 +553,7 @@ def exec_comando(node):
             # compara valor com o topo da pilha da variavel var_dolar
             print("valor ", valor, type(valor))
             if valor == eva_memory.var_dolar[-1][0].lower():
+                print("case = true")
                 eva_memory.reg_case = 1 # liga o reg case indicando que o resultado da comparacao foi verdadeira
         
         # case 2 (tipo de op="contain")
@@ -566,6 +567,7 @@ def exec_comando(node):
             # verifica se a string em valor está contida em $
             print("valor ", valor, type(valor))
             if valor in eva_memory.var_dolar[-1][0].lower(): 
+                print("case = true")
                 eva_memory.reg_case = 1 # liga o reg case indicando que o resultado da comparacao foi verdadeira
 
         # caso 3 (COMPARAÇÃO MATEMÁTICA) 
@@ -612,31 +614,37 @@ def exec_comando(node):
             # realiza as operações ==, >, <, >=, <= e != ) de comparação com os operandos 1 e 2
             if node.attrib['op'] == "eq": # 
                 if op1 == op2: # é preciso retirar o # da variável
+                    print("case = true")
                     eva_memory.reg_case = 1 # liga o reg case indicando que o resultado da comparacao foi verdadeira
 
             elif node.attrib['op'] == "lt": # igualdade
                 if op1 < op2:
+                    print("case = true")
                     eva_memory.reg_case = 1 # liga o reg case indicando que o resultado da comparacao foi verdadeira
 
             elif node.attrib['op'] == "gt": # igualdade
                 if op1 > op2:
+                    print("case = true")
                     eva_memory.reg_case = 1 # liga o reg case indicando que o resultado da comparacao foi verdadeira
             
             elif node.attrib['op'] == "lte": # igualdade
                 if op1 <= op2:
+                    print("case = true")
                     eva_memory.reg_case = 1 # liga o reg case indicando que o resultado da comparacao foi verdadeira
 
             elif node.attrib['op'] == "gte": # igualdade
                 if op1 >= op2:
+                    print("case = true")
                     eva_memory.reg_case = 1 # liga o reg case indicando que o resultado da comparacao foi verdadeira
 
             elif node.attrib['op'] == "ne": # igualdade
                 if op1 != op2:
+                    print("case = true")
                     eva_memory.reg_case = 1 # liga o reg case indicando que o resultado da comparacao foi verdadeira          
 
 
     elif node.tag == "default": # default sempre será verdadeiro
-        print("Default funcionando")
+        print("Default = true")
         eva_memory.reg_case = 1 # liga o reg case indicando que o resultado da comparacao foi verdadeira
 
 
@@ -727,12 +735,12 @@ def exec_comando(node):
 def busca_commando(key): # keys são strings
 	# busca em settings. Isto porque "voice" fica em settings e voice é sempre o primeiro elemento
 	for elem in root.find("settings").iter():
-		if elem.get("key") != None: # verifica se node tem atributo id
+		if elem.get("key") != None: # verifica se node tem atributo key
 			if elem.attrib["key"] == key:
 				return elem
 	# busca dentro do script
 	for elem in root.find("script").iter(): # passa por todos os nodes do script
-		if elem.get("key") != None: # verifica se node tem atributo id
+		if elem.get("key") != None: # verifica se node tem atributo key
 			if elem.attrib["key"] == key:
 				return elem
 
@@ -759,6 +767,7 @@ def link_process(anterior = -1):
     while (len(fila_links) != 0) and (play == True):
         from_key = fila_links[0].attrib["from"] # chave do comando a executar
         to_key = fila_links[0].attrib["to"] # chave do próximo comando
+        print("from:", from_key, ", to_key:", to_key)
         comando_from = busca_commando(from_key).tag # Tag do comando a ser executado
         comando_to = busca_commando(to_key).tag # DEBUG
 
@@ -766,21 +775,24 @@ def link_process(anterior = -1):
         if anterior != from_key:
             exec_comando(busca_commando(from_key))
             anterior = from_key
+            print("Ant: ", anterior, ", from: ", from_key)
         
         
-        if (comando_from == "case") or (comando_from == "default"): # se o comando executado foi um case
+        if (comando_from == "case") or (comando_from == "default"): # se o comando executado foi um case ou um default
             if eva_memory.reg_case == 1: # verifica a flag pra saber se o case foi verdadeiro
                 fila_links = [] # esvazia a fila, pois o fluxo seguira deste no case em diante
-                print("case command")
+                print("pulando comando = ", comando_from)
                 # segue o fluxo do case de sucesso buscando o prox. link
                 if not(busca_links(to_key)): # se nao tem mais link, o comando indicado por to_key é o ultimo do fluxo
                     exec_comando(busca_commando(to_key))
                     print("fim de bloco.............")
                     
             else:
+                print("O elemento:", comando_from, " será removido da fila...")
                 fila_links.pop(0) # se o case falhou, ele é retirado da fila e consequentemente seu fluxo é descartado
                 print("false")
         else: # se o comando nao foi um case
+            print("O elemento:", comando_from, " será removido da fila...")
             fila_links.pop(0) # remove o link da fila
             """ ####### inseri aqui
             if len(fila_links) == 0:

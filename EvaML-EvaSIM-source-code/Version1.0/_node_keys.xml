@@ -1,0 +1,26 @@
+<evaml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="case_5" xsi:noNamespaceSchemaLocation="EvaML-Schema/evaml_schema.xsd" id="89432b7b3ca9c342a2ba43358ce506a0">
+  <settings>
+    <voice tone="pt-BR_IsabelaV3Voice" key="1000" />
+    <lightEffects mode="ON" />
+    <audioEffects mode="ON" />
+  </settings>
+  <script>
+    <random id="loop" min="1" max="4" key="1001" />
+    <wait duration="1000" key="1002" />
+    <switch var="$">
+      <case op="eq" value="1" key="1003" child_proc="false">
+        <led animation="HAPPY" key="1004" />
+      </case>
+      <case op="eq" value="2" key="1005" child_proc="false">
+        <led animation="SAD" key="1006" />
+      </case>
+      <case op="eq" value="3" key="1007" child_proc="false">
+        <led animation="ANGRY" key="1008" />
+      </case>
+      <default key="1009" child_proc="false">
+        <stop />
+      </default>
+    </switch>
+    <goto target="loop" />
+  </script>
+</evaml>
