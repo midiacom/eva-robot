@@ -3,7 +3,7 @@
 Projeto de instalação dos módulos do Robô Conversacional EVA desenvolvido na CICESE no México. O objetivo deste repositório é armazenar o software do robô EVA com algumas melhorias propostas como parte do Estudo Orientado I.
 
 ## Detalhes da minha instalação
-* Após o download do código fonte da aplicação em sua devida pasta, será preciso criar a pasta temp dentro do diretório da aplicação.
+* Após o download do código fonte do software de controle do robô em sua devida pasta, será preciso criar a pasta *temp* dentro do diretório da aplicação.
 * Essa pasta está excluída para upload no arquivo *.gitignore* pois ela contém os áudios das falas geradas pelo IBM Watson.
 
 ## Hardware
