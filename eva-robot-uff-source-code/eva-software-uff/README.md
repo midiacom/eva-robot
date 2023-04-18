@@ -48,7 +48,7 @@ sudo reboot
 ```
 
 ### Dependências da Aplicação
-### Rodar o comando seguinte dentro da pasta do EVA
+#### Rodar o comando seguinte dentro da pasta do EVA
 ```bash
 npm install
 ```
