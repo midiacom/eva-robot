@@ -1,4 +1,4 @@
-# Eva-UFF-Inicio
+# Softare do robô EVA - Versão estendida da VPL 
 
 Projeto de instalação dos módulos do Robô Conversacional EVA desenvolvido na CICESE no México. O objetivo deste repositório é armazenar o software do robô EVA com algumas melhorias propostas como parte do Estudo Orientado I.
 
@@ -11,7 +11,8 @@ Projeto de instalação dos módulos do Robô Conversacional EVA desenvolvido na
 - Matrix Voice
 - Servomotores Dynamixel AX-12A
 
-## Instalación
+## Instalação do Nodejs
+
 - NodeJs 14.16.0
 ```bash
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
@@ -25,7 +26,7 @@ nvm install v14.16.0
 ```bash
 nvm use v14.16.0
 ```
-- Registrar la [Matrix Voice](https://matrix-io.github.io/matrix-documentation/matrix-voice/resources/microphone/) como micrófono
+- Registrar a placa [Matrix Voice](https://matrix-io.github.io/matrix-documentation/matrix-voice/resources/microphone/) como microfone (Dispositivo de entrada)
 
 ```bash
 curl https://apt.matrix.one/doc/apt-key.gpg | sudo apt-key add -
@@ -46,7 +47,8 @@ sudo apt install matrixio-kernel-modules
 sudo reboot
 ```
 
-### Dependencias de la aplicación
+### Dependências da Aplicação
+### Rodar o comando seguinte dentro da pasta do EVA
 ```bash
 npm install
 ```
@@ -59,30 +61,31 @@ sudo apt-get install libasound2-dev
 -->
 
 
-### Animaciones
- - Paquetes requeridos para compilar las animaciones del arreglo de luces led.
+### Animações dos Leds da Matrix Voice
+
+ - Pacotes necessários para compilar as animações dos leds da Matrix Voice.
 ```bash
 sudo apt-get install matrixio-creator-init libmatrixio-creator-hal libmatrixio-creator-hal-dev
 ```
- - Para compilar las animaciones del arreglo de leds de la Matrix Voice
+ - Para compilar as animações da Matrix Voice
 ```bash
 g++ -o app app.cpp -std=c++11 -lmatrix_creator_hal
 ```
 
-## Configuración
+## CConfiguração
 
-Archivo necesario para el uso de los servicios de texto a voz de Watson:
+Arquivo necessário para o uso dos serviços text-to-speech do Watson:
 
 - .env
 
-Este archivo contendrá los siguientes parámetros:
+Este arquivo deve conter os seguintes parâmetros:
 
 ```bash
 TEXT_TO_SPEECH_APIKEY=api-key
 TEXT_TO_SPEECH_URL=https://stream.watsonplatform.net/text-to-speech/api
 ```
 
-Archivo necesario para el uso de los servicios de Google:
+Arquivo necessário para o uso dos serviços do Google:
 
 - [Archivo JSON que contiene la clave de la cuenta de servicio de Google](https://cloud.google.com/docs/authentication/getting-started)
 - Opcionalmente el archivo '.env' para la configuración de los servicios de Watson podrá contener el siguiente parámetro si se desea utlizar un proyecto de Dialogflow de Google por defecto:
