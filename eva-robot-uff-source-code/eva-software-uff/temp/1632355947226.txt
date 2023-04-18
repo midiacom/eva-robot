@@ -1,0 +1,6 @@
+Robot Eva: Hi, I am robot EVA. I am a socially assistive robot. I will choose a number between 1 and 3
+Robot Eva: Hi, I am robot EVA. I am a socially assistive robot. I will choose a number between 1 and 3
+Robot Eva: I choose the number 3
+Robot Eva: I choose the number 3
+Robot Eva: Bye
+Robot Eva: Bye

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Eva</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- tentando usar o color picker-->
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <link id="jquiCSS" rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css" type="text/css" media="all">
+	<link href="/css/evol-colorpicker.min.css" rel="stylesheet" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript"></script>
+	<script src="/js/evol-colorpicker.min.js" type="text/javascript"></script>
+<!-- tentando usar o color picker-->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/dropzone.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+    
+    <style>
+        .dropzone { border: 2px dashed #0087F7; }
+        .ui-loader { display: none; }
+        .right { right: 40%; }
+    </style>
+</head>
+
+<body ng-app="evaApp">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/#!/controlAngular">Control de Eva</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li ng-class="{'active': $route.current.activetab == 'controlAngular'}"><a href="/#!/controlAngular">Inicio</a></li>
+                    <li ng-class="{'active': $route.current.activetab == 'interaccion'}"><a href="/#!/interaccion">Interacción</a></li>
+                    <li class="dropdown" ng-class="{'active': $route.current.activetab == 'script'}">
+                        <a id="drop2" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" target="_blank">
+                          Script
+                          <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="drop2">
+                          <li><a href="/#!/script">Scripts</a></li>
+                          <li><a href="/#!/scriptdata">Datos</a></li>
+                          <!-- <li role="separator" class="divider"></li>
+                          <li><a href="#">Separated link</a></li> -->
+                        </ul>
+                      </li>
+                    <li ng-class="{'active': $route.current.activetab == 'audio'}"><a href="/#!/audio">Audios</a></li>
+                    <li ng-class="{'active': $route.current.activetab == 'voice'}"><a href="/#!/voice">Voz</a></li>
+                    <li ng-class="{'active': $route.current.activetab == 'led'}"><a href="/#!/led">Led</a></li>
+                    <li ng-class="{'active': $route.current.activetab == 'mov'}"><a href="/#!/mov">Movimiento</a></li>
+                    <li ng-class="{'active': $route.current.activetab == 'woo'}"><a href="/#!/woo">Mago de Oz</a></li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </nav>
+
+    <section id="content" ng-view>
+      
+    </section>
+
+    <div class="container">
+        <footer>
+            <p>&copy; 2020 CICESE</p>
+        </footer>
+    </div>
+
+<!--    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular-route.min.js"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <script src="/js/bootstrap-notify.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="/js/angular-drag-and-drop-lists.min.js"></script>
+    <script type="text/javascript" src="/js/dropzone.min.js"></script>
+    <script type="text/javascript" src="/js/go.js"></script>
+
+    <script type="text/javascript" src="/js/app.js"></script>
+    <script type="text/javascript" src="/js/controlAngular.js"></script>
+    <script type="text/javascript" src="/js/controllers/led.js"></script>
+    <script type="text/javascript" src="/js/controllers/mov.js"></script>
+    <script type="text/javascript" src="/js/controllers/audio.js"></script>
+    <script type="text/javascript" src="/js/controllers/voice.js"></script>
+    <script type="text/javascript" src="/js/controllers/script.js"></script>
+    <script type="text/javascript" src="/js/controllers/scriptdata.js"></script>
+    <script type="text/javascript" src="/js/controllers/interaccion.js"></script>
+    <script type="text/javascript" src="/js/controllers/woo.js"></script>
+    <script type="text/javascript" src="/js/diagrama-min.js"></script>
+</body>
+
+</html>

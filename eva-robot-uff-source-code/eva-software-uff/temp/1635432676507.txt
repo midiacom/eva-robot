@@ -1,0 +1,10 @@
+Robot Eva: Olá, eu vou contar de um a três usando um contador
+Robot Eva: Olá, eu vou contar de um a três usando um contador
+Robot Eva: O valor de x é #x
+Robot Eva: O valor de x é 1
+Robot Eva: O valor de x é #x
+Robot Eva: O valor de x é 2
+Robot Eva: O valor de x é #x
+Robot Eva: O valor de x é 3
+Robot Eva: Um abraço
+Robot Eva: Um abraço

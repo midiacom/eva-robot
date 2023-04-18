@@ -1,0 +1,6 @@
+Robot Eva: Vou sortear um número de 1 a 3
+Robot Eva: Vou sortear um número de 1 a 3
+Robot Eva: O número sorteado foi o $
+Robot Eva: Vou sortear outro número
+Robot Eva: Vou sortear outro número
+Robot Eva: O outro número sorteado foi o $

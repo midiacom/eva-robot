@@ -1,0 +1,6 @@
+Robot Eva: Olá! Qual o seu nome?
+Robot Eva: Olá! Qual o seu nome?
+Usuario: agronopolos
+Robot Eva: Olá $!, qual cor você escolhe? azul, vermelho ou verde?
+Usuario: azul
+Robot Eva: O $ é uma bela cor! Parabéns!

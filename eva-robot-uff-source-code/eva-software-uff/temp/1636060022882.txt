@@ -1,0 +1,16 @@
+Robot Eva: Qual é essa cor?
+Robot Eva: Qual é essa cor?
+Usuario: azul
+Robot Eva: Muito bem! Você acertou!
+Robot Eva: Muito bem! Você acertou!
+Robot Eva: Qual é essa cor?
+Robot Eva: Qual é essa cor?
+Usuario: vermelha
+Robot Eva: Muito bem! Você acertou!
+Robot Eva: Muito bem! Você acertou!
+Robot Eva: Qual é essa cor?
+Robot Eva: Qual é essa cor?
+Usuario: Verde
+Robot Eva: Muito bem! Você acertou!
+Robot Eva: Muito bem! Você acertou!
+Robot Eva: Foi muito bom jogar com você, $1

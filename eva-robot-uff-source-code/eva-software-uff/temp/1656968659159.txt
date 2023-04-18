@@ -1,0 +1,18 @@
+Robot Eva: Olá, meu nome é Eva e sou um robô social desenvolvido na CICESE.
+Robot Eva: Olá, meu nome é Eva e sou um robô social desenvolvido na CICESE.
+Robot Eva: Meus criadores me dotaram de várias capacidades de movimentação. Por exemplo, posso mover minha cabeça para cima.
+Robot Eva: Meus criadores me dotaram de várias capacidades de movimentação. Por exemplo, posso mover minha cabeça para cima.
+Robot Eva: Para baixo.
+Robot Eva: Para baixo.
+Robot Eva: E para ambos os lados.
+Robot Eva: E para ambos os lados.
+Robot Eva: Também posso mostrar várias emoções, como a alegria.
+Robot Eva: Também posso mostrar várias emoções, como a alegria.
+Robot Eva: Tristeza.
+Robot Eva: Tristeza.
+Robot Eva: E a raiva.
+Robot Eva: E a raiva.
+Robot Eva: Actualmente los desarrolladores se encuentran trabajando en mis capacidades de visión y desplazamiento.
+Robot Eva: Actualmente los desarrolladores se encuentran trabajando en mis capacidades de visión y desplazamiento.
+Robot Eva: Feliz por tê-lo conhecido, tenha um bom dia.
+Robot Eva: Feliz por tê-lo conhecido, tenha um bom dia.

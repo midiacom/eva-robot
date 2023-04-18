@@ -1,0 +1,4 @@
+Robot Eva: Olá, bom dia. Já estou usando a Mêitrix Voice. Qual o seu nome
+Robot Eva: Olá, bom dia. Já estou usando a Mêitrix Voice. Qual o seu nome
+Usuario: Carlos
+Robot Eva: Bom dia $

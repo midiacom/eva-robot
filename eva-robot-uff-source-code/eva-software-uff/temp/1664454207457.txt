@@ -1,0 +1,9 @@
+Robot Eva: Qual o seu nome
+Robot Eva: Qual o seu nome
+Usuario: Joaquim
+Robot Eva: Olá $
+Robot Eva: Quantos anos você tem?
+Robot Eva: Quantos anos você tem?
+Usuario: 73
+Robot Eva: Nossa! Você tem $ anos!
+Robot Eva: Uáu $-2! Você tem uma pele linda! Parabéns!

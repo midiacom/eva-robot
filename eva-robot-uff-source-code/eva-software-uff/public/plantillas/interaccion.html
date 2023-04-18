@@ -1,0 +1,510 @@
+<div class="container" ng-controller="interaccion">
+  <div class="row">
+    <div class="col-md-4">
+      <br>
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a id="inicio" href="#home" aria-controls="home" role="tab"
+            data-toggle="tab" target="_blank">Listado de Interacciones</a></li>
+        <li role="presentation" ng-show="node.length > 0"><a href="#profile" aria-controls="profile" role="tab"
+            data-toggle="tab" target="_blank">Nodos</a></li>
+      </ul>
+      <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="home">
+          <div class="card-body table-responsive" style="height: 575px">
+            <table class="table" id="data-table-basic">
+              <thead>
+                <tr>
+                  <th>Nombre</th>
+                  <th>Opciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="l in listado">
+                  <td>{{ l.nombre }}</td>
+                  <td><span class="btn btn-default" ng-click="unified(l._id)"><i class="fa fa-expand fa-sm"></i></span>
+                    <span class="btn btn-default" ng-click="iniciarInteracciong(l._id)"><i
+                        class="fa fa-play fa-sm"></i></span>
+                    <span class="btn btn-default" ng-click="update(l)"><i class="fa fa-edit fa-sm"></i></span>
+                    <span class="btn btn-default" ng-click="delete(l._id)"><i class="fa fa-trash fa-sm"></i></span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <br />
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="button" class="btn btn-primary" ng-click="add()">Add Interaction</button>
+            </div>
+          </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="profile">
+          <div class="card-body table-responsive" style="height: 575px">
+            <table class="table" id="data-table-basic">
+              <thead>
+                <tr>
+                  <th>Nodo</th>
+                  <th>Tipo</th>
+                  <th colspan="2">Opciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="l in node">
+                  <td>{{ l.name }}</td>
+                  <td>{{ l.type }}</td>
+                  <td><span class="btn btn-default" ng-click="updatenode(l)"><i class="fa fa-edit fa-sm"></i></span>
+                  </td>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-md-8">
+      <div class="card z-depth-1">
+        <div class="form-horizontal" role="form">
+          <div class="card-header bgm-bluegray">
+            <h2>{{ accion }} Interacci&oacute;n <small></small></h2>
+          </div>
+          <div class="card-body card-padding">
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Name</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control input-sm" ng-model="nombre" placeholder="Nombre">
+              </div>
+            </div>
+            <div class="col-sm-offset-2">
+              <div id="myDiagramDiv" style="border: solid 1px gray; border-radius: 1%; width:625px; height:400px">
+              </div>
+            </div>
+            <br />
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-10">
+                <button id="blobButton" class="btn btn-dark">Download Script Image</button>
+                <button type="button" ng-show="icon" class="btn btn-dark" ng-click="create()">Save</button>
+                <button type="button" ng-show="!icon" class="btn btn-dark"
+                  ng-click="updatesend()">Update</button>
+                <button type="button" ng-show="!icon" class="btn btn-dark" ng-click="updatesendx()">Update and Terminate</button>
+                <button type="button" class="btn btn-dark" ng-click="actualizar()">Refresh</button>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-sm-offset-2 col-sm-12">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" ng-click="showmodal('voice')">Voice</button>
+                <button type="button" class="btn btn-success" ng-click="showmodal('speak')">Talk</button>
+                <button type="button" class="btn btn-success" ng-click="showmodal('listen')">Listen</button>
+                <button type="button" class="btn btn-success" ng-click="showmodal('user_emotion')">User_Emotion</button>
+                <button type="button" class="btn btn-danger"  ng-click="showmodal('emotion')">Eva_Emotion</button>
+                <button type="button" class="btn btn-primary" ng-click="showmodal('mov')">Motion</button>
+                <button type="button" class="btn btn-primary" ng-click="showmodal('led')">Leds</button>
+                <button type="button" class="btn btn-primary" ng-click="showmodal('sound')">Audio</button>
+                <button type="button" class="btn btn-warning" ng-click="showmodal('light')">Light</button>
+                <br>
+                <br>
+                <button type="button" class="btn btn-info" ng-click="showmodal('for')">Loop</button>
+                <button type="button" class="btn btn-info" ng-click="showmodal('if')">Condition</button>
+                <button type="button" class="btn btn-info" ng-click="showmodal('wait')">Wait</button>
+                <button type="button" class="btn btn-info" ng-click="showmodal('int')">Interaction</button>
+                <button type="button" class="btn btn-info" ng-click="showmodal('script')">Script</button>
+                <button type="button" class="btn btn-primary" ng-click="showmodal('random')">Random</button>
+                <button type="button" class="btn btn-info" ng-click="showmodal('counter')">Counter</button>
+                <button type="button" class="btn btn-info" ng-click="showmodal('api')">Api Rest</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade right" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel"> {{ accion }} {{ ModalName }}</h4>
+          </div>
+          <div class="modal-body">
+            <div class="form-horizontal" role="form">
+              <div class="form-group" ng-show="node.length > 0">
+                <label class="col-sm-2 control-label">Grupo</label>
+                <div class="col-sm-10">
+                  <select name="group" id="" ng-model="group" class="form-control">
+                    <option value="" selected>Ninguno</option>
+                    <option ng-repeat="item in node" ng-show="item.isGroup" value="{{item.key}}">
+                      {{ item.name }}</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group" ng-show="node.length > 0 && key == 0">
+                <label class="col-sm-2 control-label">Anterior</label>
+                <div class="col-sm-10">
+                  <select name="link" id="" ng-model="link" class="form-control">
+                    <option value="" selected>Ninguno</option>
+                    <option ng-repeat="item in node" value="{{item.key}}">{{ item.name }}</option>
+                  </select>
+                </div>
+              </div>
+              <!-- Modal Emocion -->
+              <div class="form-group" ng-show="modal == 'emotion'">
+                <label class="col-sm-2 control-label">Emoci&oacute;n</label>
+                <div class="col-sm-10">
+                  <select name="emocion" id="" ng-model="emocion" class="form-control">
+                    <option value="ini">Neutral</option>
+                    <option value="joy">Alegr&iacute;a</option>
+                    <option value="surprised">Sorpresa</option>
+                    <option value="sad">Tristeza</option>
+                    <option value="anger">Ira</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group" ng-show="modal == 'emotion'">
+                <label class="col-sm-2 control-label">Velocidad</label>
+                <div class="col-sm-10">
+                  <input type="number" min="0" class="form-control input-sm" ng-model="velocidad"
+                    placeholder="Velocidad">
+                </div>
+              </div>
+              <div class="form-group" ng-show="modal == 'emotion' && emocion != 'ini' && !!emocion">
+                <label class="col-sm-2 control-label">Nivel</label>
+                <label class="radio-inline col-sm-offset-1">
+                  <input type="radio" name="level" id="inlineRadio1" ng-model="level" value="0"> Solo Ojos
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="level" id="inlineRadio3" ng-model="level" value="2"> Movimiento
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="level" id="inlineRadio2" ng-model="level" value="-1"> Incremental
+                </label>
+              </div>
+              <!-- Modal Emocion -->
+
+ <!--------------- Modal Light ---------------------------------------------------------------------->
+                
+              <div class="form-group" ng-show="modal == 'light'">
+                <label class="col-sm-2 control-label">Light Color</label>
+                <div class="col-sm-10">
+                  <!-- color_picker -->
+                    <div id="cpb" class="demoPanel" style="width:170px;">
+                      <input id="cp1" name="lcolor" ng-model="lcolor"/> 
+                    </div>
+                </div>
+              </div>
+              <div class="form-group" ng-show="modal == 'light'">
+                <label class="col-sm-2 control-label">State</label>
+                <label class="radio-inline col-sm-offset-1">
+                  <input type="radio" name="state" id="inlineRadio0" ng-model="state" value="off"> Off
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="state" id="inlineRadio1" ng-model="state" value="on" > On
+                </label>
+              </div>
+
+<!---------------- Modal Light ---------------------------------------------------------------------->
+
+<!---------------- Modal User_Emotion ---------------------------------------------------------------------->
+
+              <div class="form-group" ng-show="modal == 'user_emotion'">
+                <label class="col-sm-2 control-label">User Emotion [Expression Recognition]</label>
+              </div>
+
+<!---------------- Modal User_Emotion ---------------------------------------------------------------------->
+
+              <!-- Modal Hablar -->
+              <div class="form-group" ng-show="modal == 'speak'">
+                <label class="col-sm-2 control-label">Di&aacute;logo</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control input-sm" ng-model="texto" placeholder="Texto a decir">
+                </div>
+                <p class="col-sm-offset-3 help-block">Utiliza '$' para incluir la &uacute;ltima respuesta, '$1' para
+                  incluir la primera y '$-1' para incluir la pen&uacute;ltima.
+                  Utiliza '%' si tiene un nodo tipo 'Script' antes para incluir el 2do campo o '%1' para especificar el
+                  campo 1. Utiliza '/' para separar varias frases (el robot solo dir&aacute; una aleatoriamente). Si
+                  utiliza alg&uacute;n contador puede usar #contador para incluir el valor del mismo.</p>
+              </div>
+              <!-- Modal Hablar -->
+
+              <!-- Modal Escuchar -->
+              <div class="form-group" ng-show="modal == 'listen'">
+                <label class="col-sm-2 control-label">Obtener</label>
+                <div class="col-sm-10">
+                  <select name="listenopt" id="" ng-model="listenopt" class="form-control">
+                    <option value="">Todo</option>
+                    <option ng-repeat="item in filterslist" value="{{ item }}">{{ item }}</option>
+                  </select>
+                </div>
+              </div>
+              <!-- Modal Escuchar -->
+
+              <!-- Modal Tiempo -->
+              <div class="form-group" ng-show="modal == 'wait'">
+                <label class="col-sm-2 control-label">Tiempo (ms)</label>
+                <div class="col-sm-10">
+                  <input type="number" class="form-control input-sm" ng-model="time"
+                    placeholder="Tiempo a esperar en ms">
+                </div>
+              </div>
+              <!-- Modal Tiempo -->
+
+              <!-- Modal Random -->
+              <div class="form-group" ng-show="modal == 'random'">
+                <label class="col-sm-2 control-label">Min.</label>
+                <div class="col-sm-10">
+                  <input type="number" class="form-control input-sm" ng-model="min"
+                    placeholder="Type an integer">
+                </div>
+                <label class="col-sm-2 control-label">Max.</label>
+                <div class="col-sm-10">
+                  <input type="number" class="form-control input-sm" ng-model="max"
+                    placeholder="Type another integer">
+                </div>
+              </div>
+              <!-- Modal Random -->
+
+              <!-- Modal Ciclo -->
+              <div class="form-group" ng-show="modal == 'for'">
+                <label class="col-sm-2 control-label">Iteraciones</label>
+                <div class="col-sm-10">
+                  <input type="number" class="form-control input-sm" ng-model="it" placeholder="Cantidad de iteraciones"
+                    min="-1">
+                </div>
+                <p class="col-sm-offset-3 help-block">Utiliza el valor '-1' para que las iteraciones coincidan con los
+                  elementos del 'script'</p>
+              </div>
+              <!-- Modal Ciclo -->
+
+              <!-- Modal Condicion -->
+              <div class="form-group" ng-show="modal == 'if'">
+                <label class="col-sm-2 control-label">Condici&oacute;n</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control input-sm" ng-model="texto" ng-change="autoif()" placeholder="Condición">
+                </div>
+                <p class="col-sm-offset-3 help-block">Utiliza #&NestedLessLess;contador&NestedGreaterGreater; para comparar contra este.</p>
+              </div>
+              <div class="form-group" ng-show="modal == 'if'">
+                <label class="col-sm-2 control-label">Comparaci&oacute;n</label>
+                <div class="col-sm-10">
+                  <select name="ifopt" id="" ng-model="ifopt" class="form-control">
+                    <option value="4">Exacta</option>
+                    <option value="3">Phon&eacute;tica</option>
+                    <option value="2">Incluye</option>
+                    <option value="5">Matemática</option>
+                  </select>
+                </div>
+              </div>
+              <!-- Modal Condicion -->
+
+              <!-- Modal Movimiento -->
+              <div class="form-group" ng-show="modal == 'mov'">
+                <label class="col-sm-2 control-label">Movimiento</label>
+                <div class="col-sm-10">
+                  <select name="nivel" id="" ng-model="movement" class="form-control">
+                    <option ng-repeat="m in mov" value="{{ m.codigo }}">{{ m.nombre }}</option>
+                  </select>
+                </div>
+              </div>
+              <!-- Modal Movimiento -->
+
+              <!-- Modal Interaccion -->
+              <div class="form-group" ng-show="modal == 'int'">
+                <label class="col-sm-2 control-label">Interacci&oacute;n</label>
+                <div class="col-sm-10">
+                  <select name="int" id="" ng-model="int" class="form-control">
+                    <option ng-repeat="i in listado" value="{{i._id}}">{{ i.nombre }}</option>
+                  </select>
+                </div>
+              </div>
+              <!-- Modal Interaccion -->
+
+              <!-- Modal Script -->
+              <div class="form-group" ng-show="modal == 'script'">
+                <label class="col-sm-2 control-label">Script</label>
+                <div class="col-sm-10">
+                  <select name="emocion" id="" ng-model="thescript" class="form-control">
+                    <option value="" selected>Ninguno</option>
+                    <option ng-repeat="item in slistado" value="{{item._id}}">{{ item.nombre }}</option>
+                  </select>
+                  <p class="col-sm-offset-3 help-block">Este nodo incluye la funci&oacute;n de hablar, leyendo el primer campo del elemento del escript que se est&eacute; ejecutando en ese momento</p>
+                </div>
+              </div>
+              <!-- Modal Script -->
+
+              <!-- Modal Sonidos -->
+              <div class="form-group" ng-show="modal == 'sound'">
+                <label class="col-sm-2 control-label">Audio</label>
+                <div class="col-sm-10">
+                  <select name="emocion" id="" ng-model="thesound" class="form-control">
+                    <option value="" selected>Ninguno</option>
+                    <option ng-repeat="item in soundlistado" value="{{item.nombre}}">{{ item.nombre }}</option>
+                  </select>
+                </div>
+              </div>
+              <!-- Modal Sonidos -->
+
+              <!-- Modal Leds -->
+              <div class="form-group" ng-show="modal == 'led'">
+                <label class="col-sm-2 control-label">Leds</label>
+                <div class="col-sm-10">
+                  <select name="leds" id="" ng-model="leds" class="form-control">
+                    <option ng-repeat="m in led" value="{{ m.codigo }}">{{ m.nombre }}</option>
+                  </select>
+                </div>
+              </div>
+              <!-- Modal Leds -->
+
+              <!-- Modal Voice -->
+              <div class="form-group" ng-show="modal == 'voice'">
+                <label class="col-sm-2 control-label">Voice</label>
+                <div class="col-sm-10">
+                  <select name="voice" id="" ng-model="voice" class="form-control">
+                    <option ng-repeat="item in vlistado" value="{{item.codigo}}">{{ item.nombre + ' (' + item.idioma + ')' }}</option>
+                  </select>
+                </div>
+              </div>
+              <!-- Modal Voice -->
+
+              <!-- Modal Counter -->
+              <div class="form-group" ng-show="modal == 'counter'">
+                <label class="col-sm-2 control-label">Contador</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control input-sm" ng-model="cnname" ng-change="cname = ''"
+                    placeholder="Nombre del Contador">
+                </div>
+              </div>
+              <div class="form-group" ng-show="modal == 'counter'">
+                <label class="col-sm-2 control-label"></label>
+                <div class="col-sm-10">
+                  <select name="cname" id="" ng-model="cname" class="form-control" ng-change="cnname = ''">
+                    <option ng-repeat="item in counters" value="{{ item }}">{{ item }}</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group" ng-show="modal == 'counter'">
+                <label class="col-sm-2 control-label">Contador</label>
+                <div class="col-sm-10">
+                  <input type="number" class="form-control input-sm" ng-model="vcounter" min="0" placeholder="0">
+                </div>
+              </div>
+              <div class="form-group" ng-show="modal == 'counter'">
+                <label class="col-sm-2 control-label">Operaci&oacute;n</label>
+                <label class="radio-inline col-sm-offset-1">
+                  <input type="radio" name="ops" id="inlineRadio4" ng-model="ops" value="sum"> Suma
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="ops" id="inlineRadio5" ng-model="ops" value="rest"> Resta
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="ops" id="inlineRadio6" ng-model="ops" value="mult"> Multiplicaci&oacute;n
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="ops" id="inlineRadio7" ng-model="ops" value="div"> Divisi&oacute;n
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="ops" id="inlineRadio7" ng-model="ops" value="assign"> Asignar
+                </label>
+              </div>
+              <!-- Modal Counter -->
+
+              <!-- Modal Api -->
+              <div class="form-group" ng-show="modal == 'api'">
+                <label class="col-sm-2 control-label">Versi&oacute;n</label>
+                <label class="radio-inline col-sm-offset-1">
+                  <input type="radio" name="version" id="inlineRadio4" ng-model="version" value="http"> Http
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" name="version" id="inlineRadio5" ng-model="version" value="https"> Https
+                </label>
+              </div>
+              <div class="form-group" ng-show="modal == 'api'">
+                <label class="col-sm-2 control-label">Servidor</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control input-sm" ng-model="host" ng-change="autoversion()" placeholder="Host">
+                </div>
+              </div>
+              <div class="form-group" ng-show="modal == 'api'">
+                <label class="col-sm-2 control-label">Consulta</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control input-sm" ng-model="path" placeholder="?item=value&...">
+                </div>
+              </div>
+              <div class="form-group" ng-show="modal == 'api'">
+                <label class="col-sm-2 control-label">Puerto</label>
+                <div class="col-sm-10">
+                  <input type="number" class="form-control input-sm" ng-model="port" placeholder="Puerto">
+                </div>
+              </div>
+              <!-- Modal Api -->
+
+              <!-- Modal Common -->
+              <div class="form-group" ng-show="modal == 'script' || modal == 'sound'">
+                <label class="col-sm-2 control-label">{{ ncommon }}</label>
+                <div class="col-sm-1">
+                  <input type="checkbox" class="form-control" ng-model="ccommon" name="rs" id="rs" />
+                </div>
+              </div>
+              <!-- Modal Common -->
+
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" ng-click="setnode()" class="btn btn-primary">Salvar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <br>
+</div>
+
+<!------------ color_picker script -------------------->
+
+<script>
+
+  $(document).ready(function(){
+    
+    // Events demo
+    function setColor(evt, color){
+          if(color){
+              $('#cpEvent').css('background-color', color);
+          }
+    }
+  
+    $('#cpBinding').colorpicker({
+      color:'#ebf1dd',
+      initialHistory: ['#ff0000','#000000','red', 'purple']
+    })
+      .on('change.color', setColor)
+      .on('mouseover.color', setColor);
+    
+    // Instanciate colorpickers
+    $('#cp1').colorpicker({
+      color:'#00b0f0',
+      initialHistory: ['#ff0000','#000000','red', 'purple']
+    })
+  
+    $('#cpBinding').colorpicker({
+      color:'#ebf1dd'
+    })
+  
+    // Custom theme palette
+    $('#customTheme').colorpicker({
+      color: '#f44336',
+      customTheme: ['#f44336','#ff9800','#ffc107','#4caf50','#00bcd4','#3f51b5','#9c27b0', 'white', 'black']
+    });
+  
+      $('#cpButton').colorpicker({showOn:'button'});
+  
+    $('#show').on('click', function(evt){
+      evt.stopImmediatePropagation();
+      $('#cpOther').colorpicker("showPalette");
+    });
+  
+  });
+  
+  </script>

@@ -1,0 +1,3 @@
+Robot Eva: Qual cor você prefere, azul, vermelho ou verde?
+Robot Eva: Qual cor você prefere, azul, vermelho ou verde?
+Usuario: Verde

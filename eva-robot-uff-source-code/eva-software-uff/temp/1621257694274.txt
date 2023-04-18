@@ -1,0 +1,14 @@
+Robot Eva: Como estou me sentindo?
+Robot Eva: Como estou me sentindo?
+Robot Eva: Feliz, triste ou com raiva?
+Robot Eva: Feliz, triste ou com raiva?
+Usuario: triste
+Robot Eva: Muito bem! Você acertou!
+Robot Eva: Muito bem! Você acertou!
+Robot Eva: Como estou me sentindo?
+Robot Eva: Como estou me sentindo?
+Robot Eva: Feliz, triste ou com raiva?
+Robot Eva: Feliz, triste ou com raiva?
+Usuario: Você parece que tá com raiva
+Robot Eva: Muito bem! Você acertou!
+Robot Eva: Muito bem! Você acertou!

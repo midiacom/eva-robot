@@ -1,0 +1,22 @@
+Robot Eva: Está chovendo agora?
+Robot Eva: Está chovendo agora?
+Usuario: não
+Robot Eva: Você errou! Tente novamente
+Robot Eva: Você errou! Tente novamente
+Robot Eva: Está chovendo agora?
+Robot Eva: Está chovendo agora?
+Usuario: sim agora sim
+Robot Eva: Isso mesmo! Está chovendo
+Robot Eva: Isso mesmo! Está chovendo
+Robot Eva: Está chovendo agora?
+Robot Eva: Está chovendo agora?
+Usuario: parece que sim
+Robot Eva: Isso mesmo! Está chovendo
+Robot Eva: Isso mesmo! Está chovendo
+Robot Eva: Está chovendo agora?
+Robot Eva: Está chovendo agora?
+Usuario: Agora sim parece que sim
+Robot Eva: Isso mesmo! Está chovendo
+Robot Eva: Isso mesmo! Está chovendo
+Robot Eva: O x chegou a 3, vou terminar
+Robot Eva: O x chegou a 3, vou terminar

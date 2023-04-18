@@ -1,0 +1,10 @@
+Robot Eva: Olá, eu sou o robô Eva. Vou sortear um número de um a nove
+Robot Eva: Olá, eu sou o robô Eva. Vou sortear um número de um a nove
+Robot Eva: Para cada um, vou acender a luz numa cor diferente
+Robot Eva: Para cada um, vou acender a luz numa cor diferente
+Robot Eva: Só vou parar quando o número sorteado for o três
+Robot Eva: Só vou parar quando o número sorteado for o três
+Robot Eva: O número sorteado foi o três
+Robot Eva: O número sorteado foi o três
+Robot Eva: Já vou embora 
+Robot Eva: Já vou embora 

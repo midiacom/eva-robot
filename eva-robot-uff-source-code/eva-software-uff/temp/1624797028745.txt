@@ -1,0 +1,4 @@
+Robot Eva: Olá, bom dia
+Robot Eva: Olá, bom dia
+Usuario: Luiza
+Robot Eva: Bom dia $

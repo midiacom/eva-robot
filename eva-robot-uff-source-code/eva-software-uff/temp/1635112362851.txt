@@ -1,0 +1,33 @@
+Robot Eva: Olá, eu sou o robô EVA
+Robot Eva: Olá, eu sou o robô EVA
+Robot Eva: Qual o seu nome?
+Robot Eva: Qual o seu nome?
+Usuario: Marcelo
+Robot Eva: Vou sortear um número de um a três
+Robot Eva: Vou sortear um número de um a três
+Robot Eva: quero ver se você consegue advinhar $
+Robot Eva: Vamos lá então
+Robot Eva: Vamos lá então
+Robot Eva: E ai? Qual foi  o número?
+Robot Eva: E ai? Qual foi  o número?
+Usuario: foi os dois
+Robot Eva: Parabéns, eu pensei no número 2. Você acertou!
+Robot Eva: Parabéns, eu pensei no número 2. Você acertou!
+Robot Eva: Vamos lá então
+Robot Eva: Vamos lá então
+Robot Eva: E ai? Qual foi  o número?
+Robot Eva: E ai? Qual foi  o número?
+Usuario: quando dois
+Robot Eva: Parabéns, eu pensei no número 2. Você acertou!
+Robot Eva: Parabéns, eu pensei no número 2. Você acertou!
+Robot Eva: Vamos lá então
+Robot Eva: Vamos lá então
+Robot Eva: E ai? Qual foi  o número?
+Robot Eva: E ai? Qual foi  o número?
+Usuario: foi o três
+Robot Eva: Você errou, eu pensei no numero dois
+Robot Eva: Você errou, eu pensei no numero dois
+Robot Eva: O seu número de pontos foi #p
+Robot Eva: O seu número de pontos foi 2
+Robot Eva:  Pra mim já deu
+Robot Eva:  Pra mim já deu

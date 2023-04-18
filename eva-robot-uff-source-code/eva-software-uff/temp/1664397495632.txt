@@ -1,0 +1,24 @@
+Robot Eva: Olá! Eu sou o robô EVA
+Robot Eva: Olá! Eu sou o robô EVA
+Robot Eva: Qual o seu nome?
+Robot Eva: Qual o seu nome?
+Usuario: Marcelo
+Robot Eva: Olá, $!
+Robot Eva: Eu sou bom em matemática!
+Robot Eva: Eu sou bom em matemática!
+Robot Eva: Você vai pensar em um número e eu vou tentar advinhar qual foi
+Robot Eva: Você vai pensar em um número e eu vou tentar advinhar qual foi
+Robot Eva: Então, Vamos começar o jogo!
+Robot Eva: Então, Vamos começar o jogo!
+Robot Eva: Pense em um número
+Robot Eva: Pense em um número
+Robot Eva: Multiplique ele por dois!
+Robot Eva: Multiplique ele por dois!
+Robot Eva: Some o resultado com 4
+Robot Eva: Some o resultado com 4
+Robot Eva: Divida por 2
+Robot Eva: Divida por 2
+Robot Eva: Agora, subtraia pelo número que você pensou
+Robot Eva: Agora, subtraia pelo número que você pensou
+Robot Eva: Você pensou no número 2!
+Robot Eva: Você pensou no número 2!

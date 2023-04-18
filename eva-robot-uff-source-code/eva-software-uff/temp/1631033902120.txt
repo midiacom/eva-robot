@@ -1,0 +1,10 @@
+Robot Eva: I will choose a number between 1 to 3
+Robot Eva: I will choose a number between 1 to 3
+Robot Eva: I choose the number $
+Robot Eva: And I will to restart the game. Let is go!
+Robot Eva: And I will to restart the game. Let is go!
+Robot Eva: I will choose a number between 1 to 3
+Robot Eva: I will choose a number between 1 to 3
+Robot Eva: I choose the number $
+Robot Eva: That is all folks
+Robot Eva: That is all folks

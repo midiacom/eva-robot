@@ -1,0 +1,4 @@
+Robot Eva: O valor de x é #x
+Robot Eva: O valor de x é 10
+Robot Eva: O valor de z é #z
+Robot Eva: O valor de z é 20

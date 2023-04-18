@@ -1,0 +1,34 @@
+Robot Eva: Olá! Eu sou o robô Eva!
+Robot Eva: Olá! Eu sou o robô Eva!
+Robot Eva: Vamos jogar um jogo diferente!
+Robot Eva: Vamos jogar um jogo diferente!
+Robot Eva: Qual o seu nome?
+Robot Eva: Qual o seu nome?
+Usuario: Luiza
+Robot Eva: Que legal!
+Robot Eva: Que legal!
+Robot Eva: Vamos lá então $
+Robot Eva: Vou demonstrar uma emoção e você tenta me imitar!
+Robot Eva: Vou demonstrar uma emoção e você tenta me imitar!
+Robot Eva: Eu me sinto feliz
+Robot Eva: Eu me sinto feliz
+Robot Eva: Você pode me imitar?
+Robot Eva: Você pode me imitar?
+Robot Eva: Parabéns, você acertou!
+Robot Eva: Parabéns, você acertou!
+Robot Eva: Vou demonstrar outra emoção!
+Robot Eva: Vou demonstrar outra emoção!
+Robot Eva: Eu me sinto com raiva!
+Robot Eva: Eu me sinto com raiva!
+Robot Eva: Você pode me imitar?
+Robot Eva: Você pode me imitar?
+Robot Eva: Parabéns, você acertou!
+Robot Eva: Parabéns, você acertou!
+Robot Eva: Vou demonstrar mais uma emoção!
+Robot Eva: Vou demonstrar mais uma emoção!
+Robot Eva: Eu me sinto triste!
+Robot Eva: Eu me sinto triste!
+Robot Eva: Você pode me imitar?
+Robot Eva: Você pode me imitar?
+Robot Eva: Foi muito legal jogar com você!
+Robot Eva: Foi muito legal jogar com você!

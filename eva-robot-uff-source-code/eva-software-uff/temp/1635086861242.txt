@@ -1,0 +1,5 @@
+Robot Eva: Está chovendo agora?
+Robot Eva: Está chovendo agora?
+Usuario: parece que sim
+Robot Eva: Não consegui entender
+Robot Eva: Não consegui entender

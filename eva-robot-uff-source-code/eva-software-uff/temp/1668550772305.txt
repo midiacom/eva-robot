@@ -1,0 +1,30 @@
+Robot Eva: Eu sou o robô eva
+Robot Eva: Eu sou o robô eva
+Robot Eva: Como você se chama?
+Robot Eva: Como você se chama?
+Usuario: Marcelo
+Robot Eva: Oi $
+Robot Eva: Vamos jogar o jogo das tabuadas
+Robot Eva: Vamos jogar o jogo das tabuadas
+Robot Eva: Eu vou te fazer duas perguntas e você tenta acertar
+Robot Eva: Eu vou te fazer duas perguntas e você tenta acertar
+Robot Eva: Vamos para a primeira pergunta
+Robot Eva: Vamos para a primeira pergunta
+Robot Eva: Quanto é quatro vezes cinco?
+Robot Eva: Quanto é quatro vezes cinco?
+Usuario: 10
+Robot Eva: Puxa, não foi dessa vez. Você precisa estudar mais um pouco
+Robot Eva: Puxa, não foi dessa vez. Você precisa estudar mais um pouco
+Robot Eva: Vamos para a segunda pergunta
+Robot Eva: Vamos para a segunda pergunta
+Robot Eva: Quanto é seis vezes sete?
+Robot Eva: Quanto é seis vezes sete?
+Usuario: 10
+Robot Eva: Puxa, não foi dessa vez. Você precisa estudar mais um pouco
+Robot Eva: Puxa, não foi dessa vez. Você precisa estudar mais um pouco
+Robot Eva: Foi muito bom jogar com você
+Robot Eva: Foi muito bom jogar com você
+Robot Eva: Mas você precisa praticar mais as tabuadas de #ERRO1 e de #ERRO2
+Robot Eva: Mas você precisa praticar mais as tabuadas de 4 e de 6
+Robot Eva: Bons estudos e até mais
+Robot Eva: Bons estudos e até mais

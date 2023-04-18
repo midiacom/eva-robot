@@ -1,0 +1,5 @@
+Robot Eva: Fim do script
+Robot Eva: Não foi nem o 1 nem o 2 nem o 3
+Robot Eva: Não foi nem o 1 nem o 2 nem o 3
+Robot Eva: O número foi o $
+Robot Eva: Fim do script

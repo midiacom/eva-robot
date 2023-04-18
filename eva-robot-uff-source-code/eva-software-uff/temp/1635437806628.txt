@@ -1,0 +1,10 @@
+Robot Eva: Hello, what is your name
+Robot Eva: Hello, what is your name
+Usuario: Marcelo
+Robot Eva: Hi $, nice to meet you 
+Robot Eva: How are you feeling?
+Robot Eva: How are you feeling?
+Robot Eva: I couldn't identify how you feel
+Robot Eva: I couldn't identify how you feel
+Robot Eva: Bye bye
+Robot Eva: Bye bye
