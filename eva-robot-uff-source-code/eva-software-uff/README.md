@@ -52,6 +52,17 @@ sudo reboot
 ```bash
 npm install
 ```
+
+### Copiar os arquivos para o dir do EVA:
+
+"credencial.json" ... contêm a chave do Google Cloud
+
+".env" .. contêm as credenciais do watson. achei estranho mas o arquivo deve
+se chamar ".env". isso torna o arquivo invisivel no Linux
+
+** Como dito anteriormente, é preciso criar uma pasta chamada "temp" no diretótio EVA.
+Nele é que são criados os audios das falas geradas pelo o tts do IBM-Watson.
+
 <!--
 ### Librerías
  - Requerida para compilar la dependencia "speaker".
