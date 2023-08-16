@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<evaml
+  name="tabuda_nivel1"
+  xsi:noNamespaceSchemaLocation="EvaML-Schema/evaml_schema.xsd"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <settings>
+    <voice tone="pt-BR_IsabelaV3Voice" />
+    <lightEffects mode="ON" />
+    <audioEffects mode="ON" />
+  </settings>
+  <script>
+  <counter var="pont_min" op="=" value="0" />
+    <useMacro macro="Apresenta" />
+    <useMacro macro="Fixa_dolar" />
+    <talk>$1, vamos jogar o jogo da tabuada. Mas, antes de começar o jogo você gostaria de saber nossas regras?</talk>
+    <listen />
+    <switch var="$">
+      <case op="exact" value="sim">
+        <useMacro macro="Regras" />
+        <talk>$1, Agora que conhece brevemente as regras do jogo eu vou fazer mais algumas perguntas.</talk>
+        <useMacro macro="Multiplicando" />
+        <useMacro macro="Nivelamento" />
+        <useMacro macro="Multiplicando" />
+        <useMacro macro="Nivelamento" />
+        <useMacro macro="Multiplicando" />
+        <useMacro macro="Nivelamento" />
+        <switch var="pont_min">
+          <case op="eq" value="3">
+            <counter var="pontos" op="=" value="3" />
+            <useMacro macro="final" />
+          </case>
+          <case op="lt" value="2">
+            <talk>Então agora iniciaremos o nível 1, vamos testar o seu conhecimento nas tabuadas</talk>
+            <counter var="pontos" op="=" value="0" />
+            <useMacro macro="Multiplicando" />
+            <counter var="ponto" op="=" value="0" />
+            <loop var="Loop" times="3">
+              <useMacro macro="Multiplicando" />
+              <useMacro macro="nível_1" />
+            </loop>
+            <useMacro macro="final" />
+          </case>
+        </switch>
+      </case>
+      <case op="exact" value="não">
+        <talk>Já que conhece as regras do jogo eu vou fazer mais algumas perguntas.</talk>
+        <useMacro macro="Multiplicando" />
+        <useMacro macro="Nivelamento" />
+        <useMacro macro="Multiplicando" />
+        <useMacro macro="Nivelamento" />
+        <useMacro macro="Multiplicando" />
+        <useMacro macro="Nivelamento" />
+        <switch var="pont_min">
+          <case op="eq" value="3">
+            <counter var="pontos" op="=" value="3" />
+            <useMacro macro="final" />
+          </case>
+          <case op="lt" value="2">
+            <talk>Então agora iniciaremos o nível 1, vamos testar o seu conhecimento nas tabuadas</talk>
+            <counter var="pontos" op="=" value="0" />
+            <useMacro macro="Multiplicando" />
+            <counter var="ponto" op="=" value="0" />
+            <loop var="Loop" times="3">
+              <useMacro macro="Multiplicando" />
+              <useMacro macro="nível_1" />
+            </loop>
+            <useMacro macro="final" />
+          </case>
+        </switch>
+      </case>
+    </switch>
+  </script>
+  <macros>
+    <macro id="Regras">
+      <audio source="mario-start-02" block="TRUE" />
+      <light state="ON" color="RED"/>
+      <talk> $1, o jogo da tabuada funciona da seguinte maneira.</talk>
+      <talk>Eu irei te fazer uma pergunta sobre a tabuada e você precisa me responder de maneira exata.</talk>
+      <talk>Cada pergunta terá uma pontuação e seu objetivo final é conseguir acertar todas as perguntas, totalizando 3 pontos.</talk>
+      <talk>Caso acerte todas as perguntas do nivelamento, o jogo se encerrará e vocẼ terá obtido a pontuação máxima.</talk>
+      <light state="ON" color="WHITE"/>
+      <evaEmotion emotion="NEUTRAL" />
+    </macro>
+    <macro id="Pont_total">
+      <counter var="pontos" op="+" value="1" />
+    </macro>
+    <macro id="Fixa_tabuada">
+      <listen />
+      <switch var="$">
+        <case op="exact" value="1">
+          <counter var="multiplicando" op="=" value="1" />
+        </case>
+        <case op="exact" value="2">
+          <counter var="multiplicando" op="=" value="2" />
+        </case>
+        <case op="exact" value="3">
+          <counter var="multiplicando" op="=" value="3" />
+        </case>
+        <case op="exact" value="4">
+          <counter var="multiplicando" op="=" value="4" />
+        </case>
+        <case op="exact" value="5">
+          <counter var="multiplicando" op="=" value="5" />
+        </case>
+        <case op="exact" value="6">
+          <counter var="multiplicando" op="=" value="6" />
+        </case>
+        <case op="exact" value="7">
+          <counter var="multiplicando" op="=" value="7" />
+        </case>
+        <case op="exact" value="8">
+          <counter var="multiplicando" op="=" value="8" />
+        </case>
+        <case op="exact" value="9">
+          <counter var="multiplicando" op="=" value="9" />
+        </case>
+        <case op="exact" value="10">
+          <counter var="multiplicando" op="=" value="10" />
+        </case>
+      </switch>
+      <counter var="multiplicando" op="*" value="1" />
+      <talk>$ vezes 1 é = a #multiplicando </talk>
+      <counter var="multiplicando" op="/" value="1" />
+      <counter var="multiplicando" op="*" value="2" />
+      <talk>$ vezes 2 é = a #multiplicando </talk>
+      <counter var="multiplicando" op="/" value="2" />
+      <counter var="multiplicando" op="*" value="3" />
+      <talk>$ vezes 3 é = a #multiplicando </talk>
+      <counter var="multiplicando" op="/" value="3" />
+      <counter var="multiplicando" op="*" value="4" />
+      <talk>$ vezes 4 é = a #multiplicando </talk>
+      <counter var="multiplicando" op="/" value="4" />
+      <counter var="multiplicando" op="*" value="5" />
+      <talk>$ vezes 5  é = a #multiplicando </talk>
+      <counter var="multiplicando" op="/" value="5" />
+      <counter var="multiplicando" op="*" value="6" />
+      <talk>$ vezes 6 é = a #multiplicando </talk>
+      <counter var="multiplicando" op="/" value="6" />
+      <counter var="multiplicando" op="*" value="7" />
+      <talk>$ vezes 7 é = a #multiplicando </talk>
+      <counter var="multiplicando" op="/" value="7" />
+      <counter var="multiplicando" op="*" value="8" />
+      <talk>$ vezes 8 é = a #multiplicando </talk>
+      <counter var="multiplicando" op="/" value="8" />
+      <counter var="multiplicando" op="*" value="9" />
+      <talk>$ vezes 9 é = a #multiplicando </talk>
+      <counter var="multiplicando" op="/" value="9" />
+      <counter var="multiplicando" op="*" value="10" />
+      <talk>$ vezes 10 é = a #multiplicando </talk>
+    </macro>
+    <macro id="Fixa_dolar">
+      <random min="1" max="1" />
+      <random min="2" max="2" />
+      <random min="3" max="3" />
+      <random min="4" max="4" />
+      <random min="5" max="5" />
+      <random min="6" max="6" />
+      <random min="7" max="7" />
+      <random min="8" max="8" />
+      <random min="9" max="9" />
+      <random min="10" max="10" />
+    </macro>
+    <macro id="Multiplicando">
+      <random min="1" max="10" />
+      <switch var="$">
+        <case op="exact" value="1">
+          <counter var="multiplicando" op="=" value="1" />
+        </case>
+        <case op="exact" value="2">
+          <counter var="multiplicando" op="=" value="2" />
+        </case>
+        <case op="exact" value="3">
+          <counter var="multiplicando" op="=" value="3" />
+        </case>
+        <case op="exact" value="4">
+          <counter var="multiplicando" op="=" value="4" />
+        </case>
+        <case op="exact" value="5">
+          <counter var="multiplicando" op="=" value="5" />
+        </case>
+        <case op="exact" value="6">
+          <counter var="multiplicando" op="=" value="6" />
+        </case>
+        <case op="exact" value="7">
+          <counter var="multiplicando" op="=" value="7" />
+        </case>
+        <case op="exact" value="8">
+          <counter var="multiplicando" op="=" value="8" />
+        </case>
+        <case op="exact" value="9">
+          <counter var="multiplicando" op="=" value="9" />
+        </case>
+        <case op="exact" value="10">
+          <counter var="multiplicando" op="=" value="10" />
+        </case>
+      </switch>
+    </macro>
+    <macro id="nível_1">
+        <talk>Quanto é #multiplicando vezes $?</talk>
+        <switch var="$">
+            <case op="exact" value="1">
+                <counter var="multiplicando" op="*" value="1" />
+            </case>
+            <case op="exact" value="2">
+                <counter var="multiplicando" op="*" value="2" />
+            </case>
+            <case op="exact" value="3">
+                <counter var="multiplicando" op="*" value="3" />
+            </case>
+            <case op="exact" value="4">
+                <counter var="multiplicando" op="*" value="4" />
+            </case>
+            <case op="exact" value="5">
+                <counter var="multiplicando" op="*" value="5" />
+            </case>
+            <case op="exact" value="6">
+                <counter var="multiplicando" op="*" value="6" />
+            </case>
+            <case op="exact" value="7">
+                <counter var="multiplicando" op="*" value="7" />
+            </case>
+            <case op="exact" value="8">
+                <counter var="multiplicando" op="*" value="8" />
+            </case>
+            <case op="exact" value="9">
+                <counter var="multiplicando" op="*" value="9" />
+            </case>
+            <case op="exact" value="10">
+                <counter var="multiplicando" op="*" value="10" />
+            </case>
+        </switch>
+        <listen />
+        <switch var="$">
+          <case op="exact" value="parar">
+            <useMacro macro="final" />
+            <stop />
+          </case>
+            <case op="eq" value="#multiplicando">
+                <useMacro macro="Pontuou" />
+            </case>
+            <default>
+                <useMacro macro="Não_pontuou" />
+            </default>
+        </switch>
+    </macro>
+    <macro id="Pontuou">
+      <evaEmotion emotion="HAPPY" />
+      <random min="1" max="3" />
+      <switch var="$">
+        <case op="exact" value="1">
+          <light state="ON" color="GREEN"/>
+          <useMacro macro="Pont_total" />
+        </case>
+        <case op="exact" value="2">
+          <light state="ON" color="BLUE"/>
+          <useMacro macro="Pont_total" />
+        </case>
+        <case op="exact" value="3">
+          <light state="ON" color="PINK"/>
+          <useMacro macro="Pont_total" />
+        </case>
+      </switch>
+      <motion type="YES" />
+      <audio source="applause-moderate" block="TRUE" />
+      <counter var="ponto" op="+" value="1" />
+      <talk>Parabéns, voce ganhou um ponto </talk>
+      <evaEmotion emotion="NEUTRAL" />
+      <light state="ON" color="WHITE"/>
+    </macro>
+    <macro id="Não_pontuou">
+      <evaEmotion emotion="SAD" />
+      <random min="1" max="3" />
+      <switch var="$">
+        <case op="exact" value="1">
+          <light state="ON" color="RED"/>
+        </case>
+        <case op="exact" value="2">
+          <light state="ON" color="YELLOW"/>
+        </case>
+        <case op="exact" value="3">
+          <light state="ON" color="BLACK"/>
+        </case>
+      </switch>
+      <motion type="NO" />
+      <talk>A resposta dessa operação é #multiplicando</talk>
+      <talk>Que pena, dessa vez você não pontuou, vamos para a próxima</talk>
+      <light state="ON" color="WHITE"/>
+      <evaEmotion emotion="NEUTRAL" />
+    </macro>
+    <macro id="Nivelamento">
+        <random min="2" max="10" />
+        <talk>Quanto é #multiplicando vezes $?</talk>
+        <switch var="$">
+            <case op="exact" value="1">
+                <counter var="multiplicando" op="*" value="1" />
+            </case>
+            <case op="exact" value="2">
+                <counter var="multiplicando" op="*" value="2" />
+            </case>
+            <case op="exact" value="3">
+                <counter var="multiplicando" op="*" value="3" />
+            </case>
+            <case op="exact" value="4">
+                <counter var="multiplicando" op="*" value="4" />
+            </case>
+            <case op="exact" value="5">
+                <counter var="multiplicando" op="*" value="5" />
+            </case>
+            <case op="exact" value="6">
+                <counter var="multiplicando" op="*" value="6" />
+            </case>
+            <case op="exact" value="7">
+                <counter var="multiplicando" op="*" value="7" />
+            </case>
+            <case op="exact" value="8">
+                <counter var="multiplicando" op="*" value="8" />
+            </case>
+            <case op="exact" value="9">
+                <counter var="multiplicando" op="*" value="9" />
+            </case>
+            <case op="exact" value="10">
+                <counter var="multiplicando" op="*" value="10" />
+            </case>
+        </switch>
+        <listen />
+        <switch var="$">
+            <case op="eq" value="#multiplicando">
+                <counter var="pont_min" op="+" value="1" />
+                <talk>Parabéns.</talk>
+            </case>
+            <default>
+                <talk>A resposta certa é #multiplicando . Vamos para a próxima, esta foi por pouco.</talk>
+            </default>
+        </switch>
+    </macro>
+    <macro id="Apresenta">
+      <audio source="mario-game-intro" block="TRUE" />
+      <evaEmotion emotion="HAPPY" />
+      <light state="ON" color="YELLOW"/>
+      <talk>Olá, eu sou robô Eva. E você? Qual é o seu nome?</talk>
+      <evaEmotion emotion="NEUTRAL" />
+      <led animation="LISTEN" />
+      <listen />
+      <light state="ON" color="GREEN"/>
+    </macro>
+    <macro id="final">
+      <evaEmotion emotion="HAPPY" />
+      <audio source="mario-end-03" block="TRUE" />
+      <light state="ON" color="BLACK"/>
+      <talk>$1, então encerramos por aqui a nossa sessão, você conseguiu um total de #pontos pontos, torço para que tenha gostado da experiência de ter jogado comigo, estarei te esperando para jogarmos em outro momento.</talk>
+    </macro>
+  </macros>
+</evaml>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<evaml
+  name="meu_teste"
+  xsi:noNamespaceSchemaLocation="EvaML-Schema/evaml_schema.xsd"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <settings>
+    <voice tone="pt-BR_IsabelaV3Voice" />
+    <lightEffects mode="ON" />
+    <audioEffects mode="ON" />
+  </settings>
+  <script>
+    <counter var="multiplicando" op="=" value="8" />
+    <talk>Quanto é 1 vezes 8</talk>
+    <listen />
+    <switch var="$">
+      <case op="eq" value="#multiplicando">
+        <light state="ON" color="GREEN"/>
+      </case>
+      <default>
+        <light state="ON" color="RED" />
+      </default>
+    </switch>
+  </script>
+</evaml>
