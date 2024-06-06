@@ -1,3 +1,0 @@
-Robot Eva: Hi, I will choose a number between 1 and 3
-Robot Eva: Hi, I will choose a number between 1 and 3
-Robot Eva: I choose the number $

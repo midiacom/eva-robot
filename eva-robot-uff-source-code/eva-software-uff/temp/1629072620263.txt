@@ -1,6 +1,0 @@
-Robot Eva: Eu vou pensar em um número de 1 a 3
-Robot Eva: Eu vou pensar em um número de 1 a 3
-Robot Eva: Em qual número eu pensei?
-Robot Eva: Em qual número eu pensei?
-Usuario: 2
-Robot Eva: Eu pensei no número $-1

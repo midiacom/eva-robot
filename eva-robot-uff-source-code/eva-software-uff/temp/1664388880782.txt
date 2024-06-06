@@ -1,4 +1,0 @@
-Robot Eva: Qual o seu nome
-Robot Eva: Qual o seu nome
-Usuario: Augusto
-Robot Eva: Olá $

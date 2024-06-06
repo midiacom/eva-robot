@@ -1,0 +1,11 @@
+<evaml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="teste_talk" xsi:noNamespaceSchemaLocation="EvaML-Schema/evaml_schema.xsd" id="9b71c55ff8d1146078fad91d87a61d48">
+  <settings>
+    <voice tone="pt-BR_IsabelaV3Voice" key="1000" />
+    <lightEffects mode="ON" />
+    <audioEffects mode="ON" />
+  </settings>
+  <script>
+    <light state="ON" color="GREEN" key="1001" />
+    <evaEmotion emotion="HAPPY" key="1002" />
+  </script>
+<links><link from="1000" to="1001" /><link from="1001" to="1002" /></links></evaml>

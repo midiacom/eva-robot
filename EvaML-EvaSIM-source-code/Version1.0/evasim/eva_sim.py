@@ -2,6 +2,7 @@
 # EvaSIM - Software Simulador para o robô EVA
 # Autor: Marcelo Marques da Rocha
 # Labaratório MidiaCOM - Universidade Federal Fluminense
+from paho.mqtt import client as mqtt_client
 
 import platform 
 
@@ -42,10 +43,47 @@ from play_audio import playsound
 import time
 import threading
 
-# from ibm_watson.text_to_speech_v1 import Voice
+from ibm_watson.text_to_speech_v1 import Voice
 from ibm_watson import TextToSpeechV1
 from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 
+
+import config # Modulo com as configurações dos dispositivos de rede
+
+broker = config.MQTT_BROKER_ADRESS # broker adress
+port = config.MQTT_PORT # broker port
+topic_base = config.EVA_TOPIC_BASE
+
+EVA_ROBOT_STATE = "FREE"
+EVA_DOLLAR = ""
+RUNNING_MODE = "SIMULATOR" # modo de operação do EvaSIM (Simulador ou Player do Robô Físico)
+
+# MQTT
+# The callback for when the client receives a CONNACK response from the server.
+def on_connect(client, userdata, flags, rc):
+    print("Connected with result code " + str(rc))
+    # Subscribing in on_connect() means that if we lose the connection and
+        # reconnect then subscriptions will be renewed.
+    client.subscribe(topic=[(topic_base + '/state', 1), ])
+    client.subscribe(topic=[(topic_base + '/var/dollar', 1), ])
+
+# The callback for when a PUBLISH message is received from the server.
+def on_message(client, userdata, msg):
+    global EVA_ROBOT_STATE
+    global EVA_DOLLAR
+    if msg.topic == topic_base + '/state':
+        EVA_ROBOT_STATE = msg.payload.decode()
+    elif msg.topic == topic_base + '/var/dollar':
+        EVA_DOLLAR = msg.payload.decode()
+        
+
+client = mqtt_client.Client()
+client.on_connect = on_connect
+client.on_message = on_message
+client.connect(broker, port)
+
+
+client.loop_start()
 
 # variaveis globais da vm
 root = {}
@@ -88,7 +126,10 @@ im_eyes_neutral = PhotoImage(file = "images/eyes_neutral.png")
 im_eyes_angry = PhotoImage(file = "images/eyes_angry.png")
 im_eyes_sad = PhotoImage(file = "images/eyes_sad.png")
 im_eyes_happy = PhotoImage(file = "images/eyes_happy.png")
+im_eyes_fear = PhotoImage(file = "images/eyes_fear.png")
+im_eyes_surprise = PhotoImage(file = "images/eyes_surprise.png")
 im_eyes_on = PhotoImage(file = "images/eyes_on.png")
+
 # matrix voice images
 im_matrix_blue = PhotoImage(file = "images/matrix_blue.png")
 im_matrix_green = PhotoImage(file = "images/matrix_green.png")
@@ -131,16 +172,16 @@ def evaInit():
     gui.bt_power.unbind("<Button-1>")
     evaEmotion("POWER_ON")
     gui.terminal.insert(INSERT, "\nstate: Initializing.")
-    playsound("my_sounds/power_on" + audio_ext, block = True)
+    #playsound("my_sounds/power_on" + audio_ext, block = True)
     gui.terminal.insert(INSERT, "\nstate: Speaking a greeting text.")
-    playsound("my_sounds/greetings" + audio_ext, block = True)
+    #playsound("my_sounds/greetings" + audio_ext, block = True)
     gui.terminal.insert(INSERT, '\nstate: Speaking "Load a script file and enjoy."')
-    playsound("my_sounds/load_a_script" + audio_ext, block = True)
+    #playsound("my_sounds/load_a_script" + audio_ext, block = True)
     gui.terminal.insert(INSERT, "\nstate: Entering in standby mode.")
     gui.bt_import['state'] = NORMAL
     gui.bt_import.bind("<Button-1>", importFileThread)
     evaMatrix("white")
-    while gui.bt_run['state'] == DISABLED: # animacao da luz da matrix em stand by
+    while gui.bt_run_sim['state'] == DISABLED: # animacao da luz da matrix em stand by
         evaMatrix("white")
         time.sleep(0.5)
         evaMatrix("grey")
@@ -152,8 +193,21 @@ def powerOn(self):
     threading.Thread(target=evaInit, args=()).start()
 
 
+# Roda no modo Simulador
+def setSimMode(self):
+    global RUNNING_MODE
+    RUNNING_MODE = "SIMULATOR"
+    runScript()
+
+
+# Roda no modo Player do Robô EVA
+def setEVAMode(self):
+    global RUNNING_MODE
+    RUNNING_MODE = "EVA_ROBOT"
+    runScript()
+
 # Ativa a thread que roda o script
-def runScript(self):
+def runScript():
     global play, fila_links
     # initialize the robot memory
     print("Intializing the robot memory...")
@@ -167,8 +221,10 @@ def runScript(self):
     # initializing the memory of simulator
     fila_links =  []
     # buttons states
-    gui.bt_run['state'] = DISABLED
-    gui.bt_run.unbind("<Button-1>")
+    gui.bt_run_sim['state'] = DISABLED
+    gui.bt_run_sim.unbind("<Button-1>")
+    gui.bt_run_robot['state'] = DISABLED
+    gui.bt_run_robot.unbind("<Button-1>")
     gui.bt_import['state'] = DISABLED
     gui.bt_stop['state'] = NORMAL
     gui.bt_stop.bind("<Button-1>", stopScript)
@@ -181,8 +237,10 @@ def runScript(self):
 # Encerra a thread que roda o script
 def stopScript(self):
     global play
-    gui.bt_run['state'] = NORMAL
-    gui.bt_run.bind("<Button-1>", runScript)
+    gui.bt_run_sim['state'] = NORMAL
+    gui.bt_run_sim.bind("<Button-1>", setSimMode)
+    gui.bt_run_robot['state'] = NORMAL
+    gui.bt_run_robot.bind("<Button-1>", setEVAMode)
     gui.bt_stop['state'] = DISABLED
     gui.bt_stop.unbind("<Button-1>")
     gui.bt_import['state'] = NORMAL
@@ -214,8 +272,10 @@ def importFile():
     root = tree.getroot() # evaml root node
     script_node = root.find("script")
     links_node = root.find("links")
-    gui.bt_run['state'] = NORMAL
-    gui.bt_run.bind("<Button-1>", runScript)
+    gui.bt_run_sim['state'] = NORMAL
+    gui.bt_run_sim.bind("<Button-1>", setSimMode)
+    gui.bt_run_robot['state'] = NORMAL
+    gui.bt_run_robot.bind("<Button-1>", setEVAMode)
     gui.bt_stop['state'] = DISABLED
     evaEmotion("NEUTRAL")
     gui.terminal.insert(INSERT, '\nstate: Script loaded.')
@@ -225,10 +285,10 @@ def importFile():
 def clear_terminal(self):
     gui.terminal.delete('1.0', END)
     # criando terminal text
-    gui.terminal.insert(INSERT, "=====================================================================================\n")
-    gui.terminal.insert(INSERT, "                                                                Eva Simulator for EvaML\n")
-    gui.terminal.insert(INSERT, "                                                Version 1.0 - UFF/MidiaCom/CICESE [2022]\n")
-    gui.terminal.insert(INSERT, "=====================================================================================")
+    gui.terminal.insert(INSERT, "=============================================================================================================================\n")
+    gui.terminal.insert(INSERT, "                                                                                                                         Eva Simulator for EvaML\n")
+    gui.terminal.insert(INSERT, "                                                                                    Version 2.0 - UFF / MidiaCom / CICESE / Google Research - [2023]\n")
+    gui.terminal.insert(INSERT, "=============================================================================================================================")
 
 
 # conecta as callbacks aos botoes
@@ -241,16 +301,185 @@ gui.bt_power.bind("<Button-1>", powerOn)
 gui.bt_clear.bind("<Button-1>", clear_terminal)
 
 
+# WoZ light functions
+def woz_light_blue(self):
+    client.publish(topic_base + "/light", "BLUE|ON")
+def woz_light_green(self):
+    client.publish(topic_base + "/light", "GREEN|ON")
+def woz_light_black(self):
+    client.publish(topic_base + "/light", "BLACK|OFF")
+def woz_light_pink(self):
+    client.publish(topic_base + "/light", "PINK|ON")
+def woz_light_red(self):
+    client.publish(topic_base + "/light", "RED|ON")
+def woz_light_yellow(self):
+    client.publish(topic_base + "/light", "YELLOW|ON")
+def woz_light_white(self):
+    client.publish(topic_base + "/light", "WHITE|ON")
+
+# WoZ light buttons binding
+gui.bt_bulb_green_btn.bind("<Button-1>", woz_light_green)
+gui.bt_bulb_blue_btn.bind("<Button-1>", woz_light_blue)
+gui.bt_bulb_off_btn.bind("<Button-1>", woz_light_black)
+gui.bt_bulb_pink_btn.bind("<Button-1>", woz_light_pink)
+gui.bt_bulb_red_btn.bind("<Button-1>", woz_light_red)
+gui.bt_bulb_yellow_btn.bind("<Button-1>", woz_light_yellow)
+gui.bt_bulb_white_btn.bind("<Button-1>", woz_light_white)
+
+# WoZ expressions functions
+def woz_expression_angry(self):
+    client.publish(topic_base + "/evaEmotion", "ANGRY")
+def woz_expression_fear(self):
+    client.publish(topic_base + "/evaEmotion", "FEAR")
+def woz_expression_happy(self):
+    client.publish(topic_base + "/evaEmotion", "HAPPY")
+def woz_expression_neutral(self):
+    client.publish(topic_base + "/evaEmotion", "NEUTRAL")
+def woz_expression_sad(self):
+    client.publish(topic_base + "/evaEmotion", "SAD")
+def woz_expression_surprise(self):
+    client.publish(topic_base + "/evaEmotion", "SURPRISE")
+
+# WoZ expression buttons binding
+gui.bt_exp_angry.bind("<Button-1>", woz_expression_angry)
+gui.bt_exp_fear.bind("<Button-1>", woz_expression_fear)
+gui.bt_exp_happy.bind("<Button-1>", woz_expression_happy)
+gui.bt_exp_neutral.bind("<Button-1>", woz_expression_neutral)
+gui.bt_exp_sad.bind("<Button-1>", woz_expression_sad)
+gui.bt_exp_surprise.bind("<Button-1>", woz_expression_surprise)
+
+# WoZ led functions
+def woz_led_stop(self):
+    client.publish(topic_base + "/leds", "STOP")
+def woz_led_angry(self):
+    client.publish(topic_base + "/leds", "STOP")
+    client.publish(topic_base + "/leds", "ANGRY")
+def woz_led_sad(self):
+    client.publish(topic_base + "/leds", "STOP")
+    client.publish(topic_base + "/leds", "SAD")
+def woz_led_angry2(self):
+    client.publish(topic_base + "/leds", "STOP")
+    client.publish(topic_base + "/leds", "ANGRY2")
+def woz_led_happy(self):
+    client.publish(topic_base + "/leds", "STOP")
+    client.publish(topic_base + "/leds", "HAPPY")
+def woz_led_listen(self):
+    client.publish(topic_base + "/leds", "STOP")
+    client.publish(topic_base + "/leds", "LISTEN")
+def woz_led_listen(self):
+    client.publish(topic_base + "/leds", "STOP")
+    client.publish(topic_base + "/leds", "LISTEN")
+def woz_led_rainbow(self):
+    client.publish(topic_base + "/leds", "STOP")
+    client.publish(topic_base + "/leds", "RAINBOW")
+def woz_led_speak(self):
+    client.publish(topic_base + "/leds", "STOP")
+    client.publish(topic_base + "/leds", "SPEAK")
+def woz_led_surprise(self):
+    client.publish(topic_base + "/leds", "STOP")
+    client.publish(topic_base + "/leds", "SURPRISE")
+def woz_led_white(self):
+    client.publish(topic_base + "/leds", "STOP")
+    client.publish(topic_base + "/leds", "WHITE")
+
+# WoZ led buttons binding
+gui.bt_led_stop.bind("<Button-1>", woz_led_stop)
+gui.bt_led_angry.bind("<Button-1>", woz_led_angry)
+gui.bt_led_sad.bind("<Button-1>", woz_led_sad)
+gui.bt_led_angry2.bind("<Button-1>", woz_led_angry2)
+gui.bt_led_happy.bind("<Button-1>", woz_led_happy)
+gui.bt_led_listen.bind("<Button-1>", woz_led_listen)
+gui.bt_led_rainbow.bind("<Button-1>", woz_led_rainbow)
+gui.bt_led_speak.bind("<Button-1>", woz_led_speak)
+gui.bt_led_surprise.bind("<Button-1>", woz_led_surprise)
+gui.bt_led_white.bind("<Button-1>", woz_led_white)
+
+
+# WoZ motion functions
+def woz_motion_yes(self):
+    client.publish(topic_base + "/motion", "YES")
+def woz_motion_no(self):
+    client.publish(topic_base + "/motion", "NO")
+def woz_motion_center(self):
+    client.publish(topic_base + "/motion", "CENTER")
+def woz_motion_left(self):
+    client.publish(topic_base + "/motion", "LEFT")
+def woz_motion_right(self):
+    client.publish(topic_base + "/motion", "RIGHT")
+def woz_motion_up(self):
+    client.publish(topic_base + "/motion", "UP")
+def woz_motion_down(self):
+    client.publish(topic_base + "/motion", "DOWN")
+def woz_motion_2left(self):
+    client.publish(topic_base + "/motion", "2LEFT")
+def woz_motion_2right(self):
+    client.publish(topic_base + "/motion", "2RIGHT")
+def woz_motion_2up(self):
+    client.publish(topic_base + "/motion", "2UP")
+def woz_motion_2down(self):
+    client.publish(topic_base + "/motion", "2DOWN")
+def woz_motion_up_left(self):
+    client.publish(topic_base + "/motion", "UP_LEFT")
+def woz_motion_up_right(self):
+    client.publish(topic_base + "/motion", "UP_RIGHT")
+def woz_motion_down_left(self):
+    client.publish(topic_base + "/motion", "DOWN_LEFT")
+def woz_motion_down_right(self):
+    client.publish(topic_base + "/motion", "DOWN_RIGHT")
+    
+
+# WoZ motion buttons binding
+gui.bt_motion_yes.bind("<Button-1>", woz_motion_yes)
+gui.bt_motion_no.bind("<Button-1>", woz_motion_no)
+gui.bt_motion_center.bind("<Button-1>", woz_motion_center)
+gui.bt_motion_left.bind("<Button-1>", woz_motion_left)
+gui.bt_motion_right.bind("<Button-1>", woz_motion_right)
+gui.bt_motion_up.bind("<Button-1>", woz_motion_up)
+gui.bt_motion_down.bind("<Button-1>", woz_motion_down)
+gui.bt_motion_2left.bind("<Button-1>", woz_motion_2left)
+gui.bt_motion_2right.bind("<Button-1>", woz_motion_2right)
+gui.bt_motion_2up.bind("<Button-1>", woz_motion_2up)
+gui.bt_motion_2down.bind("<Button-1>", woz_motion_2down)
+gui.bt_motion_up_left.bind("<Button-1>", woz_motion_up_left)
+gui.bt_motion_up_right.bind("<Button-1>", woz_motion_up_right)
+gui.bt_motion_down_left.bind("<Button-1>", woz_motion_down_left)
+gui.bt_motion_down_right.bind("<Button-1>", woz_motion_down_right)
+
+
+# TTS function
+def woz_tts(self):
+    voice_option = gui.Lb_voices.get(ANCHOR)
+    print(voice_option + "|" + gui.msg_tts_text.get('1.0','end'))
+    client.publish(topic_base + "/talk", voice_option + "|" + gui.msg_tts_text.get('1.0','end'))
+
+# TTS buttons binding
+gui.bt_send_tts.bind("<Button-1>", woz_tts)
+
 
 # led "animations"
 def ledAnimation(animation):
-    if animation == "STOP": evaMatrix("grey")
-    elif animation == "LISTEN": evaMatrix("green")
-    elif animation == "SPEAK": evaMatrix("blue")
-    elif animation == "ANGRY": evaMatrix("red")
-    elif animation == "HAPPY": evaMatrix("green")
-    elif animation == "SAD": evaMatrix("blue")
-    elif animation == "SURPRISE": evaMatrix("yellow")
+    if RUNNING_MODE == "EVA_ROBOT":
+        client.publish(topic_base + "/leds", "STOP")
+        client.publish(topic_base + "/leds", animation)
+    if animation == "STOP": 
+        evaMatrix("grey")
+    elif animation == "LISTEN":
+        evaMatrix("green")
+    elif animation == "SPEAK":
+        evaMatrix("blue")
+    elif animation == "ANGRY" or animation == "ANGRY2":
+        evaMatrix("red")
+    elif animation == "HAPPY":
+        evaMatrix("green")
+    elif animation == "SAD":
+        evaMatrix("blue")
+    elif animation == "SURPRISE":
+        evaMatrix("yellow")
+    elif animation == "WHITE":
+        evaMatrix("white")
+    elif animation == "RAINBOW":
+        evaMatrix("white")
+        print("Falta gerar a imagem do RAINBOW para os leds do EvaSIM")
     else: print("wrong led animation option")
 
 
@@ -264,11 +493,16 @@ def evaEmotion(expression):
         gui.canvas.create_image(156, 161, image = im_eyes_happy)
     elif expression == "SAD":
         gui.canvas.create_image(156, 161, image = im_eyes_sad)
+    elif expression == "FEAR":
+        gui.canvas.create_image(156, 161, image = im_eyes_fear)
+    elif expression == "SURPRISE":
+        gui.canvas.create_image(156, 161, image = im_eyes_surprise)
     elif expression == "POWER_ON": 
         gui.canvas.create_image(156, 161, image = im_eyes_on)
     else: 
         print("Wrong expression")
-    time.sleep(1)
+    if RUNNING_MODE == "SIMULATOR":
+        time.sleep(1) # apenas um tempo simbólico para o simulador
 
 
 # set the Eva matrix
@@ -283,7 +517,7 @@ def evaMatrix(color):
         gui.canvas.create_image(155, 349, image = im_matrix_green)
     elif color == "white":
         gui.canvas.create_image(155, 349, image = im_matrix_white)
-    elif color == "grey":
+    elif color == "grey": # somente para representar a luz da matrix apagada
         gui.canvas.create_image(155, 349, image = im_matrix_grey)
     else : 
         print("wrong color to matrix...")
@@ -291,7 +525,6 @@ def evaMatrix(color):
 
 # set the image of light (color and state)
 def light(color, state):
-    print("aqui ------------")
     color_map = {"WHITE":"#ffffff", "BLACK":"#000000", "RED":"#ff0000", "PINK":"#e6007e", "GREEN":"#00ff00", "YELLOW":"#ffff00", "BLUE":"#0000ff"}
     if color_map.get(color) != None:
         color = color_map.get(color)
@@ -306,6 +539,7 @@ def light(color, state):
 # funcoes da maquina virtual
 # executa os comandos
 def exec_comando(node):
+    global EVA_ROBOT_STATE
     if node.tag == "voice":
         gui.terminal.insert(INSERT, "\nstate: Selected Voice: " + node.attrib["tone"])
         gui.terminal.see(tkinter.END)
@@ -316,7 +550,10 @@ def exec_comando(node):
         gui.terminal.insert(INSERT, "\nstate: Moving the head! Movement type: " + node.attrib["type"], "motion")
         gui.terminal.see(tkinter.END)
         print("Moving the head. Type:", node.attrib["type"])
-        time.sleep(1) # Um tempo apenas simbólico. No robô, o movimento não bloqueia o script e demorar tempos distintos
+        if RUNNING_MODE == "EVA_ROBOT":
+            client.publish(topic_base + "/motion", node.attrib["type"]); # comando para o robô físico
+        else:
+            time.sleep(1) # Um tempo apenas simbólico. No robô, o movimento não bloqueia o script e demorar tempos distintos
 
 
     elif node.tag == "light":
@@ -329,7 +566,7 @@ def exec_comando(node):
         
         # caso a seguir, se o state é off, e pode não ter atributo color definido
         if state == "OFF":
-            color = "black"
+            color = "BLACK"
             if lightEffect == "OFF":
                 message_state = "\nstate: Light Effects DISABLED."
             else:
@@ -346,7 +583,10 @@ def exec_comando(node):
             gui.terminal.insert(INSERT, message_state)
             gui.terminal.see(tkinter.END) # autoscrolling
         light(color , state)
-        time.sleep(1) # emula o tempo da lampada real
+        if RUNNING_MODE == "EVA_ROBOT":
+            client.publish(topic_base + "/light", color + "|" + state); # comando para o robô físico
+        else:
+            time.sleep(1) # emula o tempo da lampada real
 
 
     elif node.tag == "wait":
@@ -357,10 +597,25 @@ def exec_comando(node):
 
 
     elif node.tag == "led":
-        print(node.attrib["animation"])
+        # a seleção do modo de execução é feita dentro da função ledAnimation()
         ledAnimation(node.attrib["animation"])
         gui.terminal.insert(INSERT, "\nstate: Matrix Leds. Animation=" + node.attrib["animation"])
         gui.terminal.see(tkinter.END)
+        
+
+    elif node.tag == "mqtt":
+        mqtt_topic = node.attrib["topic"]
+        mqtt_message = node.attrib["message"]
+        if (len(mqtt_topic) or len(mqtt_message)) == 0: # erro
+            gui.terminal.insert(INSERT, "\nError -> The topic or message attribute is empty.")
+            gui.terminal.see(tkinter.END)
+            exit(1)
+        else:
+            client.publish(mqtt_topic, mqtt_message)
+            print("Publishing a MQTT message to an external device.", mqtt_topic, mqtt_message)
+            gui.terminal.insert(INSERT, "\nstate: MQTT publishing. Topic=" + mqtt_topic + " and Message=" + mqtt_message + ".")
+            gui.terminal.see(tkinter.END)
+
 
 
     elif node.tag == "random":
@@ -380,55 +635,67 @@ def exec_comando(node):
 
 
     elif node.tag == "listen":
-        lock_thread_pop()
-        ledAnimation("LISTEN")
-        # função de fechamento da janela pop up para a tecla <return)
-        def fechar_pop_ret(self): 
-            print(var.get())
-            eva_memory.var_dolar.append([var.get(), "<listen>"])
+        if RUNNING_MODE == "EVA_ROBOT": 
+            EVA_ROBOT_STATE = "BUSY"
+            ledAnimation("LISTEN")
+            client.publish(topic_base + "/listen", " ")
+            while (EVA_ROBOT_STATE != "FREE"):
+                pass
+            eva_memory.var_dolar.append([EVA_DOLLAR, "<listen>"])
             gui.terminal.insert(INSERT, "\nstate: Listening : var=$" + ", value=" + eva_memory.var_dolar[-1][0])
             tab_load_mem_dollar()
             gui.terminal.see(tkinter.END)
-            pop.destroy()
-            unlock_thread_pop() # reativa a thread de processamento do script
-        
-        # função de fechamento da janela pop up par o botão ok
-        def fechar_pop_bt(): 
-            print(var.get())
-            eva_memory.var_dolar.append([var.get(), "<listen>"])
-            gui.terminal.insert(INSERT, "\nstate: Listening : var=$" + ", value=" + eva_memory.var_dolar[-1][0])
-            tab_load_mem_dollar()
-            gui.terminal.see(tkinter.END)
-            pop.destroy()
-            unlock_thread_pop() # reativa a thread de processamento do script
-        # criacao da janela
-        var = StringVar()
-        pop = Toplevel(gui)
-        pop.title("Listen Command")
-        # Disable the max and close buttons
-        pop.resizable(False, False)
-        pop.protocol("WM_DELETE_WINDOW", False)
-        w = 300
-        h = 150
-        ws = gui.winfo_screenwidth()
-        hs = gui.winfo_screenheight()
-        x = (ws/2) - (w/2)
-        y = (hs/2) - (h/2)  
-        pop.geometry('%dx%d+%d+%d' % (w, h, x, y))
-        pop.grab_set()
-        label = Label(pop, text="Eva is listening... Please, enter your answer!", font = ('Arial', 10))
-        label.pack(pady=20)
-        E1 = Entry(pop, textvariable = var, font = ('Arial', 10))
-        E1.bind("<Return>", fechar_pop_ret)
-        E1.pack()
-        Button(pop, text="    OK    ", font = font1, command=fechar_pop_bt).pack(pady=20)
-        # espera pela liberacao, aguardando a resposta do usuario
-        while thread_pop_pause: 
-            time.sleep(0.5)
-        ledAnimation("STOP")
+            ledAnimation("STOP")
+        else:
+            lock_thread_pop()
+            ledAnimation("LISTEN")
+            # função de fechamento da janela pop up para a tecla <return)
+            def fechar_pop_ret(self): 
+                print(var.get())
+                eva_memory.var_dolar.append([var.get(), "<listen>"])
+                gui.terminal.insert(INSERT, "\nstate: Listening : var=$" + ", value=" + eva_memory.var_dolar[-1][0])
+                tab_load_mem_dollar()
+                gui.terminal.see(tkinter.END)
+                pop.destroy()
+                unlock_thread_pop() # reativa a thread de processamento do script
+            
+            # função de fechamento da janela pop up par o botão ok
+            def fechar_pop_bt(): 
+                print(var.get())
+                eva_memory.var_dolar.append([var.get(), "<listen>"])
+                gui.terminal.insert(INSERT, "\nstate: Listening : var=$" + ", value=" + eva_memory.var_dolar[-1][0])
+                tab_load_mem_dollar()
+                gui.terminal.see(tkinter.END)
+                pop.destroy()
+                unlock_thread_pop() # reativa a thread de processamento do script
+            # criacao da janela
+            var = StringVar()
+            pop = Toplevel(gui)
+            pop.title("Listen Command")
+            # Disable the max and close buttons
+            pop.resizable(False, False)
+            pop.protocol("WM_DELETE_WINDOW", False)
+            w = 300
+            h = 150
+            ws = gui.winfo_screenwidth()
+            hs = gui.winfo_screenheight()
+            x = (ws/2) - (w/2)
+            y = (hs/2) - (h/2)  
+            pop.geometry('%dx%d+%d+%d' % (w, h, x, y))
+            pop.grab_set()
+            label = Label(pop, text="Eva is listening... Please, enter your answer!", font = ('Arial', 10))
+            label.pack(pady=20)
+            E1 = Entry(pop, textvariable = var, font = ('Arial', 10))
+            E1.bind("<Return>", fechar_pop_ret)
+            E1.pack()
+            Button(pop, text="    OK    ", font = font1, command=fechar_pop_bt).pack(pady=20)
+            # espera pela liberacao, aguardando a resposta do usuario
+            while thread_pop_pause: 
+                time.sleep(0.5)
+            ledAnimation("STOP")
 
 
-    elif node.tag == "talk":
+    elif node.tag == "talk": # função bloqueante
         texto = node.text
         # substitui as variaveis através do texto. as variaveis devem existir na memoria
         if "#" in texto:
@@ -478,42 +745,61 @@ def exec_comando(node):
         gui.terminal.insert(INSERT, '\nstate: Speaking: "' + texto[ind_random] + '"')
         gui.terminal.see(tkinter.END)
 
-        # Assume the default UTF-8 (Gera o hashing do arquivo de audio)
-        # Also, uses the voice tone attribute in file hashing
-        hash_object = hashlib.md5(texto[ind_random].encode())
-        file_name = "_audio_"  + root.find("settings")[0].attrib["tone"] + hash_object.hexdigest()
+        if RUNNING_MODE == "EVA_ROBOT":
+            client.publish(topic_base + "/log", "Using Text-To-Spech service from IBM Watson.")
+            ledAnimation("SPEAK")
+            EVA_ROBOT_STATE = "BUSY" # a fala é uma função bloueante. o robo fica ocupado.
+            client.publish(topic_base + "/talk", root.find("settings")[0].attrib["tone"] + "|" + texto[ind_random])
+            while(EVA_ROBOT_STATE != "FREE"):
+                pass
+            ledAnimation("STOP")
+        else:
+            # Assume the default UTF-8 (Gera o hashing do arquivo de audio)
+            # Also, uses the voice tone attribute in file hashing
+            hash_object = hashlib.md5(texto[ind_random].encode())
+            file_name = "_audio_"  + root.find("settings")[0].attrib["tone"] + hash_object.hexdigest()
 
-        # verifica se o audio da fala já existe na pasta
-        if not (os.path.isfile("audio_cache_files/" + file_name + audio_ext)): # se nao existe chama o watson
-            # Eva tts functions
-            with open("audio_cache_files/" + file_name + audio_ext, 'wb') as audio_file:
-                print("Aqui")
-                try:
-                    res = tts.synthesize(texto[ind_random], accept = ibm_audio_ext, voice = root.find("settings")[0].attrib["tone"]).get_result()
-                    audio_file.write(res.content)
-                except:
-                    print("Voice exception")
-                    gui.terminal.insert(INSERT, "\nError when trying to select voice tone, please verify the tone atribute.\n", "error")
-                    gui.terminal.see(tkinter.END)
-                    exit(1)
-        ledAnimation("SPEAK")
-        playsound("audio_cache_files/" + file_name + audio_ext, block = True) # toca o audio da fala
-        ledAnimation("STOP")
+            # verifica se o audio da fala já existe na pasta
+            if not (os.path.isfile("audio_cache_files/" + file_name + audio_ext)): # se nao existe chama o watson
+                audio_file_is_ok = False
+                while(not audio_file_is_ok):
+                    # Eva tts functions
+                    with open("audio_cache_files/" + file_name + audio_ext, 'wb') as audio_file:
+                        try:
+                            res = tts.synthesize(texto[ind_random], accept = ibm_audio_ext, voice = root.find("settings")[0].attrib["tone"]).get_result()
+                            audio_file.write(res.content)
+                            playsound("audio_cache_files/" + file_name + audio_ext, block = True) # toca o audio da fala
+                        except:
+                            print("Voice exception")
+                            gui.terminal.insert(INSERT, "\nError when trying to select voice tone, please verify the tone atribute.\n", "error")
+                            gui.terminal.see(tkinter.END)
+                            exit(1)
+                    file_size = os.path.getsize("audio_cache_files/" + file_name + audio_ext)
+                    if file_size == 0: # arquivo corrompido
+                        print("#### Arquivo corrompido....")
+                        os.remove("audio_cache_files/" + file_name + audio_ext)
+                    else:
+                        audio_file_is_ok = True
+            else:
+                playsound("audio_cache_files/" + file_name + audio_ext, block = True) # toca o audio da fala
+        
 
 
     elif node.tag == "evaEmotion":
         emotion = node.attrib["emotion"]
+        if RUNNING_MODE == "EVA_ROBOT":
+            client.publish(topic_base + "/evaEmotion", emotion) # comando para o EVA físico)
         gui.terminal.insert(INSERT, "\nstate: Expressing an emotion: " + emotion)
         gui.terminal.see(tkinter.END)
         evaEmotion(emotion)
 
 
     elif node.tag == "audio":
-        sound_file = "sonidos/" + node.attrib["source"] + ".wav"
+        sound_file =  node.attrib["source"]
         block = False # o play do audio não bloqueia a execucao do script
-        if node.attrib["block"].lower() == "true":
+        if node.attrib["block"] == "TRUE":
             block = True
-        message_audio = '\nstate: Playing a sound: "' + sound_file + '", block=' + str(block)
+        message_audio = '\nstate: Playing a sound: "' + "audio_files/" + sound_file + ".wav" + '", block=' + str(block)
 
         # process audioEffects settings
         if root.find("settings").find("audioEffects") != None:
@@ -524,10 +810,25 @@ def exec_comando(node):
 
         gui.terminal.insert(INSERT, message_audio)
         gui.terminal.see(tkinter.END)
-        ledAnimation("SPEAK")
+
         try:
-            playsound(sound_file, block = block)
-            ledAnimation("STOP")
+            #client.publish(topic_base + "/log", "Playing the audio file: ", sound_file + ".wav" + " ( - blocking mode = True")
+            if block == True:
+                if RUNNING_MODE == "EVA_ROBOT":
+                    EVA_ROBOT_STATE = "BUSY"
+                    client.publish(topic_base + "/audio", sound_file + "|" + "TRUE")
+                    while (EVA_ROBOT_STATE != "FREE"):
+                        pass
+                else:
+                    print(sound_file)
+                    playsound("audio_files/" + sound_file + ".wav", block = block)
+
+            else: # block = False
+                if RUNNING_MODE == "EVA_ROBOT":
+                    #client.publish(topic_base + "/log", "Playing the audio file: ", sound_file + ".wav" + " ( - blocking mode = True")
+                    client.publish(topic_base + "/audio", sound_file + "|" + "FALSE")
+                else:
+                    playsound("audio_files/" + sound_file + ".wav", block = block) 
         except Exception as e:
             # trata uma exceção. não achei exceções na documentação da biblioteca
             error_string = "\nError -> " + str(e) + "."
@@ -763,6 +1064,7 @@ def link_process(anterior = -1):
     gui.terminal.insert(INSERT, "\n---------------------------------------------------")
     gui.terminal.insert(INSERT, "\nstate: Starting the script: " + root.attrib["name"])
     gui.terminal.see(tkinter.END)
+    client.publish(topic_base + "/log", "Starting the script: " + root.attrib["name"])
     global fila_links
     while (len(fila_links) != 0) and (play == True):
         from_key = fila_links[0].attrib["from"] # chave do comando a executar
@@ -805,8 +1107,10 @@ def link_process(anterior = -1):
     gui.terminal.insert(INSERT, "\nstate: End of script.")
     gui.terminal.see(tkinter.END)
     # restore the buttons states (run and stop)
-    gui.bt_run['state'] = NORMAL
-    gui.bt_run.bind("<Button-1>", runScript)
+    gui.bt_run_sim['state'] = NORMAL
+    gui.bt_run_sim.bind("<Button-1>", setSimMode)
+    gui.bt_run_robot['state'] = NORMAL
+    gui.bt_run_robot.bind("<Button-1>", setEVAMode)
     gui.bt_import['state'] = NORMAL
     gui.bt_import.bind("<Button-1>", importFileThread)
     gui.bt_stop['state'] = DISABLED

@@ -1,4 +1,0 @@
-Robot Eva: Olá, eu sou o robô Eva. Posso falar, escutar, me expressar através do olhar e também posso controlar a iluminação. Vou começar acendendo a luz!
-Robot Eva: Olá, eu sou o robô Eva. Posso falar, escutar, me expressar através do olhar e também posso controlar a iluminação. Vou começar acendendo a luz!
-Robot Eva: Agora, o controle da iluminação passou a ser um elemento de primeira classe na minha linguagem de programação. Assim, posso controlar a luz de maneira independente das minhas outras expressões.
-Robot Eva: Agora, o controle da iluminação passou a ser um elemento de primeira classe na minha linguagem de programação. Assim, posso controlar a luz de maneira independente das minhas outras expressões.

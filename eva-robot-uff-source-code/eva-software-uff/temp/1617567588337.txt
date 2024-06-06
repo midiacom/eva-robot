@@ -1,4 +1,0 @@
-Robot Eva: Hola, mi nombre es Eva, ¿Cuál es tu nombre?
-Robot Eva: Hola, mi nombre es Eva, ¿Cuál es tu nombre?
-Usuario: House
-Robot Eva: Mucho gusto en conocerte $

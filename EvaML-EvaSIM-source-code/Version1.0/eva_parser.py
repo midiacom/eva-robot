@@ -59,11 +59,12 @@ if compile:
 			# step 03 - to generate xml_exe file
 			cmd = get_python_interpreter_arguments()[0] + " eva_xml_links.py _node_keys.xml"
 			if (os.system(cmd)) == 0: # step 03 OK
+				exit(0) # Step 3 OK, finish the execution
 				# step 04 - generate the json file
-				tree = ET.parse("_node_keys.xml")  #
-				root = tree.getroot() # evaml root node
-				cmd = get_python_interpreter_arguments()[0] + " eva_json_gen.py " + root.attrib['name'] + "_EvaML.xml" #_xml_links.xml"
-				os.system(cmd)
+				#tree = ET.parse("_node_keys.xml")  #
+				#root = tree.getroot() # evaml root node
+				#cmd = get_python_interpreter_arguments()[0] + " eva_json_gen.py " + root.attrib['name'] + "_EvaML.xml" #_xml_links.xml"
+				#os.system(cmd)
 
 # steps 5 and 6 (optional)
 if save:

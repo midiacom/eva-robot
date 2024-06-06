@@ -1,4 +1,0 @@
-Robot Eva: #x
-Robot Eva: 1
-Robot Eva: #x
-Robot Eva: 2

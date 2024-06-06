@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<evaml
+  name="teste_listen"
+  xsi:noNamespaceSchemaLocation="EvaML-Schema/evaml_schema.xsd"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <settings>
+    <voice tone="pt-BR_IsabelaV3Voice" />
+    <lightEffects mode="ON" />
+    <audioEffects mode="ON" />
+  </settings>
+  <script>
+    <light state="ON" color="GREEN"/>
+    <evaEmotion emotion="HAPPY" />
+    <talk>Qual o seu nome?</talk>
+    <listen />
+    <light state="OFF" color="BLACK"/>
+    <talk>Muito prazer em conhecê-lo $</talk>
+  </script>
+</evaml>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<evaml
+  name="tarefa-evaml"
+  xsi:noNamespaceSchemaLocation="EvaML-Schema/evaml_schema.xsd"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <settings>
+    <voice tone="en-US_AllisonV3Voice" />
+    <lightEffects mode="ON" />
+    <audioEffects mode="ON" />
+  </settings>
+  <script>
+    <!-- TASK 01 -->
+    <evaEmotion emotion="NEUTRAL" />
+    <light state="ON" color="WHITE"/>
+    <audio source="mario-game-intro" block="TRUE" />
+    <light state="ON" color="YELLOW"/>
+    <evaEmotion emotion="HAPPY" />
+    <talk>Hi, I'm the robot EVA / Hello, my name is EVA / Hi, what is up. I am the robot EVA</talk>
+    <light state="ON" color="PINK"/>
+    <evaEmotion emotion="NEUTRAL" />
+    <wait duration="2000" />
+    <!-- TASK 02 -->
+    <talk>What is your name?</talk>
+    <listen />
+    <talk>Hello $. I'm going to present my expressions</talk>
+    <evaEmotion emotion="HAPPY" />
+    <talk>I can express hapiness</talk>
+    <evaEmotion emotion="SAD" />
+    <talk>I can express sadness</talk>
+    <evaEmotion emotion="ANGRY" />
+    <talk>I can express anger</talk>
+    <evaEmotion emotion="NEUTRAL" />
+    <talk>Hey $, let's play the imitation game?</talk>
+    <listen />
+    <switch var="$">
+      <case op="exact" value="yes">
+        <evaEmotion emotion="HAPPY" />
+        <talk>Excelent! Let's go now!</talk>
+      </case>
+      <case op="exact" value="no">
+        <evaEmotion emotion="SAD" />
+        <talk>Oh, I'm sorry you don't want to play. Bye!</talk>
+        <light state="OFF" />
+        <stop />        
+      </case>
+    </switch>
+    <!-- TASK 03 -->
+    <talk>I will show some emotions and you try to imitate me</talk>
+    <counter var="score" op="=" value="0" />
+    <counter var="chance" op="=" value="0" />
+    <random id="LOOP" min="1" max="3"/>
+    <switch var="$">
+      <case op="exact" value="1">
+        <evaEmotion emotion="SAD" />
+        <light state="ON" color="BLUE" />
+        <useMacro macro="GET_EXPRESSION" />
+        <switch var="$">
+          <case op="exact" value="sad">
+            <useMacro macro="RIGHT_ANSWER" />
+          </case>
+          <default>
+            <useMacro macro="WRONG_ANSWER" />
+          </default>
+        </switch>
+      </case>
+      <case op="exact" value="2">
+        <evaEmotion emotion="HAPPY" />
+        <light state="ON" color="YELLOW" />
+        <useMacro macro="GET_EXPRESSION" />
+        <switch var="$">
+          <case op="exact" value="happy">
+            <useMacro macro="RIGHT_ANSWER" />
+          </case>
+          <default>
+            <useMacro macro="WRONG_ANSWER" />
+          </default>
+        </switch>
+      </case>
+      <case op="exact" value="3">
+        <evaEmotion emotion="ANGRY" />
+        <light state="ON" color="RED" />
+        <useMacro macro="GET_EXPRESSION" />
+        <switch var="$">
+          <case op="exact" value="angry">
+            <useMacro macro="RIGHT_ANSWER" />
+          </case>
+          <default>
+            <useMacro macro="WRONG_ANSWER" />
+          </default>
+        </switch>
+      </case>
+    </switch>
+    <counter var="chance" op="+" value="1" />
+    <switch var="chance">
+      <case op="eq" value="3">
+        <evaEmotion emotion="HAPPY" />
+        <talk>Your score was #score</talk>
+        <talk>It was good to play with you $1. Bye!</talk>
+      </case>
+      <default>
+        <goto target="LOOP" />
+      </default>
+    </switch>
+  </script>
+  <!-- MACRO DEFINITIONS -->
+  <macros>
+    <macro id="GET_EXPRESSION">
+      <talk>Can you imitate me?</talk>
+      <userEmotion />
+    </macro>
+    <macro id="RIGHT_ANSWER">
+      <evaEmotion emotion="HAPPY" />
+      <talk>Ok! You are correct!</talk>
+      <counter var="score" op="+" value="1" />
+    </macro>
+    <macro id="WRONG_ANSWER">
+      <evaEmotion emotion="SAD" />
+      <talk>You are wrong!</talk>
+    </macro>
+  </macros>
+</evaml>

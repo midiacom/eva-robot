@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<evaml
+  name="teste_all_leds"
+  xsi:noNamespaceSchemaLocation="EvaML-Schema/evaml_schema.xsd"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <settings>
+    <voice tone="en-US_MichaelExpressive" />
+    <lightEffects mode="ON" />
+    <audioEffects mode="ON" />
+  </settings>
+  <script>
+    <led animation="RAINBOW" />
+  </script>
+</evaml>

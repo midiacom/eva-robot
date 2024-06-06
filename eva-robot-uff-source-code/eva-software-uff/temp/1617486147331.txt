@@ -1,6 +1,0 @@
-Robot Eva: diga seu nome
-Robot Eva: diga seu nome
-Usuario: Luiza
-Robot Eva: Olá $
-Usuario: Luiza
-Robot Eva: Olá $

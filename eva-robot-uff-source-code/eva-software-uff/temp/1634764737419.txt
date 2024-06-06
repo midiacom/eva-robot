@@ -1,3 +1,0 @@
-Robot Eva: O número sorteado foi o $
-Robot Eva: O valor de x é #x
-Robot Eva: O valor de x é 1

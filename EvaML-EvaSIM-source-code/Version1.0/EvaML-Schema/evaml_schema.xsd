@@ -23,7 +23,14 @@ Revision: 2022/08/12
 	<xs:simpleType name="voiceListType">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="pt-BR_IsabelaV3Voice"/>
-			<xs:enumeration value="en-US_AllisonV3Voice"/>
+			<xs:enumeration value="en-US_AllisonV3Voice"/> 
+			<xs:enumeration value="en-US_AllisonExpressive"/> 
+			<xs:enumeration value="en-US_EmmaExpressive"/>
+			<xs:enumeration value="en-US_LisaExpressive"/>
+			<xs:enumeration value="en-US_MichaelExpressive"/>
+			<xs:enumeration value="en-US_MichaelV3Voice"/>
+			<xs:enumeration value="en-US_KevinV3Voice"/>
+			<xs:enumeration value="en-US_OliviaV3Voice"/>
 			<xs:enumeration value="en-US_EmilyV3Voice"/>
 			<xs:enumeration value="en-US_HenryV3Voice"/>
 			<xs:enumeration value="es-LA_SofiaV3Voice"/>
@@ -41,11 +48,18 @@ Revision: 2022/08/12
 			<xs:enumeration value="RIGHT"/>
 			<xs:enumeration value="UP"/>
 			<xs:enumeration value="DOWN"/>
-			<xs:enumeration value="ANGRY"/>
 			<xs:enumeration value="2UP"/>
 			<xs:enumeration value="2DOWN"/>
 			<xs:enumeration value="2RIGHT"/>
 			<xs:enumeration value="2LEFT"/>
+			<xs:enumeration value="DOWN_RIGHT"/>
+			<xs:enumeration value="2DOWN_RIGHT"/>
+			<xs:enumeration value="DOWN_LEFT"/>
+			<xs:enumeration value="2DOWN_LEFT"/>
+			<xs:enumeration value="UP_RIGHT"/>
+			<xs:enumeration value="2UP_RIGHT"/>
+			<xs:enumeration value="UP_LEFT"/>
+			<xs:enumeration value="2UP_LEFT"/>
 		</xs:restriction>
 	</xs:simpleType>
 
@@ -57,28 +71,48 @@ Revision: 2022/08/12
 		<xs:union memberTypes="voiceListType voiceStringType" />
 	</xs:simpleType>
 
+	<xs:simpleType name="topicType">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+
+	<xs:simpleType name="messageType">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+
 	<xs:simpleType name="audioListType">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="applause-moderate"/>
-			<xs:enumeration value="beep-09"/>
-			<xs:enumeration value="cheering"/>
-			<xs:enumeration value="fanfare2"/>
-			<xs:enumeration value="laugh-01"/>
-			<xs:enumeration value="mario-end-01"/>
-			<xs:enumeration value="mario-end-02"/>
-			<xs:enumeration value="mario-end-03"/>
-			<xs:enumeration value="mario-fundo"/>
-			<xs:enumeration value="mario-game-intro"/>
-			<xs:enumeration value="mario-sound1"/>
-			<xs:enumeration value="mario-sound2"/>
-			<xs:enumeration value="mario-start-01"/>
-			<xs:enumeration value="mario-start-02"/>
-			<xs:enumeration value="oh-no"/>
-			<xs:enumeration value="song-exodus"/>
-			<xs:enumeration value="song-the-girl-from-ipanema"/>
-			<xs:enumeration value="song-the-imperial-march"/>
-			<xs:enumeration value="song-vivaldi-spring"/>
-			<xs:enumeration value="song-exodus"/>
+			<xs:enumeration value="efx-blin"/>
+            <xs:enumeration value="efx-cheering"/>
+            <xs:enumeration value="efx-crowdapplause1"/>
+            <xs:enumeration value="efx-fanfare"/>
+            <xs:enumeration value="efx-mario-end-01"/>
+            <xs:enumeration value="efx-mario-end-02"/>
+            <xs:enumeration value="efx-mario-end-03"/>
+            <xs:enumeration value="efx-mario-fundo"/>
+            <xs:enumeration value="efx-mario-game-intro"/>
+            <xs:enumeration value="efx-mario-sound1-longo"/>
+            <xs:enumeration value="efx-mario-sound1"/>
+            <xs:enumeration value="efx-mario-sound2"/>
+            <xs:enumeration value="efx-mario-start-01"/>
+            <xs:enumeration value="efx-mario-start-02"/>
+            <xs:enumeration value="efx-tic-toc"/>
+            <xs:enumeration value="efx-wand1"/>
+            <xs:enumeration value="MUTED-SOUND"/>
+            <xs:enumeration value="song-ben"/>
+            <xs:enumeration value="song-caneta-azul"/>
+            <xs:enumeration value="song-exodus"/>
+            <xs:enumeration value="song-mj-heal-the-world"/>
+            <xs:enumeration value="song-here-comes-the-sun"/>
+            <xs:enumeration value="song-mj-heal-the-world"/>
+            <xs:enumeration value="song-mj-thriller2"/>
+            <xs:enumeration value="song-mj-thriller3-laugh"/>
+            <xs:enumeration value="song-oh-no"/>
+            <xs:enumeration value="song-take-on-me"/>
+            <xs:enumeration value="song-the-girl-from-ipanema"/>
+            <xs:enumeration value="song-the-imperial-march"/>
+            <xs:enumeration value="song-thriller-open"/>
+            <xs:enumeration value="song-vivaldi-spring"/>
+            <xs:enumeration value="song-weird-science"/>
 		</xs:restriction>
 	</xs:simpleType>
 
@@ -115,10 +149,13 @@ Revision: 2022/08/12
 			<xs:enumeration value="HAPPY"/>
 			<xs:enumeration value="SAD"/>
 			<xs:enumeration value="ANGRY"/>
+            <xs:enumeration value="ANGRY2"/>
 			<xs:enumeration value="STOP"/>
 			<xs:enumeration value="SPEAK"/>
 			<xs:enumeration value="LISTEN"/>
 			<xs:enumeration value="SURPRISE"/>
+            <xs:enumeration value="WHITE"/>
+            <xs:enumeration value="RAINBOW"/>
 		</xs:restriction>
 	</xs:simpleType>
 
@@ -167,10 +204,20 @@ Revision: 2022/08/12
 			<xs:enumeration value="HAPPY"/>
 			<xs:enumeration value="SAD"/>
 			<xs:enumeration value="ANGRY"/>
+			<xs:enumeration value="FEAR"/>
+			<xs:enumeration value="SURPRISE"/>
+			<xs:enumeration value="INLOVE"/>
 		</xs:restriction>
 	</xs:simpleType>
 
   <!-- ** EvaML Commands Definitions ** -->
+
+  <xs:element name="mqtt">
+	<xs:complexType>
+		<xs:attribute name="topic" type="topicType" use="required"/>
+		<xs:attribute name="message" type="messageType" use="required"/>
+	</xs:complexType>
+</xs:element>
 
 	<xs:element name="random">
 		<xs:complexType>
@@ -302,6 +349,7 @@ Revision: 2022/08/12
 		<xs:complexType>
 			<xs:choice minOccurs="0" maxOccurs="unbounded">
 				<xs:element ref="loop"/>
+				<xs:element ref="mqtt"/>
 				<xs:element ref="random"/>
 				<xs:element ref="wait"/>
 				<xs:element ref="talk"/>
@@ -328,6 +376,7 @@ Revision: 2022/08/12
 		<xs:complexType>
 			<xs:choice minOccurs="0" maxOccurs="unbounded">
 				<xs:element ref="loop"/>
+				<xs:element ref="mqtt"/>
 				<xs:element ref="random"/>
 				<xs:element ref="wait"/>
 				<xs:element ref="talk"/>
@@ -353,6 +402,7 @@ Revision: 2022/08/12
 		<xs:complexType>
 			<xs:choice minOccurs="0" maxOccurs="unbounded">
 				<xs:element ref="loop"/>
+				<xs:element ref="mqtt"/>
 				<xs:element ref="random"/>
 				<xs:element ref="wait"/>
 				<xs:element ref="talk"/>
@@ -376,6 +426,7 @@ Revision: 2022/08/12
 		<xs:complexType>
 			<xs:choice minOccurs="0" maxOccurs="unbounded">
 				<xs:element ref="loop"/>
+				<xs:element ref="mqtt"/>
 				<xs:element ref="random"/>
 				<xs:element ref="wait"/>
 				<xs:element ref="talk"/>
@@ -423,6 +474,7 @@ Revision: 2022/08/12
 		<xs:complexType>
 			<xs:choice minOccurs="0" maxOccurs="unbounded">
 				<xs:element ref="loop"/>
+				<xs:element ref="mqtt"/>
 				<xs:element ref="random"/>
 				<xs:element ref="wait"/>
 				<xs:element ref="talk"/>

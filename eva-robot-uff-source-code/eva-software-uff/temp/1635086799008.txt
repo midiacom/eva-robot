@@ -1,5 +1,0 @@
-Robot Eva: Está chovendo agora?
-Robot Eva: Está chovendo agora?
-Usuario: não
-Robot Eva: Você errou! Tente novamente
-Robot Eva: Você errou! Tente novamente

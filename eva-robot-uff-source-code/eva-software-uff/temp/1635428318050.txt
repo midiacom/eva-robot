@@ -1,6 +1,0 @@
-Robot Eva: Hello, what is your name
-Robot Eva: Hello, what is your name
-Usuario: Hello What's your name
-Robot Eva:  It's good to have you $
-Robot Eva: Bye bye
-Robot Eva: Bye bye

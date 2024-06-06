@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<evaml
+  name="teste"
+  xsi:noNamespaceSchemaLocation="EvaML-Schema/evaml_schema.xsd"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <settings>
+    <voice tone="pt-BR_IsabelaV3Voice" />
+    <lightEffects mode="ON" />
+    <audioEffects mode="ON" />
+  </settings>
+  <script>
+    <motion type="CENTER" />
+    <light state="ON" color="WHITE" />
+    <evaEmotion emotion="NEUTRAL" />
+    <audio source="efx-wand1" block="TRUE" />
+    <talk>Olá, eu sou a nova versão do robô EVA</talk>
+    <wait duration="1000" />
+    <talk>Tenho um novo sistema de controle totalmente modular e feito em Páiton</talk>
+    <wait duration="1000" />
+    <talk>isso permite a adição de novas funcionalidades ao meu sistema </talk>
+    <wait duration="1000" />
+    <talk>todas essas funcionalidades são controladas através de mensagens MQTT</talk>
+    <motion type="2LEFT" />
+    <motion type="DOWN" />
+    <wait duration="1000" />
+    <light state="ON" color="GREEN" />
+    <talk>Neste momento, estou executando um script feito na linguagem Eva ML e que está sendo executado no simulador Eva SIM</talk>
+    <motion type="2RIGHT" />
+    <motion type="DOWN" />
+    <wait duration="1000" />
+    <talk>Quando falo, a luz no meu peito fica azul automaticamente</talk>
+    <motion type="CENTER" />
+    <wait duration="1000" />
+    <talk>Também ganhei um novo visual no meu displey</talk>
+    <wait duration="1000" />
+    <talk>Meu olhar é renderizado em uma janela usando guifs</talk>
+    <wait duration="1000" />
+    <talk>Além do novo visual, também ganhei novas emoções</talk>
+    <wait duration="1000" />
+    <motion type="CENTER" />
+    <talk>Quando estou neutro</talk>
+    <wait duration="400" />
+    <talk>Como agora</talk>
+    <wait duration="1000" />
+    <talk>meus olhos podem piscar aleatoriamente</talk>
+    <wait duration="2000" />
+    <motion type="UP" />
+
+    <talk>Além de poder ficar feliz</talk>
+    <evaEmotion emotion="HAPPY" />
+    <led animation="HAPPY" />
+    <motion type="2UP" />
+    <audio source="song-here-comes-the-sun" block="TRUE" />
+
+    <talk>Triste</talk>
+    <motion type="2DOWN" />
+    <motion type="2DOWN" />
+    <evaEmotion emotion="SAD" />
+    <led animation="SAD" />
+    <light state="ON" color="BLUE" />
+    <audio source="song-ben" block="TRUE" />
+
+    <talk>e com raiva</talk>
+    <motion type="NO" />
+    <evaEmotion emotion="ANGRY" />
+    <led animation="ANGRY" />
+    <light state="ON" color="RED" />
+    <audio source="song-mj-thriller2" block="TRUE" />
+    <motion type="CENTER" />
+
+    <talk>Também posso ficar com medo</talk>
+    <evaEmotion emotion="FEAR" />
+    <led animation="SAD" />
+    <audio source="song-fear" block="TRUE" />
+
+    <talk>e surpreso</talk>
+    <evaEmotion emotion="SURPRISE" />
+    <led animation="SURPRISE" />
+    <light state="ON" color="YELLOW" />
+    <audio source="song-surprise" block="TRUE" />
+
+    <led animation="STOP" />
+    <evaEmotion emotion="NEUTRAL" />
+    <motion type="2LEFT" />
+    <motion type="UP" />
+    <motion type="LEFT" />
+    <talk>Continuo podendo controlar esta lâmpada inteligente</talk>
+    <light state="ON" color="WHITE" />
+    <wait duration="1200" />
+    <light state="ON" color="RED" />
+    <wait duration="1200" />
+    <light state="ON" color="BLUE" />
+    <wait duration="1200" />
+    <light state="ON" color="GREEN" />
+    <wait duration="1200" />
+    <motion type="CENTER" />
+    <talk>e como você deve ter percebido, também estou movendo minha cabeça</talk>
+    <wait duration="2000" />
+    <talk>Vou tocar uma música para encerrar</talk>
+    <evaEmotion emotion="HAPPY" />
+    <motion type="UP" />
+    <motion type="NO" />
+    <led animation="RAINBOW" />
+    <audio source="song-the-girl-from-ipanema" block="TRUE" />
+
+    <led animation="STOP" />
+    <light state="OFF" />
+    <motion type="CENTER" />
+  </script>
+</evaml>

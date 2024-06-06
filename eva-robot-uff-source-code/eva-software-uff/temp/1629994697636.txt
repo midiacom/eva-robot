@@ -1,7 +1,0 @@
-Robot Eva: Vou acender a luz vermelha
-Robot Eva: Vou acender a luz vermelha
-Robot Eva: Vou acender a luz verde
-Robot Eva: Vou acender a luz verde
-Robot Eva: Vou sortear um número de 1 a 3
-Robot Eva: Vou sortear um número de 1 a 3
-Robot Eva: O número sorteado foi o $

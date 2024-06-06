@@ -1,9 +1,0 @@
-Robot Eva: Hello everyone! I am the Eva simulator software
-Robot Eva: Hello everyone! I am the Eva simulator software
-Robot Eva: Now, I can run Json scripts too
-Robot Eva: Now, I can run Json scripts too
-Robot Eva: I will draw a number from 1 to 3. I will say the number and show a color for each one of them
-Robot Eva: I will draw a number from 1 to 3. I will say the number and show a color for each one of them
-Robot Eva: The number is $
-Robot Eva: Bye bye!
-Robot Eva: Bye bye!

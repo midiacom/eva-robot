@@ -1,0 +1,10 @@
+<evaml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="teste_all_leds" xsi:noNamespaceSchemaLocation="EvaML-Schema/evaml_schema.xsd" id="a4828977f3536069a8176e230c497c40">
+  <settings>
+    <voice tone="en-US_MichaelExpressive" key="1000" />
+    <lightEffects mode="ON" />
+    <audioEffects mode="ON" />
+  </settings>
+  <script>
+    <led animation="RAINBOW" key="1001" />
+  </script>
+<links><link from="1000" to="1001" /></links></evaml>

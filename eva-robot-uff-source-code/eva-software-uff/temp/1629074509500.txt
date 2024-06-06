@@ -1,3 +1,0 @@
-Robot Eva: Vou gerar um número aleatório
-Robot Eva: Vou gerar um número aleatório
-Robot Eva: O número gerado foi o $

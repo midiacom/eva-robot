@@ -1,5 +1,0 @@
-Robot Eva: Eu vou pensar em um número de 1 a 3, e você vai ter que adivinhar qual foi
-Robot Eva: Eu vou pensar em um número de 1 a 3, e você vai ter que adivinhar qual foi
-Usuario: você pensou num
-Robot Eva: Muito bom! Você acertou! Eu pensei no número 1
-Robot Eva: Muito bom! Você acertou! Eu pensei no número 1
