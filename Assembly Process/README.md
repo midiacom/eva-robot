@@ -1,2 +1,0 @@
-# EVA Robot (Assembly Process)
-
